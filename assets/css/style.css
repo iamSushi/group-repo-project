@@ -1,0 +1,20 @@
+.form-width{
+    width: 20%;
+    margin: 0 auto;
+}
+
+.form-staff-width{
+    width:40%;
+    margin-left: 60px;
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: #17263d;
+    margin-bottom: 30px;
+}
+header > h3{
+    line-height: 60px;
+    margin-left: 10px;
+    color: #eaecef;
+}
