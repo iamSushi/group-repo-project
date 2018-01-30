@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>STAFF LOAN</title>
 </head>
 <body>
     <header class="">
@@ -16,30 +16,17 @@
         <form action="" class="flow-control">
             <div class="form-staff-width">
                 <div class="form-group">
-                    <label for="">Company Name</label>
+                    <label for="">Pag-ibig</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Employer Name</label>
+                    <label for="">PhilHealth</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Address</label>
+                    <label for="">Socail Security System</label>
                     <input type="text" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="">Contact Number</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Company Start</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Company End</label>
-                    <input type="text" class="form-control">
-                </div>
-                 
         </form>
     </main>
     <footer>

@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>STAFF DEDUCTION</title>
 </head>
 <body>
     <header>
-
+        
     </header>
     <main>
         <form action="" class="flow-control">
             <div class="form-staff-width">
                 <div class="form-group">
-                    <label for="">Month Salary</label>
+                    <label for="">Cash Advance</label>
                     <input type="text" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label for="">Meals</label>
+                    <input type="text" class="form-control">
+                </div>
+
             </div>
         </form>
     </main>

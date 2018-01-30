@@ -1,3 +1,8 @@
+<?php
+    include_once("sqlcon.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,34 +11,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <header>
-        <h3>Staff Management System</h3>
+
     </header>
     <main>
-        <form class="form-control" action="" method="post">
+        <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div class="form-width">
                 <div class="form-group">
                     <label>Username:</label>
-                    <input class="form-control"type="text" name="" value="">
+                    <input class="form-control"type="text" name="username" value="">
                 </div>
                 <div class="form-group">
                     <label>Password:</label>
-                    <input class="form-control"type="text" name="" value="">
+                    <input class="form-control"type="text" name="password" value="">
                 </div>
                 <div class="form-group">
-                    <label>Department:</label>
-                    <select class="btn btn-info form-control" name="">
-                        <option value="">Malungkot</option>
-                        <option value="">Masaya</option>
-                        <option value="">Malakas</option>
-                    </select><br>
+                    <button class="btn btn-dark form-control" type="button" name="">Register</button>
                 </div>
                 <div class="form-group">
-                    <span><a href="">forgot password?</a></span>
                     <button class="btn btn-dark form-control" type="button" name="">Login</button>
+                    <span><a href="">forgot password?</a></span>
                 </div>
             </div>
         </form>

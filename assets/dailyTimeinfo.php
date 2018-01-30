@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>DAILYTIMEINFO</title>
 </head>
 <body>
     <header>
-        <h3>Staff Management System</h3>
+        
     </header>
     <main>
         <form action="" class="flow-control">
@@ -40,6 +40,10 @@
                     <input type="text" class="form-control">
                 </div>
 
+                <div class="form-group">
+                    <label for="">Absence</label>
+                    <input type="text" class="form-control">
+                </div>
 
             </div>
         </form>

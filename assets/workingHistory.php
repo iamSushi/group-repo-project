@@ -6,47 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bs/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>WORKING HISTORY</title>
 </head>
 <body>
-    <header>
+    <header class="">
         <h3>Staff Management System</h3>
     </header>
     <main>
         <form action="" class="flow-control">
             <div class="form-staff-width">
                 <div class="form-group">
-                    <label for="">Cash Advance</label>
+                    <label for="">Company Name</label>
                     <input type="text" class="form-control">
                 </div>
-
                 <div class="form-group">
-                    <label for="">Meals</label>
+                    <label for="">Employer Name</label>
                     <input type="text" class="form-control">
                 </div>
-
                 <div class="form-group">
-                    <label for="">Social Security System (SSS)</label>
+                    <label for="">Address</label>
                     <input type="text" class="form-control">
                 </div>
-
                 <div class="form-group">
-                    <label for="">PhilHealth</label>
+                    <label for="">Contact Number</label>
                     <input type="text" class="form-control">
                 </div>
-
                 <div class="form-group">
-                    <label for="">Pag-ibig(LOVE)</label>
+                    <label for="">Company Start</label>
                     <input type="text" class="form-control">
                 </div>
-
                 <div class="form-group">
-                    <label for="">Burue of Internal Revenue(BIR)</label>
+                    <label for="">Company End</label>
                     <input type="text" class="form-control">
                 </div>
 
-
-            </div>
         </form>
     </main>
     <footer>
