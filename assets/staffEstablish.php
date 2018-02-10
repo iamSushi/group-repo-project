@@ -10,30 +10,30 @@
 </head>
 <body>
     <header class="">
-        
+
     </header>
     <main>
         <form action="" class="flow-control">
             <div class="form-staff-width">
                 <div class="form-group">
                     <label for="">Start Date</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="startDate" placeholder="Start Date">
                 </div>
                 <div class="form-group">
                     <label for="">End Date</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="endDate" placeholder="End Date">
                 </div>
                 <div class="form-group">
                     <label for="">Modify By</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="modifyBy" placeholder="Modify By">
                 </div>
                 <div class="form-group">
                     <label for="">Modify Date</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="modifyDate" placeholder="Modify Date">
                 </div>
                 <div class="form-group">
                     <label for="">Department Type</label>
-                    <select class="btn btn-info form-control" name="">
+                    <select class="btn btn-info form-control" name="departmentType">
                         <option value="">Staff</option>
                         <option value="">Accident and Emergency Department</option>
                         <option value="">Anaesthetics Department</option>

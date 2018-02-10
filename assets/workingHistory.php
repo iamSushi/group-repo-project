@@ -17,27 +17,27 @@
             <div class="form-staff-width">
                 <div class="form-group">
                     <label for="">Company Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="companyName" placeholder="Company Name">
                 </div>
                 <div class="form-group">
                     <label for="">Employer Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="employerName" placeholder="Employer Name">
                 </div>
                 <div class="form-group">
                     <label for="">Address</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="address" placeholder="Address">
                 </div>
                 <div class="form-group">
                     <label for="">Contact Number</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="contactNumber" placeholder="Contact Number">
                 </div>
                 <div class="form-group">
                     <label for="">Company Start</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="companyStart" placeholder="Company Start">
                 </div>
                 <div class="form-group">
                     <label for="">Company End</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="companyEnd" placeholder="Company End">
                 </div>
 
         </form>

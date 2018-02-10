@@ -17,7 +17,7 @@
             <div class="form-staff-width">
                 <div class="form-group">
                     <label for="">Month Salary</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="salary" placeholder="Month Salary">
                 </div>
             </div>
         </form>

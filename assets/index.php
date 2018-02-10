@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <?php
     include_once("sqlcon.php");
 
-?>
 
-<!DOCTYPE html>
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,11 +23,11 @@
             <div class="form-width">
                 <div class="form-group">
                     <label>Username:</label>
-                    <input class="form-control"type="text" name="username" value="">
+                    <input class="form-control"type="text" name="username" value="" placeholder="Email Add">
                 </div>
                 <div class="form-group">
                     <label>Password:</label>
-                    <input class="form-control"type="text" name="password" value="">
+                    <input class="form-control"type="text" name="password" value="" placeholder="Phone Number">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-dark form-control" type="button" name="">Register</button>
