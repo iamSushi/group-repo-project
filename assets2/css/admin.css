@@ -1,5 +1,16 @@
-body {
+* {
     margin: 0;
+}
+aside{
+    margin-top: 52px;
+}
+.admin-header{
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 0;
+    width: 100%;
+    height: 50px;
 }
 .admin-header-button{
     float: right;
@@ -7,11 +18,8 @@ body {
 .admin-header-admin{
     padding: 10px;
     background-color: #01123d ;
-    position: fixed;
-    overflow: auto;
-    widows: 100%;
-
 }
+
 .admin-nav-ul{
     list-style-type: none;
     margin: 0;
@@ -22,7 +30,7 @@ body {
     height: 100%;
     overflow: auto;
 }
-
+ 
 li a {
     display: block;
     color: #000;
@@ -38,4 +46,9 @@ li a.active {
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
+}
+.content{
+    margin-left:25%;
+    padding:1px 16px;
+    height:1000px;
 }
