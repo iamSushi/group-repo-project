@@ -8,7 +8,7 @@ aside{
     position: fixed;
     left: 0;
     top:0;
-    z-index: 0;
+    z-index: 99;
     width: 100%;
     height: 50px;
 }
@@ -27,7 +27,7 @@ aside{
     width: 20%;
     background-color: #f1f1f1;
     position: fixed;
-    height: 100%;
+    height: 1000px;
     overflow: auto;
 }
  
@@ -39,7 +39,7 @@ li a {
 }
 
 li a.active {
-    background-color:#0333a5;
+    background-color:#354365;
     color: white;
 }
 
@@ -51,4 +51,7 @@ li a:hover:not(.active) {
     margin-left:25%;
     padding:1px 16px;
     height:1000px;
+}
+.active-staff{
+    background-color: green;
 }
