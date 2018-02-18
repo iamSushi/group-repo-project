@@ -13,10 +13,12 @@
 	    <header class="admin-header">
 	    	<div  class="admin-header-admin"> 
 	    		<div>
-		    		<label for="" style="color:white;">ATTENDANCE</label>
+		    		<label for="" style="color:white;"><a href="staff.php">Department Head</a></label>
 		    		<div  class="admin-header-button">
 			    		<input type="text" placeholder="Search">
-			    		<button type="button">SR</button>
+			    		<button type="button" class="btn">
+			    			<img src="images/search.png" alt="search" class="search-img" width="20px">
+			    		</button>
 		    			<button type="button">Logout</button>
 	    			</div>
 	    		</div>
@@ -40,7 +42,7 @@
 		        <section class="content">
 				   	 <div class="col-md-12">
 				   		<br>
-					  <form method="POST" action="contact_person_insert.php">
+					  <form method="POST" action="">
 						  <div>
 						  <label>Staff ID</label>
 						  <input type="text" name="name" class='form-control' required>
@@ -49,7 +51,7 @@
 
 
 						  <br>
-						  <button type="submit" class="btn btn-primary">
+						  <button type="submit" class="btn btn-primary"><a href="attendance_data.php" style="color:white">
 						  	<span class="glyphicon glyphicon-submit"></span>
 						  	Submit
 						  </button>

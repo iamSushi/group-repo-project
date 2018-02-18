@@ -12,7 +12,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	    <link rel="stylesheet" href="bs/bootstrap.min.css">
 	    <link rel="stylesheet" href="css/admin.css">
-	    <title>Admin Index</title>
+	    <title>Department Head</title>
 	</head>
 	<body>
 	    <header class="admin-header">
@@ -21,7 +21,9 @@
 		    		<label for="" style="color:white;">Department Head</label>
 		    		<div  class="admin-header-button">
 			    		<input type="text" placeholder="Search">
-			    		<button type="button">SR</button>
+			    		<button type="button" class="btn">
+			    			<img src="images/search.png" alt="search" class="search-img" width="20px">
+			    		</button>
 		    			<button type="button">Logout</button>
 	    			</div>
 	    		</div>
@@ -52,3 +54,5 @@
 	    </footer>
 	</body>
 </html>
+
+

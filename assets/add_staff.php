@@ -13,10 +13,12 @@
 	    <header class="admin-header">
 	    	<div  class="admin-header-admin"> 
 	    		<div>
-		    		<label for="" style="color:white;">ADD STAFF</label>
+		    		<label for="" style="color:white;"><a href="staff.php">Department Head</a></label>
 		    		<div  class="admin-header-button">
 			    		<input type="text" placeholder="Search">
-			    		<button type="button">SR</button>
+			    		<button type="button" class="btn">
+			    			<img src="images/search.png" alt="search" class="search-img" width="20px">
+			    		</button>
 		    			<button type="button">Logout</button>
 	    			</div>
 	    		</div>
