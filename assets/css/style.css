@@ -1,3 +1,6 @@
+.index-body{
+	margin-top: 200px;
+}
 .form-width{
     width: 20%;
     margin: 0 auto;
@@ -5,4 +8,19 @@
 .form-staff-width{
     width:40%;
     margin-left: 60px;
+}
+.admin-body{
+	overflow-x: hidden;
+}
+ 
+.admin-header-ID{
+	width: 30px;
+	overflow: ;
+}
+.admin-header-button{
+	float: right;
+	overflow: visible;
+}
+.active-staff{
+	background-color: green;
 }
