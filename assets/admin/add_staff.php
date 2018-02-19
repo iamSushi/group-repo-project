@@ -26,7 +26,7 @@
 		</header>
 		<main>
 			<div class="row">
-				<div class="col-sm-2 sidebar" >
+				<div class="col-sm-2 col-md-2 sidebar" >
 					<ul class="nav-ul">
 						<li><a href="#" class="active">Add Staff</a></li>
 						<li><a href="view_staff.php">View Staff</a></li>
@@ -37,9 +37,8 @@
 						<li><a href="job_details.php">Job Details</a></li>
 					</ul>
 				</div>
-				<div class="col-sm-10 content" >
-					<div class="row">
-						<div class="col-sm-12">
+				<div class="col-md-10 content" >
+						<div class="col-sm-10 form-ni">
 							<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 						    	<div>
 									<label>First Name:</label>
@@ -80,7 +79,6 @@
 							  </button>
 					  		</form>
 						</div>
-					</div>
 				</div>
 			</div>
 		</main>
