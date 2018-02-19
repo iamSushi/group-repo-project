@@ -1,0 +1,25 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.header-container{
+	line-height: 50px;
+}
+header > div{
+	height: 50px;
+	width: 100%;
+	background-color: red;
+}
+header h3{
+	float: left;
+}
+header div > .masaya{
+	float: right;
+}
+/*main part*/
+aside{
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	background-color: pink;
+}
