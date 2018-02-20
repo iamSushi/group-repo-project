@@ -46,11 +46,17 @@
 }
 .left-font{
     color: #c8cbce;
-    text-shadow: 2px 2px 5px #00000;
+    text-shadow: 2px 1px 8px black;
+    font-size: 18px;
+    font-family: raleway;
 }
 @font-face {
     font-family: quicksand;
     src: url("../font/Quicksand-Regular.otf");
+}
+@font-face {
+    font-family: raleway;
+    src: url("../font/Raleway-Medium.ttf");
 }
 html,body {
     font-family: quicksand;
@@ -58,6 +64,9 @@ html,body {
     width: 100% !important;
     background-color: #f2f5f9;
 
+}
+.pos-fix{
+    position: fixed;
 }
 .logo{
     padding-top: 30px;
