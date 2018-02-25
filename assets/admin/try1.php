@@ -11,22 +11,11 @@
 <body>
 	<div class="container-fluid">
 		<header class="headerhe">
-			<div class="row">
-				<div class="col-sm-12 headerni">
-					<label for="" style="color: white;">Admin ID</label>
-		    		<div  class="admin-header-button" style="float:right;">
-			    		<input type="text" placeholder="Search">
-			    		<button type="button" class="btn">
-			    			<img src="images/search.png" alt="search" class="search-img" width="20px">
-			    		</button>
-		    			<button type="button" class="btn">Logout</button>
-	    			</div>
-				</div>
-			</div>
+			
 		</header>
 		<main>
 			 <div class="row">
-			 	<div class="col-sm-2 col-2 nav-ni" height="100%">
+			 	<div class="col-sm-2 sidebar">
 			 		<ul class="nav-ul">
 						<li><a href="#" class="active">Add Staff</a></li>
 						<li><a href="view_staff.php">View Staff</a></li>
@@ -37,8 +26,18 @@
 						<li><a href="job_details.php">Job Details</a></li>
 					</ul>
 			 	</div>
-			 	<div class="col-sm-10 col-10">
-			 		<div class="col-10 form-ni">
+			 	<div class="col-sm-10 content">
+						<div class="col-sm-12 headerni">
+							<label for="" style="color: white;">Admin ID</label>
+				    		<div  class="admin-header-button" style="float:right;">
+					    		<input type="text" placeholder="Search">
+					    		<button type="button" class="btn">
+					    			<img src="images/search.png" alt="search" class="search-img" width="20px">
+					    		</button>
+				    			<button type="button" class="btn">Logout</button>
+			    			</div>
+			 		</div>
+			 		<div class="col-sm-10">
 			 			<legend>Staff Form Registration</legend>
 			 			<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 						    	<div class="form-group">

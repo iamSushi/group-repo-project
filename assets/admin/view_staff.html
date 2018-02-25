@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <link rel="stylesheet" href="css/styletry.css">
+	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+	<div class="col-sm-2 he" style="height: 100%;padding: 0">
+				<ul class="nav-ul">
+						<li><a href="#" class="active">Staff</a></li>
+						<li><a href="view_department_head.php">Department Head</a></li>
+						<li><a href="attendance.php">Attendance</a></li>
+						<li><a href="schedule.php">Schedule</a></li>
+						<li><a href="job_details.php">Job Details</a></li>
+					</ul>
+	</div>
+	<div class="col-sm-10 ha" style="height: 100%;padding: 0">
+		<div class="col-sm-12" style="padding: 0;">
+			 <nav class="navbar navbar-inverse" style="border-radius: 0;border:none;">
+					<div class="container-fluid" style="padding-left: 0;">
+			 	 	<ul class="nav navbar-nav">
+			 	 		<li><a href="add_staff.php">Add Staff</a></li>
+			 	 		<li><a href="#" class="activeh" style="color: white;">View Staff</a></li>
+			 	 	</ul>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn">Logout</button></div>
+			 	 	<ul class="nav navbar-right nav-btn">
+				 	 	<div class="input-group">
+							 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+							</div> 
+						</div>
+					</ul>
+			 	 </div>
+	    	</nav>
+		</div>
+		<div class="col-sm-12"><legend>Staff Form Registration</legend></div>
+			 		<div class="col-sm-12">
+			 			 
+						<div class="col-sm-10 form-ni">
+							<table border="1" class="table">
+								<tr>
+									<th>Staff ID</th>
+									<th>Name</th>
+									<th>BirthDate</th>
+									<th>Cellphone Number</th>
+									<th>Telephone Number</th>
+									<th>Status</th>
+									<th>Gender</th>
+									<th></th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Joshua Perater</td>
+									<td>April 15 1999</td>
+									<td>0916231452</td>
+									<td>9251151</td>
+									<td>Single</td>
+									<td>Male</td>
+									<td>
+										<a href='staff_update.php?id=".$row['staff_id']."'>
+										      <button class='btn btn-primary'>Update</button>
+											</a>
+											<a  href='view_staff.php?id=".$row['staff_id']."'>
+											  <button class='btn btn-danger' name='delete' id='delete'>Delete</button>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>john Ortiz</td>
+									<td>October 16 1996</td>
+									<td>0916452131</td>
+									<td>30916425</td>
+									<td>Maried</td>
+									<td>Male</td>
+									<td>
+										<a href='staff_update.php?id=".$row['staff_id']."'>
+										      <button class='btn btn-primary'>Update</button>
+											</a>
+											<a  href='view_staff.php?id=".$row['staff_id']."'>
+											  <button class='btn btn-danger' name='delete' id='delete'>Delete</button>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Melinda Padrones</td>
+									<td>july 6 1989</td>
+									<td>09358049315</td>
+									<td>0168132</td>
+									<td>168213</td>
+									<td>Female</td>
+									<td>
+										<a href='staff_update.php?id=".$row['staff_id']."'>
+										      <button class='btn btn-primary'>Update</button>
+											</a>
+											<a  href='view_staff.php?id=".$row['staff_id']."'>
+											  <button class='btn btn-danger' name='delete' id='delete'>Delete</button>
+										</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+			 			 
+					</div>
+		
+	</div>
+</body>
+</html>
+</body>
+</html>
