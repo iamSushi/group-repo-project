@@ -1,71 +1,50 @@
 <!DOCTYPE html>
- 
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link rel="stylesheet" href="bs/bootstrap.min.css">
-      <link rel="stylesheet" href="css/admin.css">
-      <title>VIEW STAFF</title>
-  </head>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-</head>
-<body>
-  <header class="admin-header">
-        <div  class="admin-header-admin"> 
-          <div>
-            <label for="" style="color:white;"><a href="staff.php">Department Head</a></label>
-            <div  class="admin-header-button">
-              <input type="text" placeholder="Search">
-              <button type="button" class="btn">
-                <img src="images/search.png" alt="search" class="search-img" width="20px">
-              </button>
-              <button type="button">Logout</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="col-2">
+            <div class="row-1">
+                <div  class="admin-header-admin"> 
+                <div>
+                    <label for="" style="color:white;">Department Head</label>
+                </div>
             </div>
-          </div>
-      </div>
-      </header>
-      <main>
-        <div>
-          <aside>
-            <nav>
-            <ul class="admin-nav-ul">
-               <li><a href="add_staff.php">Add Staff</a></li>
-               <li><a href="view_staff.php" class="active">View Staff</a></li>
-               <li><a href="attendance.php">Attendance</a></li>
-               <li><a href="schedule.php">Schedule</a></li>
-               <li><a href="job_details.php">Job Details</a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-            </ul>
-          </nav>
-          </aside>
+            </div>
+            <div class="row-11">
+                <div class="bgc">
+                    <li><a href="index.html">Add Staff</a></li>
+                    <li><a href="view.html" class="active">View Staff</a></li>
+                    <li><a href="attend.html">Attendance</a></li>
+                    <li><a href="shed.html">Schedule</a></li>
+                    <li><a href="job.html">Job Details</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </div>
+            </div>
         </div>
-        <section class="content">
-             <div class="col-md-12">
-              <br>
-            <form method="POST" action="">
-              <div>
-             <h1>Staff</h1>
-              
-              </div>
+        <div class="col-10">
+            <div class="row-1">
+                <div  class="admin-header-admin"> 
+                <div>
+                    <label for="" style="color:01123;">Department Head</label>
+                    <div  class="admin-header-button">
+                        <input type="text" placeholder="Search">
+                        <button type="button">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row-9">
+                <div class="container">
+                        <form class="" action="view.html" method="post">
+                            <h1>Staffs</h1><br>
+                            <div class="">
+                                </div>
                 <table>
                       <tr>
                         <th>Staff ID</th>
@@ -74,6 +53,7 @@ tr:nth-child(even) {
                         <th>Contact Number</th>
                         <th>Status</th>
                         <th>Gender</th>
+                        <th></th>
                       </tr>
                       <tr>
                         <td>001</td>
@@ -160,10 +140,34 @@ tr:nth-child(even) {
               </button>
                         </td>
                       </tr>
+                      <tr>
+                        <td>005</td>
+                        <td>Ezekiel Garbosa</td>
+                        <td>1996-08-06</td>
+                        <td>+639363732916</td>
+                        <td>Single</td>
+                        <td>Male</td>
+                        <td>
+                          <button type="" class="btn btn-primary">
+                <span class="glyphicon glyphicon-submit"></span><a href="" style="color:white">
+                Update
+              </a>
+            
+              </button>
+              <button type="" class="btn btn-danger">
+                <span class="glyphicon glyphicon-submit"></span><a href="" style="color:white">
+                Delete
+              </a>
+              </button>
+                        </td>
+                      </tr>
                   </table>
-            </form>
-          </div>
-        </section>
-
-</body>
+                            </div>
+                        </form>
+            </div>
+        </div>
+            <div class="row-2">
+            </div>
+                    
+    </body>
 </html>
