@@ -26,7 +26,7 @@
 		</header>
 		<main>
 			 <div class="row">
-			 	<div class="col-sm-2 col-2 nav-ni">
+			 	<div class="col-sm-2 col-2 nav-ni" height="100%">
 			 		<ul class="nav-ul">
 						<li><a href="#" class="active">Add Staff</a></li>
 						<li><a href="view_staff.php">View Staff</a></li>

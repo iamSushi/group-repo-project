@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Job Details</title>
 	 <link rel="stylesheet" href="bootstrap.css">
-	 <link rel="stylesheet" href="styletry.css">
+	 <link rel="stylesheet" href="css/styletry.css">
 	 <script src="bootstrap.js"></script>
 </head>
 <body>

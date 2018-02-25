@@ -48,16 +48,18 @@
 									<th>Telephone Number</th>
 									<th>Status</th>
 									<th>Gender</th>
+									<th>Department</th>
 									<th></th>
 								</tr>
 								<tr>
 									<td>1</td>
-									<td>Joshua Perater</td>
+									<td>Biran Perater</td>
 									<td>April 15 1999</td>
 									<td>0916231452</td>
 									<td>9251151</td>
 									<td>Single</td>
 									<td>Male</td>
+									<td>Medicine</td>
 									<td>
 										<a href='staff_update.php?id=".$row['staff_id']."'>
 										      <button class='btn btn-primary'>Update</button>
@@ -69,12 +71,13 @@
 								</tr>
 								<tr>
 									<td>2</td>
-									<td>john Ortiz</td>
+									<td>Mart Ortiz</td>
 									<td>October 16 1996</td>
 									<td>0916452131</td>
 									<td>30916425</td>
 									<td>Maried</td>
 									<td>Male</td>
+									<td>Laboratory</td>
 									<td>
 										<a href='staff_update.php?id=".$row['staff_id']."'>
 										      <button class='btn btn-primary'>Update</button>
@@ -86,12 +89,13 @@
 								</tr>
 								<tr>
 									<td>3</td>
-									<td>Melinda Padrones</td>
+									<td>Frits Padrones</td>
 									<td>july 6 1989</td>
 									<td>09358049315</td>
 									<td>0168132</td>
 									<td>168213</td>
 									<td>Female</td>
+									<td>Nurse</td>
 									<td>
 										<a href='staff_update.php?id=".$row['staff_id']."'>
 										      <button class='btn btn-primary'>Update</button>

@@ -1,38 +1,16 @@
 <!DOCTYPE html>
-<?php 
-	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		include_once("connectsql.php");
-	$attend_id = $_POST['attend_id'];
-	$schedDetails_id = $_POST['schedDetails_id'];
-	$tardiness = $_POST['tardiness'];
-	$overtime = $_POST['overtime'];
-	$absences = $_POST['absences'];
-	$holiday = $_POST['holiday'];
-	$holidayName = $_POST['holidayName'];
-	$dailyTotalHours = $_POST['dailyTotalHours'];
-	 
-	 
 
-	$sql = "INSERT INTO attendance_details VALUES('','$attend_id','$schedDetails_id','$tardiness','$overtime','$absences','$holiday','$holidayName','$dailyTotalHours')";
-
-	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added! <a href='attendance_details.php'><<< Go Back</a>";
-	}else{
-		echo "Failed to Add! <a href='attendance_details.php'><<< Go Back</a>" ;
-		echo mysqli_error($connect);
-	}
-	}
-?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Attendance</title>
-	 <link rel="stylesheet" href="bootstrap.css">
-	 <link rel="stylesheet" href="styletry.css">
+	
+	 <link rel="stylesheet" href="css/styletry.css">
+	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <script src="bootstrap.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="main-container">
 		<header class="headerhe">
 			<div class="row">
 				<div class="col-sm-12 headerni">
@@ -60,9 +38,9 @@
 						<li><a href="job_details.php">Job Details</a></li>
 					</ul>
 				</div>
-				<div class="col-sm-10 content" >
-					<div class="row">
-						<div class="col-sm-12">
+				<div class="content" >
+					<div class="col-sm-12">
+						<div class="col-sm-10 form-ni">
 							 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 					      <div>
 							 <label>Attendance ID:</label>
@@ -103,7 +81,7 @@
 						  </button>
 					  </form>
 						</div>
-					</div>
+					 </div>
 				</div>
 			</div>
 		</main>
@@ -112,4 +90,28 @@
 		</footer>
 	</div>
 </body>
+<!-- <?php 
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+		include_once("connectsql.php");
+	$attend_id = $_POST['attend_id'];
+	$schedDetails_id = $_POST['schedDetails_id'];
+	$tardiness = $_POST['tardiness'];
+	$overtime = $_POST['overtime'];
+	$absences = $_POST['absences'];
+	$holiday = $_POST['holiday'];
+	$holidayName = $_POST['holidayName'];
+	$dailyTotalHours = $_POST['dailyTotalHours'];
+	 
+	 
+
+	$sql = "INSERT INTO attendance_details VALUES('','$attend_id','$schedDetails_id','$tardiness','$overtime','$absences','$holiday','$holidayName','$dailyTotalHours')";
+
+	if(mysqli_query($connect, $sql)){
+		echo "Successfully Added! <a href='attendance_details.php'><<< Go Back</a>";
+	}else{
+		echo "Failed to Add! <a href='attendance_details.php'><<< Go Back</a>" ;
+		echo mysqli_error($connect);
+	}
+	}
+?> -->
 </html>

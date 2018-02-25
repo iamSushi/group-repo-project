@@ -5,11 +5,12 @@
 	<title>Document</title>
 	 <link rel="stylesheet" href="css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
+	 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	  
 	 <script src="bootstrap.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class=" main-container">
 		<header class="headerhe">
 			<div class="row">
 				<div class="col-sm-12 headerni">
@@ -17,7 +18,7 @@
 		    		<div  class="admin-header-button" style="float:right;">
 			    		<input type="text" placeholder="Search">
 			    		<button type="button" class="btn">
-			    			<img src="images/search.png" alt="search" class="search-img" width="20px">
+			    			<i class="glyphicon glyphicon-search"></i>
 			    		</button>
 		    			<button type="button" class="btn">Logout</button>
 	    			</div>
@@ -26,7 +27,7 @@
 		</header>
 		<main>
 			<div class="row">
-				<div class="col-sm-2 col-md-2 sidebar" >
+				<div class="sidebar" >
 					<ul class="nav-ul">
 						<li><a href="#" class="active">Add Staff</a></li>
 						<li><a href="view_staff.php">View Staff</a></li>
@@ -37,48 +38,93 @@
 						<li><a href="job_details.php">Job Details</a></li>
 					</ul>
 				</div>
-				<div class="col-md-10 content" >
+				<div class=" content" >
+					<div class="col-sm-12">
 						<div class="col-sm-10 form-ni">
-							<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-						    	<div>
-									<label>First Name:</label>
-									<input type="text" name="fname" class='form-control' required>
+							<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+						    	<div class="form-group">
+									<label class="control-label col-sm-4">First Name:</label>
+									<div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="fname" class='form-control' required placeholder="First Name">
+										</div>
+									</div>
 							   	</div>
-							 	<div>
-									<label>Middle Name:</label>
-									<input type="text" name="mname" class='form-control' required>
+							 	<div class="form-group">
+									<label class="control-label col-sm-4">Middle Name:</label>
+									<div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="fname" class='form-control' required placeholder="Middle Name">
+										</div>
+									</div>
 								</div>
-								<div>
-								    <label>Last Name:</label>
-								    <input type="text" name="lname" class='form-control' required>
+								<div class="form-group">
+								    <label class="control-label col-sm-4">Last Name:</label>
+								    <div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="fname" class='form-control' required placeholder="Last Name">
+										</div>
+									</div>
 								</div>
-							    <div>
-									<label>Birthdate:</label>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Birthdate:</label>
+									<div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 									<input type="date" name="bday" class='form-control' required>
+										</div>
+									</div>
 							 	</div>
-							    <div>
-									<label>Cellphone Number</label>
-									<input type="text" name="cellnum" class='form-control' required>
-							    </div>
-							    <div>
-									<label>Telephone Number</label>
-								    <input type="text" name="telnum" class='form-control' required>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">Cellphone Number:</label>
+							     	<div class="col-sm-7 col-md-6 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+							     			<input type="text" name="cellphone" class="form-control" required placeholder="Cellphone Number">
+							     		</div>
+							     	</div>
+							     </div>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Telephone Number:</label>
+									<div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+								    <input type="text" name="telnum" class='form-control' required placeholder="Telephone Number">
+								    	</div>
+								    </div>
 								</div>
-								<div>
-									<label>Civil Status:</label>
-								  	<input type="text" name="status" class='form-control' required>
-							    </div>
-							    <div>
-								  	<label>Gender:</label>
-								  	<input type="text" name="gender" class='form-control' required>
+								<div class="form-group">
+									<label class="control-label col-sm-4">Civil Status:</label>
+									<div class="col-sm-7 col-md-6 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="bday" class='form-control' required placeholder="Civil Status">
+										</div>
+									</div>
+							 	</div>
+							 	<div class="form-group">
+								  	<label class="control-label col-sm-4">Gender:</label>
+								  	<div class="col-sm-7 col-md-6 inputGroupContainer">
+								  		<div class="input-group">
+								  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								  	<input type="text" name="gender" class='form-control' required placeholder="Gender">
+								  		</div>
+								  	</div>
 							    </div>
 							   <br>
-							  <button type="submit" class="btn btn-primary" id="submit" name="submit">
-							  	<span class="glyphicon glyphicon-submit"></span>
-							  	Submit
-							  </button>
+							   <div class="form-group">
+							    <label for="" class="col-sm-4 control-label"></label>
+							   		<div class="col-sm-7 col-md-6">
+							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit<span class="glyphicon glyphicon-send"></span></button>
+
+							  </div>
+							  </div>
 					  		</form>
 						</div>
+					</div>
 				</div>
 			</div>
 		</main>

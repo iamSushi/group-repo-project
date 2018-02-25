@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Schedule</title>
-	 <link rel="stylesheet" href="bootstrap.css">
-	 <link rel="stylesheet" href="styletry.css">
+	 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	 <link rel="stylesheet" href="css/styletry.css">
 	 <script src="bootstrap.js"></script>
 </head>
 <body>
@@ -37,8 +37,8 @@
 					</ul>
 				</div>
 				<div class="col-sm-10 content" >
-					<div class="row">
-						<div class="col-sm-12">
+					<div class="col-sm-12">
+						<div class="col-sm-10 form-ni">
 							 <form method="POST" action="schedule_details_insert.php">
 						  <div>
 							<label>Schedule ID:</label>
