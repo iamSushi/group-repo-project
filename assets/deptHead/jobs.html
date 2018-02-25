@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	 <link rel="stylesheet" href="css/styletry.css">
+	
+</head>
+<body>
+	<div class="col-sm-2 sidebar">
+		<ul class="nav-ul">
+
+			<li><a href="adds.html">Add Staff</a></li>
+			<li><a href="views.html">View Staff</a></li>
+			<li><a href="attends.html">Attendance</a></li>
+			<li><a href="sched.html">Schedule</a></li>
+			<li><a href="jobs.html" class="active">Job Details</a></li>
+		</ul>
+	</div>
+	<div class="col-sm-10 content">
+		<div class="col-sm-12" style="padding: 0;">
+			 <nav class="navbar navbar-inverse">
+			 	 <div class="container-fluid" style="padding-left: 0;">
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Job Details</a></li>
+			 	 	</ul>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn">Logout</button></div>
+			 	 	<ul class="nav navbar-right nav-btn">
+				 	 	<div class="input-group">
+							 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+							</div> 
+						</div>
+					</ul>
+			 	 </div>
+			 </nav>		
+		</div>
+		<div class="col-sm-12"><legend>Job Details</legend></div>
+			 		<div class="col-sm-12">
+			 			
+			 			<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+						    	<div class="form-group">
+									<label class="control-label col-sm-4">Schedule ID:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
+										</div>
+									</div>
+							   	</div>
+							 	<div class="form-group">
+									<label class="control-label col-sm-4">Salary Wage:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+								    <label class="control-label col-sm-4">Department:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="department" class='form-control' required placeholder="Department">
+										</div>
+									</div>
+								</div>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Allowance:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
+										</div>
+									</div>
+							 	</div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
+							     		</div>
+							     	</div>
+							     </div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">Department Head::</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Department Head:">
+							     		</div>
+							     	</div>
+							     </div>
+							    
+							   <br>
+							   <div class="form-group">
+							    <label for="" class="col-sm-4 control-label"></label>
+							   		<div class="col-sm-5">
+							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+
+							  </div>
+							  </div>
+					  		</form>
+					  	</div>
+		
+	</div>
+</body>
+</html>
