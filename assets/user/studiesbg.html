@@ -16,8 +16,8 @@
 					<div class="row-2 container text-center">
 						<p>Your Profile</p>
 					</div>
-					<div class="row-7">
-						
+					<div class="row-7 text-center">
+						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
 						<p>James Sinadjan</p>
@@ -41,21 +41,22 @@
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
 							<li><a href="basicinfo.html">Basic Information</a></li>
+							<li><a href="parentsdetails.html">Parents Details</a></li>
 							<li><a href="familydetails.html">Family Details</a></li>
 							<li class="active"><a href="studiesbg.html">Studies Background</a></li>
 							<li><a href="contactperson.html">Contact Person</a></li>
 							<li><a href="others.html">Others</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
-								<a href="" class="dropdown-toggle" data-toggle="dropdown">Social Medias<b class="caret"></b></a>
+								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="">Facebook</a></li>
-									<li><a href="">Instagram</a></li>
-									<li><a href="">Twitter</a></li>
-									<li><a href="">Google+</a></li>
+									<li><a href="">Your Profile</a></li>
+									<li><a href="">Settings</a></li>
+									<li><a href="">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
-						<button class="btn btn-primary float-right" type="button" style="margin: 9px 10px 0 0;"><a href="" style="color:white;">Logout</a></button>
 					</div>
 				</nav>
 			</div>
@@ -94,7 +95,41 @@
 						</div>
 						<div class="container row-1 form-group">
 							<div class="col-5">
-								<label for="">Year Graduated</label>
+								<label for="">State</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="text" required>
+								</div>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-5">
+								<label for="">City</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="text" required>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group">
+							<div class="col-5">
+								<label for="">Country</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="text" required>
+								</div>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-5">
+								<label for="">Postal code</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="text"  required>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group">
+							<div class="col-5">
+								<label for="">Year graduated</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 									<input class="form-control" type="date" required>
@@ -102,44 +137,19 @@
 							</div>
 							<div class="col-1"></div>
 							<div class="col-5">
-								<label for="">Graduation Standing</label>
+								<label for="">Average</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-									<select class="form-control" required="">
-	                                    <option value="">Male</option>
-	                                    <option value="">Female</option>
-	                                </select>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
 						<div class="container row-1 form-group">
 							<div class="col-11">
-								<label for="">Average</label>
+								<label for="">Graduation standing</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
-								</div>
-							</div>
-						</div>
-						<div class="container row-1 form-group">
-							<div class="col-5">
-								<label for="">Contact number</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
-								</div>
-							</div>
-							<div class="col-1"></div>
-							<div class="col-5">
-								<label for="">Status</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-heart-empty"></i></span>
-									<select class="form-control">
-	                                    <option value="">Single</option>
-	                                    <option value="">Married</option>
-	                                    <option value="">Divorced</option>
-	                                    <option value="">Widowed</option>
-	                                </select>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
@@ -152,28 +162,19 @@
 						</div>
 						<div class="container row-1 form-group">
 							<div class="col-11">
-								<label for="">Address one</label>
+								<label for="">School name</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
 						<div class="container row-1 form-group">
 							<div class="col-11">
-								<label for="">Address two</label>
+								<label for="">School address</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
-								</div>
-							</div>
-						</div>
-						<div class="container row-1 form-group">
-							<div class="col-11">
-								<label for="">Address three</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
@@ -181,16 +182,16 @@
 							<div class="col-5">
 								<label for="">State</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 							<div class="col-1"></div>
 							<div class="col-5">
 								<label for="">City</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
@@ -198,16 +199,33 @@
 							<div class="col-5">
 								<label for="">Country</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 							<div class="col-1"></div>
 							<div class="col-5">
-								<label for="">Postal Code</label>
+								<label for="">Postal code</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" placeholder="e.g. James Kenneth Mark" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+									<input class="form-control" type="text"  required>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group">
+							<div class="col-5">
+								<label for="">Year graduated</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+									<input class="form-control" type="text" required>
+								</div>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-5">
+								<label for="">Average</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
