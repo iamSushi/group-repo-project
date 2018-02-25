@@ -25,17 +25,72 @@
 .row-12{height: 100%;width: 100%;}
 
 .row-1, .row-2, .row-3, .row-4, .row-5, .row-6, .row-7, .row-8, .row-9, .row-10, .row-11, .row-12{
-    position: relative;
-    float: left;
+  position: relative;
+  float: left;
 }
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12{
-    position: relative;
-    float: left;
+  position: relative;
+  float: left;
 }
 
-html,body {
-    height: 100% !important;
-    width: 100% !important;
-    background-color: red;
-
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  line-height: 1.3;
+}
+h1,h2,h3,h4,h5,h6{
+	padding: 0 !important;
+ 	margin: 0 !important;
+}
+a{
+	color: #333;
+	text-decoration: none;
+	list-style-type: none;
+}
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+.foot-color, .foot-color > a{
+  color: #c8cbce;
+}
+.bg{
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/indexbg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.logo{
+  padding-top: 30px;
+  width: 180px;
+  height: 200px;
+}
+.text-center{
+  text-align: center;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+.btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+.container-mid{
+  padding: 80px 30px;
+}
+.form-text {
+  display: block;
+  margin-top: 0.25rem;
+}
+.foot-link > a > img{
+  width: 27px;
+  height: 25px;
 }

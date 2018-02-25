@@ -1,62 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/glyphicon.css">
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-        <div class="col-3">
-            <div class="bg">
-                <div class="row-4 text-center">
-                    
-                    <img class="logo" src="img/logo.png" style="width:160px;height200px;" alt="">
-                </div>
-                <div class="row-2 text-center">
-                    <div class="container">
-                        <p class="left-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ipsum hic placeat vel assumenda, impil.</p>
-                    </div>
-                </div>
-
-                <div class="row-6 text-center">
-                    <div class="container">
-                        <p class="left-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis dolorum minus quidem, blanditiis, adipisci aspernatur accusantium vitae quia omnis consequatur natus odit quisquam, temporibus fugit ipsam eveniet! onsequuntur! Incidunt, iusto odit nemo omnis consectetur molestiae voluptates.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-9">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<title>Home</title>
+	</head>
+	<body>
+		<div class="col-3">
+			<div class="bg container">
+				<div class="row-4 text-center">
+					<img class="logo" src="img/logo.png" alt="">
+				</div>
+				<div class="row-4">
+					<div class="">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi aut beatae consequuntur blanditiis fuga eveniet laborum vel dolore. Recusandae tenetur aperiam reiciendis voluptatem autem nam molestiae magnam, deleniti sunt laborum.</p>
+					</div>
+				</div>
+				<div class="row-4">
+					<div class="">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate doloribus possimus eveniet sequi, necessitatibus repudiandae harum totam vero laboriosam iste excepturi inventore, rem autem assumenda mollitia illo, est id, illum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-9">
             <div class="row-2">
                 <div class="container">
                     <div class="float-left">
                         <a href="#">login</a>
                         <span>/</span>
-                        <a href="register.html">signup</a>
+                        <a href="register.html">register</a>
                     </div>
                     <div class="float-right">
-                        <button class="btn btn-dark" type="button" name="button">Admin</button>
-                        <button class="btn btn-dark" type="button" name="button">Dept. Head</button>
+                        <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#admin">Admin</button>
+                        <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#deptHead">Head</button>
+
+                        <div class="modal fade" id="admin">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1>Admin Login</h1>
+									</div>
+									<div class="modal-body">
+										<form action="">
+											<div class="container">
+												<div class="container form-group">
+													<label for="username">Username</label>
+													<div class="input-group">
+														<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+														<input type="text" class='form-control' required placeholder="Username">
+													</div>
+												</div>
+												<div class="container form-group">
+													<label>Password</label>
+													<div class="input-group">
+														<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+														<input type="text" class='form-control' required placeholder="Password">
+													</div>
+												</div>
+												<div class="container form-group">
+													<button class="btn btn-dark" type="button">Login</button>
+													<button class="btn btn-dark" type="button">Cancel</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="deptHead">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1>Department Head</h1>
+									</div>
+									<div class="modal-body">
+										<form action="">
+											<div class="container">
+												<div class="form-group">
+													<label>Username</label>
+													<div class="input-group">
+														<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+														<input type="text" class='form-control' required placeholder="Username">
+													</div>
+												</div>
+												<div class="form-group">
+													<label>Password</label>
+													<div class="input-group">
+														<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+														<input type="text" class='form-control' required placeholder="Password">
+													</div>
+												</div>
+												<div class="form-group">
+													<button class="btn btn-dark" type="button">Login</button>
+													<button class="btn btn-dark" type="button">Cancel</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
             <div class="row-6">
                 <div class="container">
                     <div class="col-6">
-                        <form class="" action="index.html" method="post">
-                            <h1>login</h1><br>
-                            <div class="">
-                                <label for="">Username</label>
-                                <input class="form-control" type="text" name="" value="" required>
+                        <form class="">
+                            <h1>login here . . </h1><br>
+                            <div class="container form-group">
+                                <label>Username</label>
+                                <div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" class='form-control' required placeholder="Username">
+								</div>
                             </div>
-                            <div class="">
-                                <label for="">Password</label>
-                                <input class="form-control" type="text" name="" value="" required>
+                            <div class="container form-group">
+                                <label>Password</label>
+                                <div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									<input type="text" class='form-control' required placeholder="Password">
+								</div>
                             </div>
-                            <div class="">
+                            <div class="container form-group">
                                 <button class="btn btn-dark" type="button" name="button">Login</button>
                             </div>
                         </form>
@@ -64,44 +142,52 @@
                     <div class="col-6">
                         <h1>or you can . . .</h1>
                         <div class="text-center container-mid">
-                           <a href="register.html">register here</a>
+                        	<span class="glyphicon glyphicon-cog"></span>
+                        	<a href="register.html">register here</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row-3" style="background-color:#141719;">
-                <div class="container">
-                    <div class="col-4">
-                        <h2 class="foot-text-color">Hospitaline</h2>
-                        <p class="foot-text-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id perspiciatis quas aliquam neque illo nobis dolores dolorem vomus!</p>
-                    </div>
-                    <div class="col-4">
-                        <h2 class="foot-text-color">Visit Us</h2>
-                        <ul class="foot-text-color">
-                            <li><a href="">Slack</a></li>
-                            <li><a href="">Trello</a></li>
-                            <li><a href="">Wordpress</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-4">
-                        <h2 class="foot-text-color">Links</h2>
-                        <ul class="foot-text-color">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Support</a></li>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="">Help</a></li>
-                        </ul>
-                    </div>
-                </div>
+            	<div class="container">
+	            	<div class="col-4">
+	            		<h3>Hospitalline</h3>	
+	            		<p class="container">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	            		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	            		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	            		consequat.</p>
+	            	</div>
+	            	<div class="col-4">
+	            		<h3>Follow us</h3>
+	            		<ul class="container">
+		                    <li class="foot-link"><a href=""><img src="img/fb.png" alt="" style="margin-right: 10px;"></a>Facebook</li>
+		                    <li class="foot-link"><a href=""><img src="img/gg.png" alt="" style="margin-right: 10px;"></a>Google+</li>
+		                    <li class="foot-link"><a href=""><img src="img/insta.png" alt="" style="margin-right: 10px;"></a>Instagram</li>
+		                    <li class="foot-link"><a href=""><img src="img/tt.png" alt="" style="margin-right: 10px;"></a>Twitter</li>
+		                </ul>
+	            	</div>
+	            	<div class="col-4">
+	            		<h3>Project Map</h3>
+	            		<ul class="container">
+		                    <li class="foot-link"><a href="">Slack</a></li>
+		                    <li class="foot-link"><a href="">Trello</a></li>
+		                    <li class="foot-link"><a href="">Wordpress</a></li>
+		                    <li class="foot-link"><a href="">Github</a></li>
+		                </ul>
+	            	</div>
+	            </div>
             </div>
             <div class="row-1" style="background-color:#23272b;">
                 <ul class="list-inline text-center container">
-                    <li class="list-inline-item foot-link"><a href=""><img src="img/fb.png" alt=""></a></li>
-                    <li class="list-inline-item foot-link"><a href=""><img src="img/gg.png" alt=""></a></li>
-                    <li class="list-inline-item foot-link"><a href=""><img src="img/insta.png" alt=""></a></li>
-                    <li class="list-inline-item foot-link"><a href=""><img src="img/tt.png" alt=""></a></li>
-                </ul>
+	                    <li class="list-inline-item foot-link"><a href="">HOME</a></li>
+	                    <li>|</li>
+	                    <li class="list-inline-item foot-link"><a href="">ABOUT</a></li>
+	                    <li>|</li>
+	                    <li class="list-inline-item foot-link"><a href="">SUPPORT</a></li>
+	                    <li>|</li>
+	                    <li class="list-inline-item foot-link"><a href="">CONTACT US</a></li>
+	                </ul>
             </div>
         </div>
-    </body>
+	</body>
 </html>
