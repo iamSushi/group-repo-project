@@ -35,6 +35,12 @@
 html,body {
   height: 100% !important;
   width: 100% !important;
+  font-family: masaya;
+  font-weight: bold;
+}
+@font-face{
+  font-family: masaya;
+  src: url(../fonts/Quicksand-Regular.otf);
 }
 .container-sides{
   width: 60%;

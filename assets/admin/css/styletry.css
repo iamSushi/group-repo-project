@@ -127,8 +127,13 @@ li a:hover:not(.active) {
 html,body{
 	width: 100%;
 	height:100%;
+	font-family: masaya;
+  	font-weight: bold;
 }
-
+@font-face{
+  font-family: masaya;
+  src: url(../fonts/Quicksand-Regular.otf);
+}
 .navbar{
 	border-radius: 0;
 	 border: none;

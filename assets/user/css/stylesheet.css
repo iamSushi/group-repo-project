@@ -60,9 +60,13 @@ h1,h2,h3,h4,h5,h6{
  	margin: 0 !important;
 }
 a{
-	color: #333;
+	color: inherit;
 	text-decoration: none;
 	list-style-type: none;
+}
+a:hover{
+  text-decoration: none;
+  list-style-type: none;
 }
 label {
   display: inline-block;
