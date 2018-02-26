@@ -2589,6 +2589,41 @@ fieldset[disabled] .form-control {
   background-color: #eee;
   opacity: 1;
 }
+
+.form-control1 {
+  display: block;
+  width: 175px;
+  margin: 5px;
+  padding: 0.375rem 0.75rem;
+  float: left;
+  font-size: 16px;
+  line-height: 20px;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control2 {
+  display: block;
+  width: 360px;
+  margin: 5px;
+  padding: 0.375rem 0.75rem;
+  float: left;
+  font-size: 16px;
+  line-height: 20px;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
 .form-control[disabled],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
@@ -5247,7 +5282,7 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #fff;
+  background-color: #f7f993;
   border: 1px solid #ddd;
 }
 .list-group-item:first-child {
@@ -5656,12 +5691,12 @@ button.list-group-item-danger.active:focus {
   margin-bottom: 0;
   border: 0;
 }
-.panel-group {
+/*.panel-group {
   margin-bottom: 20px;
-}
+}*/
 .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -5684,7 +5719,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #ddd;
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
