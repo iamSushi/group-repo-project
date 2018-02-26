@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
-		<title>Attendance</title>
+		<title>Working Details</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -45,8 +45,7 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="add.html">Add Schedule</a></li>
-							<li><a href="view.html">View Schedule</a></li>
+							<li><a href="basicinfo.html">Work Details</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
@@ -62,38 +61,55 @@
 				</nav>
 			</div>
 			<div class="row-10">
-				<div class="col-sm-12"><legend>Staffs</legend></div>
-			 		<div class="col-sm-12">
-			 			 
-						<div class="col-sm-10 form-ni">
-							<table border="1" class="table">
-								<tr>
-			                        <th>Days</th>
-			                        <th>From (AM)</th>
-			                        <th>To (AM)</th>
-			                        <th>From (PM)</th>
-			                        <th>To (PM)</th>
-			                        <th>Action</th>
-			                        <th></th>
-			                      </tr>
-			                      <tr>
-			                        <td>Monday</td>
-			                        <td>8:00am</td>
-			                    	<td>11:30am</td>
-			                        <td>1:00pm</td>
-			                    	<td>5:00pm</td>
-			                        <td>On Time</td>
-							  		<td><button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
-									</td>
+				<div class="">
+					<form class="form-horizontal container">
+				    	<div class="form-group">
+							<label class="control-label col-sm-4">Department:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="dept" class='form-control' required placeholder="Department">
+								</div>
+							</div>
+					   	</div>
+					 	<div class="form-group">
+							<label class="control-label col-sm-4">Daily Rate:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="rate" class='form-control' required placeholder="Daily Rate">
+								</div>
+							</div>
 						</div>
-							</table>
+						<div class="form-group">
+						    <label class="control-label col-sm-4">Wage:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="wage" class='form-control' required placeholder="Wage">
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="container row-1">
+					    <div class="form-group">
+							<label class="control-label col-sm-4">Allowance:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="allowance" class='form-control' required placeholder="Allowance">
+								</div>
+							</div>
+					 	</div>
+					 	<br>
+					   	<div class="form-group">
+						    <label for="" class="col-sm-4 control-label"></label>
+					   		<div class="col-sm-5">
+					  			<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+							</div>
+						</div>
+			<div class="row-1">
+				<div class="container row-1">
 					<button class="btn btn-dark" type="button">Update  <span class="glyphicon glyphicon-send"></span></button>
 				</div>
-				</div>
-			</div>
 			</div>
 		</div>
 	</body>
