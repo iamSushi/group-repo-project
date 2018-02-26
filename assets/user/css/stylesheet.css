@@ -32,7 +32,10 @@
   position: relative;
   float: left;
 }
-
+.container-sides{
+  width: 80%;
+  margin: 0 auto;
+}
 *{
   padding: 0;
   margin: 0;
@@ -93,4 +96,7 @@ label {
 .foot-link > a > img{
   width: 27px;
   height: 25px;
+}
+.sidebar{
+  background-color: #a44141;
 }
