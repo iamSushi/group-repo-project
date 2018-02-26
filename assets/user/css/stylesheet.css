@@ -32,9 +32,15 @@
   position: relative;
   float: left;
 }
+html,body {
+  height: 100% !important;
+  width: 100% !important;
+}
 .container-sides{
-  width: 80%;
-  margin: 0 auto;
+  width: 60%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 *{
   padding: 0;
