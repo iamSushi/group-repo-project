@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="col-2">
-			<div class="row-12" style="background-color: pink;">
+			<div class="row-12 sidebar">
 				<div class="row-6">
 					<div class="row-2 container text-center">
 						<p>Your Profile</p>
@@ -61,28 +61,93 @@
 				</nav>
 			</div>
 			<div class="row-10">
-				<div class="col-6" style="background-color: red;">
-					<div class="form-inline row-12 form-horizontal">
-						<div class="form-group">
-							<label class="control-label col-4">First Name:</label>
-							<div class="col-8">
+				<div class="">
+					<form class="form-horizontal container">
+				    	<div class="form-group">
+							<label class="control-label col-sm-4">First Name:</label>
+							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									<input type="text" name="fname" class='form-control' required placeholder="First Name">
 								</div>
 							</div>
 					   	</div>
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="row-12">
-						
-					</div>
+					 	<div class="form-group">
+							<label class="control-label col-sm-4">Middle Name:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="fname" class='form-control' required placeholder="Middle Name">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+						    <label class="control-label col-sm-4">Last Name:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="fname" class='form-control' required placeholder="Last Name">
+								</div>
+							</div>
+						</div>
+					    <div class="form-group">
+							<label class="control-label col-sm-4">Birthdate:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="date" name="bday" class='form-control' required>
+								</div>
+							</div>
+					 	</div>
+					     <div class="form-group">
+					     	<label for="" class="control-label col-sm-4">Cellphone Number:</label>
+					     	<div class="col-sm-5 inputGroupContainer">
+					     		<div class="input-group">
+					     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+					     			<input type="text" name="cellphone" class="form-control" required placeholder="Cellphone Number">
+					     		</div>
+					     	</div>
+					     </div>
+					    <div class="form-group">
+							<label class="control-label col-sm-4">Telephone Number:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+						    		<input type="text" name="telnum" class='form-control' required placeholder="Telephone Number">
+						    	</div>
+						    </div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-4">Civil Status:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input type="text" name="bday" class='form-control' required placeholder="Civil Status">
+								</div>
+							</div>
+					 	</div>
+					 	<div class="form-group">
+						  	<label class="control-label col-sm-4">Gender:</label>
+						  	<div class="col-sm-5 inputGroupContainer">
+						  		<div class="input-group">
+						  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						  			<input type="text" name="gender" class='form-control' required placeholder="Gender">
+						  		</div>
+						  	</div>
+					    </div>
+					   	<br>
+					   	<div class="form-group">
+						    <label for="" class="col-sm-4 control-label"></label>
+					   		<div class="col-sm-5">
+					  			<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 			<div class="row-1">
 				<div class="container row-1">
-					<button class="btn btn-dark" type="button">Update Details</button>
+					<button class="btn btn-dark" type="button">Update  <span class="glyphicon glyphicon-send"></span></button>
 				</div>
 			</div>
 		</div>

@@ -11,9 +11,9 @@
 	<div class="col-sm-2 sidebar">
 		<ul class="nav-ul">
 
-			<li><a href="#" class="active">Staff</a></li>
+			<li><a href="view_staff.html" class="active">Staff</a></li>
 			<li><a href="view_department_head.html">Department Head</a></li>
-			<li><a href="attendance.php">Attendance</a></li>
+			<li><a href="#" class="activec">Attendance</a></li>
 			<li><a href="schedule.php">Schedule</a></li>
 			<li><a href="job_details.php">Job Details</a></li>
 		</ul>
@@ -23,8 +23,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		<li><a href="#" class="activeh" style="color: white;">Add Staff</a></li>
-			 	 		<li><a href="view_staff.html">View Staff</a></li>
+			 	 		 <li><a href="#" style="color: white;">View Attendance</a></li>
 			 	 	</ul>
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn">Logout</button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
@@ -43,81 +42,74 @@
 			 			
 			 			<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 						    	<div class="form-group">
-									<label class="control-label col-sm-4">First Name:</label>
+									<label class="control-label col-sm-4">Attendance ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="fname" class='form-control' required placeholder="First Name">
+											<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID">
 										</div>
 									</div>
 							   	</div>
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Middle Name:</label>
+									<label class="control-label col-sm-4">Schedule Details ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" name="fname" class='form-control' required placeholder="Middle Name">
+											<input type="text" name="schedDetails_id" class='form-control' required placeholder="Schedule ID">
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-								    <label class="control-label col-sm-4">Last Name:</label>
+								    <label class="control-label col-sm-4">Tardiness:</label>
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" name="fname" class='form-control' required placeholder="Last Name">
+											<input type="text" name="tardiness" class='form-control' required placeholder="Tardiness">
 										</div>
 									</div>
 								</div>
 							    <div class="form-group">
-									<label class="control-label col-sm-4">Birthdate:</label>
+									<label class="control-label col-sm-4">Overtime:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="date" name="bday" class='form-control' required>
+											<input type="text" name="absences" class='form-control' required placeholder="Overtime">
 										</div>
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Cellphone Number:</label>
+							     	<label for="" class="control-label col-sm-4">Absences:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-							     			<input type="text" name="cellphone" class="form-control" required placeholder="Cellphone Number">
+							     			 <input type="text" name="absences" class='form-control' required placeholder="Absences">
 							     		</div>
 							     	</div>
 							     </div>
 							    <div class="form-group">
-									<label class="control-label col-sm-4">Telephone Number:</label>
+									<label class="control-label col-sm-4">Holiday:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								    <input type="text" name="telnum" class='form-control' required placeholder="Telephone Number">
+								    		<input type="text" name="holiday" class='form-control' required placeholder="Holiday">
 								    	</div>
 								    </div>
 								</div>
 								<div class="form-group">
-									<label class="control-label col-sm-4">Civil Status:</label>
+									<label class="control-label col-sm-4">Holiday Name:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									 		<select name="status" id="status" class="form-control">
-									 			<option value="single">Single</option>
-									 			<option value="merried">Merried</option>
-									 			<option value="widow">Widow</option>
-									 		</select>
+									 		 <input type="text" name="dailyTotalHours" class='form-control' required placeholder="Holiday Name">
 										</div>
 									</div>
 							 	</div>
 							 	<div class="form-group">
-								  	<label class="control-label col-sm-4">Gender:</label>
+								  	<label class="control-label col-sm-4">Daily Total Hours:</label>
 								  	<div class="col-sm-5 inputGroupContainer">
 								  		<div class="input-group">
 								  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								   		<select name="gender" id="gender" class="form-control">
-								   			<option value="male">Male</option>
-								   			<option value="female">Female</option>
-								   		</select>
+								   		 	<input type="text" name="dailyTotalHours" class='form-control' required placeholder="Daily Total Hours">
 								  		</div>
 								  	</div>
 							    </div>
