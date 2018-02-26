@@ -106,3 +106,6 @@ label {
 .sidebar{
   background-color: #D5D8DC;
 }
+.active {
+  color: green;
+}
