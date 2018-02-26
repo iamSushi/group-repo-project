@@ -16,10 +16,6 @@ html {
 body {
   margin: 0;
 }
-html,body {
-  height: 100% !important;
-  width: 100% !important;
-}
 article,
 aside,
 details,
@@ -1591,7 +1587,7 @@ pre code {
 }
 .container {
   padding: 15px 15px 0 15px;
-  width: 95%;
+  width: auto;
   margin: 0 auto;
 }
 /*@media (min-width: 768px) {
@@ -2511,7 +2507,7 @@ legend {
   line-height: inherit;
   color: #333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1.2px solid #d62d4b;
 }
 label {
   display: inline-block;
