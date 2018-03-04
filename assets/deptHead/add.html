@@ -5,6 +5,9 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/stylesheet.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<link rel="icon" href="img/logo.png">
 		<title>Schedule</title>
 	</head>
 	<body>
@@ -18,46 +21,24 @@
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
-						<p>John Christian</p>
-						<p>Staff</p>
+						<h4>James Kenneth Mark Omamalin Sinadjan</h4>
 					</div>
 				</div>
 				<div class="row-5 container text-center">
-					<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="work.html">Work Details</a></a></h4>
-									</div>
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								<div class="collapse navbar-collapse navHeaderCollapse">
+									<ul class="nav" style="text-align: center;">
+										<li><a href="work.html">Work Details</a></li>
+										<li class="activeh" style="background-color: #68d34f;"><a href="add.html">Schedule</a></li>
+										<li><a href="attend.html">Attendance</a></li>
+										<li><a href="deds.html">Deductions</a></li>
+										<li><a href="prof.html">View Profile</a></li>
+									</ul>
 								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="add.html" class="active" >Schedule</a></a></h4>
-									</div>
-								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="attend.html">Attendance</a></a></h4>
-									</div>
-								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="deds.html">Deductions</a></a></h4>
-									</div>
-								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="prof.html">View Profile</a></a></h4>
-									</div>
-								</div>
-							</div>
 				</div>
 			</div>
 		</div>
@@ -71,16 +52,14 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="add.html" class="active">Add Schedule</a></li>
+							<li><a href="add.html" class="active" style="background-color: #0f0f0f">Add Schedule</a></li>
 							<li><a href="view.html">View Schedule</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="">Your Profile</a></li>
-									<li><a href="">Settings</a></li>
-									<li><a href="">Logout</a></li>
+									<li><a href="../user/index.html">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -94,7 +73,7 @@
 							<label class="control-label col-sm-4">Time In (AM):</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 									<input type="text" name="" class='form-control' required placeholder="Time In (AM)">
 								</div>
 							</div>
@@ -103,7 +82,7 @@
 							<label class="control-label col-sm-4">Time Out (AM):</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 									<input type="text" name="" class='form-control' required placeholder="Time Out (AM)">
 								</div>
 							</div>
@@ -112,7 +91,7 @@
 						    <label class="control-label col-sm-4">Time In (PM):</label>
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 									<input type="text" name="" class='form-control' required placeholder="Time In (PM)">
 								</div>
 							</div>
@@ -130,7 +109,7 @@
 					     	<label for="" class="control-label col-sm-4">Day Off:</label>
 					     	<div class="col-sm-5 inputGroupContainer">
 					     		<div class="input-group">
-					     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+					     			<span class="input-group-addon"><i class="glyphicon glyphicon-cloud"></i></span>
 					     			<input type="text" name="" class="form-control" required placeholder="Day Off">
 					     		</div>
 					     	</div>
@@ -139,7 +118,7 @@
 							<label class="control-label col-sm-4">Total Working Hours:</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
 						    		<input type="text" name="" class='form-control' required placeholder="Total Working Hours">
 						    	</div>
 						    </div>
@@ -148,16 +127,12 @@
 					   	<div class="form-group">
 						    <label for="" class="col-sm-4 control-label"></label>
 					   		<div class="col-sm-5">
-					  			<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+					  			<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px"><a href="view.html"> Submit <span class="glyphicon glyphicon-send"></span></button>
 							</div>
 						</div>
 					</form>
 			</div>
 				</div>
-				<div class="row-1">
-						<div class="container row-1">
-						<button class="btn btn-dark" type="button">Update  <span class="glyphicon glyphicon-send"></span></button>
-					</div>
 			</div>
 		</div>
 	</body>
