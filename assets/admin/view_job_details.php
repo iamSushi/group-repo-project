@@ -5,8 +5,9 @@
 	<title>Document</title>
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
-	<script src="js/jquery-3.3.1.js"></script>
+	 <script src="js/jquery-3.3.1.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
@@ -46,6 +47,9 @@
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add_attendance.html">Add Attendance</a></li>
 											<li class="list-group-item"><a href="view_attendance.html">View Attendance</a></li>
+											<li class="list-group-item"><a href="add_attendance_detaisl.html">Add Attendance Details</a></li>
+											<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>
+											 
 											 
 										</ul>
 									</div>
@@ -72,7 +76,9 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_jobdetails.html">View Job Details</a></li>
+											<li class="list-group-item"><a href="add_job_details.html">Add Job Details</a></li>
+											 
+											<li class="list-group-item"><a href="view_job_details.html">View Job Details</a></li>
 											 
 										</ul>
 									</div>
@@ -83,9 +89,10 @@
 		<div class="col-sm-12" style="padding: 0;">
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
-			 	 	<!-- <ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Job Details</a></li>
-			 	 	</ul> -->
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">View Job Details</a></li>
+			 	 	</ul> 
+			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.html" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -98,74 +105,57 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Job Details</legend></div>
+		<div class="col-sm-12"><legend>Attendance Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-						    	<div class="form-group">
-									<label class="control-label col-sm-4">Schedule ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
-										</div>
-									</div>
-							   	</div>
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Salary Wage:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Allowance:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
-							     		</div>
-							     	</div>
-							     </div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Department Head::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Department Head:">
-							     		</div>
-							     	</div>
-							     </div>
-							    
-							   <br>
-							   <div class="form-group">
-							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5">
-							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+			 			<?php
 
-							  </div>
-							  </div>
-					  		</form>
+	  include_once("connection.php");
+	  $sql = "SELECT * FROM job_details";
+	  $result = mysqli_query($connect,$sql);
+	  if(mysqli_num_rows($result) > 0){
+		  echo "<table class='table' border='1'>";
+		  echo "<thead>
+					<tr>
+					    <th>Staff ID</th>
+						<th>Salary Wage</th>
+						<th>Department</th>
+						<th>Allowance</th>
+						<th>Employment Status</th>
+						<th>Department Head</th>
+						<th></th>
+					</tr>
+				</thead>";
+		  echo "<tbody>";
+	     while($row = mysqli_fetch_assoc($result)){
+		       echo "<tr><td style='text-align:center;'>".
+			         $row['staff_id'].
+					"</td><td>".
+					 $row['salaryWage'].
+					"</td><td>".
+					$row['department'].
+					"</td><td>".
+					$row['allowance'].
+					"</td><td>".
+					$row['employmentStatus'].
+					"</td><td>".
+					$row['deptHead'].
+					 
+					 
+					 "</td>
+					 <td>
+					    <a href='job_details_update.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-primary'>Update</button>
+						</a>
+						<a href='action/job_details_delete.php?id=".$row['staff_id']."'>
+						  <button class='btn btn-danger'>Delete</button>
+						</a>
+					 </td>
+					 </tr>";
+		 }
+		 echo "</tbody>";
+	  }
+	?>
 					  	</div>
 		
 	</div>

@@ -8,6 +8,7 @@
 	$holiday = $_POST['holiday'];
 	$holiday = $_POST['holidayName'];
 	$dailyTotalHours = $_POST['dailyTotalHours'];
+	
 	$sql = "INSERT INTO attendance_details VALUES(null,'$attend_id','$schedDetails_id','$tardiness','$overtime','$absences','$holiday','$holiday','$dailyTotalHours')";
 
 	if(mysqli_query($connect, $sql)){

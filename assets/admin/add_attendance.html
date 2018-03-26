@@ -46,11 +46,9 @@
 									<div id="collapse3" class="panel-collapse collapse">
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add_attendance.html">Add Attendance</a></li>
-											<li class="list-group-item"><a href="view_attendance.html">View Attendance</a></li>
-											<li class="list-group-item"><a href="add_attendance_detaisl.html">Add Attendance Details</a></li>
-											<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>
-											 
-											 
+											<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
+											<li class="list-group-item"><a href="add_attendance_details.html">Add View Attendance</a></li>
+											<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>	 
 										</ul>
 									</div>
 								</div>
@@ -103,66 +101,36 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12"><legend>Attendance</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<?php
+			 			<form class="form-horizontal" method="POST" action="action/attendance_add.php">
+ 								<!-- <div class="form-group">
+ 									<label class="control-label col-sm-4">Attendance ID:</label>
+ 									<div class="col-sm-5 inputGroupContainer">
+ 										<div class="input-group">
+ 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ 											<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID">
+ 										</div>
+ 									</div>
+ 							   	</div>  -->
+							 	<div class="form-group">
+									<label class="control-label col-sm-4">Staff ID:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+										</div>
+									</div>
+								</div>
+							   <div class="form-group">
+							    <label for="" class="col-sm-4 control-label"></label>
+							   		<div class="col-sm-5">
+							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 
-	  include_once("connection.php");
-	  $sql = "SELECT * FROM attendance_details";
-	  $result = mysqli_query($connect,$sql);
-	  if(mysqli_num_rows($result) > 0){
-		  echo "<table class='table' border='1'>";
-		  echo "<thead>
-					<tr>
-					    <th>Attendance Details ID</th>
-						<th>Attendance ID</th>
-						<th>Schedule ID</th>
-						<th>Tardiness</th>
-						<th>Overtime</th>
-						<th>Absences</th>
-						<th>Holiday</th>
-						<th>Holiday Name</th>
-						<th>Daily Total Hours</th>
-						<th></th>
-					</tr>
-				</thead>";
-		  echo "<tbody>";
-	     while($row = mysqli_fetch_assoc($result)){
-		       echo "<tr><td style='text-align:center;'>".
-			         $row['attenDetails_id'].
-					"</td><td>".
-					 $row['attend_id'].
-					"</td><td>".
-					$row['schedDetails_id'].
-					"</td><td>".
-					$row['tardiness'].
-					"</td><td>".
-					$row['overtime'].
-					"</td><td>".
-					$row['absences'].
-					"</td><td>".
-					$row['holiday'].
-					"</td><td>".
-					$row['holidayName'].
-					 "</td><td>".
-					$row['dailyTotalHours'].
-					 
-					 
-					 "</td>
-					 <td>
-					    <a href='attendance_details_update.php?id=".$row['attenDetails_id']."'>
-					      <button class='btn btn-primary'>Update</button>
-						</a>
-						<a href='action/attendance_details_delete.php?id=".$row['attenDetails_id']."'>
-						  <button class='btn btn-danger'>Delete</button>
-						</a>
-					 </td>
-					 </tr>";
-		 }
-		 echo "</tbody>";
-	  }
-	?>
+							  </div>
+							  </div>
+					  		</form>
 					  	</div>
 		
 	</div>
