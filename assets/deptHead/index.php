@@ -62,7 +62,7 @@
 			                        <td>+639363732919</td>
 			                        <td>Single</td>
 			                        <td>Male</td>
-			                        <td><a href="work.html" div class="">
+			                        <td><a href="work.php" div class="">
 										<button class="btn btn-dark" type="button">View  <span class="glyphicon glyphicon-send"></span></button>
 									</div></td>
 			                    </tr>
@@ -73,7 +73,7 @@
 			                        <td>+639363732919</td>
 			                        <td>Single</td>
 			                        <td>Male</td>
-			                        <td><a href="work.html" div class="">
+			                        <td><a href="work.php" div class="">
 										<button class="btn btn-dark" type="button">View  <span class="glyphicon glyphicon-send"></span></button>
 									</div></td>
 			                    </tr>
@@ -84,7 +84,7 @@
 			                        <td>+639363732919</td>
 			                        <td>Single</td>
 			                        <td>Male</td>
-			                        <td><a href="work.html" div class="">
+			                        <td><a href="work.php" div class="">
 										<button class="btn btn-dark" type="button">View  <span class="glyphicon glyphicon-send"></span></button>
 									</div></td>
 			                    </tr>
@@ -95,7 +95,7 @@
 			                        <td>+639363732919</td>
 			                        <td>Single</td>
 			                        <td>Female</td>
-			                        <td><a href="work.html" div class="">
+			                        <td><a href="work.php" div class="">
 										<button class="btn btn-dark" type="button">View  <span class="glyphicon glyphicon-send"></span></button>
 									</div></td>
 			                    </tr>
@@ -106,7 +106,7 @@
 			                        <td>+639363732919</td>
 			                        <td>Single</td>
 			                        <td>Female</td>
-			                        <td><a href="work.html" div class="">
+			                        <td><a href="work.php" div class="">
 										<button class="btn btn-dark" type="button">View  <span class="glyphicon glyphicon-send"></span></button>
 									</div></td>
 			                    </tr>
