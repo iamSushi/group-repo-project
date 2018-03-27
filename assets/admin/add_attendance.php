@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	include('../user/action/session.php');
+	if(empty($_SESSION['email'])){
+		header('location: ../user/index.php');
+	}
+?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -89,7 +95,7 @@
 			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
 			 	 	</ul> 
 			 	 	 
-			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.html" style="text-decoration-style: none;">Logout</a></button></div>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
 							 <div class="input-group">

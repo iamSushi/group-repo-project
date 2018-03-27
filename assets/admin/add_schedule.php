@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	include('../user/action/session.php');
+	if(empty($_SESSION['email'])){
+		header('location: ../user/index.php');
+	}
+?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -89,7 +95,7 @@
 			 	 	<!-- <ul class="nav navbar-nav">
 			 	 		 <li><a href="#" style="color: white;">View Schedule</a></li>
 			 	 	</ul> -->
-			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.html" style="text-decoration-style: none;">Logout</a></button></div>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
 							 <div class="input-group">
@@ -105,52 +111,25 @@
 			 		<div class="col-sm-12">
 			 			
 			 			<form class="form-horizontal" method="POST" action="action/schedule_add.php">
-						    	<div class="form-group">
-									<label class="control-label col-sm-4">Schedule ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
+								<!-- <div class="form-group">
+										<label class="control-label col-sm-4">Schedule ID:</label>
+										<div class="col-sm-5 inputGroupContainer">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
+											</div>
 										</div>
-									</div>
-							   	</div>
+								   	</div> -->
 							 	<div class="form-group">
 									<label class="control-label col-sm-4">Day:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="day" class='form-control' required placeholder="Day">
+											<input type="text" name="Staff_id" class='form-control' required placeholder="Day">
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Morning Time In:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											  <input type="text" name="morningTimeIn" class='form-control' required placeholder="Morning Time In">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Morning Time In:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="morningTimeOut" class='form-control' required placeholder="Morning Time Ouy">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">TotalHours::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
-							     			<input type="text" name="totalHours" class='form-control' required placeholder="Total Hours">
-							     		</div>
-							     	</div>
-							     </div>
-							    
+								 
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>

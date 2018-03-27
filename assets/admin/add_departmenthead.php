@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	include('../user/action/session.php');
+	if(empty($_SESSION['email'])){
+		header('location: ../user/index.php');
+	}
+?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -84,7 +90,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		<li><a href="view_department_head.html">Department Head</a></li>
+			 	 		<li><a href="view_department_head.php?logout='1'">Department Head</a></li>
 			 	 		<li><a href="#" class="activeh" style="color: white;">Elect Department Head</a></li>
 			 	 		<li><a href="search_department_head.html">Search Department Head</a></li>
 			 	 	</ul>
