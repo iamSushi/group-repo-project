@@ -82,7 +82,7 @@
 			</div>
 			<div class="row-10">
 				<div class="col-6">
-					<div class="row-12">
+					<form class="row-12" action="action/update_parentsdetails.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<div class="row-6">
 							<?php
 								$space = " ";
@@ -103,7 +103,7 @@
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['fathers_fname'] ?>">
+										<input class="form-control" type="text" required placeholder="firstname" name="fname" value="<?php echo $row['fathers_fname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -112,7 +112,7 @@
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['fathers_mname'] ?>">
+										<input class="form-control" type="text" required placeholder="middlename" name="mname" value="<?php echo $row['fathers_mname'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -120,7 +120,7 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['fathers_lname'] ?>">
+										<input class="form-control" type="text" required placeholder="surname" name="sname" value="<?php echo $row['fathers_lname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -129,7 +129,7 @@
 									<label for="">Birthdate</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-										<input class="form-control" type="date" required value="<?php echo $row['fathers_birthdate'] ?>">
+										<input class="form-control" type="date" name="dob" required value="<?php echo $row['fathers_birthdate'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -137,7 +137,7 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['fathers_contnum'] ?>">
+										<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****" value="<?php echo $row['fathers_contnum'] ?>">
 									</div>
 								</div>
 							</div>
@@ -146,12 +146,12 @@
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="occupation" value="<?php echo $row['fathers_occupation'] ?>">
+										<input class="form-control" type="text" name="occupation" required placeholder="occupation" value="<?php echo $row['fathers_occupation'] ?>">
 									</div>
 								</div>
 							</div>
 							<div class="container row-1 form-group" style="margin-bottom: 15px;">
-								<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+								<button class="btn btn-dark" type="submit" name="father_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 								
 								<div class="modal fade" id="update">
 									<div class="modal-dialog">
@@ -168,10 +168,10 @@
 							</div>
 							<?php endwhile;} ?>
 						</div>
-					</div>
+					</form>
 				</div>
 				<div class="col-6">
-					<div class="row-12">
+					<form class="row-12" action="action/update_parentsdetails.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<div class="row-6">
 							<?php
 								$space = " ";
@@ -192,7 +192,7 @@
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['mothers_fname'] ?>">
+										<input class="form-control" type="text" required placeholder="firstname" name="fname" value="<?php echo $row['mothers_fname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -201,7 +201,7 @@
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['mothers_mname'] ?>">
+										<input class="form-control" type="text" required placeholder="middlename" name="mname" value="<?php echo $row['mothers_mname'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -209,7 +209,7 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['mothers_lname'] ?>">
+										<input class="form-control" type="text" required placeholder="surname" name="sname" value="<?php echo $row['mothers_lname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -218,7 +218,7 @@
 									<label for="">Birthdate</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-										<input class="form-control" type="date" required value="<?php echo $row['mothers_birthdate'] ?>">
+										<input class="form-control" type="date" required name="dob" value="<?php echo $row['mothers_birthdate'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -226,7 +226,7 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['mothers_contnum'] ?>">
+										<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****" value="<?php echo $row['mothers_contnum'] ?>">
 									</div>
 								</div>
 							</div>
@@ -235,12 +235,12 @@
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="occupation" value="<?php echo $row['mothers_occupation'] ?>">
+										<input class="form-control" type="text" name="occupation" required placeholder="occupation" value="<?php echo $row['mothers_occupation'] ?>">
 									</div>
 								</div>
 							</div>
 							<div class="container row-1 form-group" style="margin-bottom: 15px;">
-								<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+								<button class="btn btn-dark" type="submit" name="mother_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 								
 								<div class="modal fade" id="update">
 									<div class="modal-dialog">
@@ -257,7 +257,7 @@
 							</div>
 							<?php endwhile;} ?>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>	
 		</div>

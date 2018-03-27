@@ -138,7 +138,7 @@
 								<label for="">Gender</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
-									<select class="form-control" required name="gender">
+									<select class="form-control" name="gender">
 	                                    <option value="Male">Male</option>
 	                                    <option value="Female">Female</option>
 	                                </select>
@@ -200,7 +200,7 @@
 					</form>
 				</div>
 				<div class="col-6">
-					<div class="row-12">
+					<form class="row-12" action="action/update_basicinfo.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<?php
 							$space = " ";
 							$id = $_GET['id'];
@@ -220,7 +220,7 @@
 								<label for="">Address one</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address one" value="<?php echo $row['addOne'] ?>">
+									<input class="form-control" type="text" required placeholder="address one" name="addOne" value="<?php echo $row['addOne'] ?>">
 								</div>
 							</div>
 						</div>
@@ -229,7 +229,7 @@
 								<label for="">Address two</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address two" value="<?php echo $row['addTwo'] ?>">
+									<input class="form-control" type="text" required placeholder="address two" name="addTwo" value="<?php echo $row['addTwo'] ?>">
 								</div>
 							</div>
 						</div>
@@ -238,7 +238,7 @@
 								<label for="">Address three</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address three" value="<?php echo $row['addTre'] ?>">
+									<input class="form-control" type="text" required placeholder="address three" name="addTre" value="<?php echo $row['addTre'] ?>">
 								</div>
 							</div>
 						</div>
@@ -247,7 +247,7 @@
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-									<input class="form-control" type="text" required placeholder="state" value="<?php echo $row['state'] ?>">
+									<input class="form-control" type="text" required placeholder="state" name="state" value="<?php echo $row['state'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -255,7 +255,7 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required placeholder="city" value="<?php echo $row['city'] ?>">
+									<input class="form-control" type="text" required placeholder="city" name="city" value="<?php echo $row['city'] ?>">
 								</div>
 							</div>
 						</div>
@@ -264,7 +264,7 @@
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required placeholder="country" value="<?php echo $row['country'] ?>">
+									<input class="form-control" type="text" required placeholder="country" name="country" value="<?php echo $row['country'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -272,20 +272,21 @@
 								<label for="">Postal Code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text" required placeholder="zip code" value="<?php echo $row['postCode'] ?>">
+									<input class="form-control" type="text" required placeholder="zip code" name="postCode" value="<?php echo $row['postCode'] ?>">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group" style="padding-top: 30px;">
+						<!-- <div class="container row-1 form-group" style="padding-top: 30px;">
 							<div class="checkbox">
 								<label>
 									<input type="checkbox" name="">Check if this is your current address!
 								</label>
 							</div>
-						</div>
+						</div> -->
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
-							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
-							
+							<button class="btn btn-dark" type="submit" name="add_update" data-toggle="modal" data-target="#update">Update
+							<span class="glyphicon glyphicon-send"></span></button>
+
 							<div class="modal fade" id="update">
 								<div class="modal-dialog">
 									<div class="modal-content">
@@ -300,7 +301,7 @@
 							</div>
 						</div>
 						<?php endwhile;} ?>
-					</div>
+					</form>
 				</div>
 			</div>
 			<!-- <div class="row-1">
