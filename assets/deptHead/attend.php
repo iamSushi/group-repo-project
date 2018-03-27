@@ -1,3 +1,9 @@
+<? php
+	include('./user/action/session.php')
+	if (empty($SESSION['email'])){
+		header('location:index.php');
+	}
+?>
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
