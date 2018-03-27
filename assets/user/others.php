@@ -41,20 +41,20 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="basicinfo.html">Basic Information</a></li>
-							<li><a href="parentsdetails.html">Parents Details</a></li>
-							<li><a href="familydetails.html">Family Details</a></li>
-							<li><a href="studiesbg.html">Studies Background</a></li>
-							<li><a href="contactperson.html">Contact Person</a></li>
-							<li class="active"><a href="others.html">Others</a></li>
+							<li><a href="basicinfo.php">Basic Information</a></li>
+							<li><a href="parentsdetails.php">Parents Details</a></li>
+							<li><a href="familydetails.php">Family Details</a></li>
+							<li><a href="studiesbg.php">Studies Background</a></li>
+							<li><a href="contactperson.php">Contact Person</a></li>
+							<li class="active"><a href="others.php">Others</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="about_me.html">Your Profile</a></li>
-									<li><a href="settings.html">Settings</a></li>
-									<li><a href="index.html">Logout</a></li>
+									<li><a href="about_me.php">Your Profile</a></li>
+									<li><a href="settings.php">Settings</a></li>
+									<li><a href="index.php">Logout</a></li>
 								</ul>
 							</li>
 						</ul>

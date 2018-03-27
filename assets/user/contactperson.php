@@ -8,7 +8,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>User Details</title>
+		<title>Contact</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -41,20 +41,20 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li class="active"><a href="">Basic Information</a></li>
-							<li><a href="parentsdetails.html">Parents Details</a></li>
-							<li><a href="familydetails.html">Family Details</a></li>
-							<li><a href="studiesbg.html">Studies Background</a></li>
-							<li><a href="contactperson.html">Contact Person</a></li>
-							<li><a href="others.html">Others</a></li>
+							<li><a href="basicinfo.php">Basic Information</a></li>
+							<li><a href="parentsdetails.php">Parents Details</a></li>
+							<li><a href="familydetails.php">Family Details</a></li>
+							<li><a href="studiesbg.php">Studies Background</a></li>
+							<li class="active"><a href="contactperson.php">Contact Person</a></li>
+							<li><a href="others.php">Others</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="about_me.html">Your Profile</a></li>
-									<li><a href="settings.html">Settings</a></li>
-									<li><a href="index.html">Logout</a></li>
+									<li><a href="about_me.php">Your Profile</a></li>
+									<li><a href="settings.php">Settings</a></li>
+									<li><a href="index.php">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -65,7 +65,7 @@
 				<div class="col-6">
 					<div class="row-12">
 						<div class="container form-group">
-							<legend><h2>About me</h2></legend>
+							<legend><h2>First contact person</h2></legend>
 						</div>
 						<div class="container row-1 form-group">
 							<div class=" col-11">
@@ -111,7 +111,6 @@
 	                                    <option value="">Female</option>
 	                                </select>
 								</div>
-								
 							</div>
 						</div>
 						<div class="container row-1 form-group">
@@ -119,7 +118,7 @@
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="email" required>
+									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
@@ -150,74 +149,83 @@
 				<div class="col-6">
 					<div class="row-12">
 						<div class="container form-group">
-							<legend><h2>Address</h2></legend>
+							<legend><h2>Second contact person (Optional)</h2></legend>
 						</div>
 						<div class="container row-1 form-group">
-							<div class="col-11">
-								<label for="">Address one</label>
+							<div class=" col-11">
+								<label for="">Firstname</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
 						<div class="container row-1 form-group">
-							<div class="col-11">
-								<label for="">Address two</label>
+							<div class=" col-5">
+								<label for="">Middlename</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									<input class="form-control" type="text" required>
 								</div>
 							</div>
-						</div>
-						<div class="container row-1 form-group">
-							<div class="col-11">
-								<label for="">Address three</label>
+							<div class="col-1"></div>
+							<div class=" col-5">
+								<label for="">Surname</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									<input class="form-control" type="text" required>
 								</div>
 							</div>
 						</div>
 						<div class="container row-1 form-group">
 							<div class="col-5">
-								<label for="">State</label>
+								<label for="">Birthdate</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
+									<input class="form-control" type="date"  required>
+								</div>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-5">
+								<label for="">Gender</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
+									<select class="form-control" required="">
+	                                    <option value="">Male</option>
+	                                    <option value="">Female</option>
+	                                </select>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group">
+							<div class="col-11">
+								<label for="">Email address</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="email" required>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group">
+							<div class="col-5">
+								<label for="">Contact number</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
 									<input class="form-control" type="text" required>
 								</div>
 							</div>
 							<div class="col-1"></div>
 							<div class="col-5">
-								<label for="">City</label>
+								<label for="">Status</label>
 								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-heart-empty"></i></span>
+									<select class="form-control">
+	                                    <option value="">Single</option>
+	                                    <option value="">Married</option>
+	                                    <option value="">Divorced</option>
+	                                    <option value="">Widowed</option>
+	                                </select>
 								</div>
-							</div>
-						</div>
-						<div class="container row-1 form-group">
-							<div class="col-5">
-								<label for="">Country</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-							<div class="col-1"></div>
-							<div class="col-5">
-								<label for="">Postal Code</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-						</div>
-						<div class="container row-1 form-group" style="padding-top: 30px;">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="">Check if this is your current address!
-								</label>
 							</div>
 						</div>
 					</div>

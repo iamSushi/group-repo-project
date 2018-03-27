@@ -8,7 +8,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>Family Details</title>
+		<title>Parents Details</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -41,20 +41,20 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="basicinfo.html">Basic Information</a></li>
-							<li><a href="parentsdetails.html">Parents Details</a></li>
-							<li class="active"><a href="">Family Details</a></li>
-							<li><a href="studiesbg.html">Studies Background</a></li>
-							<li><a href="contactperson.html">Contact Person</a></li>
-							<li><a href="others.html">Others</a></li>
+							<li><a href="basicinfo.php">Basic Information</a></li>
+							<li class="active"><a href="parentsdetails.php">Parents Details</a></li>
+							<li><a href="familydetails.php">Family Details</a></li>
+							<li><a href="studiesbg.php">Studies Background</a></li>
+							<li><a href="contactperson.php">Contact Person</a></li>
+							<li><a href="others.php">Others</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="about_me.html">Your Profile</a></li>
-									<li><a href="settings.html">Settings</a></li>
-									<li><a href="index.html">Logout</a></li>
+									<li><a href="about_me.php">Your Profile</a></li>
+									<li><a href="settings.php">Settings</a></li>
+									<li><a href="index.php">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -63,67 +63,79 @@
 			</div>
 			<div class="row-10">
 				<div class="col-6">
-					<div class="row-6">
-						<div class="container form-group">
-							<legend><h2>Spouse Details</h2></legend>
-						</div>
-						<div class="container row-2 form-group">
-							<div class=" col-11">
-								<label for="">Firstname</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-						</div>
-						<div class="container row-2 form-group">
-							<div class=" col-5">
-								<label for="">Middlename</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-							<div class="col-1"></div>
-							<div class="col-5">
-								<label for="">Surname</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-						</div>
-						<div class="container row-2 form-group">
-							<div class="col-5">
-								<label for="">Birthdate</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" required>
-								</div>
-							</div>
-							<div class="col-1"></div>
-							<div class="col-5">
-								<label for="">Contact number</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-6">
 					<div class="row-12">
 						<div class="row-6">
 							<div class="container form-group">
-								<legend><h2>Children Details</h2></legend>
+								<legend><h2>Father's Details</h2></legend>
 							</div>
 							<div class="container row-2 form-group">
 								<div class=" col-11">
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text"required>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+							</div>
+							<div class="container row-2 form-group">
+								<div class=" col-5">
+									<label for="">Middlename</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+								<div class="col-1"></div>
+								<div class="col-5">
+									<label for="">Surname</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+							</div>
+							<div class="container row-2 form-group">
+								<div class="col-5">
+									<label for="">Birthdate</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-1"></div>
+								<div class="col-5">
+									<label for="">Contact number</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+							</div>
+							<div class="container row-2 form-group">
+								<div class=" col-11">
+									<label for="">Occupation</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6">
+					<div class="row-12">
+						<div class="row-6">
+							<div class="container form-group">
+								<legend><h2>Mother's Details</h2></legend>
+							</div>
+							<div class="container row-2 form-group">
+								<div class=" col-11">
+									<label for="">Firstname</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input class="form-control" type="text" required>
 									</div>
 								</div>
 							</div>
@@ -157,6 +169,15 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+										<input class="form-control" type="text" required>
+									</div>
+								</div>
+							</div>
+							<div class="container row-2 form-group">
+								<div class=" col-11">
+									<label for="">Occupation</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input class="form-control" type="text" required>
 									</div>
 								</div>

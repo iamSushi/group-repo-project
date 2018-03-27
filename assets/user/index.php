@@ -1,3 +1,6 @@
+<?php
+	include('action/session.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -53,15 +56,16 @@
 									<h1>Admin Login</h1>
 								</div>
 								<div class="modal-body">
-									<form action="">
+									<form action="index.php" method="post">
 										<div class="container">
+											<?php include('action/errors.php'); ?>
 											<div class="container form-group">
 												<label for="username">Username</label>
 												<div class="input-group">
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-user"></i>
 													</span>
-													<input type="text" class="form-control" required placeholder="Username">
+													<input type="text" class="form-control" placeholder="Email" name="admin_email">
 												</div>
 											</div>
 											<div class="container form-group">
@@ -70,14 +74,12 @@
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-lock"></i>
 													</span>
-													<input type="text" class="form-control" required placeholder="Password">
+													<input type="password" class="form-control" placeholder="Password" name="admin_password">
 												</div>
 											</div>
 											<div class="container form-group">
-												<button class="btn btn-dark" type="button">
-													<a href="../admin/index.html">Login
+												<button class="btn btn-dark" type="submit" name="admin_login">Login
 														<span class="glyphicon glyphicon-send"></span>
-													</a>
 												</button>
 												<button class="btn btn-dark" type="button">Cancel</button>
 											</div>
@@ -97,15 +99,16 @@
 									<h1>Department Head</h1>
 								</div>
 								<div class="modal-body">
-									<form action="">
+									<form action="index.php" method="post">
 										<div class="container">
+											<?php include('action/errors.php'); ?>
 											<div class="container form-group">
 												<label>Username</label>
 												<div class="input-group">
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-user"></i>
 													</span>
-													<input type="text" class="form-control" required placeholder="Username">
+													<input type="text" class="form-control" placeholder="Username" name="head_email">
 												</div>
 											</div>
 											<div class="container form-group">
@@ -114,14 +117,12 @@
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-lock"></i>
 													</span>
-													<input type="text" class="form-control" required placeholder="Password">
+													<input type="password" class="form-control" placeholder="Password" name="head_password">
 												</div>
 											</div>
 											<div class="container form-group">
-												<button class="btn btn-dark" type="button">
-													<a href="../deptHead/index.html">Login
+												<button class="btn btn-dark" type="submit" name="head_login">Login
 														<span class="glyphicon glyphicon-send"></span>
-													</a>
 												</button>
 												<button class="btn btn-dark" type="button">Cancel</button>
 											</div>
@@ -141,38 +142,39 @@
 			<div class="row-12">
 				<div class="col-6">
 					<div class="row-12">
-						<div class="container">
-							<h2>login here . . .</h2>
-						</div>
-						<div class="container form-group">
-							<div class=" col-11">
-								<label for="">Username</label>
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-user"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Email address">
+						<form action="index.php" method="post">
+							<div class="container">
+								<h2>login here . . .</h2>
+							</div>
+							<div class="container form-group">
+								<?php include('action/errors.php'); ?>
+								<div class=" col-11">
+									<label for="">Username</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<input class="form-control" type="text" name="email" placeholder="Email">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container form-group">
-							<div class=" col-11">
-								<label for="">Password</label>
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-lock"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Password">
+							<div class="container form-group">
+								<div class=" col-11">
+									<label for="">Password</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-lock"></i>
+										</span>
+										<input class="form-control" type="password" name="password" placeholder="Password">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container form-group">
-							<button type="button" class="btn btn-dark">
-								<a href="about_me.html">Login
-									<span class="glyphicon glyphicon-send"></span>
-								</a>
-							</button>
-						</div>
+							<div class="container form-group">
+								<button type="submit" class="btn btn-dark" name="login">Login
+										<span class="glyphicon glyphicon-send"></span>
+								</button>
+							</div>
+						</form>
 					</div>
 				</div>
 				<div class="col-6">
@@ -180,68 +182,89 @@
 						<div class="container">
 							<h2>or you can register here . . .</h2>
 						</div>
-						<div class="container row-2 form-group">
-							<div class="col-5">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-user"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Firstname">
+						<form action="index.php" method="post">
+							<!-- <div class="container row-2 form-group">
+								<div class="col-5">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<input class="form-control" type="text" required placeholder="Firstname">
+									</div>
+								</div>
+								<div class="col-1"></div>
+								<div class="col-5">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<input class="form-control" type="text" required placeholder="Surname">
+									</div>
+								</div>
+							</div> -->
+							<div class="container  form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<input class="form-control" type="text" name="fname" required placeholder="Firstname">
+									</div>
 								</div>
 							</div>
-							<div class="col-1"></div>
-							<div class="col-5">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-user"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Surname">
+							<div class="container  form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-user"></i>
+										</span>
+										<input class="form-control" type="text" name="sname" required placeholder="Surname">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container  form-group">
-							<div class="col-11">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-envelope"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Email Address">
+							<div class="container  form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-envelope"></i>
+										</span>
+										<input class="form-control" type="text" name="reg_email" required placeholder="Email Address">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container  form-group">
-							<div class="col-11">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-lock"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Password">
+							<div class="container  form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-lock"></i>
+										</span>
+										<input class="form-control" type="text" name="reg_password" required placeholder="Password">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container form-group">
-							<div class="col-11">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="glyphicon glyphicon-lock"></i>
-									</span>
-									<input class="form-control" type="text" required placeholder="Retype password">
+							<div class="container form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-lock"></i>
+										</span>
+										<input class="form-control" type="text" name="reg_repassword" required placeholder="Retype password">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="container form-group">
-							<div class="col-11">
-								<div class="input-group">
-									<button type="" class="btn btn-dark">
-										<a href="index.html" style="color: white;">Register
-											<span class="glyphicon glyphicon-send"></span>
-										</a>
-									</button>
+							<div class="container form-group">
+								<div class="col-11">
+									<div class="input-group">
+										<button type="submit" class="btn btn-dark" name="register">Register
+												<span class="glyphicon glyphicon-send"></span>
+										</button>
+									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
+
 			</div>
 		</div>
 		<div class="row-3" style="background-color:#141719;">

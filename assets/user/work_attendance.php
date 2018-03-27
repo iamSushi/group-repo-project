@@ -8,7 +8,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>Schedule</title>
+		<title>Attendance</title>
 	</head>
 	<body>
 		<div class="row-3">
@@ -63,16 +63,16 @@
 								</button>
 								<div class="collapse navbar-collapse navHeaderCollapse">
 									<ul class="nav navbar-nav navbar-left">
-										<li><a href="about_me.html">About</a></li>
-										<li class="active"><a href="work_details.html">Work</a></li>
-										<li><a href="contact_person.html">Contact</a></li>
+										<li><a href="about_me.php">About</a></li>
+										<li class="active"><a href="work_details.php">Work</a></li>
+										<li><a href="contact_person.php">Contact</a></li>
 									</ul>
 									<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 										<li>
 											<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 											<ul class="dropdown-menu">
-												<li><a href="basicinfo.html">Edit Profile</a></li>
-												<li><a href="index.html">Logout</a></li>
+												<li><a href="basicinfo.php">Edit Profile</a></li>
+												<li><a href="index.php">Logout</a></li>
 											</ul>
 										</li>
 									</ul>
@@ -85,12 +85,12 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="work_details.html">Work Details</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="work_details.php">Work Details</a></a></h4>
 									</div>
 									<!-- <div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="about_me.html">About Me</a></li>
-											<li class="list-group-item"><a href="about_address.html">Address</a></li>
+											<li class="list-group-item"><a href="about_me.php">About Me</a></li>
+											<li class="list-group-item"><a href="about_address.php">Address</a></li>
 										</ul>
 									</div> -->
 								</div>
@@ -98,12 +98,12 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse"><a href="work_schedule.html">Schedule</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse"><a href="work_schedule.php">Schedule</a></a></h4>
 									</div>
 									<!-- <div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="about_father.html">Father's Information</a></li>
-											<li class="list-group-item"><a href="about_mother.html">Mother's Information</a></li>
+											<li class="list-group-item"><a href="about_father.php">Father's Information</a></li>
+											<li class="list-group-item"><a href="about_mother.php">Mother's Information</a></li>
 										</ul>
 									</div> -->
 								</div>
@@ -111,12 +111,12 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse"><a href="work_attendance.html">Attendance</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse"><a href="work_attendance.php">Attendance</a></a></h4>
 									</div>
 									<!-- <div id="collapse3" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="about_spouse.html">Spouse</a></li>
-											<li class="list-group-item"><a href="about_children.html">Children</a></li>
+											<li class="list-group-item"><a href="about_spouse.php">Spouse</a></li>
+											<li class="list-group-item"><a href="about_children.php">Children</a></li>
 										</ul>
 									</div> -->
 								</div>
@@ -124,12 +124,12 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse"><a href="work_leave.html">Request Leave</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse"><a href="work_leave.php">Request Leave</a></a></h4>
 									</div>
 									<!-- <div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="about_hsbg.html">High School Background</a></li>
-											<li class="list-group-item"><a href="about_collegebg.html">College Background</a></li>
+											<li class="list-group-item"><a href="about_hsbg.php">High School Background</a></li>
+											<li class="list-group-item"><a href="about_collegebg.php">College Background</a></li>
 										</ul>
 									</div> -->
 								</div>
@@ -139,7 +139,7 @@
 							<div class="row-12">
 								<form action="">
 									<div class="container form-group">
-										<legend><h2>Work Schedule</h2></legend>
+										<legend><h2>Attendance</h2></legend>
 									</div>
 									<!-- <div class="container form-group form-horizontal">
 										<div class="inputGroupContainer">
