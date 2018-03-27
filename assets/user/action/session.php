@@ -36,7 +36,7 @@
 			mysqli_query($connect,$sql);
 			$_SESSION['email'] = $email;
 			// $_SESSION['success'] = "You are now logged in";
-			header('location: about_me.php');
+			header("location: basicinfo.php?id=".$row['staff_id']."");
 		}
 	}
 	if (isset($_POST['login'])){
@@ -86,7 +86,7 @@
 			if(mysqli_num_rows($result) == 1){
 				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: about_me.php');
+				header('location: .php');
 				// if($stand == "User"){
 				// 	$_SESSION['email'] = $email;
 				// 	$_SESSION['success'] = "You are now logged in";

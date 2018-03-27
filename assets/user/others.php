@@ -64,7 +64,7 @@
 			<div class="row-10">
 				<div class="">
 					<form class="form-horizontal container">
-				    	<div class="form-group">
+				    	<div class="form-group" style="margin-bottom: 15px;">
 							<label class="control-label col-sm-4">Facebook</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
@@ -73,7 +73,7 @@
 								</div>
 							</div>
 					   	</div>
-					 	<div class="form-group">
+					 	<div class="form-group" style="margin-bottom: 15px;">
 							<label class="control-label col-sm-4">Instagram</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group" style="margin-bottom: 15px;">
 						    <label class="control-label col-sm-4">Twitter</label>
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
@@ -91,7 +91,7 @@
 								</div>
 							</div>
 						</div>
-					    <div class="form-group">
+					    <div class="form-group" style="margin-bottom: 15px;">
 							<label class="control-label col-sm-4">Nickname</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
@@ -100,7 +100,7 @@
 								</div>
 							</div>
 					 	</div>
-						<div class="form-group">
+						<div class="form-group" style="margin-bottom: 15px;">
 							<label for="" class="control-label col-sm-4">Telephone Number:</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">

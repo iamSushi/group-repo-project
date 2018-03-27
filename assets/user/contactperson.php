@@ -67,21 +67,21 @@
 						<div class="container form-group">
 							<legend><h2>First contact person</h2></legend>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-11">
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="firstname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-5">
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="middlename">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -89,11 +89,11 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="surname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Birthdate</label>
 								<div class="input-group">
@@ -106,28 +106,28 @@
 								<label for="">Gender</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
-									<select class="form-control" required="">
+									<select class="form-control" required>
 	                                    <option value="">Male</option>
 	                                    <option value="">Female</option>
 	                                </select>
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="your@email.com">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="+639 *** ****">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -144,6 +144,22 @@
 								</div>
 							</div>
 						</div>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							
+							<div class="modal fade" id="update">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<h2>Update Success!</h2>
+										</div>
+										<div class="modal-footer">
+											<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-6">
@@ -151,21 +167,21 @@
 						<div class="container form-group">
 							<legend><h2>Second contact person (Optional)</h2></legend>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-11">
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="firstname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-5">
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="middlename">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -173,11 +189,11 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="surname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Birthdate</label>
 								<div class="input-group">
@@ -190,28 +206,28 @@
 								<label for="">Gender</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
-									<select class="form-control" required="">
+									<select class="form-control" required>
 	                                    <option value="">Male</option>
 	                                    <option value="">Female</option>
 	                                </select>
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="email" required>
+									<input class="form-control" type="email" required placeholder="your@email.com">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="+639 *** ****">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -228,27 +244,26 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row-1">
-				<div class="container row-1">
-					<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
-					
-					<div class="modal fade" id="update">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-body">
-									<h2>Update Success!</h2>
-								</div>
-								<div class="modal-footer">
-									<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							
+							<div class="modal fade" id="update">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<h2>Update Success!</h2>
+										</div>
+										<div class="modal-footer">
+											<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</body>
 </html>

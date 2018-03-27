@@ -68,21 +68,21 @@
 							<div class="container form-group">
 								<legend><h2>Father's Details</h2></legend>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-11">
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="firstname">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-5">
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="middlename">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -90,11 +90,11 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="surname">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class="col-5">
 									<label for="">Birthdate</label>
 									<div class="input-group">
@@ -107,44 +107,59 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="+639 *** ****">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-11">
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="occupation">
+									</div>
+								</div>
+							</div>
+							<div class="container row-1 form-group" style="margin-bottom: 15px;">
+								<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+								
+								<div class="modal fade" id="update">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-body">
+												<h2>Update Success!</h2>
+											</div>
+											<div class="modal-footer">
+												<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div class="col-6">
 					<div class="row-12">
 						<div class="row-6">
 							<div class="container form-group">
 								<legend><h2>Mother's Details</h2></legend>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-11">
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="firstname">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-5">
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="middlename">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -152,11 +167,11 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="surname">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class="col-5">
 									<label for="">Birthdate</label>
 									<div class="input-group">
@@ -169,41 +184,39 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="+639 *** ****">
 									</div>
 								</div>
 							</div>
-							<div class="container row-2 form-group">
+							<div class="container row-2 form-group" style="margin-bottom: 15px;">
 								<div class=" col-11">
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required>
+										<input class="form-control" type="text" required placeholder="occupation">
+									</div>
+								</div>
+							</div>
+							<div class="container row-1 form-group" style="margin-bottom: 15px;">
+								<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+								
+								<div class="modal fade" id="update">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-body">
+												<h2>Update Success!</h2>
+											</div>
+											<div class="modal-footer">
+												<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row-1">
-				<div class="container row-2">
-					<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
-					
-					<div class="modal fade" id="update">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-body">
-									<h2>Update Success!</h2>
-								</div>
-								<div class="modal-footer">
-									<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>		
+			</div>	
 		</div>
 	</body>
 </html>

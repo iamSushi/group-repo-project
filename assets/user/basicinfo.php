@@ -1,3 +1,10 @@
+<?php
+	include('action/session.php');
+	if(empty($_SESSION['email'])){
+		header('location: index.php');
+	}
+	include('action/update_basicinfo.php');
+?>
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -64,24 +71,28 @@
 			<div class="row-10">
 				<div class="col-6">
 					<div class="row-12">
+						<?php
+							$id = $_GET['id'];
+							include_once("action/update_basicinfo.php");
+						?>
 						<div class="container form-group">
 							<legend><h2>About me</h2></legend>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-11">
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" name="fname" required placeholder="firstname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class=" col-5">
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" name="mname" required placeholder="middlename">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -89,16 +100,16 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" name="sname" required placeholder="surname">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Birthdate</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" required>
+									<input class="form-control" type="date" name="dob" required>
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -106,29 +117,29 @@
 								<label for="">Gender</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
-									<select class="form-control" required="">
-	                                    <option value="">Male</option>
-	                                    <option value="">Female</option>
+									<select class="form-control" required name="gender">
+	                                    <option value="Male">Male</option>
+	                                    <option value="Female">Female</option>
 	                                </select>
 								</div>
 								
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="email" required>
+									<input class="form-control" type="email" name="email" required placeholder="your@email.com">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -136,12 +147,28 @@
 								<label for="">Status</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart-empty"></i></span>
-									<select class="form-control">
-	                                    <option value="">Single</option>
-	                                    <option value="">Married</option>
-	                                    <option value="">Divorced</option>
-	                                    <option value="">Widowed</option>
+									<select class="form-control" name="status">
+	                                    <option value="Single">Single</option>
+	                                    <option value="Married">Married</option>
+	                                    <option value="Divorced">Divorced</option>
+	                                    <option value="Widowed">Widowed</option>
 	                                </select>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<button class="btn btn-dark" type="submit" name="about_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							
+							<div class="modal fade" id="update">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<h2>Update Success!</h2>
+										</div>
+										<div class="modal-footer">
+											<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -152,39 +179,39 @@
 						<div class="container form-group">
 							<legend><h2>Address</h2></legend>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Address one</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="address one">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Address two</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="address two">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
 								<label for="">Address three</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="address three">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="state">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -192,16 +219,16 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="city">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group">
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-5">
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="country">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -209,7 +236,7 @@
 								<label for="">Postal Code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text" required>
+									<input class="form-control" type="text" required placeholder="zip code">
 								</div>
 							</div>
 						</div>
@@ -220,11 +247,27 @@
 								</label>
 							</div>
 						</div>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							
+							<div class="modal fade" id="update">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-body">
+											<h2>Update Success!</h2>
+										</div>
+										<div class="modal-footer">
+											<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row-1">
-				<div class="container row-1">
+			<!-- <div class="row-1">
+				<div class="container">
 					<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 					
 					<div class="modal fade" id="update">
@@ -240,7 +283,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</body>
 </html>
