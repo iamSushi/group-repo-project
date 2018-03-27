@@ -84,7 +84,7 @@
 			</div>
 			<div class="row-10">
 				<div class="col-6">
-					<form class="row-12" action="action/update_basicinfo.php<?php echo '?id='.$_GET['id'].''?>" method="post">
+					<div class="row-12" action="action/update_basicinfo.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<?php
 							$space = " ";
 							$id = $_GET['id'];
@@ -197,7 +197,7 @@
 							</div>
 						</div>
 						<?php endwhile;} ?>
-					</form>
+					</div>
 				</div>
 				<div class="col-6">
 					<div class="row-12">

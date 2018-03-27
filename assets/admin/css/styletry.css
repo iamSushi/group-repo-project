@@ -85,6 +85,10 @@ li a.active {
     background-color: khaki;
     color: white;
 }
+.list-group-item:hover:not > a(.active) {
+    
+    color: white;
+}
 .form-ni{
 	margin-left: 100px;
 	margin-top: 80px;
@@ -186,4 +190,5 @@ ul>.hnav{
 }
 .panel-default > .panel-heading {
 	background-color: #243a51;
+	color:white;
 }

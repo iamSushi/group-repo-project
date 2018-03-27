@@ -13,8 +13,9 @@
 
 		$id = $_GET['id'];
 
-		$sql = "UPDATE staff SET fname = '$fname' WHERE staff_id = '$id'";
+		$sql = "UPDATE staff SET fname = '$fname', mname ='$mname',lname ='lname' WHERE staff_id = '$id'";
 		mysqli_query($connect,$sql);
+		mysqli_error($connect);
 	}
 		
 
