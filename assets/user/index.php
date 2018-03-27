@@ -60,12 +60,12 @@
 										<div class="container">
 											<?php include('action/errors.php'); ?>
 											<div class="container form-group">
-												<label for="username">Username</label>
+												<label for="username">Email Address</label>
 												<div class="input-group">
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-user"></i>
 													</span>
-													<input type="text" class="form-control" placeholder="Email" name="admin_email">
+													<input type="text" class="form-control" placeholder="your@email.com" name="admin_email">
 												</div>
 											</div>
 											<div class="container form-group">
@@ -103,12 +103,12 @@
 										<div class="container">
 											<?php include('action/errors.php'); ?>
 											<div class="container form-group">
-												<label>Username</label>
+												<label>Email Address</label>
 												<div class="input-group">
 													<span class="input-group-addon">
 														<i class="glyphicon glyphicon-user"></i>
 													</span>
-													<input type="text" class="form-control" placeholder="Username" name="head_email">
+													<input type="text" class="form-control" placeholder="your@email.com" name="head_email">
 												</div>
 											</div>
 											<div class="container form-group">

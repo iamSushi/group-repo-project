@@ -29,7 +29,6 @@
 		if($pass != $repass){
 			array_push($errors, "Password dont match!");
 		}
-
 		if(count($errors) == 0){
 			 // $password = md5($pass);
 			$sql = "INSERT INTO staff VALUES('','$fname','','$sname','','','','$email','','','$type','','$pass')";

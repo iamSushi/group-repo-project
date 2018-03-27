@@ -84,7 +84,7 @@
 									<ul class="nav navbar-nav navbar-left">
 										<li><a href="about_me.php<?php echo '?id='.$id.''?>">About</a></li>
 										<li><a href="work_details.php<?php echo '?id='.$id.''?>">Work</a></li>
-										<li class="active"><a href="contact_person.php">Contact</a></li>
+										<li class="active"><a href="contact_person.php<?php echo '?id='.$id.''?>">Contact</a></li>
 									</ul>
 									<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 										<li>
@@ -108,7 +108,7 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="contact_person.php">Guardian</a></li>
+											<li class="list-group-item"><a href="contact_person.php<?php echo '?id='.$id.''?>">Guardian</a></li>
 										</ul>
 									</div>
 								</div>
@@ -120,9 +120,9 @@
 									</div>
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="contact_sm.php">Facebook</a></li>
-											<li class="list-group-item"><a href="contact_sm.php">Instagram</a></li>
-											<li class="list-group-item"><a href="contact_sm.php">Twitter</a></li>
+											<li class="list-group-item"><a href="contact_sm.php<?php echo '?id='.$id.''?>">Facebook</a></li>
+											<li class="list-group-item"><a href="contact_sm.php<?php echo '?id='.$id.''?>">Instagram</a></li>
+											<li class="list-group-item"><a href="contact_sm.php<?php echo '?id='.$id.''?>">Twitter</a></li>
 										</ul>
 									</div>
 								</div>

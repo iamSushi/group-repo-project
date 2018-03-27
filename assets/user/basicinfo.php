@@ -20,16 +20,31 @@
 		<div class="col-2">
 			<div class="row-12 sidebar">
 				<div class="row-6">
-					<div class="row-2 container text-center">
-						<p>Your Profile</p>
-					</div>
-					<div class="row-7 text-center">
-						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
-					</div>
-					<div class="row-3 container text-center">
-						<p>James Sinadjan</p>
-						<p>Staff</p>
-					</div>
+					<?php
+						$space = " ";
+						$email = $_SESSION['email'];
+						$id = $_GET['id'];
+						include_once("action/session.php");
+						// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
+						// $query = "SELECT * FROM staff WHERE email = '$email'";
+						$query = "SELECT * FROM staff WHERE staff_id = '$id'";
+						$result = mysqli_query($connect,$query);
+						if(mysqli_num_rows($result) > 0){
+							while($row = mysqli_fetch_assoc($result)):
+					?>
+					<form action="">
+						<div class="row-2 container text-center">
+							<p>Your Profile</p>
+						</div>
+						<div class="row-7 text-center">
+							<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
+						</div>
+						<div class="row-3 container text-center">
+							<p><?php echo $row['fname'].$space.$row['lname'] ?></p>
+							<p><?php echo $row['position'] ?></p>
+						</div>
+					</form>
+					<?php endwhile;} ?>
 				</div>
 				<div class="row-5 container text-center">
 					<p>" My Motto "</p>
@@ -47,20 +62,20 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li class="active"><a href="">Basic Information</a></li>
-							<li><a href="parentsdetails.php">Parents Details</a></li>
-							<li><a href="familydetails.php">Family Details</a></li>
-							<li><a href="studiesbg.php">Studies Background</a></li>
-							<li><a href="contactperson.php">Contact Person</a></li>
-							<li><a href="others.php">Others</a></li>
+							<li class="active"><a href="basicinfo.php<?php echo '?id='.$id.''?>">Basic Information</a></li>
+							<li><a href="parentsdetails.php<?php echo '?id='.$id.''?>">Parents Details</a></li>
+							<li><a href="familydetails.php<?php echo '?id='.$id.''?>">Family Details</a></li>
+							<li><a href="studiesbg.php<?php echo '?id='.$id.''?>">Studies Background</a></li>
+							<li><a href="contactperson.php<?php echo '?id='.$id.''?>">Contact Person</a></li>
+							<li><a href="others.php<?php echo '?id='.$id.''?>">Others</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="about_me.php">Your Profile</a></li>
-									<li><a href="settings.php">Settings</a></li>
-									<li><a href="index.php">Logout</a></li>
+									<li><a href="about_me.php<?php echo '?id='.$id.''?>">Your Profile</a></li>
+									<li><a href="settings.php<?php echo '?id='.$id.''?>">Settings</a></li>
+									<li><a href="index.php?logout='1'" style="color: red !important;">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
