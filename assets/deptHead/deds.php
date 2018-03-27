@@ -93,7 +93,7 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="../user/about_me.html">Staff Profile</a></li>
+											<li class="list-group-item"><a href="../user/about_me.php">Staff Profile</a></li>
 										</ul>
 									</div>
 								</div>
