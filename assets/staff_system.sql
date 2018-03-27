@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2018 at 12:48 PM
+-- Generation Time: Mar 27, 2018 at 09:22 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -79,6 +79,10 @@ CREATE TABLE `college_background` (
   `course` varchar(50) NOT NULL,
   `schoolName` varchar(255) NOT NULL,
   `schoolAdd` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `postCode` int(11) NOT NULL,
   `yearEnd` date NOT NULL,
   `status` varchar(50) NOT NULL,
   `percentage` int(11) DEFAULT NULL
@@ -88,8 +92,8 @@ CREATE TABLE `college_background` (
 -- Dumping data for table `college_background`
 --
 
-INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `yearEnd`, `status`, `percentage`) VALUES
-(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '2018-03-30', 'Cum Laude', 96);
+INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `state`, `country`, `city`, `postCode`, `yearEnd`, `status`, `percentage`) VALUES
+(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '', '', '', 0, '2018-03-30', 'Cum Laude', 96);
 
 -- --------------------------------------------------------
 
@@ -104,15 +108,17 @@ CREATE TABLE `contact_person` (
   `lname` varchar(50) NOT NULL,
   `contactNum` varchar(50) NOT NULL,
   `address` varchar(50) NOT NULL,
-  `gender` varchar(50) NOT NULL
+  `gender` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `birthdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact_person`
 --
 
-INSERT INTO `contact_person` (`staff_id`, `fname`, `mname`, `lname`, `contactNum`, `address`, `gender`) VALUES
-(6, 'Marissa', 'Omamalin', 'Sinadjan', '09368727409', '187 Zone 1 Centro Kolambog Lapasan, CDOC', 'Female');
+INSERT INTO `contact_person` (`staff_id`, `fname`, `mname`, `lname`, `contactNum`, `address`, `gender`, `email`, `birthdate`) VALUES
+(6, 'Marissa', 'Omamalin', 'Sinadjan', '09368727409', '187 Zone 1 Centro Kolambog Lapasan, CDOC', 'Female', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -221,19 +227,21 @@ INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fat
 CREATE TABLE `highschool_background` (
   `staff_id` bigint(20) DEFAULT NULL,
   `schoolName` varchar(50) NOT NULL,
-  `school_addOne` varchar(50) NOT NULL,
-  `school_addTwo` varchar(50) NOT NULL,
-  `school_addTre` varchar(50) NOT NULL,
+  `schoolAdd` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
-  `city` varchar(50) NOT NULL
+  `city` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `postCode` int(11) NOT NULL,
+  `year_end` date NOT NULL,
+  `average` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `highschool_background`
 --
 
-INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `school_addOne`, `school_addTwo`, `school_addTre`, `state`, `city`) VALUES
-(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Velez', 'Street', 'Misamis Oriental', 'Cagayan de Oro City');
+INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `state`, `city`, `country`, `postCode`, `year_end`, `average`) VALUES
+(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Misamis Oriental', 'Cagayan de Oro City', '', 0, '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +406,7 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 (2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', ''),
 (3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', 'Leader', '1234'),
 (4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', ''),
-(6, 'James', 'Omamalin', 'Sinadjan', '1995-08-11', '09368727409', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Leader', 'masaya'),
+(6, 'James', 'Omamalin', 'Sinadjan', '1995-08-11', '09368727409', 'wala', 'jamessinadjan5@gmail.com', 'Married', 'Male', 'Staff', 'Leader', 'masaya'),
 (8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', '', 'cscas', 'wad', '', '', ''),
 (9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', '', 'sda', 'wdaw', '', '', ''),
 (10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', '', 'SQS', 'Sqs', '', '', ''),
@@ -408,7 +416,8 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 (14, '21', '212', 'wqeqe', '2018-02-01', 'dwqd', 'dqwd', '', 'eq2', 'e2q', '', '', ''),
 (15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Leader', '1233'),
 (16, 'Ezekiel', 'Kong', 'Garbosa', '0000-00-00', '09652651456', 'wala', 'garbosa@gmail.com', 'Married', 'Male', 'Staff', 'Leader', '1235'),
-(17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '1111');
+(17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '1111'),
+(18, 'Jane', '', 'Go', '0000-00-00', '', '', 'janego@gmail.com', '', '', 'Staff', '', '1234');
 
 -- --------------------------------------------------------
 
@@ -615,7 +624,7 @@ ALTER TABLE `schedule_details`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

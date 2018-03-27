@@ -142,4 +142,21 @@
 		unset($_SESSION['email']);
 		header('location: index.php');
 	}
+
+	if (isset($_POST['about_update'])){
+		$fname = $_POST['fname'];
+		$mname = $_POST['mname'];
+		$sname = $_POST['sname'];
+		$dob = $_POST['dob'];
+		$gender = $_POST['gender'];
+		$email = $_POST['email'];
+		$contnum = $_POST['contnum'];
+		$status = $_POST['status'];
+		$id = $_GET['id'];
+		$sql = "UPDATE staff SET fname = '$fname' WHERE satff_id ='$id'";
+		mysqli_query($connect,$sql);
+		// $_SESSION['email'] = $email;
+		// $_SESSION['success'] = "You are now logged in";
+		// header("location: basicinfo.php?id=".$row['staff_id']."");
+	}
 ?>

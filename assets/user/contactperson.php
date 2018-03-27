@@ -83,6 +83,17 @@
 			<div class="row-10">
 				<div class="col-6">
 					<div class="row-12">
+						<?php
+							$space = " ";
+							$id = $_GET['id'];
+							// include_once("action/update_basicinfo.php");
+							include_once("action/session.php");
+							$query = "SELECT * FROM contact_person WHERE staff_id = '$id'";
+
+							$result = mysqli_query($connect,$query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)):
+						?>
 						<div class="container form-group">
 							<legend><h2>First contact person</h2></legend>
 						</div>
@@ -91,7 +102,7 @@
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="firstname">
+									<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['fname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -100,7 +111,7 @@
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="middlename">
+									<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['mname'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -108,7 +119,7 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="surname">
+									<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['lname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -117,7 +128,7 @@
 								<label for="">Birthdate</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" required>
+									<input class="form-control" type="date" required value="<?php echo $row['date'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -134,10 +145,19 @@
 						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<div class="col-11">
+								<label for="">Address</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+									<input class="form-control" type="text" required placeholder="address" value="<?php echo $row['address'] ?>">
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<div class="col-11">
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="text" required placeholder="your@email.com">
+									<input class="form-control" type="email" required placeholder="your@email.com" value="<?php echo $row['email'] ?>">
 								</div>
 							</div>
 						</div>
@@ -146,10 +166,10 @@
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required placeholder="+639 *** ****">
+									<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['contactNum'] ?>">
 								</div>
 							</div>
-							<div class="col-1"></div>
+							<!-- <div class="col-1"></div>
 							<div class="col-5">
 								<label for="">Status</label>
 								<div class="input-group">
@@ -161,7 +181,7 @@
 	                                    <option value="">Widowed</option>
 	                                </select>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
@@ -179,6 +199,7 @@
 								</div>
 							</div>
 						</div>
+						<?php endwhile;} ?>
 					</div>
 				</div>
 				<div class="col-6">
@@ -229,6 +250,15 @@
 	                                    <option value="">Male</option>
 	                                    <option value="">Female</option>
 	                                </select>
+								</div>
+							</div>
+						</div>
+						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<div class="col-11">
+								<label for="">Address</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input class="form-control" type="text" required placeholder="address">
 								</div>
 							</div>
 						</div>

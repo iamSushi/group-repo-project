@@ -84,10 +84,17 @@
 			</div>
 			<div class="row-10">
 				<div class="col-6">
-					<div class="row-12">
+					<div class="row-12" action="action/update_basicinfo.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<?php
+							$space = " ";
 							$id = $_GET['id'];
-							include_once("action/update_basicinfo.php");
+							// include_once("action/update_basicinfo.php");
+							include_once("action/session.php");
+							$query = "SELECT * FROM staff WHERE staff_id = '$id'";
+
+							$result = mysqli_query($connect,$query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)):
 						?>
 						<div class="container form-group">
 							<legend><h2>About me</h2></legend>
@@ -97,7 +104,7 @@
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" name="fname" required placeholder="firstname">
+									<input class="form-control" type="text" name="fname" required placeholder="firstname" value="<?php echo $row['fname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -106,7 +113,7 @@
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" name="mname" required placeholder="middlename">
+									<input class="form-control" type="text" name="mname" required placeholder="middlename" value="<?php echo $row['mname'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -114,7 +121,7 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" name="sname" required placeholder="surname">
+									<input class="form-control" type="text" name="sname" required placeholder="surname" value="<?php echo $row['lname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -123,7 +130,7 @@
 								<label for="">Birthdate</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" name="dob" required>
+									<input class="form-control" type="date" name="dob" required value="<?php echo $row['birthdate'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -144,7 +151,7 @@
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="email" name="email" required placeholder="your@email.com">
+									<input class="form-control" type="email" name="email" required placeholder="your@email.com" value="<?php echo $row['email'] ?>">
 								</div>
 							</div>
 						</div>
@@ -153,7 +160,7 @@
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****">
+									<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****" value="<?php echo $row['cellnum'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -171,8 +178,11 @@
 							</div>
 						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
+							<!-- <input class="btn btn-dark" type="submit" name="about_update" data-toggle="modal" data-target="#update">
+							<span class="glyphicon glyphicon-send"></span> -->
+
 							<button class="btn btn-dark" type="submit" name="about_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
-							
+
 							<div class="modal fade" id="update">
 								<div class="modal-dialog">
 									<div class="modal-content">
@@ -186,10 +196,22 @@
 								</div>
 							</div>
 						</div>
+						<?php endwhile;} ?>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row-12">
+						<?php
+							$space = " ";
+							$id = $_GET['id'];
+							// include_once("action/update_basicinfo.php");
+							include_once("action/session.php");
+							$query = "SELECT * FROM current_address WHERE staff_id = '$id'";
+
+							$result = mysqli_query($connect,$query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)):
+						?>
 						<div class="container form-group">
 							<legend><h2>Address</h2></legend>
 						</div>
@@ -198,7 +220,7 @@
 								<label for="">Address one</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address one">
+									<input class="form-control" type="text" required placeholder="address one" value="<?php echo $row['addOne'] ?>">
 								</div>
 							</div>
 						</div>
@@ -207,7 +229,7 @@
 								<label for="">Address two</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address two">
+									<input class="form-control" type="text" required placeholder="address two" value="<?php echo $row['addTwo'] ?>">
 								</div>
 							</div>
 						</div>
@@ -216,7 +238,7 @@
 								<label for="">Address three</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="address three">
+									<input class="form-control" type="text" required placeholder="address three" value="<?php echo $row['addTre'] ?>">
 								</div>
 							</div>
 						</div>
@@ -225,7 +247,7 @@
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-									<input class="form-control" type="text" required placeholder="state">
+									<input class="form-control" type="text" required placeholder="state" value="<?php echo $row['state'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -233,7 +255,7 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required placeholder="city">
+									<input class="form-control" type="text" required placeholder="city" value="<?php echo $row['city'] ?>">
 								</div>
 							</div>
 						</div>
@@ -242,7 +264,7 @@
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required placeholder="country">
+									<input class="form-control" type="text" required placeholder="country" value="<?php echo $row['country'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -250,7 +272,7 @@
 								<label for="">Postal Code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text" required placeholder="zip code">
+									<input class="form-control" type="text" required placeholder="zip code" value="<?php echo $row['postCode'] ?>">
 								</div>
 							</div>
 						</div>
@@ -277,6 +299,7 @@
 								</div>
 							</div>
 						</div>
+						<?php endwhile;} ?>
 					</div>
 				</div>
 			</div>
