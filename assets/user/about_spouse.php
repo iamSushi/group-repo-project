@@ -82,7 +82,7 @@
 								</button>
 								<div class="collapse navbar-collapse navHeaderCollapse">
 									<ul class="nav navbar-nav navbar-left">
-										<li class="active"><a href="about_me.php">About</a></li>
+										<li class="active"><a href="about_me.php<?php echo '?id='.$id.''?>">About</a></li>
 										<li><a href="work_details.php<?php echo '?id='.$id.''?>">Work</a></li>
 										<li><a href="contact_person.php<?php echo '?id='.$id.''?>">Contact</a></li>
 									</ul>
