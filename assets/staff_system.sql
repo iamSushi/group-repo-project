@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2018 at 03:24 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Mar 27, 2018 at 12:48 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,12 +51,12 @@ CREATE TABLE `attendance_details` (
   `attenDetails_id` bigint(20) NOT NULL,
   `attend_id` bigint(20) DEFAULT NULL,
   `schedDetails_id` bigint(20) DEFAULT NULL,
-  `tardiness` tinyint(4) DEFAULT NULL,
-  `overtime` tinyint(4) DEFAULT NULL,
-  `absences` tinyint(4) DEFAULT NULL,
+  `tardiness` int(11) DEFAULT NULL,
+  `overtime` int(11) DEFAULT NULL,
+  `absences` int(11) DEFAULT NULL,
   `holiday` bit(1) DEFAULT NULL,
-  `holidayName` tinytext,
-  `dailyTotalHours` tinyint(4) NOT NULL
+  `holidayName` varchar(50) DEFAULT NULL,
+  `dailyTotalHours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -64,9 +64,9 @@ CREATE TABLE `attendance_details` (
 --
 
 INSERT INTO `attendance_details` (`attenDetails_id`, `attend_id`, `schedDetails_id`, `tardiness`, `overtime`, `absences`, `holiday`, `holidayName`, `dailyTotalHours`) VALUES
-(5, 1, 1, 1, 1, 1, b'1111111111111111111111111111111', 'Christmas', 8),
-(7, 1, 1, 1, 1, 1, b'1111111111111111111111111111111', 'Christmas', 8),
-(12, 1, 1, 0, 0, 0, b'1111111111111111111111111111111', 'daWD', 0);
+(5, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
+(7, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
+(12, 1, 1, 0, 0, 0, b'1', 'daWD', 0);
 
 -- --------------------------------------------------------
 
@@ -76,12 +76,12 @@ INSERT INTO `attendance_details` (`attenDetails_id`, `attend_id`, `schedDetails_
 
 CREATE TABLE `college_background` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `course` tinytext NOT NULL,
-  `schoolName` tinytext NOT NULL,
-  `schoolAdd` tinytext NOT NULL,
+  `course` varchar(50) NOT NULL,
+  `schoolName` varchar(255) NOT NULL,
+  `schoolAdd` varchar(50) NOT NULL,
   `yearEnd` date NOT NULL,
-  `status` tinytext NOT NULL,
-  `percentage` tinyint(4) DEFAULT NULL
+  `status` varchar(50) NOT NULL,
+  `percentage` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -89,11 +89,7 @@ CREATE TABLE `college_background` (
 --
 
 INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `yearEnd`, `status`, `percentage`) VALUES
-(1, 'BIST', 'USTP', 'LAPASAN', '2018-02-01', 'GOOD', 100),
-(4, 'BSPOGI', 'HARVARD', 'MARS', '2018-02-02', 'GWAPO NA GWAPO', 101),
-(3, 's', 's', 's', '0000-00-00', 's', 1),
-(1, 's', 's', 's', '0000-00-00', 's', 1),
-(3, 'Secret', 'Secret', 'schoolAdd', '0000-00-00', 'Secret', 100);
+(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '2018-03-30', 'Cum Laude', 96);
 
 -- --------------------------------------------------------
 
@@ -103,18 +99,20 @@ INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd
 
 CREATE TABLE `contact_person` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `name` tinytext NOT NULL,
-  `contactNum` tinytext NOT NULL,
-  `address` tinytext NOT NULL,
-  `gender` tinytext NOT NULL
+  `fname` varchar(50) NOT NULL,
+  `mname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `contactNum` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact_person`
 --
 
-INSERT INTO `contact_person` (`staff_id`, `name`, `contactNum`, `address`, `gender`) VALUES
-(1, 'GWAPO KO', 'SECRET', 'MARS', 'LALAKI');
+INSERT INTO `contact_person` (`staff_id`, `fname`, `mname`, `lname`, `contactNum`, `address`, `gender`) VALUES
+(6, 'Marissa', 'Omamalin', 'Sinadjan', '09368727409', '187 Zone 1 Centro Kolambog Lapasan, CDOC', 'Female');
 
 -- --------------------------------------------------------
 
@@ -124,13 +122,13 @@ INSERT INTO `contact_person` (`staff_id`, `name`, `contactNum`, `address`, `gend
 
 CREATE TABLE `current_address` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `addOne` tinytext,
-  `addTwo` tinytext,
-  `addTre` tinytext,
-  `state` tinytext NOT NULL,
-  `city` tinytext NOT NULL,
-  `country` tinytext NOT NULL,
-  `postCode` tinyint(4) NOT NULL
+  `addOne` varchar(50) DEFAULT NULL,
+  `addTwo` varchar(50) DEFAULT NULL,
+  `addTre` varchar(50) DEFAULT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `postCode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -138,7 +136,8 @@ CREATE TABLE `current_address` (
 --
 
 INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
-(1, '12', '13', '14', '15', '16', '16', 0);
+(6, '187 Zone 1', 'Centro Kolambog', 'Lapasan', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
+(16, 'BongBongon', 'Di Makita', 'Street', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000);
 
 -- --------------------------------------------------------
 
@@ -183,21 +182,35 @@ CREATE TABLE `deduction_details` (
 
 CREATE TABLE `family_details` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `fathersName` tinytext,
-  `mothersName` tinytext,
-  `fathersAge` tinyint(4) DEFAULT NULL,
-  `mothersAge` tinyint(4) DEFAULT NULL,
-  `siblings` tinyint(4) DEFAULT NULL,
-  `spouseName` tinytext,
-  `numOfChildren` tinyint(4) DEFAULT NULL
+  `fathers_fname` varchar(50) DEFAULT NULL,
+  `fathers_mname` varchar(50) NOT NULL,
+  `fathers_lname` varchar(50) NOT NULL,
+  `mothers_fname` varchar(50) DEFAULT NULL,
+  `mothers_mname` varchar(50) NOT NULL,
+  `mothers_lname` varchar(50) NOT NULL,
+  `fathers_birthdate` date DEFAULT NULL,
+  `mothers_birthdate` date DEFAULT NULL,
+  `fathers_occupation` varchar(50) NOT NULL,
+  `mothers_occupation` varchar(50) NOT NULL,
+  `fathers_contnum` varchar(50) NOT NULL,
+  `mothers_contnum` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `siblings` int(11) DEFAULT NULL,
+  `spouse_fname` varchar(50) DEFAULT NULL,
+  `spouse_mname` varchar(50) NOT NULL,
+  `spouse_lname` varchar(50) NOT NULL,
+  `spouse_birthdate` date NOT NULL,
+  `spouse_contnum` varchar(50) NOT NULL,
+  `spouse_occupation` varchar(50) NOT NULL,
+  `numOfChildren` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `family_details`
 --
 
-INSERT INTO `family_details` (`staff_id`, `fathersName`, `mothersName`, `fathersAge`, `mothersAge`, `siblings`, `spouseName`, `numOfChildren`) VALUES
-(1, 'john', 'melinda', 0, 21, 1, 'wala', 0);
+INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fathers_lname`, `mothers_fname`, `mothers_mname`, `mothers_lname`, `fathers_birthdate`, `mothers_birthdate`, `fathers_occupation`, `mothers_occupation`, `fathers_contnum`, `mothers_contnum`, `status`, `siblings`, `spouse_fname`, `spouse_mname`, `spouse_lname`, `spouse_birthdate`, `spouse_contnum`, `spouse_occupation`, `numOfChildren`) VALUES
+(6, 'Danilo', 'Alsa', 'Sinadjan', 'Marissa', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical', 'Pharmaciest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12);
 
 -- --------------------------------------------------------
 
@@ -207,19 +220,20 @@ INSERT INTO `family_details` (`staff_id`, `fathersName`, `mothersName`, `fathers
 
 CREATE TABLE `highschool_background` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `schoolName` tinytext NOT NULL,
-  `schoolAdd` tinytext NOT NULL,
-  `yearEnd` date NOT NULL,
-  `status` tinytext NOT NULL,
-  `percentage` tinyint(4) DEFAULT NULL
+  `schoolName` varchar(50) NOT NULL,
+  `school_addOne` varchar(50) NOT NULL,
+  `school_addTwo` varchar(50) NOT NULL,
+  `school_addTre` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `highschool_background`
 --
 
-INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `yearEnd`, `status`, `percentage`) VALUES
-(1, '1', '1', '0000-00-00', '1', 1);
+INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `school_addOne`, `school_addTwo`, `school_addTre`, `state`, `city`) VALUES
+(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Velez', 'Street', 'Misamis Oriental', 'Cagayan de Oro City');
 
 -- --------------------------------------------------------
 
@@ -229,26 +243,12 @@ INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `yea
 
 CREATE TABLE `job_details` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `salaryWage` tinyint(4) NOT NULL,
-  `department` tinytext NOT NULL,
-  `allowance` tinyint(4) DEFAULT NULL,
-  `employmentStatus` tinytext NOT NULL,
-  `deptHead` tinytext NOT NULL
+  `salaryWage` int(11) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `allowance` int(11) DEFAULT NULL,
+  `employmentStatus` varchar(50) NOT NULL,
+  `deptHead` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `job_details`
---
-
-INSERT INTO `job_details` (`staff_id`, `salaryWage`, `department`, `allowance`, `employmentStatus`, `deptHead`) VALUES
-(1, 1, '1', 1, '1', ''),
-(1, 1, '1', 1, '1', ''),
-(1, 1, '1', 1, '1', ''),
-(1, 1, '1', 1, '1', ''),
-(1, 1, '1', 1, '1', '1'),
-(1, 2, '3', 3, '4', '5'),
-(1, 1, '1', 1, 'DAWDAW', 'QEQ2E'),
-(1, 0, 'EQ2', 0, 'DAWD', 'FEFF');
 
 -- --------------------------------------------------------
 
@@ -259,12 +259,12 @@ INSERT INTO `job_details` (`staff_id`, `salaryWage`, `department`, `allowance`, 
 CREATE TABLE `leave_details` (
   `leave_id` bigint(20) NOT NULL,
   `staff_id` bigint(20) DEFAULT NULL,
-  `typeOfabsence` tinytext NOT NULL,
-  `deptHead` tinytext NOT NULL,
+  `typeOfabsence` varchar(50) NOT NULL,
+  `deptHead` varchar(50) NOT NULL,
   `dateStart` date NOT NULL,
   `dateEnd` date NOT NULL,
   `moreInfo` text NOT NULL,
-  `extendedLeave` tinyint(4) NOT NULL
+  `extendedLeave` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -284,13 +284,13 @@ INSERT INTO `leave_details` (`leave_id`, `staff_id`, `typeOfabsence`, `deptHead`
 
 CREATE TABLE `permanent_address` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `addOne` tinytext,
-  `addTwo` tinytext,
-  `addTre` tinytext,
-  `state` tinytext NOT NULL,
-  `city` tinytext NOT NULL,
-  `country` tinytext NOT NULL,
-  `postCode` tinyint(4) NOT NULL
+  `addOne` varchar(50) DEFAULT NULL,
+  `addTwo` varchar(50) DEFAULT NULL,
+  `addTre` varchar(50) DEFAULT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `postCode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -309,7 +309,7 @@ INSERT INTO `permanent_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `stat
 CREATE TABLE `salary_details` (
   `salary_id` bigint(20) DEFAULT NULL,
   `deductDetails_id` bigint(20) DEFAULT NULL,
-  `salaryWage` tinyint(4) NOT NULL
+  `salaryWage` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -351,12 +351,12 @@ INSERT INTO `schedule` (`sched_id`, `staff_id`) VALUES
 CREATE TABLE `schedule_details` (
   `schedDetails_id` bigint(20) NOT NULL,
   `sched_id` bigint(20) DEFAULT NULL,
-  `day` tinytext NOT NULL,
-  `morningTimein` tinyint(4) DEFAULT NULL,
-  `morningTimeout` tinyint(4) DEFAULT NULL,
-  `afternoonTimein` tinyint(4) DEFAULT NULL,
-  `afternoonTimeout` tinyint(4) DEFAULT NULL,
-  `totalHours` tinyint(4) NOT NULL
+  `day` varchar(50) NOT NULL,
+  `morningTimein` int(11) DEFAULT NULL,
+  `morningTimeout` int(11) DEFAULT NULL,
+  `afternoonTimein` int(11) DEFAULT NULL,
+  `afternoonTimeout` int(11) DEFAULT NULL,
+  `totalHours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -375,35 +375,40 @@ INSERT INTO `schedule_details` (`schedDetails_id`, `sched_id`, `day`, `morningTi
 
 CREATE TABLE `staff` (
   `staff_id` bigint(20) NOT NULL,
-  `fname` tinytext NOT NULL,
-  `mname` tinytext,
-  `lname` tinytext NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mname` varchar(50) DEFAULT NULL,
+  `lname` varchar(50) NOT NULL,
   `birthdate` date NOT NULL,
-  `cellnum` tinytext NOT NULL,
-  `telnum` tinytext,
-  `status` tinytext NOT NULL,
-  `gender` tinytext NOT NULL
+  `cellnum` varchar(50) NOT NULL,
+  `telnum` varchar(50) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnum`, `telnum`, `status`, `gender`) VALUES
-(1, 'joshua', 'omagap', 'perater', '0000-00-00', '09169947508', 'wala', 'taken', 'male'),
-(2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', 'taken', 'male'),
-(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '093', '091', 'Single', 'Male'),
-(4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', 'Taken', 'Male'),
-(5, '1', '11', '1', '2018-02-13', '1', '1', '11', '1'),
-(6, 'james', 'kaka', 'waka', '2018-02-14', '09362650656', 'wala', 'Single', 'Male'),
-(7, '', '', '', '0000-00-00', '', '', '', ''),
-(8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', 'cscas', 'wad'),
-(9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', 'sda', 'wdaw'),
-(10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', 'SQS', 'Sqs'),
-(11, 'jsohua', 'baia', 'perste', '2018-02-15', '21', '2132', 'sdae', 'dawdf'),
-(12, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', 'dawd', '121212'),
-(13, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', 'dawd', '121212'),
-(14, '21', '212', 'wqeqe', '2018-02-01', 'dwqd', 'dqwd', 'eq2', 'e2q');
+INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnum`, `telnum`, `email`, `status`, `gender`, `type`, `position`, `password`) VALUES
+(1, 'joshua', 'omagap', 'perater', '0000-00-00', '09169947508', 'wala', '', 'taken', 'male', '', '', ''),
+(2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', ''),
+(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', 'Leader', '1234'),
+(4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', ''),
+(6, 'James', 'Omamalin', 'Sinadjan', '1995-08-11', '09368727409', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Leader', 'masaya'),
+(8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', '', 'cscas', 'wad', '', '', ''),
+(9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', '', 'sda', 'wdaw', '', '', ''),
+(10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', '', 'SQS', 'Sqs', '', '', ''),
+(11, 'jsohua', 'baia', 'perste', '2018-02-15', '21', '2132', '', 'sdae', 'dawdf', '', '', ''),
+(12, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', ''),
+(13, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', ''),
+(14, '21', '212', 'wqeqe', '2018-02-01', 'dwqd', 'dqwd', '', 'eq2', 'e2q', '', '', ''),
+(15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Leader', '1233'),
+(16, 'Ezekiel', 'Kong', 'Garbosa', '0000-00-00', '09652651456', 'wala', 'garbosa@gmail.com', 'Married', 'Male', 'Staff', 'Leader', '1235'),
+(17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '1111');
 
 -- --------------------------------------------------------
 
@@ -413,19 +418,19 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 
 CREATE TABLE `work_experience` (
   `staff_id` bigint(20) DEFAULT NULL,
-  `companyName` tinytext,
-  `employerName` tinytext,
-  `employerAdd` tinytext,
-  `employerCellnum` tinytext,
-  `employerTelnum` tinytext,
+  `companyName` varchar(50) DEFAULT NULL,
+  `employerName` varchar(50) DEFAULT NULL,
+  `employerAdd` varchar(50) DEFAULT NULL,
+  `employerCellnum` varchar(50) DEFAULT NULL,
+  `employerTelnum` varchar(50) DEFAULT NULL,
   `companyStart` date DEFAULT NULL,
   `companyEnd` date DEFAULT NULL,
-  `jobTitle` tinytext,
-  `department` tinytext,
-  `workArea` tinytext,
-  `state` tinytext,
-  `city` tinytext,
-  `country` tinytext,
+  `jobTitle` varchar(50) DEFAULT NULL,
+  `department` varchar(50) DEFAULT NULL,
+  `workArea` varchar(50) DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `country` varchar(50) DEFAULT NULL,
   `moreInfo` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -569,41 +574,49 @@ ALTER TABLE `work_experience`
 --
 ALTER TABLE `attendance`
   MODIFY `attend_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `attendance_details`
 --
 ALTER TABLE `attendance_details`
   MODIFY `attenDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `deduction`
 --
 ALTER TABLE `deduction`
   MODIFY `deduction_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `leave_details`
 --
 ALTER TABLE `leave_details`
   MODIFY `leave_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `salary_report`
 --
 ALTER TABLE `salary_report`
   MODIFY `salary_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
   MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
   MODIFY `schedDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- Constraints for dumped tables
 --
