@@ -86,7 +86,7 @@
 			if(mysqli_num_rows($result) == 1){
 				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: .php');
+				header('location: ../admin/view_staff.php');
 				// if($stand == "User"){
 				// 	$_SESSION['email'] = $email;
 				// 	$_SESSION['success'] = "You are now logged in";
@@ -121,7 +121,7 @@
 			if(mysqli_num_rows($result) == 1){
 				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: about_me.php');
+				header('location: ../deptHead/view.php');
 				// if($stand == "User"){
 				// 	$_SESSION['email'] = $email;
 				// 	$_SESSION['success'] = "You are now logged in";

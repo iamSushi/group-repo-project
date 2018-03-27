@@ -1,9 +1,8 @@
 <?php
-	include('action/session.php');
+	include('../user/action/session.php');
 	if(empty($_SESSION['email'])){
 		header('location: index.php');
 	}
-	include('action/update_basicinfo.php');
 ?>
 <!DOCTYPE html>
 	<html lang="en">
