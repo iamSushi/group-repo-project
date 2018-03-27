@@ -3,6 +3,7 @@
 	if (empty($SESSION['email'])){
 		header('location:index.php');
 	}
+?>
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -125,7 +126,7 @@
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="../user/index.html">Logout</a></li>
+									<li><a href="../user/index.php?logout='1'">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -177,7 +178,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="morningTimeout" class='form-control' required placeholder="Morning Time Ouy">
+											 <input type="text" name="morningTimeout" class='form-control' required placeholder="Morning Time Out">
 										</div>
 									</div>
 							 	</div>
@@ -200,7 +201,7 @@
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">TotalHours::</label>
+							     	<label for="" class="control-label col-sm-4">TotalHours:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>

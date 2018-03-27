@@ -4,7 +4,7 @@
 
 	$id = $_GET['id'];
 
-	$sql = "DELETE FROM schedule_details where sched_id = '$id'";
+	$sql = "DELETE FROM schedule_details where schedDetails_id = '$id'";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Deleted! <a href='view.php'><<< Go Back</a>";

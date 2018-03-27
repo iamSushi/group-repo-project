@@ -13,7 +13,9 @@
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='view.php'><<< Go Back</a>";
-	}else{
+	}
+	else
+	{
 		echo "Failed to Add! <a href='view.php'><<< Go Back</a>";
 	}
 ?>
