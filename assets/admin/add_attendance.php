@@ -68,6 +68,8 @@
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
 									</div>
@@ -80,8 +82,8 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
-											 
+											<li class="list-group-item"><a href="add_job_details.php">Add Job Details</a></li>
+											<li class="list-group-item"><a href="view_job_details.php">View Job Details</a></li>
 										</ul>
 									</div>
 								</div>

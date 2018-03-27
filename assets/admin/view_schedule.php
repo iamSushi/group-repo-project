@@ -109,53 +109,36 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12"><legend>View Attendance</legend></div>
 					<div class="col-sm-3"></div>
 			 		<div class="col-sm-6">
 			 			<?php
 						  include_once("connection.php");
-						  $sql = "SELECT * FROM schedule_details";
+						  $sql = "SELECT * FROM schedule";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
 							  echo "<table class='table' border='1'>";
 							  echo "<thead>
 										<tr>
-										    <th>Schedule Details ID</th>
-											<th>Schedule ID</th>
-											<th>Day</th>
-											<th>Morning Time In</th>
-											<th>Morning Time Out</th>
-											<th>Afternoon Time In</th>
-											<th>Afternon Time Out</th>
-											<th>Total Hours</th>
+										    <th>Attendance ID</th>
+											<th>Staff ID</th>
 											<th></th>
 										</tr>
 									</thead>";
 							  echo "<tbody>";
 						     while($row = mysqli_fetch_assoc($result)){
 							       echo "<tr><td style='text-align:center;'>".
-								         $row['schedDetails_id'].
+								         $row['sched_id'].
 										"</td><td>".
-										 $row['sched_id'].
-										 "</td><td>".
-										 $row['day'].
-										"</td><td>".
-										 $row['morningTimein'].
-										  "</td><td>".
-										 $row['morningTimeout'].
-										"</td><td>".
-										 $row['afternoonTimein'].
-										  "</td><td>".
-										 $row['afternoonTimeout'].
-										"</td><td>".
-										 $row['totalHours'].
+										 $row['staff_id'].
+										 
 										 
 										 "</td>
 										 <td>
-										    <a href='update_schedule_details.php?id=".$row['schedDetails_id']."'>
+										    <a href='update_schedule.php?id=".$row['sched_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['schedDetails_id']."'>
+											<a href='action/schedule_delete.php?id=".$row['sched_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>
 										 </td>

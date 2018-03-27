@@ -18,76 +18,76 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
-				</div>
-				<div id="collapse1" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="department.php">View Department</a></li>
-						<!-- <li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
-						<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li> -->
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Staff</a></h4>
-				</div>
-				<div id="collapse2" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
-						<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
-				</div>
-				<div id="collapse3" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
-						<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
-						<li class="list-group-item"><a href="add_attendance_detaisl.php">Add Attendance Details</a></li>
-						<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>
-						 
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse">Schedule</a></h4>
-				</div>
-				<div id="collapse4" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
-						<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse5" data-toggle="collapse">Job Details</a></h4>
-				</div>
-				<div id="collapse5" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="#">View Department</a></li>
+											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Staff</a></h4>
+									</div>
+									<div id="collapse2" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
+											<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
+									</div>
+									<div id="collapse3" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
+											<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
+											<li class="list-group-item"><a href="add_attendance_details.php">Add View Attendance</a></li>
+											<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>	 
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse">Schedule</a></h4>
+									</div>
+									<div id="collapse4" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
+											 
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse5" data-toggle="collapse">Job Details</a></h4>
+									</div>
+									<div id="collapse5" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_job_details.php">Add Job Details</a></li>
+											<li class="list-group-item"><a href="view_job_details.php">View Job Details</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 	</div>
 	<div class="col-sm-10 content">
 		<div class="col-sm-12" style="padding: 0;">
@@ -123,6 +123,7 @@
 			 		<div class="col-sm-12">
 			 			
 			 			<form class="form-horizontal" method="POST" action="action/attendance_update_data.php">
+			 				<input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
  								<!-- <div class="form-group">
  									<label class="control-label col-sm-4">Attendance ID:</label>
  									<div class="col-sm-5 inputGroupContainer">
@@ -137,7 +138,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID" value="<?php echo $row['attend_id'];?>">
+											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID" value="<?php echo $row['staff_id'];?>">
 										</div>
 									</div>
 								</div>
