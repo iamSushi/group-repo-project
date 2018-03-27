@@ -5,8 +5,9 @@
 	<title>Document</title>
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
-	<script src="js/jquery-3.3.1.js"></script>
+	 <script src="js/jquery-3.3.1.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
@@ -86,9 +87,10 @@
 		<div class="col-sm-12" style="padding: 0;">
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
-			 	 	<!-- <ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">View Schedule</a></li>
-			 	 	</ul> -->
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
+			 	 	</ul> 
+			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.html" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -101,66 +103,63 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Schedule</legend></div>
-			 		<div class="col-sm-12">
-			 			
-			 			<form class="form-horizontal" method="POST" action="action/schedule_add.php">
-						    	<div class="form-group">
-									<label class="control-label col-sm-4">Schedule ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
-										</div>
-									</div>
-							   	</div>
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Day:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="day" class='form-control' required placeholder="Day">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Morning Time In:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											  <input type="text" name="morningTimeIn" class='form-control' required placeholder="Morning Time In">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Morning Time In:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="morningTimeOut" class='form-control' required placeholder="Morning Time Ouy">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">TotalHours::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
-							     			<input type="text" name="totalHours" class='form-control' required placeholder="Total Hours">
-							     		</div>
-							     	</div>
-							     </div>
-							    
-							   <br>
-							   <div class="form-group">
-							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5">
-							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
-
-							  </div>
-							  </div>
-					  		</form>
+		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+					<div class="col-sm-3"></div>
+			 		<div class="col-sm-6">
+			 			<?php
+						  include_once("connection.php");
+						  $sql = "SELECT * FROM schedule_details";
+						  $result = mysqli_query($connect,$sql);
+						  if(mysqli_num_rows($result) > 0){
+							  echo "<table class='table' border='1'>";
+							  echo "<thead>
+										<tr>
+										    <th>Schedule Details ID</th>
+											<th>Schedule ID</th>
+											<th>Day</th>
+											<th>Morning Time In</th>
+											<th>Morning Time Out</th>
+											<th>Afternoon Time In</th>
+											<th>Afternon Time Out</th>
+											<th>Total Hours</th>
+											<th></th>
+										</tr>
+									</thead>";
+							  echo "<tbody>";
+						     while($row = mysqli_fetch_assoc($result)){
+							       echo "<tr><td style='text-align:center;'>".
+								         $row['attend_id'].
+										"</td><td>".
+										 $row['staff_id'].
+										 "</td><td>".
+										 $row['attend_id'].
+										"</td><td>".
+										 $row['staff_id'].
+										  "</td><td>".
+										 $row['attend_id'].
+										"</td><td>".
+										 $row['staff_id'].
+										  "</td><td>".
+										 $row['attend_id'].
+										"</td><td>".
+										 $row['staff_id'].
+										 
+										 "</td>
+										 <td>
+										    <a href='attendance_details_update.php?id=".$row['attenDetails_id']."'>
+										      <button class='btn btn-primary'>Update</button>
+											</a>
+											<a href='action/attendance_details_delete.php?id=".$row['attenDetails_id']."'>
+											  <button class='btn btn-danger'>Delete</button>
+											</a>
+										 </td>
+										 </tr>";
+							 }
+							 echo "</tbody>";
+						  }
+						?>
 					  	</div>
+					  	<div class="col-sm-3"></div>
 		
 	</div>
 </body>

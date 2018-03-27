@@ -101,10 +101,10 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Schedule</legend></div>
+		<div class="col-sm-12"><legend>Add Schedule Detailsx</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="action/schedule_add.php">
+			 			<form class="form-horizontal" method="POST" action="action/schedule_details_add.php">
 						    	<div class="form-group">
 									<label class="control-label col-sm-4">Schedule ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
@@ -119,7 +119,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="day" class='form-control' required placeholder="Day">
+											<input type="date" name="day" class='form-control' required placeholder="Day">
 										</div>
 									</div>
 								</div>
@@ -128,21 +128,39 @@
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											  <input type="text" name="morningTimeIn" class='form-control' required placeholder="Morning Time In">
+											  <input type="time" name="morningTimeIn" class='form-control' required placeholder="Morning Time In">
 										</div>
 									</div>
 								</div>
 							    <div class="form-group">
-									<label class="control-label col-sm-4">Morning Time In:</label>
+									<label class="control-label col-sm-4">Morning Time Out:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="morningTimeOut" class='form-control' required placeholder="Morning Time Ouy">
+											 <input type="time" name="morningTimeOut" class='form-control' required placeholder="Morning Time Ouy">
+										</div>
+									</div>
+							 	</div>
+							 	<div class="form-group">
+								    <label class="control-label col-sm-4">Afternoon Time In:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											  <input type="time" name="afterTimeIn" class='form-control' required placeholder="Morning Time In">
+										</div>
+									</div>
+								</div>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Afternoon Time Out:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											 <input type="time" name="afterTimeOut" class='form-control' required placeholder="Morning Time Ouy">
 										</div>
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">TotalHours::</label>
+							     	<label for="" class="control-label col-sm-4">TotalHours:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
