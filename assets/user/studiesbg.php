@@ -83,6 +83,17 @@
 			<div class="row-10">
 				<div class="col-6">
 					<div class="row-12">
+						<?php
+							$space = " ";
+							$id = $_GET['id'];
+							// include_once("action/update_basicinfo.php");
+							include_once("action/session.php");
+							$query = "SELECT * FROM college_background WHERE staff_id = '$id'";
+
+							$result = mysqli_query($connect,$query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)):
+						?>
 						<div class="container form-group">
 							<legend><h2>College Background</h2></legend>
 						</div>
@@ -91,7 +102,7 @@
 								<label for="">Course</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-									<input class="form-control" type="text" required placeholder="course">
+									<input class="form-control" type="text" required placeholder="course" value="<?php echo $row['course'] ?>">
 								</div>
 							</div>
 						</div>
@@ -100,7 +111,7 @@
 								<label for="">School name</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-									<input class="form-control" type="text" required placeholder="school name">
+									<input class="form-control" type="text" required placeholder="school name" value="<?php echo $row['schoolName'] ?>">
 								</div>
 							</div>
 						</div>
@@ -109,7 +120,7 @@
 								<label for="">School address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required placeholder="school address">
+									<input class="form-control" type="text" required placeholder="school address" value="<?php echo $row['schoolAdd'] ?>">
 								</div>
 							</div>
 						</div>
@@ -118,7 +129,7 @@
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="state">
+									<input class="form-control" type="text" required placeholder="state" value="<?php echo $row['state'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -126,7 +137,7 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="city">
+									<input class="form-control" type="text" required placeholder="city" value="<?php echo $row['city'] ?>">
 								</div>
 							</div>
 						</div>
@@ -135,7 +146,7 @@
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="country">
+									<input class="form-control" type="text" required placeholder="country" value="<?php echo $row['country'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -143,7 +154,7 @@
 								<label for="">Postal code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text"  required placeholder="postal code">
+									<input class="form-control" type="text"  required placeholder="postal code" value="<?php echo $row['postCode'] ?>">
 								</div>
 							</div>
 						</div>
@@ -152,7 +163,7 @@
 								<label for="">Year graduated</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-									<input class="form-control" type="date" required placeholder="year graduated">
+									<input class="form-control" type="date" required placeholder="year graduated" value="<?php echo $row['yearEnd'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -160,7 +171,7 @@
 								<label for="">Average</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-									<input class="form-control" type="text" required placeholder="average">
+									<input class="form-control" type="text" required placeholder="average" value="<?php echo $row['percentage'] ?>">
 								</div>
 							</div>
 						</div>
@@ -169,7 +180,7 @@
 								<label for="">Graduation standing</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
-									<input class="form-control" type="text" required placeholder="standing">
+									<input class="form-control" type="text" required placeholder="standing" value="<?php echo $row['status'] ?>">
 								</div>
 							</div>
 						</div>
@@ -189,10 +200,22 @@
 								</div>
 							</div>
 						</div>
+						<?php endwhile;} ?>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row-12">
+						<?php
+							$space = " ";
+							$id = $_GET['id'];
+							// include_once("action/update_basicinfo.php");
+							include_once("action/session.php");
+							$query = "SELECT * FROM highschool_background WHERE staff_id = '$id'";
+
+							$result = mysqli_query($connect,$query);
+							if(mysqli_num_rows($result) > 0){
+								while($row = mysqli_fetch_assoc($result)):
+						?>
 						<div class="container form-group">
 							<legend><h2>High School Background</h2></legend>
 						</div>
@@ -201,7 +224,7 @@
 								<label for="">School name</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-									<input class="form-control" type="text" required placeholder="school name">
+									<input class="form-control" type="text" required placeholder="school name" value="<?php echo $row['schoolName'] ?>">
 								</div>
 							</div>
 						</div>
@@ -210,7 +233,7 @@
 								<label for="">School address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required  placeholder="school address">
+									<input class="form-control" type="text" required  placeholder="school address" value="<?php echo $row['schoolAdd'] ?>">
 								</div>
 							</div>
 						</div>
@@ -219,7 +242,7 @@
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-									<input class="form-control" type="text" required placeholder="state">
+									<input class="form-control" type="text" required placeholder="state" value="<?php echo $row['state'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -227,7 +250,7 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required placeholder="city">
+									<input class="form-control" type="text" required placeholder="city" value="<?php echo $row['city'] ?>">
 								</div>
 							</div>
 						</div>
@@ -236,7 +259,7 @@
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required placeholder="country">
+									<input class="form-control" type="text" required placeholder="country" value="<?php echo $row['country'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -244,7 +267,7 @@
 								<label for="">Postal code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text"  required placeholder="zip code">
+									<input class="form-control" type="text"  required placeholder="zip code" value="<?php echo $row['postCode'] ?>">
 								</div>
 							</div>
 						</div>
@@ -253,7 +276,7 @@
 								<label for="">Year graduated</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-									<input class="form-control" type="text" required placeholder="year graduated" >
+									<input class="form-control" type="text" required placeholder="year graduated" value="<?php echo $row['year_end'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -261,7 +284,7 @@
 								<label for="">Average</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-									<input class="form-control" type="text" required placeholder="average">
+									<input class="form-control" type="text" required placeholder="average" value="<?php echo $row['average'] ?>">
 								</div>
 							</div>
 						</div>
@@ -288,6 +311,7 @@
 								</div>
 							</div>
 						</div>
+						<?php endwhile;} ?>
 					</div>
 				</div>
 			</div>

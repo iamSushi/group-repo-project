@@ -84,6 +84,17 @@
 				<div class="col-6">
 					<div class="row-12">
 						<div class="row-6">
+							<?php
+								$space = " ";
+								$id = $_GET['id'];
+								// include_once("action/update_basicinfo.php");
+								include_once("action/session.php");
+								$query = "SELECT * FROM family_details WHERE staff_id = '$id'";
+
+								$result = mysqli_query($connect,$query);
+								if(mysqli_num_rows($result) > 0){
+									while($row = mysqli_fetch_assoc($result)):
+							?>
 							<div class="container form-group">
 								<legend><h2>Father's Details</h2></legend>
 							</div>
@@ -92,7 +103,7 @@
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="firstname">
+										<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['fathers_fname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -101,7 +112,7 @@
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="middlename">
+										<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['fathers_mname'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -109,7 +120,7 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="surname">
+										<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['fathers_lname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -118,7 +129,7 @@
 									<label for="">Birthdate</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" required value="<?php echo $row['fathers_birthdate'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -126,7 +137,7 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required placeholder="+639 *** ****">
+										<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['fathers_contnum'] ?>">
 									</div>
 								</div>
 							</div>
@@ -135,7 +146,7 @@
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="occupation">
+										<input class="form-control" type="text" required placeholder="occupation" value="<?php echo $row['fathers_occupation'] ?>">
 									</div>
 								</div>
 							</div>
@@ -155,12 +166,24 @@
 									</div>
 								</div>
 							</div>
+							<?php endwhile;} ?>
 						</div>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row-12">
 						<div class="row-6">
+							<?php
+								$space = " ";
+								$id = $_GET['id'];
+								// include_once("action/update_basicinfo.php");
+								include_once("action/session.php");
+								$query = "SELECT * FROM family_details WHERE staff_id = '$id'";
+
+								$result = mysqli_query($connect,$query);
+								if(mysqli_num_rows($result) > 0){
+									while($row = mysqli_fetch_assoc($result)):
+							?>
 							<div class="container form-group">
 								<legend><h2>Mother's Details</h2></legend>
 							</div>
@@ -169,7 +192,7 @@
 									<label for="">Firstname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="firstname">
+										<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['mothers_fname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -178,7 +201,7 @@
 									<label for="">Middlename</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="middlename">
+										<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['mothers_mname'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -186,7 +209,7 @@
 									<label for="">Surname</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="surname">
+										<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['mothers_lname'] ?>">
 									</div>
 								</div>
 							</div>
@@ -195,7 +218,7 @@
 									<label for="">Birthdate</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" required value="<?php echo $row['mothers_birthdate'] ?>">
 									</div>
 								</div>
 								<div class="col-1"></div>
@@ -203,7 +226,7 @@
 									<label for="">Contact number</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-										<input class="form-control" type="text" required placeholder="+639 *** ****">
+										<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['mothers_contnum'] ?>">
 									</div>
 								</div>
 							</div>
@@ -212,7 +235,7 @@
 									<label for="">Occupation</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input class="form-control" type="text" required placeholder="occupation">
+										<input class="form-control" type="text" required placeholder="occupation" value="<?php echo $row['mothers_occupation'] ?>">
 									</div>
 								</div>
 							</div>
@@ -232,6 +255,7 @@
 									</div>
 								</div>
 							</div>
+							<?php endwhile;} ?>
 						</div>
 					</div>
 				</div>
