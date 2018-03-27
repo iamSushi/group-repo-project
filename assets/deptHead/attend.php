@@ -93,7 +93,7 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="../user/about_me.html">Staff Profile</a></li>
+											<li class="list-group-item"><a href="../user/about_me.php">Staff Profile</a></li>
 										</ul>
 									</div>
 								</div>
@@ -150,7 +150,7 @@
 										    <a href='attendance_details_update.php?id=".$row['attend_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['attend_id']."'>
+											<a href='deletes.php?id=".$row['attend_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>
 										 </td>
