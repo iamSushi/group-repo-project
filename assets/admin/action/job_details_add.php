@@ -7,12 +7,12 @@
 	$employmentStatus = $_POST['employmentStatus'];
 	$dept_head = $_POST['dept_head'];
 	 
-	$sql = "INSERT INTO job_details VALUES('$staff_id','$salaryWage','$department','$allowance','$employmentStatus','$dept_head','$dept_head')";
+	$sql = "INSERT INTO job_details VALUES('$staff_id','$salaryWage','$department','$allowance','$employmentStatus','$dept_head'  )";
 
 	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added! <a href='../job_details_view.php'><<< Go Back</a>";
+		echo "Successfully Added! <a href='../view_job_details.php'><<< Go Back</a>";
 	}else{
-		echo "Failed to Add! <a href='../job_details_view.php'><<< Go Back</a>";
+		echo "Failed to Add! <a href='../view_details_view.php'><<< Go Back</a>";
 		echo "Failed to UpemploymentStatus!".mysqli_error($connect);
 
 	}

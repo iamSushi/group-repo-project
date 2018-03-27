@@ -135,10 +135,10 @@
 										 
 										 "</td>
 										 <td>
-										    <a href='update_attendance_details.php?id=".$row['attend_id']."'>
+										    <a href='update_attendance.php?id=".$row['attend_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['attend_id']."'>
+											<a href='action/attendance_delete.php?id=".$row['attend_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>
 										 </td>

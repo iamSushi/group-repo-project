@@ -92,9 +92,9 @@
 		<div class="col-sm-12" style="padding: 0;">
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
-			 	 	<!-- <ul class="nav navbar-nav">
+			 	 	<ul class="nav navbar-nav">
 			 	 		 <li><a href="#" style="color: white;">Job Details</a></li>
-			 	 	</ul> -->
+			 	 	</ul> 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -110,7 +110,7 @@
 		<div class="col-sm-12"><legend>Add Job Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
+			 			<form class="form-horizontal" method="POST" action="action/job_details_add.php">
 						    	<div class="form-group">
 									<label class="control-label col-sm-4">Staff ID:</label>
 									<div class="col-sm-5 inputGroupContainer">

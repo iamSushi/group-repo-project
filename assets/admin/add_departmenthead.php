@@ -93,9 +93,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		<li><a href="view_department_head.php?logout='1'">Department Head</a></li>
-			 	 		<li><a href="#" class="activeh" style="color: white;">Elect Department Head</a></li>
-			 	 		<li><a href="search_department_head.php">Search Department Head</a></li>
+			 	 		<li><a href="#" class="activeh" style="color: white;">Department Head</a></li>
 			 	 	</ul>
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">

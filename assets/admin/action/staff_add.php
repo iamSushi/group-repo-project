@@ -4,7 +4,7 @@
 	$mname = $_POST['mname'];
 	$lname = $_POST['lname'];
 	$bday = $_POST['bday'];
-	$cellphone = $_POST['cell'];
+	$cellphone = $_POST['cellphone'];
 	$telnum = $_POST['telnum'];
 	$email = $_POST['email'];
 	$status = $_POST['status'];

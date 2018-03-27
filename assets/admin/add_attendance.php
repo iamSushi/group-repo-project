@@ -94,7 +94,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
+			 	 		 <li><a href="#" style="color: white;">Add Attendance</a></li>
 			 	 	</ul> 
 			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>

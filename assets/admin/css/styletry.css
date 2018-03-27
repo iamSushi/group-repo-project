@@ -184,3 +184,6 @@ ul>.hnav{
 .nul{
 	margin-top: 20px;
 }
+.panel-default > .panel-heading {
+	background-color: #243a51;
+}

@@ -95,8 +95,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		<li><a href="#" class="activeh" style="color: white;">Add Staff</a></li>
-			 	 		<li><a href="#">View Staff</a></li>
+			 	 		<li><a href="#" class="activeh" style="color: white;">Staff</a></li>
 			 	 	</ul>
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
