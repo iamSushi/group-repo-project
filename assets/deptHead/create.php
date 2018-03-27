@@ -9,13 +9,14 @@
 	$afternoonTimeout = $_POST['afternoonTimeout'];
 	$totalHours = $_POST['totalHours'];
 
-	$sql = "INSERT INTO schedule_details VALUES('','$sched_id','$day','$morningTimein','$morningTimeout','$afternoonTimein','$afternoonTimeout','$totalHours')";
+	$sql = "INSERT INTO schedule_details VALUES('schedDetails_id','$sched_id','$day','$morningTimein','$morningTimeout','$afternoonTimein','$afternoonTimeout','$totalHours')";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='view.php'><<< Go Back</a>";
 	}
 	else
 	{
+		echo mysqli_error($connect);
 		echo "Failed to Add! <a href='view.php'><<< Go Back</a>";
 	}
 ?>

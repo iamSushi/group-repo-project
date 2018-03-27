@@ -4,6 +4,7 @@
 		header('location:index.php');
 	}
 ?>
+
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -14,7 +15,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>Attendance</title>
+		<title>Schedule</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -106,10 +107,15 @@
 		<div class="col-10">
 			<div class="row-1">
 				<nav class="navbar navbar-inverse navbar-static-top">
-					<ul class="nav navbar-nav navbar-left">
-							<li><a href="" style="background-color: #0f0f0f">Attendance</a></li>
-						</ul>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
+						<ul class="nav navbar-nav navbar-left">
+							<li><a href="view.php" class="active" style="background-color: #0f0f0f">View Deductions</a></li>
+						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
@@ -121,32 +127,64 @@
 					</div>
 				</nav>
 			</div>
-			<div class="row-10"><br>
+			<div class="row-10">
+				<div class="col-sm-12"><legend>Deductions</legend></div>
 			 		<div class="col-sm-12">
-			 			 
-						<div class="col-sm-10 form-ni">
-							
-						</div>
-						<form class="form-horizontal" method="POST" action="creates.php">
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Staff ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
-										</div>
-									</div>
-								</div>
-							   <div class="form-group">
-							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5"><br>
-							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+			 			 <?php
 
-							  </div>
-							  </div>
-					  		</form>
-					</div>
-				</div>
+	  include_once("connection.php");
+	  $sql = "SELECT * FROM deduction_details";
+	  $result = mysqli_query($connect,$sql);
+	  if(mysqli_num_rows($result) > 0){
+		  echo "<table class='table' border='1'>";
+		  echo "<thead>
+					<tr>
+					    <th>Deduction Details ID</th>
+						<th>Deduction ID</th>
+						<th>Attendance Details ID</th>
+						<th>Leave ID</th>
+						<th>SSS</th>
+						<th>Pagibig</th>
+						<th>PhilHealth</th>
+						<th>BIR</th>
+						<th></th>
+					</tr>
+				</thead>";
+		  echo "<tbody>";
+	     while($row = mysqli_fetch_assoc($result)){
+		       echo "<tr><td style='text-align:center;'>".
+			         $row['deductDetails_id'].
+					"</td><td>".
+					 $row['deduction_id'].
+					"</td><td>".
+					$row['attenDetails_id'].
+					"</td><td>".
+					$row['leave_id'].
+					"</td><td>".
+					$row['sss'].
+					"</td><td>".
+					$row['pagibig'].
+					"</td><td>".
+					$row['philhealth'].
+					"</td><td>".
+					$row['bir'].
+					 
+					 
+					 
+					 "</td>
+					 <td>
+					    <a href='attendance_details_update.php?id=".$row['deductDetails_id']."'>
+					      <button class='btn btn-primary'>Update</button>
+						</a>
+						<a href='deletededs.php?id=".$row['deductDetails_id']."'>
+						  <button class='btn btn-danger'>Delete</button>
+						</a>
+					 </td>
+					 </tr>";
+		 }
+		 echo "</tbody>";
+	  }
+	?>
 			</div>
 			</div>
 		</div>

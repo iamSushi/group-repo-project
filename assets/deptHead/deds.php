@@ -43,7 +43,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="work.php">Details</a></li>
+											<li class="list-group-item"><a href="work.php">Add Work Details</a></li>
+											<li class="list-group-item"><a href="work.php">View Work Details</a></li>
 										</ul>
 									</div>
 								</div>
@@ -81,7 +82,8 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="deds.php">Staff Deductions</a></li>
+											<li class="list-group-item"><a href="deds.php">Staff Deduction</a></li>
+											<li class="list-group-item"><a href="viewdeds.php">View Deductions</a></li>
 										</ul>
 									</div>
 								</div>
@@ -124,68 +126,33 @@
 					</div>
 				</nav>
 			</div>
-			<div class="col-sm-12"><legend>Deductions</legend></div>
-					<div class="col-sm-3"></div>
-			 		<div class="col-sm-6">
-			 			<?php
-						  include_once("connection.php");
-						  $sql = "SELECT * FROM deduction_details";
-						  $result = mysqli_query($connect,$sql);
-						  if(mysqli_num_rows($result) > 0){
-							  echo "<table class='table' border='1'>";
-							  echo "<thead>
-										<tr>
-										    <th>Deduction Details ID</th>
-											<th>Deduction ID</th>
-											<th>Attendance Details ID</th>
-											<th>Leave ID</th>
-											<th>SSS</th>
-											<th>Pag-ibig</th>
-											<th>PhilHealth</th>
-											<th>BIR</th>
-											<th></th>
-										</tr>
-									</thead>";
-							  echo "<tbody>";
-						     while($row = mysqli_fetch_assoc($result)){
-							       echo "<tr><td style='text-align:center;'>".
-								         $row['deductDetails_id'].
-										"</td><td>".
-										 $row['deduction_id'].
-										"</td><td>".
-										 $row['attenDetails_id'].
-										"</td><td>".
-										 $row['leave_id'].
-										"</td><td>".
-										 $row['sss'].
-										"</td><td>".
-										 $row['pagibig'].
-										"</td><td>".
-										 $row['philhealth'].
-										"</td><td>".
-										 $row['bir'].
-										 
-										 
-										 "</td>
-										 <td>
-										    <a href='attendance_details_update.php?id=".$row['deduction_id']."'>
-										      <button class='btn btn-primary'>Update</button>
-											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['deduction_id']."'>
-											  <button class='btn btn-danger'>Delete</button>
-											</a>
-										 </td>
-										 </tr>";
-							 }
-							 echo "</tbody>";
-						  }
-						?>
-					  	</div>
-					  	<div class="col-sm-3"></div>
-		
-	</div>
+			<div class="row-10"><br>
+			 		<div class="col-sm-12">
+			 			 
+						<div class="col-sm-10 form-ni">
+							
+						</div>
+						<form class="form-horizontal" method="POST" action="">
+							 	<div class="form-group">
+									<label class="control-label col-sm-4">Staff ID:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+										</div>
+									</div>
+								</div>
+							   <div class="form-group">
+							    <label for="" class="col-sm-4 control-label"></label>
+							   		<div class="col-sm-5"><br>
+							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 
-		</div>
+							  </div>
+							  </div>
+					  		</form>
+					</div>
+				</div>
+			</div>
 		
 	</body>
 </html>
