@@ -30,9 +30,9 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="department.html">View Department</a></li>
-											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
-											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+											<li class="list-group-item"><a href="department.php">View Department</a></li>
+											<!-- <li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li> -->
 										</ul>
 									</div>
 								</div>
@@ -44,8 +44,8 @@
 									</div>
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_staff.html">Add Staff</a></li>
-											<li class="list-group-item"><a href="view_staff.html">View Staff</a></li>
+											<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
+											<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
 										</ul>
 									</div>
 								</div>
@@ -57,8 +57,8 @@
 									</div>
 									<div id="collapse3" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_attendance.html">Add Attendance</a></li>
-											<li class="list-group-item"><a href="view_attendance.html">View Attendance</a></li>
+											<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
+											<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
 											 
 										</ul>
 									</div>
@@ -71,8 +71,8 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_schedule.html">Add Schedule</a></li>
-											<li class="list-group-item"><a href="view_schedule.html">View Schedule</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
 											 
 										</ul>
 									</div>
@@ -85,7 +85,7 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_jobdetails.html">View Job Details</a></li>
+											<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
 											 
 										</ul>
 									</div>
@@ -98,7 +98,7 @@
 					<div class="container-fluid" style="padding-left: 0;">
 			 	 	<!-- <ul class="nav navbar-nav">
 			 	 		<li><a href="#" class="activeh" style="color: white;">Department</a></li>
-			 	 		<li><a href="search_department_head.html">Search Department</a></li>
+			 	 		<li><a href="search_department_head.php">Search Department</a></li>
 			 	 	</ul> -->
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
@@ -124,7 +124,7 @@
 								<tr>
 									<td>Labortory</td>
 									<td>
-										<a href='view_department_head.html'>
+										<a href='view_department_head.php'>
 										      <button class='btn btn-primary btn-view-department'>View Department</button>
 										</a>
 									</td>
@@ -132,7 +132,7 @@
 								<tr>
 									<td>Nurse</td>
 									<td>
-										<a href='view_department_head.html'>
+										<a href='view_department_head.php'>
 										      <button class='btn btn-primary btn-view-department'>View Department</button>
 										</a>
 									</td>
@@ -140,7 +140,7 @@
 								<tr>
 									<td>Pharmacy</td>
 									<td>
-										<a href='view_department_head.html'>
+										<a href='view_department_head.php'>
 										      <button class='btn btn-primary btn-view-department'>View  Department</button>
 										</a>
 									</td>

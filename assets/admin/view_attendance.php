@@ -24,9 +24,9 @@
 				</div>
 				<div id="collapse1" class="panel-collapse collapse">
 					<ul class="list-group">
-						<li class="list-group-item"><a href="department.html">View Department</a></li>
-						<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
-						<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+						<li class="list-group-item"><a href="department.php">View Department</a></li>
+						<!-- <li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
+						<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -38,8 +38,8 @@
 				</div>
 				<div id="collapse2" class="panel-collapse collapse">
 					<ul class="list-group">
-						<li class="list-group-item"><a href="add_staff.html">Add Staff</a></li>
-						<li class="list-group-item"><a href="view_staff.html">View Staff</a></li>
+						<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
+						<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
 					</ul>
 				</div>
 			</div>
@@ -51,9 +51,9 @@
 				</div>
 				<div id="collapse3" class="panel-collapse collapse">
 					<ul class="list-group">
-						<li class="list-group-item"><a href="add_attendance.html">Add Attendance</a></li>
+						<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
 						<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
-						<li class="list-group-item"><a href="add_attendance_detaisl.html">Add Attendance Details</a></li>
+						<li class="list-group-item"><a href="add_attendance_detaisl.php">Add Attendance Details</a></li>
 						<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>
 						 
 						 
@@ -68,8 +68,8 @@
 				</div>
 				<div id="collapse4" class="panel-collapse collapse">
 					<ul class="list-group">
-						<li class="list-group-item"><a href="add_schedule.html">Add Schedule</a></li>
-						<li class="list-group-item"><a href="view_schedule.html">View Schedule</a></li>
+						<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+						<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
 						 
 					</ul>
 				</div>
@@ -82,7 +82,7 @@
 				</div>
 				<div id="collapse5" class="panel-collapse collapse">
 					<ul class="list-group">
-						<li class="list-group-item"><a href="view_jobdetails.html">View Job Details</a></li>
+						<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
 						 
 					</ul>
 				</div>
@@ -109,7 +109,7 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12"><legend>View Attendance</legend></div>
 					<div class="col-sm-3"></div>
 			 		<div class="col-sm-6">
 			 			<?php

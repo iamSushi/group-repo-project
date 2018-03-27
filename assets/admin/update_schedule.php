@@ -93,7 +93,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<!-- <ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Job Details</a></li>
+			 	 		 <li><a href="#" style="color: white;">View Schedule</a></li>
 			 	 	</ul> -->
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
@@ -107,65 +107,39 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Add Job Details</legend></div>
+		<div class="col-sm-12"><legend>Update Schedule</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM schedule_id WHERE sched_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
-						    	<div class="form-group">
-									<label class="control-label col-sm-4">Staff ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+			 			<form class="form-horizontal" method="POST" action="action/schedule_update_data.php">
+								<!-- <div class="form-group">
+										<label class="control-label col-sm-4">Schedule ID:</label>
+										<div class="col-sm-5 inputGroupContainer">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
+											</div>
 										</div>
-									</div>
-							   	</div>
+								   	</div> -->
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Salary Wage:</label>
+									<label class="control-label col-sm-4">Day:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+											<input type="text" name="Staff_id" class='form-control' required placeholder="Day" value="<?php echo $row['staff_id'];?>">
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Allowance:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
-							     		</div>
-							     	</div>
-							     </div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Department Head::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:">
-							     		</div>
-							     	</div>
-							     </div>
-							    
+								 
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
@@ -176,6 +150,10 @@
 							  </div>
 					  		</form>
 					  	</div>
+					  	<?php
+  			}
+  		}
+  ?>
 		
 	</div>
 </body>

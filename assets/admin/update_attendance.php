@@ -11,8 +11,9 @@
 	<title>Document</title>
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
-	<script src="js/jquery-3.3.1.js"></script>
+	 <script src="js/jquery-3.3.1.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
@@ -92,9 +93,10 @@
 		<div class="col-sm-12" style="padding: 0;">
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
-			 	 	<!-- <ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Job Details</a></li>
-			 	 	</ul> -->
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
+			 	 	</ul> 
+			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -107,66 +109,38 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Add Job Details</legend></div>
+		<div class="col-sm-12"><legend>Update Attendance</legend></div>
+				<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM attendance WHERE attend_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
-						    	<div class="form-group">
+			 			<form class="form-horizontal" method="POST" action="action/attendance_update_data.php">
+ 								<!-- <div class="form-group">
+ 									<label class="control-label col-sm-4">Attendance ID:</label>
+ 									<div class="col-sm-5 inputGroupContainer">
+ 										<div class="input-group">
+ 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ 											<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID">
+ 										</div>
+ 									</div>
+ 							   	</div>  -->
+							 	<div class="form-group">
 									<label class="control-label col-sm-4">Staff ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
-										</div>
-									</div>
-							   	</div>
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Salary Wage:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID" value="<?php echo $row['attend_id'];?>">
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Allowance:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
-							     		</div>
-							     	</div>
-							     </div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Department Head::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:">
-							     		</div>
-							     	</div>
-							     </div>
-							    
-							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
 							   		<div class="col-sm-5">
@@ -176,7 +150,10 @@
 							  </div>
 					  		</form>
 					  	</div>
-		
+				  <?php
+  			}
+  		}
+  ?>
 	</div>
 </body>
 </html>

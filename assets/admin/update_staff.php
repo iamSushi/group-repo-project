@@ -19,76 +19,73 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
-				</div>
-				<div id="collapse1" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="department.php">View Department</a></li>
-						<!-- <li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
-						<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li> -->
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Staff</a></h4>
-				</div>
-				<div id="collapse2" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
-						<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
-				</div>
-				<div id="collapse3" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
-						<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
-						<li class="list-group-item"><a href="add_attendance_detaisl.php">Add Attendance Details</a></li>
-						<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>
-						 
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse">Schedule</a></h4>
-				</div>
-				<div id="collapse4" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
-						<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel panel-heading">
-					<h4 class="panel-title"><a href="#collapse5" data-toggle="collapse">Job Details</a></h4>
-				</div>
-				<div id="collapse5" class="panel-collapse collapse">
-					<ul class="list-group">
-						<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
-						 
-					</ul>
-				</div>
-			</div>
-		</div>
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="department.php">View Department</a></li>
+											<!-- <li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Staff</a></h4>
+									</div>
+									<div id="collapse2" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_staff.php">Add Staff</a></li>
+											<li class="list-group-item"><a href="view_staff.php">View Staff</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
+									</div>
+									<div id="collapse3" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
+											<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
+											 
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse">Schedule</a></h4>
+									</div>
+									<div id="collapse4" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
+											 
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse5" data-toggle="collapse">Job Details</a></h4>
+									</div>
+									<div id="collapse5" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="view_jobdetails.php">View Job Details</a></li>
+											 
+										</ul>
+									</div>
+								</div>
+							</div>
 	</div>
 	<div class="col-sm-10 content">
 		<div class="col-sm-12" style="padding: 0;">
@@ -96,7 +93,7 @@
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
 			 	 		<li><a href="#" class="activeh" style="color: white;">Add Staff</a></li>
-			 	 		<li><a href="#">View Staff</a></li>
+			 	 		<li><a href="view_staff.php">View Staff</a></li>
 			 	 	</ul>
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
@@ -111,15 +108,25 @@
 			 </nav>		
 		</div>
 		<div class="col-sm-12"><legend>Staff Form Registration</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM staff WHERE staff_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="action/staff_add.php">
+			 			<form class="form-horizontal" method="POST" action="action/staff_update_data.php">
 						    	<div class="form-group">
 									<label class="control-label col-sm-4">First Name:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="fname" class='form-control' required placeholder="First Name">
+											<input type="text" name="fname" class='form-control' required placeholder="First Name" value="<?php echo $row['fname'];?>">
 										</div>
 									</div>
 							   	</div>
@@ -128,7 +135,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" name="mname" class='form-control' required placeholder="Middle Name">
+									<input type="text" name="mname" class='form-control' required placeholder="Middle Name" value="<?php echo $row['mname'];?>">
 										</div>
 									</div>
 								</div>
@@ -137,7 +144,7 @@
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input type="text" name="lname" class='form-control' required placeholder="Last Name">
+									<input type="text" name="lname" class='form-control' required placeholder="Last Name" value="<?php echo $row['lname'];?>">
 										</div>
 									</div>
 								</div>
@@ -146,7 +153,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="date" name="bday" class='form-control' required>
+									<input type="date" name="bday" class='form-control' required value="<?php echo $row['birthdate'];?>">
 										</div>
 									</div>
 							 	</div>
@@ -155,7 +162,7 @@
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-							     			<input type="text" name="cellphone" class="form-control" required placeholder="Cellphone Number">
+							     			<input type="text" name="cellphone" class="form-control" required placeholder="Cellphone Number" value="<?php echo $row['cellnum'];?>">
 							     		</div>
 							     	</div>
 							     </div>
@@ -164,7 +171,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								    <input type="text" name="telnum" class='form-control' required placeholder="Telephone Number">
+								    <input type="text" name="telnum" class='form-control' required placeholder="Telephone Number" value="<?php echo $row['telnum'];?>">
 								    	</div>
 								    </div>
 								</div>
@@ -173,7 +180,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="email" class='form-control' required placeholder="Email">
+								    <input type="text" name="email" class='form-control' required placeholder="Email" value="<?php echo $row['email'];?>">
 								    	</div>
 								    </div>
 								</div>
@@ -182,7 +189,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									 		<select name="status" id="status" class="form-control">
+									 		<select name="status" id="status" class="form-control" value="<?php echo $row['status'];?>">
 									 			<option value="single">Single</option>
 									 			<option value="merried">Merried</option>
 									 			<option value="widow">Widow</option>
@@ -195,7 +202,7 @@
 								  	<div class="col-sm-5 inputGroupContainer">
 								  		<div class="input-group">
 								  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								   		<select name="gender" id="gender" class="form-control">
+								   		<select name="gender" id="gender" class="form-control" value="<?php echo $row['gender'];?>">
 								   			<option value="male">Male</option>
 								   			<option value="female">Female</option>
 								   		</select>
@@ -207,7 +214,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="type" class='form-control' required placeholder="Type">
+								    <input type="text" name="type" class='form-control' required placeholder="Type" value="<?php echo $row['type'];?>">
 								    	</div>
 								    </div>
 								</div>
@@ -216,7 +223,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="position" class='form-control' required placeholder="Position">
+								    <input type="text" name="position" class='form-control' required placeholder="Position" value="<?php echo $row['position'];?>">
 								    	</div>
 								    </div>
 								</div>
@@ -225,7 +232,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-								    <input type="text" name="password" class='form-control' required placeholder="Password">
+								    <input type="text" name="password" class='form-control' required placeholder="Password" value="<?php echo $row['password'];?>">
 								    	</div>
 								    </div>
 								</div>
@@ -239,6 +246,10 @@
 							  </div>
 					  		</form>
 					  	</div>
+					  	<?php
+  			}
+  		}
+  ?>
 		
 	</div>
 </body>

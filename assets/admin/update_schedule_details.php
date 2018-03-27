@@ -107,61 +107,81 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Add Job Details</legend></div>
+		<div class="col-sm-12"><legend>Update Job Details</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM schedule WHERE sched_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
+
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
+			 			<form class="form-horizontal" method="POST" action="action/schedule_details_update_data.php">
 						    	<div class="form-group">
-									<label class="control-label col-sm-4">Staff ID:</label>
+									<label class="control-label col-sm-4">Schedule ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID" value="<?php echo $row['sched_id'];?>">
 										</div>
 									</div>
 							   	</div>
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Salary Wage:</label>
+									<label class="control-label col-sm-4">Day:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+											<input type="date" name="day" class='form-control' required placeholder="Day" value="<?php echo $row['day'];?>">
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
+								    <label class="control-label col-sm-4">Morning Time In:</label>
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											  <input type="time" name="morningTimeIn" class='form-control' required placeholder="Morning Time In" value="<?php echo $row['morningTimeIn'];?>">
 										</div>
 									</div>
 								</div>
 							    <div class="form-group">
-									<label class="control-label col-sm-4">Allowance:</label>
+									<label class="control-label col-sm-4">Morning Time Out:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											 <input type="time" name="morningTimeOut" class='form-control' required placeholder="Morning Time Ouy" value="<?php echo $row['morningTimeOut'];?>">
+										</div>
+									</div>
+							 	</div>
+							 	<div class="form-group">
+								    <label class="control-label col-sm-4">Afternoon Time In:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											  <input type="time" name="afterTimeIn" class='form-control' required placeholder="Morning Time In" value="<?php echo $row['afternoonTimeIn'];?>">
+										</div>
+									</div>
+								</div>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Afternoon Time Out:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+											 <input type="time" name="afterTimeOut" class='form-control' required placeholder="Morning Time Ouy" value="<?php echo $row['afternoonTimeOut'];?>">
 										</div>
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
+							     	<label for="" class="control-label col-sm-4">TotalHours:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
-							     		</div>
-							     	</div>
-							     </div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Department Head::</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
+							     			<input type="text" name="totalHours" class='form-control' required placeholder="Total Hours" value="<?php echo $row['totalHours'];?>">
 							     		</div>
 							     	</div>
 							     </div>
@@ -176,6 +196,10 @@
 							  </div>
 					  		</form>
 					  	</div>
+					  		<?php
+  			}
+  		}
+  ?>
 		
 	</div>
 </body>

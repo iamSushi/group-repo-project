@@ -107,7 +107,18 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Add Job Details</legend></div>
+		<div class="col-sm-12"><legend>Update Job Details</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM job_details WHERE staff_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
+
 			 		<div class="col-sm-12">
 			 			
 			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
@@ -116,7 +127,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID" value="<?php echo $row['staff_id'];?>">
 										</div>
 									</div>
 							   	</div>
@@ -125,7 +136,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage" value="<?php echo $row['salaryWage'];?>">
 										</div>
 									</div>
 								</div>
@@ -134,7 +145,7 @@
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
+											<input type="text" name="department" class='form-control' required placeholder="Department" value="<?php echo $row['department'];?>">
 										</div>
 									</div>
 								</div>
@@ -143,7 +154,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
+											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance" value="<?php echo $row['allowance'];?>">
 										</div>
 									</div>
 							 	</div>
@@ -152,7 +163,7 @@
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
+							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status" value="<?php echo $row['employmentStatus'];?>">
 							     		</div>
 							     	</div>
 							     </div>
@@ -161,7 +172,7 @@
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:">
+							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:" value="<?php echo $row['deptHead'];?>">
 							     		</div>
 							     	</div>
 							     </div>
@@ -176,6 +187,10 @@
 							  </div>
 					  		</form>
 					  	</div>
+					  	<?php
+  			}
+  		}
+  ?>
 		
 	</div>
 </body>
