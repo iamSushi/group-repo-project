@@ -117,7 +117,7 @@
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="../user/index.html">Logout</a></li>
+									<li><a href="../user/index.php?logout='1'">Logout</a></li>
 								</ul>
 							</li>
 						</ul>
