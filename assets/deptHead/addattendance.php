@@ -125,7 +125,7 @@
 						<div class="col-sm-10 form-ni">
 							
 						</div>
-						<form class="form-horizontal" method="POST" action="action/attend.php">
+						<form class="form-horizontal" method="POST" action="creates.php">
 							 	<div class="form-group">
 									<label class="control-label col-sm-4">Staff ID:</label>
 									<div class="col-sm-5 inputGroupContainer">

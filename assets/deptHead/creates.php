@@ -10,13 +10,13 @@
 	$holidayName = $_POST['holidayName'];
 	$dailyTotalHours = $_POST['dailyTotalHours'];
 
-	$sql = "INSERT INTO schedule_details VALUES('','$sched_id','$day','$morningTimein','$morningTimeout','$afternoonTimein','$afternoonTimeout','$totalHours')";
+	$sql = "INSERT INTO attendance_details VALUES('','$attend_id','$schedDetails_id','$tardiness','$overtime','$absences','$holiday','$holidayName','dailyTotalHours')";
 
 	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added! <a href='view.php'><<< Go Back</a>";
+		echo "Successfully Added! <a href='attend.php'><<< Go Back</a>";
 	}
 	else
 	{
-		echo "Failed to Add! <a href='view.php'><<< Go Back</a>";
+		echo "Failed to Add! <a href='attend.php'><<< Go Back</a>";
 	}
 ?>
