@@ -21,14 +21,13 @@
 			<div class="row-12 sidebar" style="background-color: #D5D8DC">
 				<div class="row-6">
 					<div class="row-2 container text-center">
-						
+						<p>Your Profile</p>
 					</div>
 					<div class="row-7 text-center">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
-						<h5>Christian Hundinay Cat-awan</h5>
-						<p>Department Head</p>
+						<h4>James Kenneth Mark Omamalin Sinadjan</h4>
 					</div>
 				</div>
 				<div class="row-5 container text-center">
@@ -67,7 +66,7 @@
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add.php">Add Schedule</a></li>
-											<li class="list-group-item"><a href="views.php">View Schedule</a></li>
+											<li class="list-group-item"><a href="view.php">View Schedule</a></li>
 										</ul>
 									</div>
 								</div>
@@ -136,83 +135,31 @@
 					</div>
 				</nav>
 			</div>
-			<div class="col-sm-12"><legend>Schedule</legend></div>
+			<div class="col-sm-12"><legend>Update Schedule</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM schedule WHERE sched_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="create.php">
-			 					<div class="form-group">
-									<label class="control-label col-sm-4">Schedule Details ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="schedDetails_id" class='form-control' required placeholder="Schedule Details ID">
-										</div>
-									</div>
-							   	</div>
-						    	<div class="form-group">
-									<label class="control-label col-sm-4">Schedule ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
-										</div>
-									</div>
-							   	</div>
+			 			<form class="form-horizontal" method="POST" action="view.php">
+			 				<input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
 							 	<div class="form-group">
 									<label class="control-label col-sm-4">Day:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="day" class='form-control' required placeholder="Day">
+											<input type="text" name="Staff_id" class='form-control' required placeholder="Day" value="<?php echo $row['staff_id'];?>">
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Morning Time In:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											  <input type="text" name="morningTimein" class='form-control' required placeholder="Morning Time In">
-										</div>
-									</div>
-								</div>
-							    <div class="form-group">
-									<label class="control-label col-sm-4">Morning Time Out:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="morningTimeout" class='form-control' required placeholder="Morning Time Out">
-										</div>
-									</div>
-							 	</div>
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">afternoon Time In:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="afternoonTimein" class='form-control' required placeholder="Afternoon Time In">
-										</div>
-									</div>
-							 	</div>
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Afternoon Time Out:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-											 <input type="text" name="afternoonTimeout" class='form-control' required placeholder="Afternoon Time Out">
-										</div>
-									</div>
-							 	</div>
-							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">TotalHours:</label>
-							     	<div class="col-sm-5 inputGroupContainer">
-							     		<div class="input-group">
-							     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
-							     			<input type="text" name="totalHours" class='form-control' required placeholder="Total Hours">
-							     		</div>
-							     	</div>
-							     </div>
-							    
+								 
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
@@ -223,8 +170,11 @@
 							  </div>
 					  		</form>
 					  	</div>
-				</div>
-			</div>
-		</div>
+					  	<?php
+  			}
+  		}
+  ?>
+		
+	</div>
 	</body>
 </html>

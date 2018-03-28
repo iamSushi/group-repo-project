@@ -22,13 +22,14 @@
 			<div class="row-12 sidebar" style="background-color: #D5D8DC">
 				<div class="row-6">
 					<div class="row-2 container text-center">
-						<p>Your Profile</p>
+					
 					</div>
 					<div class="row-7 text-center">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
-						<h4>James Kenneth Mark Omamalin Sinadjan</h4>
+						<h5>Christian Hundinay Cat-awan</h5>
+						<p>Department Head</p>
 					</div>
 				</div>
 				<div class="row-5 container text-center">
@@ -58,7 +59,7 @@
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add.php">Add Schedule</a></li>
-											<li class="list-group-item"><a href="view.php">View Schedule</a></li>
+											<li class="list-group-item"><a href="views.php">View Schedule</a></li>
 										</ul>
 									</div>
 								</div>
