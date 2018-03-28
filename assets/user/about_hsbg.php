@@ -181,27 +181,12 @@
 										<div class="container form-group form-horizontal">
 											<div class="inputGroupContainer">
 												<div class="input-group">
-													<span class="input-group-addon">School Address One:</span>
-													<span class='form-control'><?php echo $row['school_addOne'] ?></span>
+													<span class="input-group-addon">School Address</span>
+													<span class='form-control'><?php echo $row['schoolAdd'] ?></span>
 												</div>
 											</div>
 										</div>
-										<div class="container form-group form-horizontal">
-											<div class="inputGroupContainer">
-												<div class="input-group">
-													<span class="input-group-addon">School Address Two:</span>
-													<span class='form-control'><?php echo $row['school_addTwo'] ?></span>
-												</div>
-											</div>
-										</div>
-										<div class="container form-group form-horizontal">
-											<div class="inputGroupContainer">
-												<div class="input-group">
-													<span class="input-group-addon">School Address Three:</span>
-													<span class='form-control'><?php echo $row['school_addTre'] ?></span>
-												</div>
-											</div>
-										</div>
+										
 										<div class="container form-group form-horizontal">
 											<div class="inputGroupContainer">
 												<div class="input-group">
