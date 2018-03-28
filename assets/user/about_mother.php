@@ -222,7 +222,7 @@
 											<div class="inputGroupContainer">
 												<div class="input-group">
 													<span class="input-group-addon">Occupation:</span>
-													<span class='form-control'>Pharmacist</span>
+													<span class='form-control'><?php echo $row['mothers_occupation'] ?></span>
 												</div>
 											</div>
 										</div>
