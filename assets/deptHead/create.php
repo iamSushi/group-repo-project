@@ -12,11 +12,11 @@
 	$sql = "INSERT INTO schedule_details VALUES('schedDetails_id','$sched_id','$day','$morningTimein','$morningTimeout','$afternoonTimein','$afternoonTimeout','$totalHours')";
 
 	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added! <a href='view.php'><<< Go Back</a>";
+		echo "Successfully Added! <a href='views.php'><<< Go Back</a>";
 	}
 	else
 	{
 		echo mysqli_error($connect);
-		echo "Failed to Add! <a href='view.php'><<< Go Back</a>";
+		echo "Failed to Add! <a href='views.php'><<< Go Back</a>";
 	}
 ?>

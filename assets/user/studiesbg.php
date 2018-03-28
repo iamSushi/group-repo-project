@@ -171,7 +171,7 @@
 								<label for="">Average</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-									<input class="form-control" type="text" required placeholder="average" name="average"> value="<?php echo $row['percentage'] ?>">
+									<input class="form-control" type="text" required placeholder="average" name="average" value="<?php echo $row['percentage'] ?>">
 								</div>
 							</div>
 						</div>
@@ -224,7 +224,7 @@
 								<label for="">School name</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-									<input class="form-control" type="text" required placeholder="school name" value="<?php echo $row['schoolName'] ?>">
+									<input class="form-control" type="text" required placeholder="school name" name="sname" value="<?php echo $row['schoolName'] ?>">
 								</div>
 							</div>
 						</div>
@@ -233,7 +233,7 @@
 								<label for="">School address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-									<input class="form-control" type="text" required  placeholder="school address" value="<?php echo $row['schoolAdd'] ?>">
+									<input class="form-control" type="text" required  placeholder="school address" name="sadd" value="<?php echo $row['schoolAdd'] ?>">
 								</div>
 							</div>
 						</div>
@@ -242,7 +242,7 @@
 								<label for="">State</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
-									<input class="form-control" type="text" required placeholder="state" value="<?php echo $row['state'] ?>">
+									<input class="form-control" type="text" required placeholder="state" name="state" value="<?php echo $row['state'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -250,7 +250,7 @@
 								<label for="">City</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-									<input class="form-control" type="text" required placeholder="city" value="<?php echo $row['city'] ?>">
+									<input class="form-control" type="text" required placeholder="city" name="city" value="<?php echo $row['city'] ?>">
 								</div>
 							</div>
 						</div>
@@ -259,7 +259,7 @@
 								<label for="">Country</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input class="form-control" type="text" required placeholder="country" value="<?php echo $row['country'] ?>">
+									<input class="form-control" type="text" required placeholder="country" name="country" value="<?php echo $row['country'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -267,7 +267,7 @@
 								<label for="">Postal code</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-									<input class="form-control" type="text"  required placeholder="zip code" value="<?php echo $row['postCode'] ?>">
+									<input class="form-control" type="text"  required placeholder="zip code" name="postCode" value="<?php echo $row['postCode'] ?>">
 								</div>
 							</div>
 						</div>
@@ -276,7 +276,7 @@
 								<label for="">Year graduated</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-									<input class="form-control" type="text" required placeholder="year graduated" value="<?php echo $row['year_end'] ?>">
+									<input class="form-control" type="date" required placeholder="year graduated" name="date" value="<?php echo $row['year_end'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -284,19 +284,12 @@
 								<label for="">Average</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-									<input class="form-control" type="text" required placeholder="average" value="<?php echo $row['average'] ?>">
+									<input class="form-control" type="text" required placeholder="average" name="average" value="<?php echo $row['average'] ?>">
 								</div>
 							</div>
 						</div>
-						<div class="container row-1 form-group" style="padding-top: 30px;">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="">Check if this is your current address!
-								</label>
-							</div>
-						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
-							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							<button class="btn btn-dark" type="submit" name="high_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 							
 							<div class="modal fade" id="update">
 								<div class="modal-dialog">

@@ -21,13 +21,15 @@
 			<div class="row-12 sidebar" style="background-color: #D5D8DC">
 				<div class="row-6">
 					<div class="row-2 container text-center">
-						<p>Your Profile</p>
+						
 					</div>
 					<div class="row-7 text-center">
+						<a href="view.php">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
-						<h4>James Kenneth Mark Omamalin Sinadjan</h4>
+						<h5>Christian Hundinay Cat-awan</h5>
+						<p>Department Head</p>
 					</div>
 				</div>
 				<div class="row-5 container text-center">
@@ -50,9 +52,12 @@
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Work Details</a></h4>
 									</div>
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Work Details</a></h4>
+									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="work.php">Add Work Details</a></li>
+											<li class="list-group-item"><a href="addwork.php">Add Work Details</a></li>
 											<li class="list-group-item"><a href="work.php">View Work Details</a></li>
 										</ul>
 									</div>
@@ -66,7 +71,7 @@
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add.php">Add Schedule</a></li>
-											<li class="list-group-item"><a href="view.php">View Schedule</a></li>
+											<li class="list-group-item"><a href="views.php">View Schedule</a></li>
 										</ul>
 									</div>
 								</div>
@@ -140,13 +145,6 @@
 			 			
 			 			<form class="form-horizontal" method="POST" action="create.php">
 			 					<div class="form-group">
-									<label class="control-label col-sm-4">Schedule Details ID:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="schedDetails_id" class='form-control' required placeholder="Schedule Details ID">
-										</div>
-									</div>
 							   	</div>
 						    	<div class="form-group">
 									<label class="control-label col-sm-4">Schedule ID:</label>
