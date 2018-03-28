@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2018 at 09:22 PM
+-- Generation Time: Mar 28, 2018 at 02:20 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -142,7 +142,7 @@ CREATE TABLE `current_address` (
 --
 
 INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
-(6, '187 Zone 1', 'Centro Kolambog', 'Lapasan', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
+(6, '187 Zone 6', 'Centro Kolambog', 'Lapasan', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
 (16, 'BongBongon', 'Di Makita', 'Street', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000);
 
 -- --------------------------------------------------------
@@ -216,7 +216,7 @@ CREATE TABLE `family_details` (
 --
 
 INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fathers_lname`, `mothers_fname`, `mothers_mname`, `mothers_lname`, `fathers_birthdate`, `mothers_birthdate`, `fathers_occupation`, `mothers_occupation`, `fathers_contnum`, `mothers_contnum`, `status`, `siblings`, `spouse_fname`, `spouse_mname`, `spouse_lname`, `spouse_birthdate`, `spouse_contnum`, `spouse_occupation`, `numOfChildren`) VALUES
-(6, 'Danilo', 'Alsa', 'Sinadjan', 'Marissa', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical', 'Pharmaciest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12);
+(6, 'Daniloxx', 'Alsa', 'Sinadjan', 'Marissaxx', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical Enginner', 'Priest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12);
 
 -- --------------------------------------------------------
 
@@ -406,7 +406,7 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 (2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', ''),
 (3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', 'Leader', '1234'),
 (4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', ''),
-(6, 'James', 'Omamalin', 'Sinadjan', '1995-08-11', '09368727409', 'wala', 'jamessinadjan5@gmail.com', 'Married', 'Male', 'Staff', 'Leader', 'masaya'),
+(6, 'James Kenneth Mark Gwapo', 'Omamalin', 'Sinadjan', '1990-08-11', '09368727400', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Leader', 'masaya'),
 (8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', '', 'cscas', 'wad', '', '', ''),
 (9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', '', 'sda', 'wdaw', '', '', ''),
 (10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', '', 'SQS', 'Sqs', '', '', ''),
@@ -417,7 +417,8 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 (15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Leader', '1233'),
 (16, 'Ezekiel', 'Kong', 'Garbosa', '0000-00-00', '09652651456', 'wala', 'garbosa@gmail.com', 'Married', 'Male', 'Staff', 'Leader', '1235'),
 (17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '1111'),
-(18, 'Jane', '', 'Go', '0000-00-00', '', '', 'janego@gmail.com', '', '', 'Staff', '', '1234');
+(18, 'Jane', '', 'Go', '0000-00-00', '', '', 'janego@gmail.com', '', '', 'Staff', '', '1234'),
+(19, 'Jhon', '', 'Doe', '0000-00-00', '', '', 'doe@gmail.com', '', '', 'Staff', '', '1234');
 
 -- --------------------------------------------------------
 
@@ -624,7 +625,7 @@ ALTER TABLE `schedule_details`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
@@ -640,8 +641,8 @@ ALTER TABLE `attendance`
 -- Constraints for table `attendance_details`
 --
 ALTER TABLE `attendance_details`
-  ADD CONSTRAINT `attendance_details_ibfk_1` FOREIGN KEY (`attend_id`) REFERENCES `attendance` (`attend_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `attendance_details_ibfk_2` FOREIGN KEY (`schedDetails_id`) REFERENCES `schedule_details` (`schedDetails_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `attendance_details_ibfk_1` FOREIGN KEY (`attend_id`) REFERENCES `attendance` (`attend_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attendance_details_ibfk_2` FOREIGN KEY (`schedDetails_id`) REFERENCES `schedule_details` (`schedDetails_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `college_background`
@@ -691,7 +692,7 @@ ALTER TABLE `highschool_background`
 -- Constraints for table `job_details`
 --
 ALTER TABLE `job_details`
-  ADD CONSTRAINT `job_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
+  ADD CONSTRAINT `job_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `leave_details`
@@ -728,7 +729,7 @@ ALTER TABLE `schedule`
 -- Constraints for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
-  ADD CONSTRAINT `schedule_details_ibfk_1` FOREIGN KEY (`sched_id`) REFERENCES `schedule` (`sched_id`);
+  ADD CONSTRAINT `schedule_details_ibfk_1` FOREIGN KEY (`sched_id`) REFERENCES `schedule` (`sched_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `work_experience`

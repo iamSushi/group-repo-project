@@ -14,7 +14,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>Attendance</title>
+		<title>Schedule</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -36,6 +36,15 @@
 										<span class="icon-bar"></span>
 										<span class="icon-bar"></span>
 									</button>
+								<!-- <div class="collapse navbar-collapse navHeaderCollapse"> 
+									<ul class="nav" style="text-align: center;">
+										<li><a href="work.html">Work Details</a></li>
+										<li class="activeh" style="background-color: #68d34f;"><a href="add.html">Schedule</a></li>
+										<li><a href="attend.html">Attendance</a></li>
+										<li><a href="deds.html">Deductions</a></li>
+										<li><a href="../user/about_me.html">View Profile</a></li>
+									</ul>
+								</div> -->
 								<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
@@ -106,10 +115,15 @@
 		<div class="col-10">
 			<div class="row-1">
 				<nav class="navbar navbar-inverse navbar-static-top">
-					<ul class="nav navbar-nav navbar-left">
-							<li><a href="" style="background-color: #0f0f0f">Attendance</a></li>
-						</ul>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
+						<ul class="nav navbar-nav navbar-left">
+							<li><a href="add.php" class="active" style="background-color: #0f0f0f">Add Schedule</a></li>
+						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
@@ -121,34 +135,46 @@
 					</div>
 				</nav>
 			</div>
-			<div class="row-10"><br>
+			<div class="col-sm-12"><legend>Update Schedule</legend></div>
+		<?php
+
+				include_once("connection.php");
+
+				$id = $_GET['id'];
+				$sql = "SELECT * FROM schedule WHERE sched_id = '$id'";
+				$result = mysqli_query($connect,$sql);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+					?>
 			 		<div class="col-sm-12">
-			 			 
-						<div class="col-sm-10 form-ni">
-							
-						</div>
-						<form class="form-horizontal" method="POST" action="creates.php">
+			 			
+			 			<form class="form-horizontal" method="POST" action="view.php">
+			 				<input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Staff ID:</label>
+									<label class="control-label col-sm-4">Day:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+											<input type="text" name="Staff_id" class='form-control' required placeholder="Day" value="<?php echo $row['staff_id'];?>">
 										</div>
 									</div>
 								</div>
+								 
+							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5"><br>
+							   		<div class="col-sm-5">
 							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 
 							  </div>
 							  </div>
 					  		</form>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
+					  	</div>
+					  	<?php
+  			}
+  		}
+  ?>
+		
+	</div>
 	</body>
 </html>

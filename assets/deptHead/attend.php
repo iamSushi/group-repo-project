@@ -43,7 +43,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="work.php">Details</a></li>
+											<li class="list-group-item"><a href="work.php">Add Work Details</a></li>
+											<li class="list-group-item"><a href="work.php">View Work Details</a></li>
 										</ul>
 									</div>
 								</div>
@@ -82,6 +83,7 @@
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
 											<li class="list-group-item"><a href="deds.php">Staff Deductions</a></li>
+											<li class="list-group-item"><a href="viewdeds.php">View Deductions</a></li>
 										</ul>
 									</div>
 								</div>

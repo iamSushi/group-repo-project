@@ -14,7 +14,7 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="icon" href="img/logo.png">
-		<title>Attendance</title>
+		<title>Working Details</title>
 	</head>
 	<body>
 		<div class="col-2">
@@ -106,10 +106,10 @@
 		<div class="col-10">
 			<div class="row-1">
 				<nav class="navbar navbar-inverse navbar-static-top">
-					<ul class="nav navbar-nav navbar-left">
-							<li><a href="" style="background-color: #0f0f0f">Attendance</a></li>
-						</ul>
 					<div class="collapse navbar-collapse navHeaderCollapse">
+						<ul class="nav navbar-nav navbar-left">
+							<li><a href="" style="background-color: #0f0f0f" class="activeh">Working Details</a></li>
+						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>
 								<a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
@@ -121,14 +121,11 @@
 					</div>
 				</nav>
 			</div>
-			<div class="row-10"><br>
+			<div class="col-sm-12"><legend>Job Details</legend></div>
 			 		<div class="col-sm-12">
-			 			 
-						<div class="col-sm-10 form-ni">
-							
-						</div>
-						<form class="form-horizontal" method="POST" action="creates.php">
-							 	<div class="form-group">
+			 			
+			 			<form class="form-horizontal" method="POST" action="creatework.php">
+						    	<div class="form-group">
 									<label class="control-label col-sm-4">Staff ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
@@ -136,19 +133,64 @@
 											<input type="text" name="staff_id" class='form-control' required placeholder="Schedule ID">
 										</div>
 									</div>
+							   	</div>
+							 	<div class="form-group">
+									<label class="control-label col-sm-4">Salary Wage:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+											 <input type="text" name="salaryWage" class='form-control' required placeholder="Salary Wage">
+										</div>
+									</div>
 								</div>
+								<div class="form-group">
+								    <label class="control-label col-sm-4">Department:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="department" class='form-control' required placeholder="Department">
+										</div>
+									</div>
+								</div>
+							    <div class="form-group">
+									<label class="control-label col-sm-4">Allowance:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
+											 <input type="text" name="allowance" class='form-control' required placeholder="Allowance">
+										</div>
+									</div>
+							 	</div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
+							     		</div>
+							     	</div>
+							     </div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">Department Head::</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							     			<input type="text" name="deptHead" class='form-control' required placeholder="Department Head:">
+							     		</div>
+							     	</div>
+							     </div>
+							    
+							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5"><br>
+							   		<div class="col-sm-5">
 							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 
 							  </div>
 							  </div>
 					  		</form>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
+					  	</div>
+		
+	</div>
 	</body>
 </html>
