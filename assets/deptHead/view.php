@@ -25,6 +25,7 @@
 						
 					</div>
 					<div class="row-7 text-center">
+						<a href="view.php">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
@@ -45,7 +46,7 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="work.php">Add Work Details</a></li>
+											<li class="list-group-item"><a href="addwork.php">Add Work Details</a></li>
 											<li class="list-group-item"><a href="work.php">View Work Details</a></li>
 										</ul>
 									</div>
@@ -54,7 +55,7 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Schedule</a></h4>
+										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse">Staffs</a></h4>
 									</div>
 									<div id="collapse2" class="panel-collapse collapse">
 										<ul class="list-group">
@@ -97,7 +98,7 @@
 									</div>
 									<div id="collapse5" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="../user/about_me.php">Staff Profile</a></li>
+											<li class="list-group-item"><a href="../user/about_me.php">View Profile</a></li>
 										</ul>
 									</div>
 								</div>
@@ -115,7 +116,7 @@
 					</button>
 					<div class="collapse navbar-collapse navHeaderCollapse">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="view.php" class="active" style="background-color: #0f0f0f">View Schedule</a></li>
+							<li><a href="view.php" class="active" style="background-color: #0f0f0f">Staffs</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
 							<li>

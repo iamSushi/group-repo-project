@@ -24,6 +24,7 @@
 						
 					</div>
 					<div class="row-7 text-center">
+						<a href="view.php">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
@@ -44,7 +45,7 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="work.php">Add Work Details</a></li>
+											<li class="list-group-item"><a href="addwork.php">Add Work Details</a></li>
 											<li class="list-group-item"><a href="work.php">View Work Details</a></li>
 										</ul>
 									</div>

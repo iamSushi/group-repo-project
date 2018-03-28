@@ -24,6 +24,7 @@
 						
 					</div>
 					<div class="row-7 text-center">
+						<a href="view.php">
 						<img src="img/avatar.png" alt="" style="width: 200px; height: 200px;">
 					</div>
 					<div class="row-3 container text-center">
