@@ -109,7 +109,7 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend> View Attendance Details</legend></div>
+		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
 			 			<?php
@@ -169,6 +169,9 @@
 					 
 					 "</td>
 					 <td>
+						<a href='../user/about_me.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-success'>Profile</button>
+						</a>
 					    <a href='Update_staff.php?id=".$row['staff_id']."'>
 					      <button class='btn btn-primary'>Update</button>
 						</a>
