@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2018 at 04:16 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Mar 28, 2018 at 04:48 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,9 +64,9 @@ CREATE TABLE `attendance_details` (
 --
 
 INSERT INTO `attendance_details` (`attenDetails_id`, `attend_id`, `schedDetails_id`, `tardiness`, `overtime`, `absences`, `holiday`, `holidayName`, `dailyTotalHours`) VALUES
-(5, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
-(7, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
-(12, 1, 1, 0, 0, 0, b'1', 'daWD', 0);
+(5, 1, 1, 1, 1, 1, b'1111111111111111111111111111111', 'Christmas', 8),
+(7, 1, 1, 1, 1, 1, b'1111111111111111111111111111111', 'Christmas', 8),
+(12, 1, 1, 0, 0, 0, b'1111111111111111111111111111111', 'daWD', 0);
 
 -- --------------------------------------------------------
 
@@ -181,6 +181,27 @@ CREATE TABLE `deduction_details` (
   `philhealth` int(11) DEFAULT NULL,
   `bir` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `department`
+--
+
+CREATE TABLE `department` (
+  `depart_id` int(11) NOT NULL,
+  `depart_name` varchar(255) NOT NULL,
+  `depart_head` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`depart_id`, `depart_name`, `depart_head`) VALUES
+(1, 'Lab', NULL),
+(2, '', '1111-11-11'),
+(3, 'nurse', '3');
 
 -- --------------------------------------------------------
 
@@ -511,6 +532,12 @@ ALTER TABLE `deduction_details`
   ADD KEY `leave_id` (`leave_id`);
 
 --
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`depart_id`);
+
+--
 -- Indexes for table `family_details`
 --
 ALTER TABLE `family_details`
@@ -590,49 +617,46 @@ ALTER TABLE `work_experience`
 --
 ALTER TABLE `attendance`
   MODIFY `attend_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `attendance_details`
 --
 ALTER TABLE `attendance_details`
   MODIFY `attenDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `deduction`
 --
 ALTER TABLE `deduction`
   MODIFY `deduction_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+--
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `depart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `leave_details`
 --
 ALTER TABLE `leave_details`
   MODIFY `leave_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `salary_report`
 --
 ALTER TABLE `salary_report`
   MODIFY `salary_id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
   MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
   MODIFY `schedDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
 --
 -- Constraints for dumped tables
 --

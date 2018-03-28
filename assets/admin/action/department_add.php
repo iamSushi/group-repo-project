@@ -5,7 +5,7 @@
 	 
 	 
 	
-	$sql = "INSERT INTO department VALUES(null,'$depart_id','$depart_name')";
+	$sql = "INSERT INTO department VALUES(null,'$depart_name','$depart_head')";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='../view_department.php'><<< Go Back</a>";

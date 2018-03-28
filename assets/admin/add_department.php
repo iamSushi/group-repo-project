@@ -117,7 +117,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="date" name="depart_name" class='form-control' required placeholder="Day">
+											<input type="text" name="depart_name" class='form-control' required placeholder="Department Name">
 										</div>
 									</div>
 								</div>
@@ -126,7 +126,7 @@
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											  <input type="text" name="depart_head" class='form-control' required placeholder="Morning Time In">
+											  <input type="text" name="depart_head" class='form-control' required placeholder="Departname Head">
 										</div>
 									</div>
 								</div>
