@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2018 at 04:48 AM
+-- Generation Time: Mar 28, 2018 at 07:47 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -95,6 +95,9 @@ CREATE TABLE `college_background` (
 INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `state`, `country`, `city`, `postCode`, `yearEnd`, `status`, `percentage`) VALUES
 (6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '', '', '', 0, '2018-03-30', 'Cum Laude', 96),
 (NULL, 'Bachelor of Theology in Missions and Music', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2016-10-18', 'Single', 1),
+(16, 'Bachelor of Theology in Music and Missions', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2015-04-01', 'Single', 1),
+(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '', '', '', 0, '2018-03-30', 'Cum Laude', 96),
+(NULL, 'Bachelor of Theology in Missions and Music', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2016-10-18', 'Single', 1),
 (16, 'Bachelor of Theology in Music and Missions', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2015-04-01', 'Single', 1);
 
 -- --------------------------------------------------------
@@ -120,6 +123,7 @@ CREATE TABLE `contact_person` (
 --
 
 INSERT INTO `contact_person` (`staff_id`, `fname`, `mname`, `lname`, `contactNum`, `address`, `gender`, `email`, `birthdate`) VALUES
+(6, 'Marissa', 'Omamalin', 'Sinadjan', '09368727409', '187 Zone 1 Centro Kolambog Lapasan, CDOC', 'Female', '', '0000-00-00'),
 (6, 'Marissa', 'Omamalin', 'Sinadjan', '09368727409', '187 Zone 1 Centro Kolambog Lapasan, CDOC', 'Female', '', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -144,6 +148,8 @@ CREATE TABLE `current_address` (
 --
 
 INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
+(6, '187 Zone 6', 'Centro Kolambog', 'Lapasan', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
+(16, 'BongBongon', 'Di Makita', 'Street', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
 (6, '187 Zone 6', 'Centro Kolambog', 'Lapasan', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000),
 (16, 'BongBongon', 'Di Makita', 'Street', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000);
 
@@ -201,7 +207,22 @@ CREATE TABLE `department` (
 INSERT INTO `department` (`depart_id`, `depart_name`, `depart_head`) VALUES
 (1, 'Lab', NULL),
 (2, '', '1111-11-11'),
-(3, 'nurse', '3');
+(3, 'nurse', '3'),
+(4, 'Secret', '17');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `departmentview`
+-- (See below for the actual view)
+--
+CREATE TABLE `departmentview` (
+`depart_id` int(11)
+,`depart_name` varchar(255)
+,`fname` varchar(50)
+,`mname` varchar(50)
+,`lname` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -240,6 +261,8 @@ CREATE TABLE `family_details` (
 
 INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fathers_lname`, `mothers_fname`, `mothers_mname`, `mothers_lname`, `fathers_birthdate`, `mothers_birthdate`, `fathers_occupation`, `mothers_occupation`, `fathers_contnum`, `mothers_contnum`, `status`, `siblings`, `spouse_fname`, `spouse_mname`, `spouse_lname`, `spouse_birthdate`, `spouse_contnum`, `spouse_occupation`, `numOfChildren`) VALUES
 (6, 'Daniloxx', 'Alsa', 'Sinadjan', 'Marissaxx', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical Enginner', 'Priest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12),
+(16, 'Eddie', 'Gardose', 'Garbosa', 'Edna', 'Kong', 'Garbosa', '2018-01-10', '2018-03-13', 'Farmer', 'Fruit Vendor', '09262917371', '09393045449', 'Single', 4, 'Angelique', 'Samson', 'Mugot', '2018-03-05', '09262917371', 'Architec', 2),
+(6, 'Daniloxx', 'Alsa', 'Sinadjan', 'Marissaxx', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical Enginner', 'Priest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12),
 (16, 'Eddie', 'Gardose', 'Garbosa', 'Edna', 'Kong', 'Garbosa', '2018-01-10', '2018-03-13', 'Farmer', 'Fruit Vendor', '09262917371', '09393045449', 'Single', 4, 'Angelique', 'Samson', 'Mugot', '2018-03-05', '09262917371', 'Architec', 2);
 
 -- --------------------------------------------------------
@@ -265,6 +288,9 @@ CREATE TABLE `highschool_background` (
 --
 
 INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `state`, `city`, `country`, `postCode`, `year_end`, `average`) VALUES
+(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Misamis Oriental', 'Cagayan de Oro City', '', 0, '0000-00-00', 0),
+(NULL, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2017-07-10', 95),
+(16, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2011-03-30', 95),
 (6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Misamis Oriental', 'Cagayan de Oro City', '', 0, '0000-00-00', 0),
 (NULL, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2017-07-10', 95),
 (16, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2011-03-30', 95);
@@ -332,6 +358,7 @@ CREATE TABLE `permanent_address` (
 --
 
 INSERT INTO `permanent_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
+(1, '1', '1', '14', '1', '1', '1', 1),
 (1, '1', '1', '14', '1', '1', '1', 1);
 
 -- --------------------------------------------------------
@@ -375,6 +402,19 @@ CREATE TABLE `schedule` (
 INSERT INTO `schedule` (`sched_id`, `staff_id`) VALUES
 (1, 1),
 (2, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `scheduleview`
+-- (See below for the actual view)
+--
+CREATE TABLE `scheduleview` (
+`sched_id` bigint(20)
+,`fname` varchar(50)
+,`mname` varchar(50)
+,`lname` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -476,7 +516,26 @@ CREATE TABLE `work_experience` (
 --
 
 INSERT INTO `work_experience` (`staff_id`, `companyName`, `employerName`, `employerAdd`, `employerCellnum`, `employerTelnum`, `companyStart`, `companyEnd`, `jobTitle`, `department`, `workArea`, `state`, `city`, `country`, `moreInfo`) VALUES
+(1, '1', '1', '1', '1', '1', '2018-02-02', '2018-02-07', '1', '1', '1', '1', '1', '1', '1'),
 (1, '1', '1', '1', '1', '1', '2018-02-02', '2018-02-07', '1', '1', '1', '1', '1', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `departmentview`
+--
+DROP TABLE IF EXISTS `departmentview`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `departmentview`  AS  select `department`.`depart_id` AS `depart_id`,`department`.`depart_name` AS `depart_name`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname` from (`department` left join `staff` on((`department`.`depart_head` = `staff`.`staff_id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `scheduleview`
+--
+DROP TABLE IF EXISTS `scheduleview`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `scheduleview`  AS  select `schedule`.`sched_id` AS `sched_id`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname` from (`schedule` left join `staff` on((`schedule`.`staff_id` = `staff`.`staff_id`))) ;
 
 --
 -- Indexes for dumped tables
@@ -631,7 +690,7 @@ ALTER TABLE `deduction`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `depart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `depart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `leave_details`
 --

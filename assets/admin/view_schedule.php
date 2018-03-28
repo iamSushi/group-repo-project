@@ -115,7 +115,7 @@
 			 		<div class="col-sm-6">
 			 			<?php
 						  include_once("connection.php");
-						  $sql = "SELECT * FROM schedule";
+						  $sql = "SELECT * FROM scheduleView";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
 							  echo "<table class='table' border='1'>";
@@ -131,7 +131,9 @@
 							       echo "<tr><td style='text-align:center;'>".
 								         $row['sched_id'].
 										"</td><td>".
-										 $row['staff_id'].
+										 $row['fname'].' '.
+										 $row['mname'].' '.
+										 $row['lname'].
 										 
 										 
 										 "</td>

@@ -68,7 +68,7 @@
 										<ul class="list-group">
 											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="add_schedule_details.php">Add Schedule Details</a></li>
 											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
@@ -121,16 +121,34 @@
 										</div>
 									</div>
 								</div>
+								
 								<div class="form-group">
 								    <label class="control-label col-sm-4">Departname Head:</label>
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											  <input type="text" name="depart_head" class='form-control' required placeholder="Departname Head">
+											  <!-- <input type="text" name="depart_head" class='form-control' required placeholder="Departname Head"> -->
+											  <select name="depart_head" id="depart_head" class="form-control">
+											  	<?php
+
+												include_once("connection.php");
+
+												$id = $_GET['id'];
+												$sql = "SELECT * FROM staff";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['staff_id'] ?>"><?php echo 'ID='.$row['staff_id'].' Name'.$row['fname'].' '.$row['mname'].' '.$row['lname']?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+											  </select>
 										</div>
 									</div>
 								</div>
-							    
+							   
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>

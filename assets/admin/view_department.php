@@ -116,7 +116,7 @@
 			 			<?php
 
 	  include_once("connection.php");
-	  $sql = "SELECT * FROM department";
+	  $sql = "SELECT * FROM departmentView";
 	  $result = mysqli_query($connect,$sql);
 	  if(mysqli_num_rows($result) > 0){
 		  echo "<table class='table' border='1'>";
@@ -135,8 +135,9 @@
 					"</td><td>".
 					$row['depart_name'].
 					"</td><td>".
-					$row['depart_head'].
-					
+					$row['fname'].' '.
+					$row['mname'].' '.
+					$row['lname'].
 					 
 					 "</td>
 					 <td>

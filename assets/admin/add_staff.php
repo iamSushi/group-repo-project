@@ -226,6 +226,29 @@
 								    </div>
 								</div>
 								 <div class="form-group">
+									<label class="control-label col-sm-4">Department:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								  <!--   <input type="text" name="position" class='form-control' required placeholder="Position"> -->
+								 			 <select name="department" id="" class="form-control" required>
+								  				<?php
+												include_once("connection.php");
+												$sql = "SELECT * FROM department";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['depart_id'] ?>"><?php echo 'ID = '.$row['depart_id'].' Department = '.$row['depart_name'].''?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+								  			</select>
+								    	</div>
+								    </div>
+								</div>
+								 <div class="form-group">
 									<label class="control-label col-sm-4">Password:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">

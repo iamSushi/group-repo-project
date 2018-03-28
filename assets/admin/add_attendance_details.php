@@ -119,7 +119,24 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID">
+											<select name="attend_id" id="attend_id" class="form-control">
+											<?php
+
+												include_once("connection.php");
+
+												
+												$sql = "SELECT * FROM attendance";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['attend_id'] ?>"><?php echo 'ID='.$row['attend_id'].''?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+											</select>
+											<!-- <input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID"> -->
 										</div>
 									</div>
 							   	</div>
@@ -128,7 +145,24 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="schedDetails_id" class='form-control' required placeholder="Schedule ID">
+											<select name="attend_id" id="attend_id" class="form-control">
+											<?php
+
+												include_once("connection.php");
+
+												
+												$sql = "SELECT * FROM schedule_details";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['schedDetails_id'] ?>"><?php echo 'ID='.$row['schedDetails_id'].''?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+											</select>
+											<!-- <input type="text" name="schedDetails_id" class='form-control' required placeholder="Schedule ID"> -->
 										</div>
 									</div>
 								</div>

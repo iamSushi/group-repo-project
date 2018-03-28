@@ -117,7 +117,24 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
+											<!-- <input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID"> -->
+											<select name="sched_id" id="" class="form-control">
+											<?php
+
+												include_once("connection.php");
+
+												
+												$sql = "SELECT * FROM schedule";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['sched_id'] ?>"><?php echo 'ID='.$row['sched_id'].''?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+											</select>
 										</div>
 									</div>
 							   	</div>

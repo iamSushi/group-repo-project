@@ -122,11 +122,25 @@
 										</div>
 								   	</div> -->
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Day:</label>
+									<label class="control-label col-sm-4">STAFF ID:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="staff_id" class='form-control' required placeholder="Day">
+											<!-- <input type="text" name="staff_id" class='form-control' required placeholder="Staff_ID"> -->
+											<select name="staff_id" id="" class="form-control">
+											<?php
+												include_once("connection.php");
+												$sql = "SELECT * FROM staff";
+												$result = mysqli_query($connect,$sql);
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+											  		<option  value="<?php echo $row['staff_id'] ?>"><?php echo 'ID = '.$row['staff_id'].' '.$row['fname'].' '.$row['mname'].' '.$row['lname'].''?></option>	
+											  		 <?php
+												  			}
+												  		}
+												  ?>
+											</select>
 										</div>
 									</div>
 								</div>
