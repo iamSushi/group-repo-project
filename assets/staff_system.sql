@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2018 at 02:20 AM
+-- Generation Time: Mar 28, 2018 at 04:16 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -85,7 +85,7 @@ CREATE TABLE `college_background` (
   `postCode` int(11) NOT NULL,
   `yearEnd` date NOT NULL,
   `status` varchar(50) NOT NULL,
-  `percentage` int(11) DEFAULT NULL
+  `percentage` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -93,7 +93,9 @@ CREATE TABLE `college_background` (
 --
 
 INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `state`, `country`, `city`, `postCode`, `yearEnd`, `status`, `percentage`) VALUES
-(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '', '', '', 0, '2018-03-30', 'Cum Laude', 96);
+(6, 'BSIT', 'University of Science and Technology of Southern Philippines', 'Recto Ave Lapasan, Cagayan de Oro City', '', '', '', 0, '2018-03-30', 'Cum Laude', 96),
+(NULL, 'Bachelor of Theology in Missions and Music', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2016-10-18', 'Single', 1),
+(16, 'Bachelor of Theology in Music and Missions', 'Cebu Bible Seminary', 'Cantonville, San Isidro', 'Cebu', 'Philippines', 'Talisay City', 6095, '2015-04-01', 'Single', 1);
 
 -- --------------------------------------------------------
 
@@ -216,7 +218,8 @@ CREATE TABLE `family_details` (
 --
 
 INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fathers_lname`, `mothers_fname`, `mothers_mname`, `mothers_lname`, `fathers_birthdate`, `mothers_birthdate`, `fathers_occupation`, `mothers_occupation`, `fathers_contnum`, `mothers_contnum`, `status`, `siblings`, `spouse_fname`, `spouse_mname`, `spouse_lname`, `spouse_birthdate`, `spouse_contnum`, `spouse_occupation`, `numOfChildren`) VALUES
-(6, 'Daniloxx', 'Alsa', 'Sinadjan', 'Marissaxx', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical Enginner', 'Priest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12);
+(6, 'Daniloxx', 'Alsa', 'Sinadjan', 'Marissaxx', 'Omamalin', 'Sinadjan', '2018-03-28', '2018-03-14', 'Mechanical Enginner', 'Priest', '09653214568', '09175263456', 'Married', 4, 'Lorylee', 'Malinao', 'Sinadjan', '2018-03-14', '09141431431', 'Architect', 12),
+(16, 'Eddie', 'Gardose', 'Garbosa', 'Edna', 'Kong', 'Garbosa', '2018-01-10', '2018-03-13', 'Farmer', 'Fruit Vendor', '09262917371', '09393045449', 'Single', 4, 'Angelique', 'Samson', 'Mugot', '2018-03-05', '09262917371', 'Architec', 2);
 
 -- --------------------------------------------------------
 
@@ -233,7 +236,7 @@ CREATE TABLE `highschool_background` (
   `country` varchar(50) NOT NULL,
   `postCode` int(11) NOT NULL,
   `year_end` date NOT NULL,
-  `average` int(11) NOT NULL
+  `average` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -241,7 +244,9 @@ CREATE TABLE `highschool_background` (
 --
 
 INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `state`, `city`, `country`, `postCode`, `year_end`, `average`) VALUES
-(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Misamis Oriental', 'Cagayan de Oro City', '', 0, '0000-00-00', 0);
+(6, 'Misamis Oriental General Comprehesive High School', 'Don Apolinar', 'Misamis Oriental', 'Cagayan de Oro City', '', 0, '0000-00-00', 0),
+(NULL, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2017-07-10', 95),
+(16, 'Digos City National High School', 'Rizal Ave., Zone 1', 'Davao del Sur', 'Digos City', 'Philippines', 8002, '2011-03-30', 95);
 
 -- --------------------------------------------------------
 
@@ -394,6 +399,7 @@ CREATE TABLE `staff` (
   `gender` varchar(50) NOT NULL,
   `type` varchar(50) NOT NULL,
   `position` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -401,24 +407,24 @@ CREATE TABLE `staff` (
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnum`, `telnum`, `email`, `status`, `gender`, `type`, `position`, `password`) VALUES
-(1, 'joshua', 'omagap', 'perater', '0000-00-00', '09169947508', 'wala', '', 'taken', 'male', '', '', ''),
-(2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', ''),
-(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', 'Leader', '1234'),
-(4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', ''),
-(6, 'James Kenneth Mark Gwapo', 'Omamalin', 'Sinadjan', '1990-08-11', '09368727400', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Leader', 'masaya'),
-(8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', '', 'cscas', 'wad', '', '', ''),
-(9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', '', 'sda', 'wdaw', '', '', ''),
-(10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', '', 'SQS', 'Sqs', '', '', ''),
-(11, 'jsohua', 'baia', 'perste', '2018-02-15', '21', '2132', '', 'sdae', 'dawdf', '', '', ''),
-(12, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', ''),
-(13, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', ''),
-(14, '21', '212', 'wqeqe', '2018-02-01', 'dwqd', 'dqwd', '', 'eq2', 'e2q', '', '', ''),
-(15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Leader', '1233'),
-(16, 'Ezekiel', 'Kong', 'Garbosa', '0000-00-00', '09652651456', 'wala', 'garbosa@gmail.com', 'Married', 'Male', 'Staff', 'Leader', '1235'),
-(17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '1111'),
-(18, 'Jane', '', 'Go', '0000-00-00', '', '', 'janego@gmail.com', '', '', 'Staff', '', '1234'),
-(19, 'Jhon', '', 'Doe', '0000-00-00', '', '', 'doe@gmail.com', '', '', 'Staff', '', '1234');
+INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnum`, `telnum`, `email`, `status`, `gender`, `type`, `position`, `department`, `password`) VALUES
+(1, 'joshua', 'omagap', 'perater', '0000-00-00', '09169947508', 'wala', '', 'taken', 'male', '', '', '', ''),
+(2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', '', ''),
+(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', 'Leader', '', '1234'),
+(4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', '', ''),
+(6, 'James Kenneth Mark Gwapo', 'Omamalin', 'Sinadjan', '1990-08-11', '09368727400', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Leader', '', 'masaya'),
+(8, 'daws', 'qsad', 'dawds', '2018-02-09', 'dadw', 'sda', '', 'cscas', 'wad', '', '', '', ''),
+(9, 'q', 'wq', 'dwa', '2018-02-11', 'daw', 'dawd', '', 'sda', 'wdaw', '', '', '', ''),
+(10, 'try', 'dawdad', 'dawd', '2018-02-21', 'Sqs', 'sQS', '', 'SQS', 'Sqs', '', '', '', ''),
+(11, 'jsohua', 'baia', 'perste', '2018-02-15', '21', '2132', '', 'sdae', 'dawdf', '', '', '', ''),
+(12, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', '', ''),
+(13, 'Jiosg', 'awda', 'defs', '2018-02-21', 'dawd', 'czsd', '', 'dawd', '121212', '', '', '', ''),
+(14, '21', '212', 'wqeqe', '2018-02-01', 'dwqd', 'dqwd', '', 'eq2', 'e2q', '', '', '', ''),
+(15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Leader', '', '1233'),
+(16, 'Ezekiel', 'Kong', 'Garbosa', '2018-03-07', '09652651456', 'wala', 'garbosa@gmail.com', 'Single', 'Male', 'Staff', 'Leader', '', '1235'),
+(17, 'Shane', '', 'Go', '0000-00-00', '', '', 'goshane@gmail.com', '', '', 'Staff', '', '', '1111'),
+(18, 'Jane', '', 'Go', '0000-00-00', '', '', 'janego@gmail.com', '', '', 'Staff', '', '', '1234'),
+(19, 'Jhon', '', 'Doe', '0000-00-00', '', '', 'doe@gmail.com', '', '', 'Staff', '', '', '1234');
 
 -- --------------------------------------------------------
 

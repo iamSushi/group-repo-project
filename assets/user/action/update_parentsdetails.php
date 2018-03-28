@@ -29,7 +29,7 @@
 		$id = $_GET['id'];
 
 		$sql = "UPDATE family_details SET mothers_fname = '$fname', mothers_mname = '$mname', mothers_lname = '$sname', mothers_birthdate = '$dob', mothers_contnum = '$contnum', mothers_occupation = '$occupation' WHERE staff_id = '$id'";
-		mysqli_query($connect,$sql);
+		mysqli_query($connect,$sql);	
 	}
 
 ?>
