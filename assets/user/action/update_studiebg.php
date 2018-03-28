@@ -23,11 +23,19 @@
 	}
 
 	if (isset($_POST['high_update'])){
-		$count = mysqli_real_escape_string($connect,$_POST['count']);
+		$sadd = mysqli_real_escape_string($connect,$_POST['sadd']);
+		$sname = mysqli_real_escape_string($connect,$_POST['sname']);
+		$state = mysqli_real_escape_string($connect,$_POST['state']);
+		$country = mysqli_real_escape_string($connect,$_POST['country']);
+		$postCode = mysqli_real_escape_string($connect,$_POST['postCode']);
+		$date = mysqli_real_escape_string($connect,$_POST['date']);
+		$average = mysqli_real_escape_string($connect,$_POST['average']);
+		// $standing = mysqli_real_escape_string($connect,$_POST['standing']);
+		$city = mysqli_real_escape_string($connect,$_POST['city']);
 
 		$id = $_GET['id'];
 
-		$sql = "UPDATE family_details SET numOfChildren = '$count' WHERE staff_id = '$id'";
+		$sql = "UPDATE highschool_background SET schoolName = '$sname', schoolAdd = '$sadd', state = '$state', country = '$country', city = '$city', postCode = '$postCode', year_end = '$date',  average = '$average' WHERE staff_id = '$id'";
 		mysqli_query($connect,$sql);	
 	}
 
