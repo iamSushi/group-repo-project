@@ -37,5 +37,7 @@
 
 		$sql = "UPDATE current_address SET addOne = '$addOne', addTwo = '$addTwo', addTre = '$addTre', state = '$state', city = '$city', country = '$country', postCode = '$postCode' WHERE staff_id = '$id'";
 		mysqli_query($connect,$sql);
+		// $_GET['staff_id'] = $id;
 	}
+	echo "Successfuly Updated <a href='../basicinfo.php?id=".$id."'>Go back!</a>";
 ?>

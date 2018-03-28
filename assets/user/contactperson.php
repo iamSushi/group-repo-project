@@ -82,7 +82,7 @@
 			</div>
 			<div class="row-10">
 				<div class="col-6">
-					<div class="row-12">
+					<form class="row-12" action="action/update_familydetails.php<?php echo '?id='.$_GET['id'].''?>" method="post">
 						<?php
 							$space = " ";
 							$id = $_GET['id'];
@@ -102,7 +102,7 @@
 								<label for="">Firstname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="firstname" value="<?php echo $row['fname'] ?>">
+									<input class="form-control" type="text" required placeholder="firstname" name="fname" value="<?php echo $row['fname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -111,7 +111,7 @@
 								<label for="">Middlename</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="middlename" value="<?php echo $row['mname'] ?>">
+									<input class="form-control" type="text" required placeholder="middlename" name="mname" value="<?php echo $row['mname'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -119,7 +119,7 @@
 								<label for="">Surname</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input class="form-control" type="text" required placeholder="surname" value="<?php echo $row['lname'] ?>">
+									<input class="form-control" type="text" required placeholder="surname" name="sname" value="<?php echo $row['lname'] ?>">
 								</div>
 							</div>
 						</div>
@@ -128,7 +128,7 @@
 								<label for="">Birthdate</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" required value="<?php echo $row['date'] ?>">
+									<input class="form-control" type="date" required name="dob" value="<?php echo $row['date'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -136,7 +136,7 @@
 								<label for="">Gender</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
-									<select class="form-control" required>
+									<select class="form-control" required name="gender">
 	                                    <option value="">Male</option>
 	                                    <option value="">Female</option>
 	                                </select>
@@ -148,7 +148,7 @@
 								<label for="">Address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="text" required placeholder="address" value="<?php echo $row['address'] ?>">
+									<input class="form-control" type="text" name="add" required placeholder="address" value="<?php echo $row['address'] ?>">
 								</div>
 							</div>
 						</div>
@@ -157,7 +157,7 @@
 								<label for="">Email address</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input class="form-control" type="email" required placeholder="your@email.com" value="<?php echo $row['email'] ?>">
+									<input class="form-control" type="email" required name="email" placeholder="your@email.com" value="<?php echo $row['email'] ?>">
 								</div>
 							</div>
 						</div>
@@ -166,7 +166,7 @@
 								<label for="">Contact number</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-									<input class="form-control" type="text" required placeholder="+639 *** ****" value="<?php echo $row['contactNum'] ?>">
+									<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****" value="<?php echo $row['contactNum'] ?>">
 								</div>
 							</div>
 							<!-- <div class="col-1"></div>
@@ -174,7 +174,7 @@
 								<label for="">Status</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart-empty"></i></span>
-									<select class="form-control">
+									<select class="form-control">                                                                                                                                                                                                                                                                     
 	                                    <option value="">Single</option>
 	                                    <option value="">Married</option>
 	                                    <option value="">Divorced</option>
@@ -184,7 +184,7 @@
 							</div> -->
 						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
-							<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
+							<button class="btn btn-dark" type="submit" name="contact_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 							
 							<div class="modal fade" id="update">
 								<div class="modal-dialog">
@@ -200,7 +200,7 @@
 							</div>
 						</div>
 						<?php endwhile;} ?>
-					</div>
+					</form>
 				</div>
 				<div class="col-6">
 					<div class="row-12">

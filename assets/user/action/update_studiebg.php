@@ -38,5 +38,5 @@
 		$sql = "UPDATE highschool_background SET schoolName = '$sname', schoolAdd = '$sadd', state = '$state', country = '$country', city = '$city', postCode = '$postCode', year_end = '$date',  average = '$average' WHERE staff_id = '$id'";
 		mysqli_query($connect,$sql);	
 	}
-
+	echo "Successfuly Updated <a href='../studiesbg.php?id=".$id."'>Go back!</a>";
 ?>

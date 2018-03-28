@@ -25,5 +25,21 @@
 		$sql = "UPDATE family_details SET numOfChildren = '$count' WHERE staff_id = '$id'";
 		mysqli_query($connect,$sql);	
 	}
+	if (isset($_POST['contact_update'])){
+		$fname = mysqli_real_escape_string($connect,$_POST['fname']);
+		$mname = mysqli_real_escape_string($connect,$_POST['mname']);
+		$sname = mysqli_real_escape_string($connect,$_POST['sname']);
+		$dob = mysqli_real_escape_string($connect,$_POST['dob']);
+		$gender = mysqli_real_escape_string($connect,$_POST['gender']);
+		$add = mysqli_real_escape_string($connect,$_POST['add']);
+		$email = mysqli_real_escape_string($connect,$_POST['email']);
+		$contnum = mysqli_real_escape_string($connect,$_POST['contnum']);
 
+		$id = $_GET['id'];
+
+		$sql = "UPDATE contact_person SET fname = '$fname', mname = '$mname', lname = '$sname', contactNum = '$contnum', address = '$add', gender = '$gender', email = '$email', birthdate = '$dob' WHERE staff_id = '$id'";
+		mysqli_query($connect,$sql);
+		header('location: ../familyDetails.php');
+	}
+	echo "Successfuly Updated <a href='../familyDetails.php?id=".$id."'>Go back!</a>";
 ?>
