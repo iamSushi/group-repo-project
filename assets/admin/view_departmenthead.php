@@ -30,7 +30,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="#">View Department</a></li>
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
 										</ul>

@@ -11,8 +11,7 @@
 	<title>Document</title>
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
-	<script src="js/jquery-3.3.1.js"></script>
-	<script src="js/bootstrap.js"></script>
+	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
@@ -89,40 +88,70 @@
 								</div>
 							</div>
 	</div>
-		<div class="col-sm-12"><legend>Update Schedule</legend></div>
+	<div class="col-sm-10 content">
+		<div class="col-sm-12" style="padding: 0;">
+			 <nav class="navbar navbar-inverse">
+			 	 <div class="container-fluid" style="padding-left: 0;">
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Attendance Details</a></li>
+			 	 	</ul>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
+			 	 	<ul class="nav navbar-right nav-btn">
+				 	 	<div class="input-group">
+							 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+							</div> 
+						</div>
+					</ul>
+			 	 </div>
+			 </nav>		
+		</div>
+		<div class="col-sm-12"><legend>Update Attendance Details</legend></div>
 		<?php
 
 				include_once("connection.php");
 
 				$id = $_GET['id'];
-				$sql = "SELECT * FROM schedule WHERE sched_id = '$id'";
+				$sql = "SELECT * FROM department WHERE depart_id = '$id'";
 				$result = mysqli_query($connect,$sql);
 				if(mysqli_num_rows($result) > 0){
 					while($row = mysqli_fetch_assoc($result)){
 					?>
+
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="action/schedule_update_data.php">
-			 				<input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
-								<!-- <div class="form-group">
-										<label class="control-label col-sm-4">Schedule ID:</label>
-										<div class="col-sm-5 inputGroupContainer">
-											<div class="input-group">
-												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-												<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
-											</div>
-										</div>
-								   	</div> -->
+			 			<form class="form-horizontal" method="POST" action="action/department_update_data.php">
+			 					<input type="hidden" name="id" value="<?php echo $_GET['id']?>">
+						    	<!-- <div class="form-group">
+						    										<label class="control-label col-sm-4">Attendance ID:</label>
+						    										<div class="col-sm-5 inputGroupContainer">
+						    											<div class="input-group">
+						    												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						    												<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID" value="<?php echo $row['depart_id'];?>">
+						    											</div>
+						    										</div>
+						    								   	</div> -->
+
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Day:</label>
+									<label class="control-label col-sm-4">Department Name:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="Staff_id" class='form-control' required placeholder="Day" value="<?php echo $row['staff_id'];?>">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="depart_name" class='form-control' required placeholder="Departname Name" value="<?php echo $row['depart_name'];?>">
 										</div>
 									</div>
 								</div>
-								 
+								<div class="form-group">
+								    <label class="control-label col-sm-4">Department Head:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
+											<input type="text" name="depart_head" class='form-control' required placeholder="Department Head" value="<?php echo $row['depart_head'];?>">
+										</div>
+									</div>
+								</div>
+							    
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
@@ -140,4 +169,4 @@
 		
 	</div>
 </body>
-</html>
+</html>s

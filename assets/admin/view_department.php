@@ -9,17 +9,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-</head>
-<body>
-	<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	 <link rel="stylesheet" href="css/styletry.css">
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-	  <script src="js/jquery-3.3.1.js"></script>
+	 <link rel="stylesheet" href="css/styletry.css">
+	 <script src="js/jquery-3.3.1.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
@@ -30,7 +24,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="#">View Department</a></li>
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
 										</ul>
@@ -95,14 +90,14 @@
 								</div>
 							</div>
 	</div>
-	<div class="col-sm-10 ha" style="height: 100%;padding: 0">
+	<div class="col-sm-10 content">
 		<div class="col-sm-12" style="padding: 0;">
-			 <nav class="navbar navbar-inverse" style="border-radius: 0;border:none;">
-					<div class="container-fluid" style="padding-left: 0;">
-			 	 	<!-- <ul class="nav navbar-nav">
-			 	 		<li><a href="#" class="activeh" style="color: white;">Department</a></li>
-			 	 		<li><a href="search_department_head.php">Search Department</a></li>
-			 	 	</ul> -->
+			 <nav class="navbar navbar-inverse">
+			 	 <div class="container-fluid" style="padding-left: 0;">
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
+			 	 	</ul> 
+			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -113,48 +108,52 @@
 						</div>
 					</ul>
 			 	 </div>
-	    	</nav>
+			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Department</legend></div>
+		<div class="col-sm-12"><legend>View Attendance Details</legend></div>
 			 		<div class="col-sm-12">
-			 			 
-						<div class="col-sm-10 form-ni">
-							<table border="1" class="table">
-								<tr>
-									<th>Department</th>
-									<th></th>
-								</tr>
-								<tr>
-									<td>Labortory</td>
-									<td>
-										<a href='view_department_head.php'>
-										      <button class='btn btn-primary btn-view-department'>View Department</button>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>Nurse</td>
-									<td>
-										<a href='view_department_head.php'>
-										      <button class='btn btn-primary btn-view-department'>View Department</button>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>Pharmacy</td>
-									<td>
-										<a href='view_department_head.php'>
-										      <button class='btn btn-primary btn-view-department'>View  Department</button>
-										</a>
-									</td>
-								</tr>
-							</table>
-						</div>
-			 			 
-					</div>
+			 			
+			 			<?php
+
+	  include_once("connection.php");
+	  $sql = "SELECT * FROM department";
+	  $result = mysqli_query($connect,$sql);
+	  if(mysqli_num_rows($result) > 0){
+		  echo "<table class='table' border='1'>";
+		  echo "<thead>
+					<tr>
+					    <th>Department ID</th>
+						<th>Department Name</th>
+						<th>Department Head</th>
+						 
+					</tr>
+				</thead>";
+		  echo "<tbody>";
+	     while($row = mysqli_fetch_assoc($result)){
+		       echo "<tr><td style='text-align:center;'>".
+					 $row['depart_id'].
+					"</td><td>".
+					$row['depart_name'].
+					"</td><td>".
+					$row['depart_head'].
+					
+					 
+					 "</td>
+					 <td>
+					    <a href='update_department.php?id=".$row['depart_id']."'>
+					      <button class='btn btn-primary'>Update</button>
+						</a>
+						<a href='action/department_delete.php?id=".$row['depart_id']."'>
+						  <button class='btn btn-danger'>Delete</button>
+						</a>
+					 </td>
+					 </tr>";
+		 }
+		 echo "</tbody>";
+	  }
+	?>
+					  	</div>
 		
 	</div>
-</body>
-</html>
 </body>
 </html>

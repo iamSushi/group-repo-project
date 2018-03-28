@@ -89,40 +89,48 @@
 								</div>
 							</div>
 	</div>
-		<div class="col-sm-12"><legend>Update Schedule</legend></div>
-		<?php
-
-				include_once("connection.php");
-
-				$id = $_GET['id'];
-				$sql = "SELECT * FROM schedule WHERE sched_id = '$id'";
-				$result = mysqli_query($connect,$sql);
-				if(mysqli_num_rows($result) > 0){
-					while($row = mysqli_fetch_assoc($result)){
-					?>
+	<div class="col-sm-10 content">
+		<div class="col-sm-12" style="padding: 0;">
+			 <nav class="navbar navbar-inverse">
+			 	 <div class="container-fluid" style="padding-left: 0;">
+			 	 	<ul class="nav navbar-nav">
+			 	 		 <li><a href="#" style="color: white;">Department</a></li>
+			 	 	</ul>
+			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
+			 	 	<ul class="nav navbar-right nav-btn">
+				 	 	<div class="input-group">
+							 <div class="input-group">
+								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+							</div> 
+						</div>
+					</ul>
+			 	 </div>
+			 </nav>		
+		</div>
+		<div class="col-sm-12"><legend>Add Department</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="action/schedule_update_data.php">
-			 				<input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
-								<!-- <div class="form-group">
-										<label class="control-label col-sm-4">Schedule ID:</label>
-										<div class="col-sm-5 inputGroupContainer">
-											<div class="input-group">
-												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-												<input type="text" name="sched_id" class='form-control' required placeholder="Schedule ID">
-											</div>
-										</div>
-								   	</div> -->
+			 			<form class="form-horizontal" method="POST" action="action/department_add.php">
 							 	<div class="form-group">
-									<label class="control-label col-sm-4">Day:</label>
+									<label class="control-label col-sm-4">Department Name:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-											<input type="text" name="Staff_id" class='form-control' required placeholder="Day" value="<?php echo $row['staff_id'];?>">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="date" name="depart_name" class='form-control' required placeholder="Day">
 										</div>
 									</div>
 								</div>
-								 
+								<div class="form-group">
+								    <label class="control-label col-sm-4">Departname Head:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											  <input type="text" name="depart_head" class='form-control' required placeholder="Morning Time In">
+										</div>
+									</div>
+								</div>
+							    
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
@@ -133,10 +141,6 @@
 							  </div>
 					  		</form>
 					  	</div>
-					  	<?php
-  			}
-  		}
-  ?>
 		
 	</div>
 </body>

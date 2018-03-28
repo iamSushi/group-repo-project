@@ -18,4 +18,4 @@
 		echo "Failed to Upabsences!".mysqli_error($connect);
 
 	}
-?>
+?>n

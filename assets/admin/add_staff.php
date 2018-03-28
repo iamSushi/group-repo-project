@@ -25,7 +25,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="#">View Department</a></li>
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
 										</ul>
@@ -215,7 +216,12 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="position" class='form-control' required placeholder="Position">
+								  <!--   <input type="text" name="position" class='form-control' required placeholder="Position"> -->
+								 			 <select name="position" id="" class="form-control" required>
+								  				<option value="staff">Staff</option>
+								  				<option value="head">Head</option>
+								  				<option value="leader">Leader</option>
+								  			</select>
 								    	</div>
 								    </div>
 								</div>
@@ -224,7 +230,7 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-								    <input type="text" name="password" class='form-control' required placeholder="Password">
+								  <input type="text" name="password" class='form-control' required placeholder="Password">
 								    	</div>
 								    </div>
 								</div>
