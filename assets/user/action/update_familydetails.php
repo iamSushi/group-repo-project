@@ -41,5 +41,6 @@
 		mysqli_query($connect,$sql);
 		header('location: ../familyDetails.php');
 	}
+	
 	echo "Successfuly Updated <a href='../familyDetails.php?id=".$id."'>Go back!</a>";
 ?>

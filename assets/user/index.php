@@ -121,6 +121,14 @@
 												</div>
 											</div>
 											<div class="container form-group">
+												<label for="">Department</label>
+												<select class="form-control" name="dept">
+													<option value="Ophthalmology">Ophthalmology</option>
+													<option value="Accident and emergency">Accident and emergency</option>
+													<option value="Cardiology">Cardiology</option>
+												</select>
+											</div>
+											<div class="container form-group">
 												<button class="btn btn-dark" type="submit" name="head_login">Login
 														<span class="glyphicon glyphicon-send"></span>
 												</button>
@@ -241,7 +249,7 @@
 											<span class="input-group-addon">
 												<i class="glyphicon glyphicon-lock"></i>
 											</span>
-											<input class="form-control" type="text" name="reg_password" required placeholder="Password">
+											<input class="form-control" type="password" name="reg_password" required placeholder="Password">
 										</div>
 									</div>
 								</div>
@@ -251,7 +259,7 @@
 											<span class="input-group-addon">
 												<i class="glyphicon glyphicon-lock"></i>
 											</span>
-											<input class="form-control" type="text" name="reg_repassword" required placeholder="Retype password">
+											<input class="form-control" type="password" name="reg_repassword" required placeholder="Retype password">
 										</div>
 									</div>
 								</div>

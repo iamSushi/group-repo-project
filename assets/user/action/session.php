@@ -33,9 +33,19 @@
 			 // $password = md5($pass);
 			$sql = "INSERT INTO staff VALUES('','$fname','','$sname','','','','$email','','','$type','','$pass')";
 			mysqli_query($connect,$sql);
+			// $id = mysqli_insert_id();
 			$_SESSION['email'] = $email;
+			$sqltwo = "SELECT * FROM staff WHERE email = '$email'";
+			mysqli_query($connect,$sqltwo);
+			$result = mysqli_query($connect,$sqltwo);
+			if(mysqli_num_rows($result) > 0){
+				while($row = mysqli_fetch_assoc($result)){
+					header("location: basicinfo.php?id=".$row['staff_id']."");
+				}
+			}
+			// $id = $_GET['staff_id'];
 			// $_SESSION['success'] = "You are now logged in";
-			header("location: basicinfo.php?id=".$row['staff_id']."");
+			
 		}
 	}
 	if (isset($_POST['login'])){
@@ -105,6 +115,7 @@
 	if (isset($_POST['head_login'])){
 		$email = mysqli_real_escape_string($connect,$_POST['head_email']);
 		$pass = mysqli_real_escape_string($connect,$_POST['head_password']);
+		$dept = mysqli_real_escape_string($connect,$_POST['dept']);
 		$type = "Head";
 		// $stand = mysqli_real_escape_string($connect,$_POST['standing']);
 		if(empty($email)){
@@ -115,25 +126,19 @@
 		}
 		if(count($errors) == 0){
 			// $password = md5($password);
-			$query = "SELECT * FROM staff WHERE email = '$email' AND password = '$pass' AND type = '$type'";
+			$query = "SELECT * FROM staff WHERE email = '$email' AND password = '$pass' AND department = '$dept' AND type = '$type'";
 			$result = mysqli_query($connect, $query);
-			if(mysqli_num_rows($result) == 1){
-				$_SESSION['email'] = $email;
-				$_SESSION['success'] = "You are now logged in";
-				header('location: ../deptHead/view.php');
-				// if($stand == "User"){
-				// 	$_SESSION['email'] = $email;
-				// 	$_SESSION['success'] = "You are now logged in";
-				// 	header('location: profile.php');
-					
-				// }else{
-				// 	$_SESSION['email'] = $email;
-				// 	header('location: member.php');
-					
-				// }
+			// $sqltwo = "SELECT * FROM staff WHERE email = '$email'";
+			// mysqli_query($connect,$sqltwo);
+			// $result = mysqli_query($connect,$result);
+			if(mysqli_num_rows($result) > 0){
+				while($row = mysqli_fetch_assoc($result)){
+					$sqltwo = "SELECT * FROM staff WHERE email = '$email'";
+					mysqli_query($connect,$sqltwo);
+					header("location: ../deptHead/staff_view.php?id=".$row['staff_id']."&dept=".$row['department']."");
+				}
 			}else{
-				array_push($errors, "The email/password/ is incorrect");
-				// header('location: index.php');
+				array_push($errors, "The email/password is incorrect");
 			}
 		}
 	}
