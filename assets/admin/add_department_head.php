@@ -25,8 +25,8 @@
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
 											<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
-											<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
-											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>-->
+											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li> 
 											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
 									</div>
@@ -95,7 +95,7 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Add Attendance Details</a></li>
+			 	 		 <li><a href="#" style="color: white;">View Staff</a></li>
 			 	 	</ul> 
 			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
@@ -110,48 +110,79 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>View Attendance</legend></div>
-					<div class="col-sm-3"></div>
-			 		<div class="col-sm-6">
+		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
+			 		<div class="col-sm-12">
+			 			
 			 			<?php
-						  include_once("connection.php");
-						  $sql = "SELECT * FROM scheduleView";
-						  $result = mysqli_query($connect,$sql);
-						  if(mysqli_num_rows($result) > 0){
-							  echo "<table class='table' border='1'>";
-							  echo "<thead>
-										<tr>
-										    <th>Attendance ID</th>
-											<th>Staff ID</th>
-											<th></th>
-										</tr>
-									</thead>";
-							  echo "<tbody>";
-						     while($row = mysqli_fetch_assoc($result)){
-							       echo "<tr><td style='text-align:center;'>".
-								         $row['sched_id'].
-										"</td><td>".
-										 $row['fname'].' '.
-										 $row['mname'].' '.
-										 $row['lname'].
-										 
-										 
-										 "</td>
-										 <td>
-										    <a href='update_schedule.php?id=".$row['sched_id']."'>
-										      <button class='btn btn-primary'>Update</button>
-											</a>
-											<a href='action/schedule_delete.php?id=".$row['sched_id']."'>
-											  <button class='btn btn-danger'>Delete</button>
-											</a>
-										 </td>
-										 </tr>";
-							 }
-							 echo "</tbody>";
-						  }
-						?>
+
+	  include_once("connection.php");
+	  $sql = "SELECT * FROM staff";
+	  $result = mysqli_query($connect,$sql);
+	  if(mysqli_num_rows($result) > 0){
+		  echo "<table class='table' border='1'>";
+		  echo "<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Middle Name</th>
+						<th>Last Name</th>
+						<th>Birthdate</th>
+						<th>Cellphone No.</th>
+						<th>Telephone No.</th>
+						<th>Email</th>
+						<th>Status</th>
+						<th>Gender</th>
+						<th>Type</th>
+						<th>Position</th>
+						<th>Password</th>
+						<th></th>
+					</tr>
+				</thead>";
+		  echo "<tbody>";
+	     while($row = mysqli_fetch_assoc($result)){
+		       echo "<tr><td style='text-align:center;'>".
+			        /* $row['staff_id'].
+					"</td><td>".*/
+					 $row['fname'].
+					"</td><td>".
+					$row['mname'].
+					"</td><td>".
+					$row['lname'].
+					"</td><td>".
+					$row['birthdate'].
+					"</td><td>".
+					$row['cellnum'].
+					"</td><td>".
+					 $row['telnum'].
+					"</td><td>".
+					 $row['email'].
+					"</td><td>".
+					$row['status'].
+					"</td><td>".
+					$row['gender'].
+					"</td><td>".
+					$row['type'].
+					"</td><td>".
+					$row['department'].
+					"</td><td>".
+					$row['password'].
+					 
+					 
+					 
+					 "</td>
+					 <td>
+						<a href='action/department_head_elect.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-success'>Elect Department Head</button>
+						</a>
+						<a href='action/department_head_delect.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-danger'>Delect Department Head</button>
+						</a>
+					 </td>
+					 </tr>";
+		 }
+		 echo "</tbody>";
+	  }
+	?>
 					  	</div>
-					  	<div class="col-sm-3"></div>
 		
 	</div>
 </body>

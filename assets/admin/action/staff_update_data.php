@@ -12,10 +12,10 @@
 	$email = $_POST['email'];
 	$status = $_POST['status'];
 	$type = $_POST['type'];
-	$position = $_POST['position'];
+	$department = $_POST['department'];
 	$password = $_POST['password'];
 	 
-	$sql = "UPDATE staff SET fname = '$fname', mname = '$mname', lname = '$lname', cellnum ='$cellnum', gender = '$gender',birthdate = '$bday',email ='$email', status ='$status', telnum ='$telnum' ,type ='$type' ,position ='$position', password = '$password' WHERE staff_id = '$id'";
+	$sql = "UPDATE staff SET fname = '$fname', mname = '$mname', lname = '$lname', cellnum ='$cellnum', gender = '$gender',birthdate = '$bday',email ='$email', status ='$status', telnum ='$telnum' ,type ='$type' ,department ='$department', password = '$password' WHERE staff_id = '$id'";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Updated! <a href='../view_staff.php'><<< Go Back</a>";
