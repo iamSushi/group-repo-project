@@ -22,7 +22,6 @@
 				<?php
 					$space = " ";
 					$id = $_GET['id'];
-					$dept = $_GET['dept'];
 					include_once("action/mysqlconn.php");
 					// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
 					// $query = "SELECT * FROM staff WHERE email = '$email'";
@@ -73,15 +72,6 @@
 								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
-						<!-- <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Add Attendance</a></li>
-								<li><a href="#">Check Attendance</a></li>
-							</ul>
-						</li> -->
 						<li >
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
@@ -96,55 +86,85 @@
 						</li>
 					</ul>
 				</div>
-				<div class="row-11" style="overflow-y:scroll; min-height: 690px;">
-					<!-- <div>
-						<input type="text" name="searhThis" class="form-control" style="width: 200px; margin: 10px; float: left;" placeholder="Search Here">
-						<button name="search" class="btn btn-dark" style="float: left; margin: 6px;">Search</button>
-					</div> -->
-					<form action="" method="post" class="container">
-						<?php
-							$space = " ";
-							$id = $_GET['id'];
-							$dept = $_GET['dept'];
-							include_once("action/mysqlconn.php");
-							$query = "SELECT * FROM staff WHERE department = '$dept'";
-							$result = mysqli_query($connect,$query);
-							if(mysqli_num_rows($result) > 0){
-							echo "<table class='table'>";
-								echo "<tr>";
-									echo "<th>Firstname</th>";
-									echo "<th>Middlename</th>";
-									echo "<th>Surname</th>";
-									echo "<th>Birthdate</th>";
-									echo "<th>Email Address</th>";
-									echo "<th>Position</th>";
-									echo "<th>Status</th>";
-									echo "<th>Gender</th>";
-									echo "<th></th>";
-								echo "</tr>";
-								while ($row = mysqli_fetch_assoc($result)){
-								echo "<tr>";
-									echo "<td>".$row['fname']."</td>";
-									echo "<td>".$row['mname']."</td>";
-									echo "<td>".$row['lname']."</td>";
-									echo "<td>".$row['birthdate']."</td>";
-									echo "<td>".$row['email']."</td>";
-									echo "<td>".$row['type']."</td>";
-									echo "<td>".$row['status']."</td>";
-									echo "<td>".$row['gender']."</td>";
-									echo "<td>
-										<a href='viewStaff.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-primary' style='width:85px;'>Details</a>
-										<a href='sched_add.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-warning' style='width:85px;'>Sched</a>
-										<a href='action/remove.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
-									</td>";
-								echo "</tr>";
-								}
-							echo "</table>";
-							}
-						?>
-					</form>
-				</div>
+				<?php
+					$space = " ";
+					$sid = $_GET['sid'];
+					include_once("../user/action/session.php");
+					$query = "SELECT * FROM staff WHERE staff_id = '$sid'";
+					$result = mysqli_query($connect,$query);
+					if(mysqli_num_rows($result) > 0){
+						while($row = mysqli_fetch_assoc($result)):
+				?>
+				<form class="form-horizontal" method="POST" action="action/update_jobdetails.php<?php echo '?id='.$_GET['id'].'&sid='.$sid.'&dept='.$_GET['dept'].'' ?>">
+					<div class="row-1"></div>
+ 					<div class="container row-11">
+					 	<div class="form-group" style="margin-bottom: 15px;">
+							<label class="control-label col-sm-4">Name:</label>
+							<div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+									<input type="text" name="" value="<?php echo $row['fname'].$space.$row['mname'].$space.$row['lname'] ?>" class='form-control' placeholder="name">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4">Salary Wage:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="wage" value="" class='form-control' placeholder="php">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4">Department:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="department" value="<?php echo $row['department'] ?>" class='form-control' placeholder="">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4">Allowance:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="allowance" value="" class='form-control' placeholder="php">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4">Employment Status:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="status" value="<?php echo $row['type'] ?>" class='form-control' placeholder="">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4">Department Head:</label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									<input type="text" name="depthead" value="" class='form-control' placeholder="">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" style="margin-bottom: 15px;">
+						    <label class="control-label col-sm-4"></label>
+						    <div class="col-sm-5 inputGroupContainer">
+								<div class="input-group">
+									<button  type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</div>
+				  	</div>
+		  		</form>
+				<?php endwhile;} ?>
 			</div>
 		</div>
 	</body>
+	<script src="js/script.js"></script>
 </html>

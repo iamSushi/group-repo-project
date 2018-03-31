@@ -27,7 +27,7 @@
 						include_once("action/session.php");
 						// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
 						// $query = "SELECT * FROM staff WHERE email = '$email'";
-						$query = "SELECT staff.staff_id, staff.fname, staff.mname, staff.lname, staff.status, staff.gender, staff.type, staff.position, staff.password, current_address.staff_id, current_address.addOne, current_address.addTwo, current_address.addTre, current_address.state, current_address.city FROM staff INNER JOIN current_address ON staff.staff_id = current_address.staff_id WHERE staff.staff_id = '$id'";
+						$query = "SELECT staff.staff_id, staff.fname, staff.mname, staff.lname, staff.status, staff.gender, staff.type, staff.department, staff.password, current_address.staff_id, current_address.addOne, current_address.addTwo, current_address.addTre, current_address.state, current_address.city FROM staff INNER JOIN current_address ON staff.staff_id = current_address.staff_id WHERE staff.staff_id = '$id'";
 						$result = mysqli_query($connect,$query);
 						if(mysqli_num_rows($result) > 0){
 							while($row = mysqli_fetch_assoc($result)):
@@ -52,7 +52,7 @@
 										<div class="row-4">
 											<div class="col-4 container">
 												<label>Position:</label>
-												<h5><?php echo $row['position'] ?></h5>
+												<h5><?php echo $row['department'] ?></h5>
 											</div>
 											<div class="col-4 container">
 												<label>Status:</label>
@@ -83,7 +83,7 @@
 								<div class="collapse navbar-collapse navHeaderCollapse">
 									<ul class="nav navbar-nav navbar-left">
 										<li><a href="about_me.php<?php echo '?id='.$id.''?>">About</a></li>
-										<li class="active"><a href="work_details.php<?php echo '?id='.$id.''?>">Work</a></li>
+										<li><a class="active" href="work_details.php<?php echo '?id='.$id.''?>">Work</a></li>
 										<li><a href="contact_person.php<?php echo '?id='.$id.''?>">Contact</a></li>
 									</ul>
 									<ul class="nav navbar-nav navbar-right" style="margin-right: 15px;">
@@ -104,67 +104,39 @@
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="work_details.php">Work Details</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse"><a href="work_details.php<?php echo '?id='.$id.''?>">Work Details</a></a></h4>
 									</div>
-									<!-- <div id="collapse1" class="panel-collapse collapse">
-										<ul class="list-group">
-											<li class="list-group-item"><a href="about_me.php">About Me</a></li>
-											<li class="list-group-item"><a href="about_address.php">Address</a></li>
-										</ul>
-									</div> -->
 								</div>
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse"><a href="work_schedule.php">Schedule</a></a></h4>
+										<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse"><a href="work_schedule.php<?php echo '?id='.$id.''?>">Schedule</a></a></h4>
 									</div>
-									<!-- <div id="collapse2" class="panel-collapse collapse">
-										<ul class="list-group">
-											<li class="list-group-item"><a href="about_father.php">Father's Information</a></li>
-											<li class="list-group-item"><a href="about_mother.php">Mother's Information</a></li>
-										</ul>
-									</div> -->
-								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse"><a href="work_attendance.php">Attendance</a></a></h4>
-									</div>
-									<!-- <div id="collapse3" class="panel-collapse collapse">
-										<ul class="list-group">
-											<li class="list-group-item"><a href="about_spouse.php">Spouse</a></li>
-											<li class="list-group-item"><a href="about_children.php">Children</a></li>
-										</ul>
-									</div> -->
-								</div>
-							</div>
-							<div class="panel-group">
-								<div class="panel panel-default">
-									<div class="panel panel-heading">
-										<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse"><a href="work_leave.php">Request Leave</a></a></h4>
-									</div>
-									<!-- <div id="collapse4" class="panel-collapse collapse">
-										<ul class="list-group">
-											<li class="list-group-item"><a href="about_hsbg.php">High School Background</a></li>
-											<li class="list-group-item"><a href="about_collegebg.php">College Background</a></li>
-										</ul>
-									</div> -->
 								</div>
 							</div>
 						</div>
 						<div class="col-9">
 							<div class="row-12">
+							<?php
+								$space = " ";
+								$email = $_SESSION['email'];
+								$id = $_GET['id'];
+								include_once("action/session.php");
+								$query = "SELECT * FROM job_details WHERE staff_id = '$id'";
+								$result = mysqli_query($connect,$query);
+								if(mysqli_num_rows($result) > 0){
+									while($row = mysqli_fetch_assoc($result)):
+							?>
 								<form action="">
 									<div class="container form-group">
 										<legend><h2>Job Details</h2></legend>
 									</div>
-									<!-- <div class="container form-group form-horizontal">
+									<div class="container form-group form-horizontal">
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Department:</span>
-												<span class='form-control'>Hospital Pharmacy</span>
+												<span class='form-control'><?php echo $row['department'] ?></span>
 											</div>
 										</div>
 									</div>
@@ -172,7 +144,7 @@
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Department Head:</span>
-												<span class='form-control'>Mrs. Sinadjan, Lorylee</span>
+												<span class='form-control'><?php echo $row['deptHead'] ?></span>
 											</div>
 										</div>
 									</div>
@@ -180,7 +152,7 @@
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Allowance:</span>
-												<span class='form-control'>P150</span>
+												<span class='form-control'><?php echo $row['allowance'] ?></span>
 											</div>
 										</div>
 									</div>
@@ -188,7 +160,7 @@
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Salary Wage:</span>
-												<span class='form-control'>P32,000</span>
+												<span class='form-control'><?php echo $row['salaryWage'] ?></span>
 											</div>
 										</div>
 									</div>
@@ -196,11 +168,12 @@
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Employment Status:</span>
-												<span class='form-control'>Employed</span>
+												<span class='form-control'><?php echo $row['employmentStatus'] ?></span>
 											</div>
 										</div>
-									</div> -->
+									</div>
 								</form>
+							<?php endwhile;} ?>
 							</div>
 						</div>
 					</div>

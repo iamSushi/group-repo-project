@@ -27,44 +27,44 @@
 						include_once("action/session.php");
 						// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
 						// $query = "SELECT * FROM staff WHERE email = '$email'";
-						$query = "SELECT staff.staff_id, staff.fname, staff.mname, staff.lname, staff.status, staff.gender, staff.type, staff.position, staff.password, current_address.staff_id, current_address.addOne, current_address.addTwo, current_address.addTre, current_address.state, current_address.city FROM staff INNER JOIN current_address ON staff.staff_id = current_address.staff_id WHERE staff.staff_id = '$id'";
+						$query = "SELECT staff.staff_id, staff.fname, staff.mname, staff.lname, staff.status, staff.gender, staff.type, staff.department, staff.password, current_address.staff_id, current_address.addOne, current_address.addTwo, current_address.addTre, current_address.state, current_address.city FROM staff INNER JOIN current_address ON staff.staff_id = current_address.staff_id WHERE staff.staff_id = '$id'";
 						$result = mysqli_query($connect,$query);
 						if(mysqli_num_rows($result) > 0){
 							while($row = mysqli_fetch_assoc($result)):
 					?>
-						<form action="">
-							<div class="col-3 text-center">
-								<img src="img/avatar.png" alt="" style="width:180px;height: 180px;padding-top: 5px; ">
-							</div>
-							<div class="col-9">
-								<div class="row-4">
-									<div class="container">
-										<label>Name:</label>
-										<h5><?php echo $row['fname'].$space.$row['mname'].$space.$row['lname'] ?></h5>
+								<form action="">
+									<div class="col-3 text-center">
+										<img src="img/avatar.png" alt="" style="width:180px;height: 180px;padding-top: 5px; ">
 									</div>
-								</div>
-								<div class="row-4">
-									<div class="container">
-										<label>Address:</label>
-										<h5><?php echo $row['addOne'].$space.$row['addTwo'].$space.$row['addTre'].$space.$row['city'].$space.$row['state'] ?></h5>
+									<div class="col-9">
+										<div class="row-4">
+											<div class="container">
+												<label>Name:</label>
+												<h5><?php echo $row['fname'].$space.$row['mname'].$space.$row['lname'] ?></h5>
+											</div>
+										</div>
+										<div class="row-4">
+											<div class="container">
+												<label>Address:</label>
+												<h5><?php echo $row['addOne'].$space.$row['addTwo'].$space.$row['addTre'].$space.$row['city'].$space.$row['state'] ?></h5>
+											</div>
+										</div>
+										<div class="row-4">
+											<div class="col-4 container">
+												<label>Position:</label>
+												<h5><?php echo $row['department'] ?></h5>
+											</div>
+											<div class="col-4 container">
+												<label>Status:</label>
+												<h5><?php echo $row['status'] ?></h5>
+											</div>
+											<div class="col-4 container">
+												<label>Gender:</label>
+												<h5><?php echo $row['gender'] ?></h5>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="row-4">
-									<div class="col-4 container">
-										<label>Position:</label>
-										<h5><?php echo $row['position'] ?></h5>
-									</div>
-									<div class="col-4 container">
-										<label>Status:</label>
-										<h5><?php echo $row['status'] ?></h5>
-									</div>
-									<div class="col-4 container">
-										<label>Gender:</label>
-										<h5><?php echo $row['gender'] ?></h5>
-									</div>
-								</div>
-							</div>
-						</form>
+								</form>
 					<?php endwhile;} ?>
 				</div>
 			</div>

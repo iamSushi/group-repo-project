@@ -73,19 +73,9 @@
 								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
-						<!-- <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Add Attendance</a></li>
-								<li><a href="#">Check Attendance</a></li>
-							</ul>
-						</li> -->
-						<li >
+						<li class="dropdown">
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
-
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>
@@ -104,38 +94,38 @@
 					<form action="" method="post" class="container">
 						<?php
 							$space = " ";
-							$id = $_GET['id'];
-							$dept = $_GET['dept'];
 							include_once("action/mysqlconn.php");
-							$query = "SELECT * FROM staff WHERE department = '$dept'";
+							$query = "SELECT staff.fname, staff.mname, staff.lname, staff.type, staff.department, staff.email, schedule_details.schedDetails_id, schedule_details.day, schedule_details.morningTimein, schedule_details.morningTimeout, schedule_details.afternoonTimein, schedule_details.afternoonTimeout, schedule_details.totalHours FROM staff INNER JOIN schedule_details ON staff.staff_id = schedule_details.staff_id";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
+
+
 							echo "<table class='table'>";
 								echo "<tr>";
-									echo "<th>Firstname</th>";
-									echo "<th>Middlename</th>";
-									echo "<th>Surname</th>";
-									echo "<th>Birthdate</th>";
-									echo "<th>Email Address</th>";
-									echo "<th>Position</th>";
-									echo "<th>Status</th>";
-									echo "<th>Gender</th>";
+									echo "<th>Staff Name</th>";
+									echo "<th>Type</th>";
+									echo "<th>Department</th>";
+									echo "<th>Absences</th>";
+									echo "<th>Late</th>";
+									echo "<th>SSS</th>";
+									echo "<th>BIR</th>";
+									echo "<th>Pag-ibig</th>";
+									echo "<th>Philhealth</th>";
 									echo "<th></th>";
 								echo "</tr>";
 								while ($row = mysqli_fetch_assoc($result)){
 								echo "<tr>";
-									echo "<td>".$row['fname']."</td>";
-									echo "<td>".$row['mname']."</td>";
-									echo "<td>".$row['lname']."</td>";
-									echo "<td>".$row['birthdate']."</td>";
-									echo "<td>".$row['email']."</td>";
+									echo "<td>".$row['fname']."$space".$row['mname']."$space".$row['lname']."</td>";
 									echo "<td>".$row['type']."</td>";
-									echo "<td>".$row['status']."</td>";
-									echo "<td>".$row['gender']."</td>";
+									echo "<td>".$row['department']."</td>";
+									echo "<td><input type=''text class='form-control' placeholder='total days'></td>";
+									echo "<td><input type=''text class='form-control' placeholder='total time'></td>";
+									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
+									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
+									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
+									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
 									echo "<td>
-										<a href='viewStaff.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-primary' style='width:85px;'>Details</a>
-										<a href='sched_add.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-warning' style='width:85px;'>Sched</a>
-										<a href='action/remove.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
+										<a href='action/remove.php?sid=".$row['schedDetails_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
 									</td>";
 								echo "</tr>";
 								}

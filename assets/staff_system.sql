@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2018 at 10:05 PM
+-- Generation Time: Mar 31, 2018 at 09:22 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -21,52 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `staff_system`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `attendance`
---
-
-CREATE TABLE `attendance` (
-  `attend_id` bigint(20) NOT NULL,
-  `staff_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `attendance`
---
-
-INSERT INTO `attendance` (`attend_id`, `staff_id`) VALUES
-(1, 1),
-(2, 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `attendance_details`
---
-
-CREATE TABLE `attendance_details` (
-  `attenDetails_id` bigint(20) NOT NULL,
-  `attend_id` bigint(20) DEFAULT NULL,
-  `schedDetails_id` bigint(20) DEFAULT NULL,
-  `tardiness` int(11) DEFAULT NULL,
-  `overtime` int(11) DEFAULT NULL,
-  `absences` int(11) DEFAULT NULL,
-  `holiday` bit(1) DEFAULT NULL,
-  `holidayName` varchar(50) DEFAULT NULL,
-  `dailyTotalHours` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `attendance_details`
---
-
-INSERT INTO `attendance_details` (`attenDetails_id`, `attend_id`, `schedDetails_id`, `tardiness`, `overtime`, `absences`, `holiday`, `holidayName`, `dailyTotalHours`) VALUES
-(5, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
-(7, 1, 1, 1, 1, 1, b'1', 'Christmas', 8),
-(12, 1, 1, 0, 0, 0, b'1', 'daWD', 0);
 
 -- --------------------------------------------------------
 
@@ -150,58 +104,20 @@ INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `deduction`
---
-
-CREATE TABLE `deduction` (
-  `deduction_id` bigint(20) NOT NULL,
-  `staff_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `deduction`
---
-
-INSERT INTO `deduction` (`deduction_id`, `staff_id`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `deduction_details`
 --
 
 CREATE TABLE `deduction_details` (
   `deductDetails_id` bigint(20) NOT NULL,
-  `deduction_id` bigint(20) DEFAULT NULL,
-  `attenDetails_id` bigint(20) DEFAULT NULL,
+  `staff_id` bigint(20) NOT NULL,
   `leave_id` bigint(20) DEFAULT NULL,
   `sss` int(11) DEFAULT NULL,
   `pagibig` int(11) DEFAULT NULL,
   `philhealth` int(11) DEFAULT NULL,
-  `bir` int(11) DEFAULT NULL
+  `bir` int(11) DEFAULT NULL,
+  `absences` int(11) NOT NULL,
+  `late` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `department`
---
-
-CREATE TABLE `department` (
-  `depart_id` int(11) NOT NULL,
-  `depart_name` varchar(255) NOT NULL,
-  `depart_head` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `department`
---
-
-INSERT INTO `department` (`depart_id`, `depart_name`, `depart_head`) VALUES
-(1, 'Lab', NULL),
-(2, '', '1111-11-11'),
-(3, 'nurse', '3');
 
 -- --------------------------------------------------------
 
@@ -284,6 +200,13 @@ CREATE TABLE `job_details` (
   `deptHead` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `job_details`
+--
+
+INSERT INTO `job_details` (`staff_id`, `salaryWage`, `department`, `allowance`, `employmentStatus`, `deptHead`) VALUES
+(6, 210000, 'Cardiology', 1500, 'Staff', 'Catawan');
+
 -- --------------------------------------------------------
 
 --
@@ -360,31 +283,14 @@ CREATE TABLE `salary_report` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `schedule`
---
-
-CREATE TABLE `schedule` (
-  `sched_id` bigint(20) NOT NULL,
-  `staff_id` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `schedule`
---
-
-INSERT INTO `schedule` (`sched_id`, `staff_id`) VALUES
-(1, 1),
-(2, 4);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `schedule_details`
 --
 
 CREATE TABLE `schedule_details` (
   `schedDetails_id` bigint(20) NOT NULL,
-  `sched_id` bigint(20) DEFAULT NULL,
+  `staff_id` bigint(50) NOT NULL,
+  `head_id` bigint(20) NOT NULL,
+  `department` varchar(50) NOT NULL,
   `day` varchar(50) NOT NULL,
   `morningTimein` int(11) DEFAULT NULL,
   `morningTimeout` int(11) DEFAULT NULL,
@@ -397,9 +303,12 @@ CREATE TABLE `schedule_details` (
 -- Dumping data for table `schedule_details`
 --
 
-INSERT INTO `schedule_details` (`schedDetails_id`, `sched_id`, `day`, `morningTimein`, `morningTimeout`, `afternoonTimein`, `afternoonTimeout`, `totalHours`) VALUES
-(1, 1, '1', 73, 12, 13, 5, 8),
-(2, 2, '2', 103, 13, 3, 73, 8);
+INSERT INTO `schedule_details` (`schedDetails_id`, `staff_id`, `head_id`, `department`, `day`, `morningTimein`, `morningTimeout`, `afternoonTimein`, `afternoonTimeout`, `totalHours`) VALUES
+(11, 28, 15, 'Cardiology', 'Monday', 5, 8, 1, 6, 8),
+(12, 6, 15, 'Cardiology', 'Monday', 3, 9, 1, 5, 10),
+(15, 6, 15, 'Cardiology', 'Tuesday', 6, 12, 1, 6, 11),
+(16, 6, 15, 'Cardiology', 'Monday', 6, 12, 1, 6, 11),
+(17, 6, 15, 'Cardiology', 'Friday', 6, 12, 0, 0, 6);
 
 -- --------------------------------------------------------
 
@@ -432,10 +341,10 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 (2, 'joshua', 'omagap', 'perater', '1999-01-01', '09', '09', '', 'taken', 'male', '', '', ''),
 (3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', '', '1234'),
 (4, 'Gwapo', 'joshua', 'Perater', '2018-02-07', '091', '031', '', 'Taken', 'Male', '', '', ''),
-(6, 'James Kenneth Mark', 'Omamalin', 'Sinadjan', '1990-08-11', '09368727400', 'wala', 'jamessinadjan5@gmail.com', 'Married', 'Male', 'Staff', '', 'masaya'),
+(6, 'James', 'Omamalin', 'Sinadjan', '1990-08-11', '09368727400', 'wala', 'jamessinadjan5@gmail.com', 'Single', 'Male', 'Staff', 'Cardiology', 'masaya'),
 (15, 'Christian', 'Gwapo', 'Cat-Awan', '1994-11-05', '09365268941', 'wala', 'catawan@gmail.com', 'Married', 'Male', 'Head', 'Cardiology', '1233'),
 (16, 'Ezekiel', 'Kong', 'Garbosa', '2018-03-07', '09652651456', 'wala', 'garbosa@gmail.com', 'Single', 'Male', 'Staff', '', '1235'),
-(26, 'Zynarrah', '', 'Dizon', '0000-00-00', '', '', 'dizon@gmail.com', '', '', 'Staff', '', '1233'),
+(26, 'Zynarrah', '', 'Dizon', '0000-00-00', '', '', 'dizon@gmail.com', '', '', 'Staff', 'Cardiology', '1233'),
 (28, 'Jane', 'Marie', 'Go', '2018-03-16', '', '', 'mariego@gmail.com', 'Divorced', 'Female', 'Staff', 'Cardiology', 'Password'),
 (29, 'Donna', 'Claire', 'Pepito', '2018-03-13', '', '', 'pepito@gmail.com', 'Single', 'Female', 'Staff', 'Cardiology', 'Password'),
 (30, 'Loura', 'Jane', 'Kim', '2018-03-17', '', '', 'kimloura@gmail.com', 'Married', 'Female', 'Head', 'Ophthalmology', 'Password'),
@@ -480,21 +389,6 @@ INSERT INTO `work_experience` (`staff_id`, `companyName`, `employerName`, `emplo
 --
 
 --
--- Indexes for table `attendance`
---
-ALTER TABLE `attendance`
-  ADD PRIMARY KEY (`attend_id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `attendance_details`
---
-ALTER TABLE `attendance_details`
-  ADD PRIMARY KEY (`attenDetails_id`),
-  ADD KEY `attend_id` (`attend_id`),
-  ADD KEY `schedDetails_id` (`schedDetails_id`);
-
---
 -- Indexes for table `college_background`
 --
 ALTER TABLE `college_background`
@@ -513,26 +407,11 @@ ALTER TABLE `current_address`
   ADD KEY `staff_id` (`staff_id`);
 
 --
--- Indexes for table `deduction`
---
-ALTER TABLE `deduction`
-  ADD PRIMARY KEY (`deduction_id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
 -- Indexes for table `deduction_details`
 --
 ALTER TABLE `deduction_details`
   ADD PRIMARY KEY (`deductDetails_id`),
-  ADD KEY `deduction_id` (`deduction_id`),
-  ADD KEY `attenDetails_id` (`attenDetails_id`),
   ADD KEY `leave_id` (`leave_id`);
-
---
--- Indexes for table `department`
---
-ALTER TABLE `department`
-  ADD PRIMARY KEY (`depart_id`);
 
 --
 -- Indexes for table `family_details`
@@ -580,18 +459,11 @@ ALTER TABLE `salary_report`
   ADD KEY `staff_id` (`staff_id`);
 
 --
--- Indexes for table `schedule`
---
-ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`sched_id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
 -- Indexes for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
   ADD PRIMARY KEY (`schedDetails_id`),
-  ADD KEY `sched_id` (`sched_id`);
+  ADD KEY `staff_id` (`staff_id`);
 
 --
 -- Indexes for table `staff`
@@ -610,30 +482,6 @@ ALTER TABLE `work_experience`
 --
 
 --
--- AUTO_INCREMENT for table `attendance`
---
-ALTER TABLE `attendance`
-  MODIFY `attend_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `attendance_details`
---
-ALTER TABLE `attendance_details`
-  MODIFY `attenDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `deduction`
---
-ALTER TABLE `deduction`
-  MODIFY `deduction_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `department`
---
-ALTER TABLE `department`
-  MODIFY `depart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `leave_details`
 --
 ALTER TABLE `leave_details`
@@ -646,16 +494,10 @@ ALTER TABLE `salary_report`
   MODIFY `salary_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `schedule`
---
-ALTER TABLE `schedule`
-  MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
-  MODIFY `schedDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `schedDetails_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -666,19 +508,6 @@ ALTER TABLE `staff`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `attendance`
---
-ALTER TABLE `attendance`
-  ADD CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `attendance_details`
---
-ALTER TABLE `attendance_details`
-  ADD CONSTRAINT `attendance_details_ibfk_1` FOREIGN KEY (`attend_id`) REFERENCES `attendance` (`attend_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `attendance_details_ibfk_2` FOREIGN KEY (`schedDetails_id`) REFERENCES `schedule_details` (`schedDetails_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `college_background`
@@ -699,17 +528,9 @@ ALTER TABLE `current_address`
   ADD CONSTRAINT `current_address_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 
 --
--- Constraints for table `deduction`
---
-ALTER TABLE `deduction`
-  ADD CONSTRAINT `deduction_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
 -- Constraints for table `deduction_details`
 --
 ALTER TABLE `deduction_details`
-  ADD CONSTRAINT `deduction_details_ibfk_1` FOREIGN KEY (`deduction_id`) REFERENCES `deduction` (`deduction_id`),
-  ADD CONSTRAINT `deduction_details_ibfk_2` FOREIGN KEY (`attenDetails_id`) REFERENCES `attendance_details` (`attenDetails_id`),
   ADD CONSTRAINT `deduction_details_ibfk_3` FOREIGN KEY (`leave_id`) REFERENCES `leave_details` (`leave_id`);
 
 --
@@ -756,16 +577,10 @@ ALTER TABLE `salary_report`
   ADD CONSTRAINT `salary_report_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 
 --
--- Constraints for table `schedule`
---
-ALTER TABLE `schedule`
-  ADD CONSTRAINT `schedule_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
 -- Constraints for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
-  ADD CONSTRAINT `schedule_details_ibfk_1` FOREIGN KEY (`sched_id`) REFERENCES `schedule` (`sched_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `schedule_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `work_experience`

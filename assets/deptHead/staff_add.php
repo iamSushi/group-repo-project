@@ -1,8 +1,8 @@
 <? php
 	include('./user/action/session.php')
-	// if (empty($SESSION['email'])){
-	// 	header('location:index.php');
-	// }
+	if (empty($SESSION['email'])){
+		header('location:index.php');
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,11 +68,11 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">View Schedule</a></li>
-								<li><a href="#">Add Schedule</a></li>
+								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
+								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						<!-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance
 								<span class="caret"></span>
 							</a>
@@ -80,16 +80,11 @@
 								<li><a href="#">Add Attendance</a></li>
 								<li><a href="#">Check Attendance</a></li>
 							</ul>
+						</li> -->
+						<li >
+							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payroll
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Deduction</a></li>
-								<li><a href="#">Payment</a></li>
-							</ul>
-						</li>
+
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>

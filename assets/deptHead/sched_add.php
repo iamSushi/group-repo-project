@@ -55,9 +55,9 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="staff_view.php<?php echo '?id='.$id.''?>">All Staff</a></li>
-								<li><a href="staff_dept.php<?php echo '?id='.$id.''?>">My Staff</a></li>
-								<li><a href="staff_add.php<?php echo '?id='.$id.''?>">Add Staff</a></li>
+								<li><a href="staff_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">All Staff</a></li>
+								<li><a href="staff_dept.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">My Staff</a></li>
+								<li><a href="staff_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Staff</a></li>
 								<!-- <li><a href="#">Something else here</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a href="#">Separated link</a></li> -->
@@ -68,28 +68,14 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#">View Schedule</a></li>
-								<li><a href="#">Add Schedule</a></li>
+								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
+								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Add Attendance</a></li>
-								<li><a href="#">Check Attendance</a></li>
-							</ul>
+						<li >
+							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payroll
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Deduction</a></li>
-								<li><a href="#">Payment</a></li>
-							</ul>
-						</li>
+
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>
@@ -100,7 +86,7 @@
 						</li>
 					</ul>
 				</div>
-				<form class="form-horizontal" method="POST" action="">
+				<form class="form-horizontal" method="POST" action="action/addsched.php<?php echo "?sid=".$_GET['sid']."&id=".$_GET['id']."&dept=".$_GET['dept']." " ?>">
 					<div class="row-1"></div>
  					<div class="container row-11">
 					 	<div class="form-group" style="margin-bottom: 15px;">
@@ -108,59 +94,58 @@
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-									<input type="text" name="day" class='form-control' required placeholder="Day">
+									<select name="day" class="form-control">
+										<option value="Monday">Monday</option>
+										<option value="Tuesday">Tuesday</option>
+										<option value="Wednesday">Wednesday</option>
+										<option value="Thursday">Thursday</option>
+										<option value="Friday">Friday</option>
+										<option value="Saturday">Saturday</option>
+										<option value="Sunday">Sunday</option>
+									</select>
 								</div>
 							</div>
 						</div>
 						<div class="form-group" style="margin-bottom: 15px;">
-						    <label class="control-label col-sm-4">Morning Time In:</label>
+						    <label class="control-label col-sm-4">Time in (AM):</label>
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									  <input type="text" name="morningTimein" class='form-control' required placeholder="Morning Time In">
+									<input type="time" name="morningTimein" value="" class='form-control' placeholder="Morning Time In">
 								</div>
 							</div>
 						</div>
 					    <div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Morning Time Out:</label>
+							<label class="control-label col-sm-4">Time out (AM):</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									 <input type="text" name="morningTimeout" class='form-control' required placeholder="Morning Time Out">
+									<input type="time" name="morningTimeout" value="" class='form-control' placeholder="Morning Time Out">
 								</div>
 							</div>
 					 	</div>
 					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">afternoon Time In:</label>
+							<label class="control-label col-sm-4">Time in (PM):</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									 <input type="text" name="afternoonTimein" class='form-control' required placeholder="Afternoon Time In">
+									<input type="time" name="afternoonTimein" value="" class='form-control' placeholder="Afternoon Time In">
 								</div>
 							</div>
 					 	</div>
 					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Afternoon Time Out:</label>
+							<label class="control-label col-sm-4">Time out (PM):</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									 <input type="text" name="afternoonTimeout" class='form-control' required placeholder="Afternoon Time Out">
+									<input type="time" name="afternoonTimeout" value="" class='form-control' placeholder="Afternoon Time Out">
 								</div>
 							</div>
 					 	</div>
-					    <div class="form-group" style="margin-bottom: 15px;">
-					     	<label for="" class="control-label col-sm-4">TotalHours:</label>
-					     	<div class="col-sm-5 inputGroupContainer">
-					     		<div class="input-group">
-					     			<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
-					     			<input type="text" name="totalHours" class='form-control' required placeholder="Total Hours">
-					     		</div>
-					     	</div>
-					    </div>
 					   	<div class="form-group" style="margin-bottom: 15px;">
-					    <label for="" class="col-sm-4 control-label"></label>
+					    	<label for="" class="col-sm-4 control-label"></label>
 					   		<div class="col-sm-5">
-					  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+					  		<button type="submit" class="btn btn-primary" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 							</div>
 					  	</div>
 				  	</div>
@@ -169,4 +154,5 @@
 			</div>
 		</div>
 	</body>
+	<script src="js/script.js"></script>
 </html>
