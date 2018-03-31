@@ -133,7 +133,7 @@
 						<th>Gender</th>
 						<th>Type</th>
 						<th>Position</th>
-						<th>Password</th>
+						
 						<th></th>
 					</tr>
 				</thead>";
@@ -163,18 +163,18 @@
 					$row['type'].
 					"</td><td>".
 					$row['department'].
-					"</td><td>".
-					$row['password'].
+					/*"</td><td>".
+					$row['password'].*/
 					 
 					 
 					 
 					 "</td>
 					 <td>
 						<a href='action/department_head_elect.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-success'>Elect Department Head</button>
+					      <button class='btn btn-success'>Elect</button>
 						</a>
 						<a href='action/department_head_delect.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-danger'>Delect Department Head</button>
+					      <button class='btn btn-danger'>Delect</button>
 						</a>
 					 </td>
 					 </tr>";

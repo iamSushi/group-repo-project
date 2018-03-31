@@ -128,6 +128,12 @@
 						<th>Allowance</th>
 						<th>Employment Status</th>
 						<th>Department Head</th>
+						<th>SSS</th>
+						<th>Pag-ibig</th>
+						<th>PhilHealth</th>
+						<th>BIR</th>
+						<th>Absences</th>
+						<th>Late</th>
 						<th></th>
 					</tr>
 				</thead>";
@@ -145,6 +151,18 @@
 					$row['employmentStatus'].
 					"</td><td>".
 					$row['deptHead'].
+					 "</td><td>".
+					$row['sss'].
+					 "</td><td>".
+					$row['pagibig'].
+					 "</td><td>".
+					$row['philhealth'].
+					 "</td><td>".
+					$row['bir'].
+					 "</td><td>".
+					$row['absences'].
+					 "</td><td>".
+					$row['late'].
 					 
 					 
 					 "</td>
