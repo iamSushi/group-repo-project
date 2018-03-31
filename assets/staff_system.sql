@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2018 at 09:22 AM
+-- Generation Time: Mar 31, 2018 at 10:32 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -104,24 +104,6 @@ INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `deduction_details`
---
-
-CREATE TABLE `deduction_details` (
-  `deductDetails_id` bigint(20) NOT NULL,
-  `staff_id` bigint(20) NOT NULL,
-  `leave_id` bigint(20) DEFAULT NULL,
-  `sss` int(11) DEFAULT NULL,
-  `pagibig` int(11) DEFAULT NULL,
-  `philhealth` int(11) DEFAULT NULL,
-  `bir` int(11) DEFAULT NULL,
-  `absences` int(11) NOT NULL,
-  `late` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `family_details`
 --
 
@@ -197,15 +179,14 @@ CREATE TABLE `job_details` (
   `department` varchar(50) NOT NULL,
   `allowance` int(11) DEFAULT NULL,
   `employmentStatus` varchar(50) NOT NULL,
-  `deptHead` varchar(50) NOT NULL
+  `deptHead` varchar(50) NOT NULL,
+  `sss` int(11) NOT NULL,
+  `pagibig` int(11) NOT NULL,
+  `philhealth` int(11) NOT NULL,
+  `bir` int(11) NOT NULL,
+  `absences` int(11) NOT NULL,
+  `late` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `job_details`
---
-
-INSERT INTO `job_details` (`staff_id`, `salaryWage`, `department`, `allowance`, `employmentStatus`, `deptHead`) VALUES
-(6, 210000, 'Cardiology', 1500, 'Staff', 'Catawan');
 
 -- --------------------------------------------------------
 
@@ -223,15 +204,6 @@ CREATE TABLE `leave_details` (
   `moreInfo` text NOT NULL,
   `extendedLeave` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `leave_details`
---
-
-INSERT INTO `leave_details` (`leave_id`, `staff_id`, `typeOfabsence`, `deptHead`, `dateStart`, `dateEnd`, `moreInfo`, `extendedLeave`) VALUES
-(1, 1, '1', '', '0000-00-00', '0000-00-00', '1', 1),
-(2, 1, '1', '', '0000-00-00', '0000-00-00', '1', 1),
-(3, 1, '1', '1', '0000-00-00', '0000-00-00', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -407,13 +379,6 @@ ALTER TABLE `current_address`
   ADD KEY `staff_id` (`staff_id`);
 
 --
--- Indexes for table `deduction_details`
---
-ALTER TABLE `deduction_details`
-  ADD PRIMARY KEY (`deductDetails_id`),
-  ADD KEY `leave_id` (`leave_id`);
-
---
 -- Indexes for table `family_details`
 --
 ALTER TABLE `family_details`
@@ -526,12 +491,6 @@ ALTER TABLE `contact_person`
 --
 ALTER TABLE `current_address`
   ADD CONSTRAINT `current_address_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `deduction_details`
---
-ALTER TABLE `deduction_details`
-  ADD CONSTRAINT `deduction_details_ibfk_3` FOREIGN KEY (`leave_id`) REFERENCES `leave_details` (`leave_id`);
 
 --
 -- Constraints for table `family_details`

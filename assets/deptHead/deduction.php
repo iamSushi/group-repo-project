@@ -95,16 +95,15 @@
 						<?php
 							$space = " ";
 							include_once("action/mysqlconn.php");
-							$query = "SELECT staff.fname, staff.mname, staff.lname, staff.type, staff.department, staff.email, schedule_details.schedDetails_id, schedule_details.day, schedule_details.morningTimein, schedule_details.morningTimeout, schedule_details.afternoonTimein, schedule_details.afternoonTimeout, schedule_details.totalHours FROM staff INNER JOIN schedule_details ON staff.staff_id = schedule_details.staff_id";
+							$query = "SELECT staff.fname, staff.lname, staff.type, deduction_details.sss, deduction_details.pagibig, deduction_details.philhealth, deduction_details.bir, deduction_details.absences, deduction_details.late FROM staff INNER JOIN deduction_details ON staff.staff_id = deduction_details.staff_id";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
 
-
 							echo "<table class='table'>";
 								echo "<tr>";
-									echo "<th>Staff Name</th>";
+									echo "<th>Firstame</th>";
+									echo "<th>Surname</th>";
 									echo "<th>Type</th>";
-									echo "<th>Department</th>";
 									echo "<th>Absences</th>";
 									echo "<th>Late</th>";
 									echo "<th>SSS</th>";
@@ -115,9 +114,9 @@
 								echo "</tr>";
 								while ($row = mysqli_fetch_assoc($result)){
 								echo "<tr>";
-									echo "<td>".$row['fname']."$space".$row['mname']."$space".$row['lname']."</td>";
+									echo "<td>".$row['fname']."</td>";
+									echo "<td>".$row['lname']."</td>";
 									echo "<td>".$row['type']."</td>";
-									echo "<td>".$row['department']."</td>";
 									echo "<td><input type=''text class='form-control' placeholder='total days'></td>";
 									echo "<td><input type=''text class='form-control' placeholder='total time'></td>";
 									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
