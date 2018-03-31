@@ -95,7 +95,7 @@
 						<?php
 							$space = " ";
 							include_once("action/mysqlconn.php");
-							$query = "SELECT staff.fname, staff.lname, staff.type, deduction_details.sss, deduction_details.pagibig, deduction_details.philhealth, deduction_details.bir, deduction_details.absences, deduction_details.late FROM staff INNER JOIN deduction_details ON staff.staff_id = deduction_details.staff_id";
+							$query = "SELECT staff.fname, staff.lname, staff.staff_id, job_details.jobDetails_id, job_details.employmentStatus, job_details.sss, job_details.pagibig, job_details.philhealth, job_details.bir, job_details.absences, job_details.late FROM staff INNER JOIN job_details ON staff.staff_id = job_details.staff_id";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
 
@@ -116,15 +116,15 @@
 								echo "<tr>";
 									echo "<td>".$row['fname']."</td>";
 									echo "<td>".$row['lname']."</td>";
-									echo "<td>".$row['type']."</td>";
-									echo "<td><input type=''text class='form-control' placeholder='total days'></td>";
-									echo "<td><input type=''text class='form-control' placeholder='total time'></td>";
-									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
-									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
-									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
-									echo "<td><input type=''text class='form-control' placeholder='php'></td>";
+									echo "<td>".$row['employmentStatus']."</td>";
+									echo "<td><input type='text' class='form-control' name='absences' value=".$row['absences']." placeholder='total days'></td>";
+									echo "<td><input type='text' class='form-control' name='late' value=".$row['late']." placeholder='total time'></td>";
+									echo "<td><input type='text' class='form-control' name='sss' value=".$row['sss']." placeholder='php'></td>";
+									echo "<td><input type='text' class='form-control' name='bir' value=".$row['bir']." placeholder='php'></td>";
+									echo "<td><input type='text' class='form-control' name='pagibig' value=".$row['pagibig']." placeholder='php'></td>";
+									echo "<td><input type='text' class='form-control' name='philhealth' value=".$row['philhealth']." placeholder='php'></td>";
 									echo "<td>
-										<a href='action/remove.php?sid=".$row['schedDetails_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
+										<a href='action/update_deduction.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Update</a>
 									</td>";
 								echo "</tr>";
 								}
