@@ -101,28 +101,32 @@
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
-							 <div class="input-group">
-								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
-							</div> 
+							 <form action="search_view_sched.php">
+								 <div class="input-group">
+									  <input type="text" class="form-control" placeholder="Search Schedule Details" aria-describedby="basic-addon1" name="search">
+									  <span class="input-group-addon" id="basic-addon1" style="padding: 0;"><button class="btn" type="submit" name="send"><i class="glyphicon glyphicon-search"></i></button></span>
+								</div> 
+							</form>
 						</div>
 					</ul>
 			 	 </div>
 			 </nav>		
 		</div>
 		<div class="col-sm-12"><legend>Attendance Details</legend></div>
-					<div class="col-sm-3"></div>
-			 		<div class="col-sm-6">
+					<div class="col-sm-1"></div>
+			 		<div class="col-sm-10">
 			 			<?php
 						  include_once("connection.php");
-						  $sql = "SELECT * FROM schedule_details";
+						  $sql = "SELECT * FROM staffsched";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
 							  echo "<table class='table' border='1'>";
 							  echo "<thead>
 										<tr>
 										    <th>Schedule Details ID</th>
-											<th>Schedule ID</th>
+											<th>Staff</th>
+											<th>Head</th>
+											<th>Department</th>
 											<th>Day</th>
 											<th>Morning Time In</th>
 											<th>Morning Time Out</th>
@@ -137,7 +141,13 @@
 							       echo "<tr><td style='text-align:center;'>".
 								         $row['schedDetails_id'].
 										"</td><td>".
-										 $row['sched_id'].
+										 $row['fname'].' '.
+										 $row['mname'].' '.
+										 $row['lname'].' '.
+										  "</td><td>".
+										 $row['head_id'].
+										  "</td><td>".
+										 $row['department'].
 										 "</td><td>".
 										 $row['day'].
 										"</td><td>".
@@ -166,7 +176,7 @@
 						  }
 						?>
 					  	</div>
-					  	<div class="col-sm-3"></div>
+					  	<div class="col-sm-1"></div>
 		
 	</div>
 </body>

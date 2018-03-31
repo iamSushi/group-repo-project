@@ -18,7 +18,7 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-								 <div class="panel panel-default">
+								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
 									</div>
@@ -30,7 +30,7 @@
 											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
 									</div>
-								</div> 
+								</div>
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
@@ -95,15 +95,15 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">View Job Details</a></li>
+			 	 		 <li><a href="#" style="color: white;">View Staff</a></li>
 			 	 	</ul> 
 			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
-							 <form action="search_view_jobdetails.php">
+							<form action="search_view_staff.php">
 								 <div class="input-group">
-									  <input type="text" class="form-control" placeholder="Search Job Details" aria-describedby="basic-addon1" name="search">
+									  <input type="text" class="form-control" placeholder="Search Staff" aria-describedby="basic-addon1" name="search">
 									  <span class="input-group-addon" id="basic-addon1" style="padding: 0;"><button class="btn" type="submit" name="send"><i class="glyphicon glyphicon-search"></i></button></span>
 								</div> 
 							</form>
@@ -112,77 +112,86 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
 			 			<?php
-
-	  include_once("connection.php");
-	  $sql = "SELECT * FROM staffjob";
-	  $result = mysqli_query($connect,$sql);
-	  if(mysqli_num_rows($result) > 0){
-		  echo "<table class='table' border='1'>";
-		  echo "<thead>
-					<tr>
-					    <th>Staff</th>
-						<th>Salary Wage</th>
-						<th>Department</th>
-						<th>Allowance</th>
-						<th>Employment Status</th>
-						<th>Department Head</th>
-						<th>SSS</th>
-						<th>Pag-ibig</th>
-						<th>PhilHealth</th>
-						<th>BIR</th>
-						<th>Absences</th>
-						<th>Late</th>
-						<th></th>
-					</tr>
-				</thead>";
-		  echo "<tbody>";
-	     while($row = mysqli_fetch_assoc($result)){
-		       echo "<tr><td style='text-align:center;'>".
-			         $row['fname'].' '.
-			         $row['mname'].' '.
-			         $row['lname'].' '.
-					"</td><td>".
-					 $row['salaryWage'].
-					"</td><td>".
-					$row['department'].
-					"</td><td>".
-					$row['allowance'].
-					"</td><td>".
-					$row['employmentStatus'].
-					"</td><td>".
-					$row['deptHead'].
-					 "</td><td>".
-					$row['sss'].
-					 "</td><td>".
-					$row['pagibig'].
-					 "</td><td>".
-					$row['philhealth'].
-					 "</td><td>".
-					$row['bir'].
-					 "</td><td>".
-					$row['absences'].
-					 "</td><td>".
-					$row['late'].
-					 
-					 
-					 "</td>
-					 <td>
-					    <a href='job_details_update.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-primary'>Update</button>
-						</a>
-						<a href='action/job_details_delete.php?id=".$row['staff_id']."'>
-						  <button class='btn btn-danger'>Delete</button>
-						</a>
-					 </td>
-					 </tr>";
-		 }
-		 echo "</tbody>";
-	  }
-	?>
+			 				if(isset($_GET['send'])){
+			 					$search=$_GET['search'];
+			 				}
+			 				if(isset($_POST['send'])){
+			 					$search=$_POST['search'];
+			 				}
+								  include_once("connection.php");
+								  $sql = "SELECT * FROM staff where fname like '$search%' or mname like '$search%' or lname like '$search%'";
+								  $result = mysqli_query($connect,$sql);
+								  if(mysqli_num_rows($result) > 0){
+									  echo "<table class='table' border='1'>";
+									  echo "<thead>
+												<tr>
+													<th>First Name</th>
+													<th>Middle Name</th>
+													<th>Last Name</th>
+													<th>Birthdate</th>
+													<th>Cellphone No.</th>
+													<th>Telephone No.</th>
+													<th>Email</th>
+													<th>Status</th>
+													<th>Gender</th>
+													<th>Type</th>
+													<th>Position</th>
+													<th>Password</th>
+													<th></th>
+												</tr>
+											</thead>";
+									  echo "<tbody>";
+								     while($row = mysqli_fetch_assoc($result)){
+									       echo "<tr><td style='text-align:center;'>".
+										        /* $row['staff_id'].
+												"</td><td>".*/
+												 $row['fname'].
+												"</td><td>".
+												$row['mname'].
+												"</td><td>".
+												$row['lname'].
+												"</td><td>".
+												$row['birthdate'].
+												"</td><td>".
+												$row['cellnum'].
+												"</td><td>".
+												 $row['telnum'].
+												"</td><td>".
+												 $row['email'].
+												"</td><td>".
+												$row['status'].
+												"</td><td>".
+												$row['gender'].
+												"</td><td>".
+												$row['type'].
+												"</td><td>".
+												$row['department'].
+												"</td><td>".
+												$row['password'].
+												 
+												 
+												 
+												 "</td>
+												 <td>
+													<a href='../user/about_me.php?id=".$row['staff_id']."'>
+												      <button class='btn btn-success'>Profile</button>
+													</a>
+												    <a href='Update_staff.php?id=".$row['staff_id']."'>
+												      <button class='btn btn-primary'>Update</button>
+													</a>
+													<a href='action/staff_delete.php?id=".$row['staff_id']."'>
+													  <button class='btn btn-danger'>Delete</button>
+													</a>
+												 </td>
+												 </tr>";
+									 }
+									 echo "</tbody>";
+								  }
+								?>
 					  	</div>
 		
 	</div>

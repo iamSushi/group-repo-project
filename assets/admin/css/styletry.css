@@ -157,7 +157,7 @@ td:last-child{
 }
 td>a>button{
 	width:122px;
-	float: left;
+	/* float: left; */
 	margin-left: 5px;
 }
 .btn-add{
@@ -201,4 +201,16 @@ ul>.hnav{
 }
 .haha{
 
+}
+.nav-search{
+	float: right;
+}
+
+.input-group>.input-group-addon{
+	padding: 0 !important;
+}
+
+span{
+	padding: 0 !important;
+	padding-left: 0 !important: 
 }
