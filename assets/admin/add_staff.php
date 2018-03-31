@@ -19,7 +19,7 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-								<div class="panel panel-default">
+								<!-- <div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
 									</div>
@@ -27,11 +27,11 @@
 										<ul class="list-group">
 											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
 											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
-											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
-											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+											<li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li>
 										</ul>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
@@ -207,21 +207,12 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="type" class='form-control' required placeholder="Type">
-								    	</div>
-								    </div>
-								</div>
-								 <div class="form-group">
-									<label class="control-label col-sm-4">Position:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								  <!--   <input type="text" name="position" class='form-control' required placeholder="Position"> -->
-								 			 <select name="position" id="" class="form-control" required>
+											 <select name="type" id="" class="form-control" required>
 								  				<option value="staff">Staff</option>
 								  				<option value="head">Head</option>
 								  				<option value="leader">Leader</option>
 								  			</select>
+								   <!--  <input type="text" name="type" class='form-control' required placeholder="Type"> -->
 								    	</div>
 								    </div>
 								</div>
@@ -232,22 +223,36 @@
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								  <!--   <input type="text" name="position" class='form-control' required placeholder="Position"> -->
 								 			 <select name="department" id="" class="form-control" required>
-								  				<?php
-												include_once("connection.php");
-												$sql = "SELECT * FROM department";
-												$result = mysqli_query($connect,$sql);
-												if(mysqli_num_rows($result) > 0){
-													while($row = mysqli_fetch_assoc($result)){
-													?>
-											  		<option  value="<?php echo $row['depart_id'] ?>"><?php echo 'ID = '.$row['depart_id'].' Department = '.$row['depart_name'].''?></option>	
-											  		 <?php
-												  			}
-												  		}
-												  ?>
+								  				<option value="staff">Cardiology</option>
+								  				<option value="head">Ophthalmology</option>
+								  				<option value="leader">Leader</option>
 								  			</select>
 								    	</div>
 								    </div>
 								</div>
+								<!--  <div class="form-group">
+																	<label class="control-label col-sm-4">Department:</label>
+																	<div class="col-sm-5 inputGroupContainer">
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								 <input type="text" name="position" class='form-control' required placeholder="Position">
+											 <select name="department" id="" class="form-control" required>
+								 				<?php
+													include_once("connection.php");
+													$sql = "SELECT * FROM department";
+													$result = mysqli_query($connect,$sql);
+													if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+													<option  value="<?php echo $row['depart_id'] ?>"><?php echo 'ID = '.$row['depart_id'].' Department = '.$row['depart_name'].''?></option>	
+													<?php
+													}
+																				  		}
+																				  ?>
+								 			</select>
+								   	</div>
+								   </div>
+																</div> -->
 								 <div class="form-group">
 									<label class="control-label col-sm-4">Password:</label>
 									<div class="col-sm-5 inputGroupContainer">

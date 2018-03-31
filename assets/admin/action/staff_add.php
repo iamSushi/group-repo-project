@@ -10,11 +10,11 @@
 	$status = $_POST['status'];
 	$gender = $_POST['gender'];
 	$type = $_POST['type'];
-	$position = $_POST['position'];
+	$department = $_POST['department'];
 	$password = $_POST['password'];
 	
 	
-	$sql = "INSERT INTO staff VALUES(null,'$fname','$mname','$lname','$bday','$cellphone','$telnum','$email','$status','$gender','$type','$position','$password')";
+	$sql = "INSERT INTO staff VALUES(null,'$fname','$mname','$lname','$bday','$cellphone','$telnum','$email','$status','$gender','$type','$department','$password')";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='../view_staff.php'><<< Go Back</a>";

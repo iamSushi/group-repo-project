@@ -11,24 +11,26 @@
 	<title>Document</title>
 	  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	 <link rel="stylesheet" href="css/styletry.css">
+	 <script src="js/jquery-3.3.1.js"></script>
+	<script src="js/bootstrap.js"></script>
 	
 </head>
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-								<!-- <div class="panel panel-default">
+								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
-											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
-											<li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
+											<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>-->
+											<li class="list-group-item"><a href="view_department_head.html">Department Head</a></li> 
 											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
@@ -93,8 +95,9 @@
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
 			 	 	<ul class="nav navbar-nav">
-			 	 		 <li><a href="#" style="color: white;">Attendance Details</a></li>
-			 	 	</ul>
+			 	 		 <li><a href="#" style="color: white;">View Staff</a></li>
+			 	 	</ul> 
+			 	 	 
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
@@ -107,66 +110,80 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Update Attendance Details</legend></div>
-		<?php
-
-				include_once("connection.php");
-
-				$id = $_GET['id'];
-				$sql = "SELECT * FROM department WHERE depart_id = '$id'";
-				$result = mysqli_query($connect,$sql);
-				if(mysqli_num_rows($result) > 0){
-					while($row = mysqli_fetch_assoc($result)){
-					?>
-
+		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="action/department_update_data.php">
-			 					<input type="hidden" name="id" value="<?php echo $_GET['id']?>">
-						    	<!-- <div class="form-group">
-						    										<label class="control-label col-sm-4">Attendance ID:</label>
-						    										<div class="col-sm-5 inputGroupContainer">
-						    											<div class="input-group">
-						    												<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						    												<input type="text" name="attend_id" class='form-control' required placeholder="Attendance ID" value="<?php echo $row['depart_id'];?>">
-						    											</div>
-						    										</div>
-						    								   	</div> -->
+			 			<?php
 
-							 	<div class="form-group">
-									<label class="control-label col-sm-4">Department Name:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="depart_name" class='form-control' required placeholder="Departname Name" value="<?php echo $row['depart_name'];?>">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Department Head:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-dashboard"></i></span>
-											<input type="text" name="depart_head" class='form-control' required placeholder="Department Head" value="<?php echo $row['depart_head'];?>">
-										</div>
-									</div>
-								</div>
-							    
-							   <br>
-							   <div class="form-group">
-							    <label for="" class="col-sm-4 control-label"></label>
-							   		<div class="col-sm-5">
-							  		<button type="submit" class="btn btn-primary" id="submit" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
-
-							  </div>
-							  </div>
-					  		</form>
+	  include_once("connection.php");
+	  $sql = "SELECT * FROM staff";
+	  $result = mysqli_query($connect,$sql);
+	  if(mysqli_num_rows($result) > 0){
+		  echo "<table class='table' border='1'>";
+		  echo "<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Middle Name</th>
+						<th>Last Name</th>
+						<th>Birthdate</th>
+						<th>Cellphone No.</th>
+						<th>Telephone No.</th>
+						<th>Email</th>
+						<th>Status</th>
+						<th>Gender</th>
+						<th>Type</th>
+						<th>Position</th>
+						<th>Password</th>
+						<th></th>
+					</tr>
+				</thead>";
+		  echo "<tbody>";
+	     while($row = mysqli_fetch_assoc($result)){
+		       echo "<tr><td style='text-align:center;'>".
+			        /* $row['staff_id'].
+					"</td><td>".*/
+					 $row['fname'].
+					"</td><td>".
+					$row['mname'].
+					"</td><td>".
+					$row['lname'].
+					"</td><td>".
+					$row['birthdate'].
+					"</td><td>".
+					$row['cellnum'].
+					"</td><td>".
+					 $row['telnum'].
+					"</td><td>".
+					 $row['email'].
+					"</td><td>".
+					$row['status'].
+					"</td><td>".
+					$row['gender'].
+					"</td><td>".
+					$row['type'].
+					"</td><td>".
+					$row['department'].
+					"</td><td>".
+					$row['password'].
+					 
+					 
+					 
+					 "</td>
+					 <td>
+						<a href='action/department_head_elect.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-success'>Elect Department Head</button>
+						</a>
+						<a href='action/department_head_delect.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-danger'>Delect Department Head</button>
+						</a>
+					 </td>
+					 </tr>";
+		 }
+		 echo "</tbody>";
+	  }
+	?>
 					  	</div>
-					  	<?php
-  			}
-  		}
-  ?>
 		
 	</div>
 </body>
-</html>s
+</html>

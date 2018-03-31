@@ -25,10 +25,10 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
 											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
-											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
-											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+											<li class="list-group-item"><a href="view_department_head.html">Department Head</a></li> -->
+											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li>
 										</ul>
 									</div>
 								</div>
@@ -219,16 +219,24 @@
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="type" class='form-control' required placeholder="Type" value="<?php echo $row['type'];?>">
+									     		<select name="type" id="" class="form-control" required value="<?php echo $row['type']?>">
+									  				<option value="staff">Staff</option>
+									  				<option value="head">Head</option>
+									  				<option value="leader">Leader</option>
+									  			</select>
 								    	</div>
 								    </div>
 								</div>
 								 <div class="form-group">
-									<label class="control-label col-sm-4">Position:</label>
+									<label class="control-label col-sm-4">Department:</label>
 									<div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								    <input type="text" name="position" class='form-control' required placeholder="Position" value="<?php echo $row['position'];?>">
+									   			<select name="department" id="" class="form-control" required value="<?php echo $row['department']?>">
+									  				<option value="staff">Cardiology</option>
+									  				<option value="head">Ophthalmology</option>
+									  				<option value="leader">Accident and Emergency</option>
+									  			</select>
 								    	</div>
 								    </div>
 								</div>
