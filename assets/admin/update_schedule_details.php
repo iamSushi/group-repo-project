@@ -17,19 +17,19 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-								<!-- <div class="panel panel-default">
+								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
-											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
-											<li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
-											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li>
+											<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
+											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
 									</div>
-								</div> -->
+								</div> 
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
