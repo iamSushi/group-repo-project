@@ -11,7 +11,7 @@
 	$status = mysqli_real_escape_string($connect,$_POST['status']);
 	$depthead = mysqli_real_escape_string($connect,$_POST['depthead']);
 
-	$sql = "INSERT INTO job_details VALUES('','$sid','$wage','$department','$allowance','$status','$depthead','','','','','','')";
+	$sql = "UPDATE job_details SET salaryWage = '$wage', allowance = '$allowance', employmentStatus = '$status' ";
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added!";
 	}else{
