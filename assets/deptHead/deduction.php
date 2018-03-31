@@ -113,8 +113,8 @@
 									echo "<th></th>";
 								echo "</tr>";
 								while ($row = mysqli_fetch_assoc($result)){
-								echo "<tr>";
 									echo "<form action='action/update_deduction.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' method='post'><td>".$row['fname']."</td>";
+								echo "<tr>";
 									echo "<td>".$row['lname']."</td>";
 									echo "<td>".$row['employmentStatus']."</td>";
 									echo "<td><input type='text' class='form-control' name='absences' value=".$row['absences']." placeholder='total days'></td>";
@@ -126,8 +126,8 @@
 									echo "<td>
 										<button type='submit' class='btn btn-danger' style='width:85px;'>Update</button>
 
-									</td></form>";
-								echo "</tr>";
+									</td>";
+								echo "</tr></form>";
 								}
 							echo "</table>";
 							}
