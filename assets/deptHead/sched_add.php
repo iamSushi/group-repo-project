@@ -74,7 +74,9 @@
 						<li >
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
-
+						<li class="dropdown">
+							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>

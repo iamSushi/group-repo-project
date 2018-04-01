@@ -24,8 +24,6 @@
 					$id = $_GET['id'];
 					$dept = $_GET['dept'];
 					include_once("action/mysqlconn.php");
-					// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
-					// $query = "SELECT * FROM staff WHERE email = '$email'";
 					$query = "SELECT * FROM staff WHERE staff_id = '$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result) > 0){
@@ -59,9 +57,6 @@
 								<li><a href="staff_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">All Staff</a></li>
 								<li><a href="staff_dept.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">My Staff</a></li>
 								<li><a href="staff_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Staff</a></li>
-								<!-- <li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li> -->
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -74,6 +69,9 @@
 						</li>
 						<li class="dropdown">
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
+						</li>
+						<li class="dropdown">
+							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">

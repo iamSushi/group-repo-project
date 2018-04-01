@@ -59,9 +59,6 @@
 								<li><a href="staff_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">All Staff</a></li>
 								<li><a href="staff_dept.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">My Staff</a></li>
 								<li><a href="staff_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Staff</a></li>
-								<!-- <li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li> -->
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -74,6 +71,9 @@
 						</li>
 						<li >
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
+						</li>
+						<li class="dropdown">
+							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">

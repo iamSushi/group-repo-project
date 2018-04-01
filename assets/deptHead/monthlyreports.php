@@ -24,8 +24,6 @@
 					$id = $_GET['id'];
 					$dept = $_GET['dept'];
 					include_once("action/mysqlconn.php");
-					// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
-					// $query = "SELECT * FROM staff WHERE email = '$email'";
 					$query = "SELECT * FROM staff WHERE staff_id = '$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result) > 0){
@@ -70,11 +68,13 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
-								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
-						<li class="dropdown">
+						<li >
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
+						</li>
+						<li class="dropdown">
+							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
@@ -87,46 +87,41 @@
 					</ul>
 				</div>
 				<div class="row-11" style="overflow-y:scroll; min-height: 690px;">
-					<!-- <div>
-						<input type="text" name="searhThis" class="form-control" style="width: 200px; margin: 10px; float: left;" placeholder="Search Here">
-						<button name="search" class="btn btn-dark" style="float: left; margin: 6px;">Search</button>
-					</div> -->
 					<form action="" method="post" class="container">
 						<?php
 							$space = " ";
+							$id = $_GET['id'];
+							$dept = $_GET['dept'];
 							include_once("action/mysqlconn.php");
-							$query = "SELECT staff.fname, staff.lname, staff.staff_id, job_details.employmentStatus, job_details.sss, job_details.pagibig, job_details.philhealth, job_details.bir, job_details.absences, job_details.late FROM staff INNER JOIN job_details ON staff.staff_id = job_details.staff_id";
+							$query = "SELECT staff.fname, staff.staff_id, staff.fname, staff.mname, staff.lname, staff.department, awol.awol_id, awol.date, awol.absences, awol.late FROM staff INNER JOIN awol ON staff.staff_id = awol.staff_id";
 							$result = mysqli_query($connect,$query);
-							if(mysqli_num_rows($result) > 1){
-
+							if(mysqli_num_rows($result) > 0){
 							echo "<table class='table'>";
 								echo "<tr>";
-									echo "<th>Firstame</th>";
+									echo "<th>Firstname</th>";
+									echo "<th>Middlename</th>";
 									echo "<th>Surname</th>";
-									echo "<th>Type</th>";
+									echo "<th>Department</th>";
+									echo "<th>Date</th>";
 									echo "<th>Absences</th>";
 									echo "<th>Late</th>";
-									echo "<th>SSS</th>";
-									echo "<th>BIR</th>";
-									echo "<th>Pag-ibig</th>";
-									echo "<th>Philhealth</th>";
+									echo "<th>Net Salary</th>";
 									echo "<th></th>";
 								echo "</tr>";
 								while ($row = mysqli_fetch_assoc($result)){
-								echo "<tr><form action='action/update_deduction.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' method='post'>";
+								echo "<tr>";
 									echo "<td>".$row['fname']."</td>";
+									echo "<td>".$row['mname']."</td>";
 									echo "<td>".$row['lname']."</td>";
-									echo "<td>".$row['employmentStatus']."</td>";
-									echo "<td><input type='text' class='form-control' name='absences' value=".$row['absences']." placeholder='total days'></td>";
-									echo "<td><input type='text' class='form-control' name='late' value=".$row['late']." placeholder='total time'></td>";
-									echo "<td><input type='text' class='form-control' name='sss' value=".$row['sss']." placeholder='php'></td>";
-									echo "<td><input type='text' class='form-control' name='bir' value=".$row['bir']." placeholder='php'></td>";
-									echo "<td><input type='text' class='form-control' name='pagibig' value=".$row['pagibig']." placeholder='php'></td>";
-									echo "<td><input type='text' class='form-control' name='philhealth' value=".$row['philhealth']." placeholder='php'></td>";
+									echo "<td>".$row['department']."</td>";
+									echo "<td>".$row['date']."</td>";
+									echo "<td>".$row['absences']."</td>";
+									echo "<td>".$row['late']."</td>";
+									echo "<td>MASAYA</td>";
 									echo "<td>
-										<button type='submit' class='btn btn-danger' style='width:85px;'>Update</a>
+										<a href='action/awolremove.php?aid=".$row['awol_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-primary' style='width:85px;'>Remove</a>
 									</td>";
-								echo "</form></tr>";
+								echo "</tr>";
 								}
 							echo "</table>";
 							}
@@ -136,4 +131,4 @@
 			</div>
 		</div>
 	</body>
-</html> 
+</html>

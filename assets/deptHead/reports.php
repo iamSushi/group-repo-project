@@ -77,6 +77,7 @@
 						<li class="dropdown">
 							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
 						</li>
+
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>
@@ -87,7 +88,17 @@
 						</li>
 					</ul>
 				</div>
-				<form class="form-horizontal" method="POST" action="action/addstaff.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">
+				<?php
+					$space = " ";
+					$id = $_GET['id'];
+					$sid = $_GET['sid'];
+					include_once("action/mysqlconn.php");
+					$query = "SELECT fname, mname, lname FROM staff WHERE staff_id = '$sid'";
+					$result = mysqli_query($connect,$query);
+					if(mysqli_num_rows($result) > 0){
+						while($row = mysqli_fetch_assoc($result)):
+				?>
+				<form class="form-horizontal" method="POST" action="action/awol.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].'&sid='.$sid.''?>">
 					<div class="row-4"></div>
  					<div class="container row-8">
 					 	<div class="form-group" style="margin-bottom: 15px;">
@@ -95,7 +106,7 @@
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-									<input type="text" class='form-control' name="fname" required placeholder="firstname">
+									<input type="text" class='form-control' name="fname" value="<?php echo $row['fname'] ?>" placeholder="firstname">
 								</div>
 							</div>
 						</div>
@@ -104,7 +115,7 @@
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="text" class='form-control' name="mname" required placeholder="middlename">
+									<input type="text" class='form-control' name="mname" value="<?php echo $row['mname'] ?>" placeholder="middlename">
 								</div>
 							</div>
 						</div>
@@ -113,63 +124,46 @@
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="text" class='form-control' name="sname" required placeholder="surname">
+									<input type="text" class='form-control' name="sname" value="<?php echo $row['lname'] ?>" placeholder="surname">
 								</div>
 							</div>
 						</div>
 					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Birthdate:</label>
+							<label class="control-label col-sm-4">Date:</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="date" class='form-control' name="dob" required>
+									<input type="date" class='form-control' name="date" required>
 								</div>
 							</div>
 					 	</div>
 					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Gender:</label>
+							<label class="control-label col-sm-4">Absences:</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<select class="form-control" name="gender">
-										<option value="Male">Male</option>
-										<option value="Female">Female</option>
-									</select>
+									<input type="text" class='form-control' name="absences" required placeholder="total in months">
 								</div>
 							</div>
 					 	</div>
 					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Status:</label>
+							<label class="control-label col-sm-4">Late:</label>
 							<div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<select class="form-control" name="status">
-										<option value="Single">Single</option>
-										<option value="Married">Married</option>
-										<option value="Divorced">Divorced</option>
-										<option value="Widowed">Widowed</option>
-									</select>
-								</div>
-							</div>
-					 	</div>
-					 	<div class="form-group" style="margin-bottom: 15px;">
-							<label class="control-label col-sm-4">Email Add:</label>
-							<div class="col-sm-5 inputGroupContainer">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="email" class='form-control' name="email" required placeholder="email address">
+									<input type="text" class='form-control' name="late" required placeholder="total in months">
 								</div>
 							</div>
 					 	</div>
 					   	<div class="form-group" style="margin-bottom: 15px;">
 					    	<label for="" class="col-sm-4 control-label"></label>
 					   		<div class="col-sm-5">
-					  			<button type="submit" class="btn btn-dark" name="submit" width="100px">Register <span class="glyphicon glyphicon-send"></span></button>
+					  			<button type="submit" class="btn btn-dark" name="awol" width="100px">Submit<span class="glyphicon glyphicon-send"></span></button>
 							</div>
 					  	</div>
 				  	</div>
 		  		</form>
-
+				<?php endwhile;} ?>
 			</div>
 		</div>
 	</body>

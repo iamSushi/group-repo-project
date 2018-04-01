@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2018 at 08:05 PM
+-- Generation Time: Apr 02, 2018 at 01:33 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -29,11 +29,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `awol` (
+  `awol_id` bigint(20) NOT NULL,
   `staff_id` bigint(20) NOT NULL,
   `date` date NOT NULL,
   `absences` int(11) NOT NULL,
   `late` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Triggers `awol`
+--
+DELIMITER $$
+CREATE TRIGGER `deleteawol` AFTER DELETE ON `awol` FOR EACH ROW INSERT INTO x_awol VALUES(old.awol_id, old.staff_id, old.date, old.absences, old.late)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -60,7 +69,14 @@ CREATE TABLE `college_background` (
 --
 
 INSERT INTO `college_background` (`staff_id`, `course`, `schoolName`, `schoolAdd`, `state`, `country`, `city`, `postCode`, `yearEnd`, `status`, `percentage`) VALUES
-(3, 'BSIT', 'USTP', 'Recto Ave Lapasan, Cagayan de Oro City', 'Misamis Oriental', 'Philippines', 'Cagayan de Oro City', 9000, '2018-04-10', 'Honor', 1.8);
+(3, 'BSIT', 'USTP', 'Recto Ave Lapasan, Cagayan de Oro City', 'Misamis Oriental', 'Philippines', 'Cagayan de Oro City', 9000, '2018-04-10', 'Honor', 1.8),
+(41, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(42, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(43, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(44, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(45, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(46, '', '', '', '', '', '', 0, '0000-00-00', '', 0),
+(47, '', '', '', '', '', '', 0, '0000-00-00', '', 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +101,14 @@ CREATE TABLE `contact_person` (
 --
 
 INSERT INTO `contact_person` (`staff_id`, `fname`, `mname`, `lname`, `contactNum`, `address`, `gender`, `email`, `birthdate`) VALUES
-(3, 'Masaya', 'Siya', 'Saiba', '09362566143', 'Lapasan, Cagayan de Oro City', 'Male', 'masaya@gmail.com', '2018-04-18');
+(3, 'Masaya', 'Siya', 'Saiba', '09362566143', 'Lapasan, Cagayan de Oro City', 'Male', 'masaya@gmail.com', '2018-04-18'),
+(41, '', '', '', '', '', '', '', '0000-00-00'),
+(42, '', '', '', '', '', '', '', '0000-00-00'),
+(43, '', '', '', '', '', '', '', '0000-00-00'),
+(44, '', '', '', '', '', '', '', '0000-00-00'),
+(45, '', '', '', '', '', '', '', '0000-00-00'),
+(46, '', '', '', '', '', '', '', '0000-00-00'),
+(47, '', '', '', '', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -109,7 +132,14 @@ CREATE TABLE `current_address` (
 --
 
 INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
-(3, 'Gusa', 'Galaxy', 'Ngitngit Street', 'Misamis Oriental', 'Cagayan De Oro City', 'Philippines', 9000);
+(3, 'Gusa', 'Galaxy', 'Ngitngit Street', 'Misamis Oriental', 'Cagayan De Oro City', 'Philippines', 9000),
+(41, '', '', '', '', '', '', 0),
+(42, '', '', '', '', '', '', 0),
+(43, '', '', '', '', '', '', 0),
+(44, '', '', '', '', '', '', 0),
+(45, '', '', '', '', '', '', 0),
+(46, '', '', '', '', '', '', 0),
+(47, '', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -121,6 +151,13 @@ CREATE TABLE `department` (
   `dept_id` int(11) NOT NULL,
   `dept_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`dept_id`, `dept_name`) VALUES
+(1, 'Cardiology');
 
 -- --------------------------------------------------------
 
@@ -159,7 +196,14 @@ CREATE TABLE `family_details` (
 
 INSERT INTO `family_details` (`staff_id`, `fathers_fname`, `fathers_mname`, `fathers_lname`, `mothers_fname`, `mothers_mname`, `mothers_lname`, `fathers_birthdate`, `mothers_birthdate`, `fathers_occupation`, `mothers_occupation`, `fathers_contnum`, `mothers_contnum`, `status`, `siblings`, `spouse_fname`, `spouse_mname`, `spouse_lname`, `spouse_birthdate`, `spouse_contnum`, `spouse_occupation`, `numOfChildren`) VALUES
 (3, 'Angkol', 'asdajn', 'jnsakjdn', 'jknaskjdn', 'kjnskajdn', 'kjnsakjdn', '2018-04-03', '2018-04-09', 'asdas', 'asdas', 'sada', '', '', NULL, NULL, '', '', '0000-00-00', '', '', NULL),
-(3, 'asda', 'asda', 'asda', 'asda', 'asda', 'sada', '2018-04-12', '2018-04-13', 'asda', 'sadasd', 'asdag', 'jhgjhgjh', 'ghgjhg', 5, 'jhjh', 'hbjhb', 'jhbmhb', '2018-04-16', '643513546', 'a5sdasda', 12);
+(3, 'asda', 'asda', 'asda', 'asda', 'asda', 'sada', '2018-04-12', '2018-04-13', 'asda', 'sadasd', 'asdag', 'jhgjhgjh', 'ghgjhg', 5, 'jhjh', 'hbjhb', 'jhbmhb', '2018-04-16', '643513546', 'a5sdasda', 12),
+(41, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(42, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(43, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(44, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(45, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(46, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0),
+(47, '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -184,7 +228,14 @@ CREATE TABLE `highschool_background` (
 --
 
 INSERT INTO `highschool_background` (`staff_id`, `schoolName`, `schoolAdd`, `state`, `city`, `country`, `postCode`, `year_end`, `average`) VALUES
-(3, 'asdasda', '35131', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000, '2018-04-10', 85);
+(3, 'asdasda', '35131', 'Misamis Oriental', 'Cagayan de Oro City', 'Philippines', 9000, '2018-04-10', 85),
+(41, '', '', '', '', '', 0, '0000-00-00', 0),
+(42, '', '', '', '', '', 0, '0000-00-00', 0),
+(43, '', '', '', '', '', 0, '0000-00-00', 0),
+(44, '', '', '', '', '', 0, '0000-00-00', 0),
+(45, '', '', '', '', '', 0, '0000-00-00', 0),
+(46, '', '', '', '', '', 0, '0000-00-00', 0),
+(47, '', '', '', '', '', 0, '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -202,6 +253,13 @@ CREATE TABLE `job_details` (
   `philhealth` int(11) NOT NULL,
   `bir` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `job_details`
+--
+
+INSERT INTO `job_details` (`staff_id`, `salaryWage`, `allowance`, `deptHead`, `sss`, `pagibig`, `philhealth`, `bir`) VALUES
+(41, 50000, 1500, '', 500, 112, 125, 700);
 
 -- --------------------------------------------------------
 
@@ -277,6 +335,13 @@ CREATE TABLE `schedule_details` (
   `totalHours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `schedule_details`
+--
+
+INSERT INTO `schedule_details` (`sched_id`, `staff_id`, `day`, `morningTimein`, `morningTimeout`, `afternoonTimein`, `afternoonTimeout`, `totalHours`) VALUES
+(5, 41, 'Monday', 6, 12, 1, 6, 11);
+
 -- --------------------------------------------------------
 
 --
@@ -304,7 +369,14 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnum`, `telnum`, `email`, `status`, `gender`, `type`, `department`, `password`) VALUES
-(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', '', '1234');
+(3, 'Joshua', 'Omagap', 'Perater', '1999-01-01', '09658965241', 'wala', 'perater@gmail.com', 'Single', 'Male', 'Admin', '', '1234'),
+(41, 'James', '', 'Sinadjan', '0000-00-00', '', '', 'jamessinadjan5@gmail.com', '', '', 'Head', '', '123'),
+(42, 'Christian', '', 'Cat-awan', '0000-00-00', '', '', 'cat-awan@gmail.com', '', '', 'Head', 'Cardiology', '123'),
+(43, 'Ezekiel', '', 'Garbosa', '0000-00-00', '', '', 'garbosa@gmail.com', '', '', 'Staff', 'Cardiology', '123'),
+(44, 'Lorylee', '', 'Sinadjan', '0000-00-00', '', '', 'loryleesinadjan@gmail.com', '', '', 'Staff', '', '123'),
+(45, 'Shane', '', 'Abutan', '0000-00-00', '', '', 'abutan@gmail.com', '', '', 'Staff', '', '123'),
+(46, 'Marlon', '', 'Apduhan', '0000-00-00', '', '', 'apduhan@gmail.com', '', '', 'Staff', '', '123'),
+(47, 'Jacques', '', 'Mamaran', '0000-00-00', '', '', 'mamaran@gmail.com', '', '', 'Staff', 'Cardiology', '123');
 
 -- --------------------------------------------------------
 
@@ -363,7 +435,36 @@ CREATE TABLE `work_experience` (
 --
 
 INSERT INTO `work_experience` (`staff_id`, `companyName`, `employerName`, `employerAdd`, `employerCellnum`, `employerTelnum`, `companyStart`, `companyEnd`, `jobTitle`, `department`, `workArea`, `state`, `city`, `country`, `moreInfo`) VALUES
-(3, 'hkhhghg', 'hgjhg', 'jhgjhgjhg', '+56554', '5454', '2018-04-03', '2018-04-25', ',jhkjh', 'jhhjjh', 'hkhh', 'kjhkjhkjh', 'kjhkjhkjh', 'kjhkj', 'jklljgdsdfghjhgfdsa');
+(3, 'hkhhghg', 'hgjhg', 'jhgjhgjhg', '+56554', '5454', '2018-04-03', '2018-04-25', ',jhkjh', 'jhhjjh', 'hkhh', 'kjhkjhkjh', 'kjhkjhkjh', 'kjhkj', 'jklljgdsdfghjhgfdsa'),
+(41, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(42, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(43, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(44, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(45, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(46, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
+(47, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `x_awol`
+--
+
+CREATE TABLE `x_awol` (
+  `awol_id` bigint(20) NOT NULL,
+  `staff_id` bigint(20) NOT NULL,
+  `date` date NOT NULL,
+  `absences` int(11) NOT NULL,
+  `late` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `x_awol`
+--
+
+INSERT INTO `x_awol` (`awol_id`, `staff_id`, `date`, `absences`, `late`) VALUES
+(1, 43, '2018-04-13', 212, 1232),
+(2, 43, '2018-04-20', 42, 454);
 
 -- --------------------------------------------------------
 
@@ -386,6 +487,12 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `awol`
+--
+ALTER TABLE `awol`
+  ADD PRIMARY KEY (`awol_id`);
 
 --
 -- Indexes for table `college_background`
@@ -476,14 +583,26 @@ ALTER TABLE `work_experience`
   ADD KEY `staff_id` (`staff_id`);
 
 --
+-- Indexes for table `x_awol`
+--
+ALTER TABLE `x_awol`
+  ADD KEY `awol_id` (`awol_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `awol`
+--
+ALTER TABLE `awol`
+  MODIFY `awol_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `leave_details`
@@ -501,13 +620,13 @@ ALTER TABLE `salary_report`
 -- AUTO_INCREMENT for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
-  MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables

@@ -24,8 +24,6 @@
 					$id = $_GET['id'];
 					$dept = $_GET['dept'];
 					include_once("action/mysqlconn.php");
-					// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
-					// $query = "SELECT * FROM staff WHERE email = '$email'";
 					$query = "SELECT * FROM staff WHERE staff_id = '$id'";
 					$result = mysqli_query($connect,$query);
 					if(mysqli_num_rows($result) > 0){
@@ -72,19 +70,12 @@
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
 							</ul>
 						</li>
-						<!-- <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Add Attendance</a></li>
-								<li><a href="#">Check Attendance</a></li>
-							</ul>
-						</li> -->
 						<li >
 							<a href="deduction.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Payroll</a>
 						</li>
-
+						<li class="dropdown">
+							<a href="monthlyreports.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
 						<li>
@@ -133,8 +124,10 @@
 									echo "<td>".$row['gender']."</td>";
 									echo "<td>
 										<a href='viewStaff.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-primary' style='width:85px;'>Details</a>
+										<a href='reports.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-info' style='width:85px;'>Reports</a>
 										<a href='sched_add.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-warning' style='width:85px;'>Sched</a>
 										<a href='action/remove.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
+
 									</td>";
 								echo "</tr>";
 								}
