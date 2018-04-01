@@ -139,16 +139,16 @@
 							  echo "<tbody>";
 						     while($row = mysqli_fetch_assoc($result)){
 							       echo "<tr><td style='text-align:center;'>".
-								         $row['schedDetails_id'].
+								         $row['sched_id'].
 										"</td><td>".
 										 $row['fname'].' '.
 										 $row['mname'].' '.
 										 $row['lname'].' '.
-										  "</td><td>".
+										  /*"</td><td>".
 										 $row['head_id'].
 										  "</td><td>".
 										 $row['department'].
-										 "</td><td>".
+										 "</td><td>".*/
 										 $row['day'].
 										"</td><td>".
 										 $row['morningTimein'].
@@ -163,10 +163,10 @@
 										 
 										 "</td>
 										 <td>
-										    <a href='update_schedule_details.php?id=".$row['schedDetails_id']."'>
+										    <a href='update_schedule_details.php?id=".$row['sched_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['schedDetails_id']."'>
+											<a href='action/attendance_details_delete.php?id=".$row['sched_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>
 										 </td>

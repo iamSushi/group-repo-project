@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2018 at 04:36 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Apr 01, 2018 at 06:18 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -101,6 +101,17 @@ CREATE TABLE `current_address` (
 INSERT INTO `current_address` (`staff_id`, `addOne`, `addTwo`, `addTre`, `state`, `city`, `country`, `postCode`) VALUES
 (38, 'El Salvador', 'Di makita', 'Street', 'Misamis Oriental', 'Cagayan De Oro City', 'Philippines', 9000),
 (39, '', '', '', '', '', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `department`
+--
+
+CREATE TABLE `department` (
+  `dept_id` int(11) NOT NULL,
+  `dept_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -313,6 +324,47 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `staffjob`
+-- (See below for the actual view)
+--
+CREATE TABLE `staffjob` (
+`staff_id` bigint(20)
+,`fname` varchar(50)
+,`mname` varchar(50)
+,`lname` varchar(50)
+,`salaryWage` int(11)
+,`allowance` int(11)
+,`deptHead` varchar(50)
+,`sss` int(11)
+,`pagibig` int(11)
+,`philhealth` int(11)
+,`bir` int(11)
+,`absences` int(11)
+,`late` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `staffsched`
+-- (See below for the actual view)
+--
+CREATE TABLE `staffsched` (
+`sched_id` bigint(20)
+,`fname` varchar(50)
+,`mname` varchar(50)
+,`lname` varchar(50)
+,`day` varchar(50)
+,`morningTimein` int(11)
+,`morningTimeout` int(11)
+,`afternoonTimein` int(11)
+,`afternoonTimeout` int(11)
+,`totalHours` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `work_experience`
 --
 
@@ -342,6 +394,24 @@ INSERT INTO `work_experience` (`staff_id`, `companyName`, `employerName`, `emplo
 (38, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', ''),
 (39, '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Structure for view `staffjob`
+--
+DROP TABLE IF EXISTS `staffjob`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staffjob`  AS  select `job_details`.`staff_id` AS `staff_id`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname`,`job_details`.`salaryWage` AS `salaryWage`,`job_details`.`allowance` AS `allowance`,`job_details`.`deptHead` AS `deptHead`,`job_details`.`sss` AS `sss`,`job_details`.`pagibig` AS `pagibig`,`job_details`.`philhealth` AS `philhealth`,`job_details`.`bir` AS `bir`,`job_details`.`absences` AS `absences`,`job_details`.`late` AS `late` from (`job_details` left join `staff` on((`job_details`.`staff_id` = `staff`.`staff_id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `staffsched`
+--
+DROP TABLE IF EXISTS `staffsched`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staffsched`  AS  select `schedule_details`.`sched_id` AS `sched_id`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname`,`schedule_details`.`day` AS `day`,`schedule_details`.`morningTimein` AS `morningTimein`,`schedule_details`.`morningTimeout` AS `morningTimeout`,`schedule_details`.`afternoonTimein` AS `afternoonTimein`,`schedule_details`.`afternoonTimeout` AS `afternoonTimeout`,`schedule_details`.`totalHours` AS `totalHours` from (`schedule_details` left join `staff` on((`schedule_details`.`staff_id` = `staff`.`staff_id`))) ;
+
 --
 -- Indexes for dumped tables
 --
@@ -363,6 +433,12 @@ ALTER TABLE `contact_person`
 --
 ALTER TABLE `current_address`
   ADD KEY `staff_id` (`staff_id`);
+
+--
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`dept_id`);
 
 --
 -- Indexes for table `family_details`
@@ -433,29 +509,30 @@ ALTER TABLE `work_experience`
 --
 
 --
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `leave_details`
 --
 ALTER TABLE `leave_details`
   MODIFY `leave_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `salary_report`
 --
 ALTER TABLE `salary_report`
   MODIFY `salary_id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `schedule_details`
 --
 ALTER TABLE `schedule_details`
   MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
 --
 -- Constraints for dumped tables
 --
@@ -509,23 +586,10 @@ ALTER TABLE `permanent_address`
   ADD CONSTRAINT `permanent_address_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 
 --
--- Constraints for table `salary_details`
---
-ALTER TABLE `salary_details`
-  ADD CONSTRAINT `salary_details_ibfk_1` FOREIGN KEY (`salary_id`) REFERENCES `salary_report` (`salary_id`),
-  ADD CONSTRAINT `salary_details_ibfk_2` FOREIGN KEY (`deductDetails_id`) REFERENCES `deduction_details` (`deductDetails_id`);
-
---
 -- Constraints for table `salary_report`
 --
 ALTER TABLE `salary_report`
   ADD CONSTRAINT `salary_report_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `work_experience`
---
-ALTER TABLE `work_experience`
-  ADD CONSTRAINT `work_experience_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

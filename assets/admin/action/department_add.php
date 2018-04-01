@@ -1,11 +1,11 @@
 <?php 
 	include_once("connection.php");
 	$depart_name = $_POST['depart_name'];
-	$depart_head = $_POST['depart_head'];
+	/*$depart_head = $_POST['depart_head'];*/
 	 
 	 
 	
-	$sql = "INSERT INTO department VALUES(null,'$depart_name','$depart_head')";
+	$sql = "INSERT INTO department VALUES(null,'$depart_name'/*,'$depart_head'*/)";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='../view_department.php'><<< Go Back</a>";

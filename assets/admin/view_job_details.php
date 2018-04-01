@@ -147,12 +147,12 @@
 			         $row['lname'].' '.
 					"</td><td>".
 					 $row['salaryWage'].
-					"</td><td>".
-					$row['department'].
+					/*"</td><td>".
+					$row['department'].*/
 					"</td><td>".
 					$row['allowance'].
-					"</td><td>".
-					$row['employmentStatus'].
+					/*"</td><td>".
+					$row['employmentStatus'].*/
 					"</td><td>".
 					$row['deptHead'].
 					 "</td><td>".
