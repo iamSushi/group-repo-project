@@ -22,17 +22,21 @@
 			<div class="row-5 text-center">
 				<img class="logo" src="img/logo.png" alt="">
 			</div>
-			<div class="row-2">
-				<div class="sidebar-text">
-					<p>" You don't appreciate life until you get to the other side. Like lying in a hospital bed. Hospitaline is no place to
-						be sick "</p>
-				</div>
-			</div>
-			<div class="row-5">
-				<div class="sidebar-text">
-					<p>For just a few dollars a dose, vaccines save lives and help reduce poverty. Unlike medical treatment, they provide a
-						lifetime of protection from deadly and debilitating disease. They are safe and effective. They cut healthcare and treatment
-						costs, reduce the number of hospital visits, and ensure healthier children, families and communities.</p>
+			<div class="row-7 text-center">
+				<div class="row-12">
+					<div class="row-3 container" style="background-color: rgba(74, 55, 55, 0.2); padding: 25px;">
+						<div class="sidebar-text">
+							<p>" You don't appreciate life until you get to the other side. Like lying in a hospital bed. Hospitaline is no place to
+								be sick "</p>
+						</div>
+					</div>
+					<div class="row-6 container" style="background-color: rgba(74, 55, 55, 0.2); padding: 25px;">
+						<div class="sidebar-text">
+							<p>For just a few dollars a dose, vaccines save lives and help reduce poverty. Unlike medical treatment, they provide a
+								lifetime of protection from deadly and debilitating disease. They are safe and effective. They cut healthcare and treatment
+								costs, reduce the number of hospital visits, and ensure healthier children, families and communities.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -340,7 +344,7 @@
 			</div>
 		</div>
 		<div class="row-1" style="background-color:#23272b;">
-			<div class="text-center container" style="margin-top: 5px;color: #555555;">
+			<div class="text-center container" style="margin-top: 5px;color:#b4ae8d;">
 				<p>Copyright 2018 - All Rights Reserved - Design by: iamSushi</p>
 			</div>
 		</div>

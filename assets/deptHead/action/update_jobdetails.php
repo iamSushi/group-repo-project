@@ -24,6 +24,5 @@
 		}else{
 			echo "Failed to Add!".mysqli_error($connect);
 		}
-
 	}
 ?>

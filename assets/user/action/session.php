@@ -46,13 +46,15 @@
 					$sqlfor = "INSERT INTO contact_person VALUES('$sid','','','','','','','','')";
 					$sqlfve = "INSERT INTO family_details VALUES('$sid','','','','','','','','','','','','','','','','','','','','','')";
 					$sqlsix = "INSERT INTO highschool_background VALUES('$sid','','','','','','','','')";
+					$sqlsvn = "INSERT INTO job_details VALUES('$sid','','','','','','','','','')";
 					mysqli_query($connect,$sqlone);
 					mysqli_query($connect,$sqltwo);
 					mysqli_query($connect,$sqltre);
 					mysqli_query($connect,$sqlfor);
 					mysqli_query($connect,$sqlfve);
 					mysqli_query($connect,$sqlsix);
-					
+					mysqli_query($connect,$sqlsvn);
+
 					header("location: basicinfo.php?id=".$sid."");
 				}
 			}

@@ -114,15 +114,15 @@ label {
   height: 25px;
 }
 .foot-link > a{
-  color: #555555;
+  color: #b4ae8d;
 }
 .sidebar{
   background-color: #a44141;
 }
 .sidebar-text{
-  text-shadow: .5px 1px #decdcd;
   font-size: 16px;
   text-align: center;
+  color:#ead981;
   font-family: masaya;
   font-weight: bold;
 }
