@@ -24,8 +24,8 @@
 								</div>
 								<div id="collapse1" class="panel-collapse collapse">
 									<ul class="list-group">
-										<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
-										<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
+										<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+										<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 										<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
 										<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 									</ul>
@@ -45,7 +45,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-group">
+							<!-- <div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
@@ -59,7 +59,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
@@ -67,9 +67,9 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<!-- <li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li> -->
 											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
@@ -116,7 +116,7 @@
 			 			<?php
 
 	  include_once("connection.php");
-	  $sql = "SELECT * FROM departmentView";
+	  $sql = "SELECT * FROM department";
 	  $result = mysqli_query($connect,$sql);
 	  if(mysqli_num_rows($result) > 0){
 		  echo "<table class='table' border='1'>";
@@ -131,20 +131,20 @@
 		  echo "<tbody>";
 	     while($row = mysqli_fetch_assoc($result)){
 		       echo "<tr><td style='text-align:center;'>".
-					 $row['depart_id'].
+					 $row['dept_id'].
 					"</td><td>".
-					$row['depart_name'].
-					"</td><td>".
+					$row['dept_name'].
+					/*"</td><td>".
 					$row['fname'].' '.
 					$row['mname'].' '.
 					$row['lname'].
-					 
+					 */
 					 "</td>
 					 <td>
-					    <a href='update_department.php?id=".$row['depart_id']."'>
+					    <a href='update_department.php?id=".$row['dept_id']."'>
 					      <button class='btn btn-primary'>Update</button>
 						</a>
-						<a href='action/department_delete.php?id=".$row['depart_id']."'>
+						<a href='action/department_delete.php?id=".$row['dept_id']."'>
 						  <button class='btn btn-danger'>Delete</button>
 						</a>
 					 </td>

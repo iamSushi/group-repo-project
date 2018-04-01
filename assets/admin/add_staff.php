@@ -25,8 +25,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-										<!-- 	<li class="list-group-item"><a href="view_department.php">View Department</a></li>
-										<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
@@ -46,7 +46,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-group">
+							<!-- <div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
@@ -60,7 +60,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
@@ -68,9 +68,9 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<!-- <li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li> -->
 											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
@@ -218,12 +218,12 @@
 								    	</div>
 								    </div>
 								</div>
-								 <div class="form-group">
-									<label class="control-label col-sm-4">Department:</label>
-									<div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								  <!--   <input type="text" name="position" class='form-control' required placeholder="Position"> -->
+								 <!-- <div class="form-group">
+								 									<label class="control-label col-sm-4">Department:</label>
+								 									<div class="col-sm-5 inputGroupContainer">
+								 										<div class="input-group">
+								 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								  <input type="text" name="position" class='form-control' required placeholder="Position">
 								 			 <select name="department" id="" class="form-control" required>
 								  				<option value="staff">Cardiology</option>
 								  				<option value="head">Ophthalmology</option>
@@ -231,14 +231,14 @@
 								  			</select>
 								    	</div>
 								    </div>
-								</div>
-								<!--  <div class="form-group">
-																	<label class="control-label col-sm-4">Department:</label>
-																	<div class="col-sm-5 inputGroupContainer">
-																		<div class="input-group">
-																			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								 <input type="text" name="position" class='form-control' required placeholder="Position">
-											 <select name="department" id="" class="form-control" required>
+								 								</div> -->
+								<div class="form-group">
+									<label class="control-label col-sm-4">Department:</label>
+									<div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+												<!-- <input type="text" name="position" class='form-control' required placeholder="Position">-->
+												<select name="department" id="" class="form-control" required> 
 								 				<?php
 													include_once("connection.php");
 													$sql = "SELECT * FROM department";
@@ -246,7 +246,7 @@
 													if(mysqli_num_rows($result) > 0){
 													while($row = mysqli_fetch_assoc($result)){
 													?>
-													<option  value="<?php echo $row['depart_id'] ?>"><?php echo 'ID = '.$row['depart_id'].' Department = '.$row['depart_name'].''?></option>	
+													<option  value="<?php echo $row['dept_name'] ?>"><?php echo $row['dept_name']?></option>	
 													<?php
 													}
 																				  		}
@@ -254,7 +254,7 @@
 								 			</select>
 								   	</div>
 								   </div>
-																</div> -->
+								</div>
 								 <div class="form-group">
 									<label class="control-label col-sm-4">Password:</label>
 									<div class="col-sm-5 inputGroupContainer">

@@ -127,9 +127,21 @@
 											<div class="container form-group">
 												<label for="">Department</label>
 												<select class="form-control" name="dept">
-													<option value="Ophthalmology">Ophthalmology</option>
+													<!-- <option value="Ophthalmology">Ophthalmology</option>
 													<option value="Accident and emergency">Accident and emergency</option>
-													<option value="Cardiology">Cardiology</option>
+													<option value="Cardiology">Cardiology</option> -->
+													<?php
+													include_once("action/mysqlconn.php");
+													$sql = "SELECT * FROM department";
+													$result = mysqli_query($connect,$sql);
+													if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+													<option  value="<?php echo $row['dept_name'] ?>"><?php echo $row['dept_name']?></option>	
+													<?php
+																	}
+																}
+													?>
 												</select>
 											</div>
 											<div class="container form-group">

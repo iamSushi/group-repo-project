@@ -23,8 +23,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-										<!-- 	<li class="list-group-item"><a href="view_department.php">View Department</a></li>
-										<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
@@ -51,9 +51,9 @@
 									</div>
 									<div id="collapse3" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
+											<!-- <li class="list-group-item"><a href="add_attendance.php">Add Attendance</a></li>
 											<li class="list-group-item"><a href="view_attendance.php">View Attendance</a></li>
-											<li class="list-group-item"><a href="add_attendance_details.php">Add View Attendance</a></li>
+											<li class="list-group-item"><a href="add_attendance_details.php">Add View Attendance</a></li> -->
 											<li class="list-group-item"><a href="view_attendance_details.php">View Attendance Details</a></li>	 
 										</ul>
 									</div>

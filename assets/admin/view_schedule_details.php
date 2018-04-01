@@ -24,8 +24,8 @@
 									</div>
 									<div id="collapse1" class="panel-collapse collapse">
 										<ul class="list-group">
-											<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
-											<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
 											<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
 											<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
 										</ul>
@@ -45,7 +45,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-group">
+							<!-- <div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
@@ -59,7 +59,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
@@ -67,9 +67,9 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<!-- <li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li> -->
 											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
@@ -112,7 +112,7 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12"><legend>Schedule Details</legend></div>
 					<div class="col-sm-1"></div>
 			 		<div class="col-sm-10">
 			 			<?php
@@ -125,8 +125,7 @@
 										<tr>
 										    <th>Schedule Details ID</th>
 											<th>Staff</th>
-											<th>Head</th>
-											<th>Department</th>
+										 
 											<th>Day</th>
 											<th>Morning Time In</th>
 											<th>Morning Time Out</th>
@@ -147,8 +146,8 @@
 										  /*"</td><td>".
 										 $row['head_id'].
 										  "</td><td>".
-										 $row['department'].
-										 "</td><td>".*/
+										 $row['department'].*/
+										 "</td><td>".
 										 $row['day'].
 										"</td><td>".
 										 $row['morningTimein'].

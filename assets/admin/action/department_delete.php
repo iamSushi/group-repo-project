@@ -4,7 +4,7 @@
 
 	$id = $_GET['id'];
 
-	$sql = "DELETE FROM department where depart_id = '$id'";
+	$sql = "DELETE FROM department where dept_id = '$id'";
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Deleted! <a href='../view_department.php'><<< Go Back</a>";

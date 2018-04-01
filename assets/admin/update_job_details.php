@@ -17,7 +17,7 @@
 <body>
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
-								<!-- <div class="panel panel-default">
+								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
 									</div>
@@ -29,7 +29,7 @@
 											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 							<div class="panel-group">
 								<div class="panel panel-default">
@@ -44,7 +44,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-group">
+							<!-- <div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
 										<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse">Attendance</a></h4>
@@ -58,7 +58,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel panel-heading">
@@ -66,9 +66,9 @@
 									</div>
 									<div id="collapse4" class="panel-collapse collapse">
 										<ul class="list-group">
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
+											<!-- <li class="list-group-item"><a href="add_schedule.php">Add Schedule</a></li>
 											<li class="list-group-item"><a href="view_schedule.php">View Schedule</a></li>
-											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li>
+											<li class="list-group-item"><a href="add_schedule.php">Add Schedule Details</a></li> -->
 											<li class="list-group-item"><a href="view_schedule_details.php">View Schedule Details</a></li>
 											 
 										</ul>
