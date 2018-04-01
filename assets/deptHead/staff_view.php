@@ -69,7 +69,6 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
-								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
 						<!-- <li class="dropdown">
@@ -100,8 +99,9 @@
 						<?php
 							$space = " ";
 							$id = $_GET['id'];
+							$dept = $_GET['dept'];
 							include_once("action/mysqlconn.php");
-							$query = "SELECT * FROM staff";
+							$query = "SELECT * FROM staff WHERE department = ''";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
 							echo "<table class='table'>";

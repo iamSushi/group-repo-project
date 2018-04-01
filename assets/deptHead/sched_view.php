@@ -70,7 +70,6 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
-								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
 						<li >
@@ -94,7 +93,7 @@
 					<form action="" method="post" class="container">
 						<?php
 							include_once("action/mysqlconn.php");
-							$query = "SELECT staff.fname, staff.lname, staff.type, staff.department, staff.email, schedule_details.schedDetails_id, schedule_details.day, schedule_details.morningTimein, schedule_details.morningTimeout, schedule_details.afternoonTimein, schedule_details.afternoonTimeout, schedule_details.totalHours FROM staff INNER JOIN schedule_details ON staff.staff_id = schedule_details.staff_id";
+							$query = "SELECT staff.fname, staff.lname, staff.type, staff.department, staff.email, schedule_details.sched_id, schedule_details.day, schedule_details.morningTimein, schedule_details.morningTimeout, schedule_details.afternoonTimein, schedule_details.afternoonTimeout, schedule_details.totalHours FROM staff INNER JOIN schedule_details ON staff.staff_id = schedule_details.staff_id";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
 
@@ -128,7 +127,7 @@
 									echo "<td class='text-center'>".$row['afternoonTimeout']."</td>";
 									echo "<td class='text-center'>".$row['totalHours']."</td>";
 									echo "<td>
-										<a href='action/remove.php?sid=".$row['schedDetails_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
+										<a href='action/delete_sched.php?sid=".$row['sched_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-danger' style='width:85px;'>Remove</a>
 									</td>";
 								echo "</tr>";
 								}

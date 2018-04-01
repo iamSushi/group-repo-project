@@ -70,7 +70,6 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
-								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
 						<!-- <li class="dropdown">

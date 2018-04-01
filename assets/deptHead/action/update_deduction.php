@@ -13,7 +13,7 @@
 	$sql = "UPDATE job_details SET absences = '$absences', late = '$late', sss = '$sss', bir = '$bir', pagibig = '$pagibig', philhealth = '$philhealth' WHERE staff_id = '$sid'";
 
 	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added!";
+		echo "Successfully Added! <a href='../deduction.php?id=".$_GET['id']."&dept=".$_GET['dept']."'>Go Back!</a>";
 	}else{
 		echo "Failed to Delete!".mysqli_error($connect);
 	}

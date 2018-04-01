@@ -69,7 +69,6 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="sched_view.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">View Schedule</a></li>
-								<li><a href="sched_add.php<?php echo '?id='.$id.'&dept='.$_GET['dept'].''?>">Add Schedule</a></li>
 							</ul>
 						</li>
 						<li >
@@ -145,7 +144,7 @@
 					   	<div class="form-group" style="margin-bottom: 15px;">
 					    	<label for="" class="col-sm-4 control-label"></label>
 					   		<div class="col-sm-5">
-					  		<button type="submit" class="btn btn-primary" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
+					  			<button type="submit" class="btn btn-primary" name="submit" width="100px">Submit <span class="glyphicon glyphicon-send"></span></button>
 							</div>
 					  	</div>
 				  	</div>
