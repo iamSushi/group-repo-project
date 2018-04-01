@@ -205,14 +205,6 @@
 										<div class="container form-group form-horizontal">
 											<div class="inputGroupContainer">
 												<div class="input-group">
-													<span class="input-group-addon">Status:</span>
-													<span class='form-control'><?php echo $row['status'] ?></span>
-												</div>
-											</div>
-										</div>
-										<div class="container form-group form-horizontal">
-											<div class="inputGroupContainer">
-												<div class="input-group">
 													<span class="input-group-addon">Contact number:</span>
 													<span class='form-control'><?php echo $row['mothers_contnum'] ?></span>
 												</div>

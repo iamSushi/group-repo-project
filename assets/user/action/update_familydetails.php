@@ -38,8 +38,12 @@
 		$id = $_GET['id'];
 
 		$sql = "UPDATE contact_person SET fname = '$fname', mname = '$mname', lname = '$sname', contactNum = '$contnum', address = '$add', gender = '$gender', email = '$email', birthdate = '$dob' WHERE staff_id = '$id'";
-		mysqli_query($connect,$sql);
-		header('location: ../familyDetails.php');
+		// mysqli_query($connect,$sql);
+
+		if(mysqli_query($connect,$sql)){
+			header('location: ../contactperson.php?id='.$id.'');
+		}
+		
 	}
 	
 	echo "Successfuly Updated <a href='../familyDetails.php?id=".$id."'>Go back!</a>";

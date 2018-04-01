@@ -33,19 +33,29 @@
 			 // $password = md5($pass);
 			$sql = "INSERT INTO staff VALUES('','$fname','','$sname','','','','$email','','','$type','','$pass')";
 			mysqli_query($connect,$sql);
-			// $id = mysqli_insert_id();
 			$_SESSION['email'] = $email;
 			$sqltwo = "SELECT * FROM staff WHERE email = '$email'";
 			mysqli_query($connect,$sqltwo);
 			$result = mysqli_query($connect,$sqltwo);
 			if(mysqli_num_rows($result) > 0){
 				while($row = mysqli_fetch_assoc($result)){
-					header("location: basicinfo.php?id=".$row['staff_id']."");
+					$sid = $row['staff_id'];
+					$sqlone = "INSERT INTO work_experience VALUES('$sid','','','','','','','','','','','','','','')";
+					$sqltwo = "INSERT INTO current_address VALUES('$sid','','','','','','','')";
+					$sqltre = "INSERT INTO college_background VALUES('$sid','','','','','','','','','','')";
+					$sqlfor = "INSERT INTO contact_person VALUES('$sid','','','','','','','','')";
+					$sqlfve = "INSERT INTO family_details VALUES('$sid','','','','','','','','','','','','','','','','','','','','','')";
+					$sqlsix = "INSERT INTO highschool_background VALUES('$sid','','','','','','','','')";
+					mysqli_query($connect,$sqlone);
+					mysqli_query($connect,$sqltwo);
+					mysqli_query($connect,$sqltre);
+					mysqli_query($connect,$sqlfor);
+					mysqli_query($connect,$sqlfve);
+					mysqli_query($connect,$sqlsix);
+					
+					header("location: basicinfo.php?id=".$sid."");
 				}
 			}
-			// $id = $_GET['staff_id'];
-			// $_SESSION['success'] = "You are now logged in";
-			
 		}
 	}
 	if (isset($_POST['login'])){
@@ -68,12 +78,9 @@
 					$_SESSION['email'] = $email;
 					header("location: about_me.php?id=".$row['staff_id']."");
 				}
-				// $_SESSION['email'] = $email;
-				// header('location: about_me.php?id='.$_GET['staff_id'].'');
 				
 			}else{
 				array_push($errors, "The email/password/ is incorrect");
-				// header('location: index.php');
 			}
 		}
 	}
@@ -81,7 +88,6 @@
 		$email = mysqli_real_escape_string($connect,$_POST['admin_email']);
 		$pass = mysqli_real_escape_string($connect,$_POST['admin_password']);
 		$type = "Admin";
-		// $stand = mysqli_real_escape_string($connect,$_POST['standing']);
 		if(empty($email)){
 			array_push($errors, "Input Email!");
 		}
@@ -96,19 +102,8 @@
 				$_SESSION['email'] = $email;
 				$_SESSION['success'] = "You are now logged in";
 				header('location: ../admin/view_staff.php');
-				// if($stand == "User"){
-				// 	$_SESSION['email'] = $email;
-				// 	$_SESSION['success'] = "You are now logged in";
-				// 	header('location: profile.php');
-					
-				// }else{
-				// 	$_SESSION['email'] = $email;
-				// 	header('location: member.php');
-					
-				// }
 			}else{
 				array_push($errors, "The email/password/ is incorrect");
-				// header('location: index.php');
 			}
 		}
 	}
@@ -117,7 +112,6 @@
 		$pass = mysqli_real_escape_string($connect,$_POST['head_password']);
 		$dept = mysqli_real_escape_string($connect,$_POST['dept']);
 		$type = "Head";
-		// $stand = mysqli_real_escape_string($connect,$_POST['standing']);
 		if(empty($email)){
 			array_push($errors, "Input Email!");
 		}
@@ -128,9 +122,6 @@
 			// $password = md5($password);
 			$query = "SELECT * FROM staff WHERE email = '$email' AND password = '$pass' AND department = '$dept' AND type = '$type'";
 			$result = mysqli_query($connect, $query);
-			// $sqltwo = "SELECT * FROM staff WHERE email = '$email'";
-			// mysqli_query($connect,$sqltwo);
-			// $result = mysqli_query($connect,$result);
 			if(mysqli_num_rows($result) > 0){
 				while($row = mysqli_fetch_assoc($result)){
 					$sqltwo = "SELECT * FROM staff WHERE email = '$email'";
@@ -160,8 +151,5 @@
 		$id = $_GET['id'];
 		$sql = "UPDATE staff SET fname = '$fname' WHERE satff_id ='$id'";
 		mysqli_query($connect,$sql);
-		// $_SESSION['email'] = $email;
-		// $_SESSION['success'] = "You are now logged in";
-		// header("location: basicinfo.php?id=".$row['staff_id']."");
 	}
 ?>

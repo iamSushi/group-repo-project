@@ -123,7 +123,7 @@
 								$email = $_SESSION['email'];
 								$id = $_GET['id'];
 								include_once("action/session.php");
-								$query = "SELECT * FROM job_details WHERE staff_id = '$id'";
+								$query = "SELECT staff.department, staff.type, job_details.deptHead, job_details.allowance, job_details.salaryWage FROM staff INNER JOIN job_details ON staff.staff_id = job_details.staff_id WHERE job_details.staff_id = '$id'";
 								$result = mysqli_query($connect,$query);
 								if(mysqli_num_rows($result) > 0){
 									while($row = mysqli_fetch_assoc($result)):
@@ -168,7 +168,7 @@
 										<div class="inputGroupContainer">
 											<div class="input-group">
 												<span class="input-group-addon">Employment Status:</span>
-												<span class='form-control'><?php echo $row['employmentStatus'] ?></span>
+												<span class='form-control'><?php echo $row['type'] ?></span>
 											</div>
 										</div>
 									</div>

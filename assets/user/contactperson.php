@@ -128,7 +128,7 @@
 								<label for="">Birthdate</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
-									<input class="form-control" type="date" required name="dob" value="<?php echo $row['date'] ?>">
+									<input class="form-control" type="date" required name="dob" value="<?php echo $row['birthdate'] ?>">
 								</div>
 							</div>
 							<div class="col-1"></div>
@@ -137,8 +137,8 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-heart"></i></span>
 									<select class="form-control" required name="gender">
-	                                    <option value="">Male</option>
-	                                    <option value="">Female</option>
+	                                    <option value="Male">Male</option>
+	                                    <option value="Female">Female</option>
 	                                </select>
 								</div>
 							</div>
@@ -169,19 +169,6 @@
 									<input class="form-control" type="text" name="contnum" required placeholder="+639 *** ****" value="<?php echo $row['contactNum'] ?>">
 								</div>
 							</div>
-							<!-- <div class="col-1"></div>
-							<div class="col-5">
-								<label for="">Status</label>
-								<div class="input-group">
-									<span class="input-group-addon"><i class="glyphicon glyphicon-heart-empty"></i></span>
-									<select class="form-control">                                                                                                                                                                                                                                                                     
-	                                    <option value="">Single</option>
-	                                    <option value="">Married</option>
-	                                    <option value="">Divorced</option>
-	                                    <option value="">Widowed</option>
-	                                </select>
-								</div>
-							</div> -->
 						</div>
 						<div class="container row-1 form-group" style="margin-bottom: 15px;">
 							<button class="btn btn-dark" type="submit" name="contact_update" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
