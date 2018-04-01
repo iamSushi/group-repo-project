@@ -101,10 +101,12 @@
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
-							 <div class="input-group">
-								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
-							</div> 
+							 <form action="search_view_staff.php">
+								 <div class="input-group">
+									  <input type="text" class="form-control" placeholder="Search Staff" aria-describedby="basic-addon1" name="search">
+									  <span class="input-group-addon" id="basic-addon1" style="padding: 0;"><button class="btn" type="submit" name="send"><i class="glyphicon glyphicon-search"></i></button></span>
+								</div> 
+							</form>
 						</div>
 					</ul>
 			 	 </div>

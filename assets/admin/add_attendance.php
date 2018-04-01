@@ -19,17 +19,17 @@
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
 								<div class="panel panel-default">
-								<div class="panel panel-heading">
-									<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
-								</div>
-								<div id="collapse1" class="panel-collapse collapse">
-									<ul class="list-group">
-										<!-- <li class="list-group-item"><a href="view_department.php">View Department</a></li>
-										<li class="list-group-item"><a href="add_department.php">Add Department</a></li> -->
-										<li class="list-group-item"><a href="view_department_head.php">Department Head</a></li>
-										<li class="list-group-item"><a href="add_department_head.php">Elect Department Head</a></li>
-									</ul>
-								</div> 
+									<div class="panel panel-heading">
+										<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse">Department</a></h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse">
+										<ul class="list-group">
+											<li class="list-group-item"><a href="view_department.php">View Department</a></li>
+											<li class="list-group-item"><a href="add_department.php">Add Department</a></li>
+											<!-- <li class="list-group-item"><a href="view_department_head.html">Department Head</a></li>
+											<li class="list-group-item"><a href="add_department_head.html">Elect Department Head</a></li> -->
+										</ul>
+									</div>
 								</div>
 							</div>
 							<div class="panel-group">
@@ -101,10 +101,12 @@
 			 	 	<div class="nav navbar-right nav-btn"><button class="btn"><a href="../user/index.php?logout='1'" style="text-decoration-style: none;">Logout</a></button></div>
 			 	 	<ul class="nav navbar-right nav-btn">
 				 	 	<div class="input-group">
-							 <div class="input-group">
-								  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
-								  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
-							</div> 
+				 	 		<form action="try">
+								 <div class="input-group">
+									  <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+									  <span class="input-group-addon" id="basic-addon1" style="padding: 0;"><button class="btn"><i class="glyphicon glyphicon-search"></i></button></span>
+								</div> 
+							</form>
 						</div>
 					</ul>
 			 	 </div>
