@@ -25,8 +25,6 @@
 						$email = $_SESSION['email'];
 						$id = $_GET['id'];
 						include_once("action/session.php");
-						// $query = "SELECT member.member_id, member.firstName, member.middleName, member.surName, member.emailAdd, member.status, member.gender, member.position, address.member_id, address.addOne, address.addTwo, address.addTre FROM member LEFT JOIN address ON member.member_id = address.member_id WHERE emailAdd = '$email'";
-						// $query = "SELECT * FROM staff WHERE email = '$email'";
 						$query = "SELECT * FROM staff WHERE staff_id = '$id'";
 						$result = mysqli_query($connect,$query);
 						if(mysqli_num_rows($result) > 0){
@@ -41,7 +39,7 @@
 						</div>
 						<div class="row-3 container text-center">
 							<p><?php echo $row['fname'].$space.$row['lname'] ?></p>
-							<p><?php echo $row['position'] ?></p>
+							<p><?php echo $row['department'] ?></p>
 						</div>
 					</form>
 					<?php endwhile;} ?>

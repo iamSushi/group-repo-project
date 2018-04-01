@@ -39,7 +39,7 @@
 						</div>
 						<div class="row-3 container text-center">
 							<p><?php echo $row['fname'].$space.$row['lname'] ?></p>
-							<p><?php echo $row['position'] ?></p>
+							<p><?php echo $row['department'] ?></p>
 						</div>
 					</form>
 					<?php endwhile;} ?>
