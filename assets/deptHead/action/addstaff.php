@@ -17,8 +17,8 @@
 		$pass = "Password";
 		$sql = "INSERT INTO staff VALUES('','$fname','$mname','$sname','$dob','','','$email','$status','$gender','$type','$dept','$pass')";
 		mysqli_query($connect,$sql);
-		// $sqltwo = "";
+		header('location: ../staff_view.php?id='.$_GET['id'].'&dept='.$_GET['dept'].'');
 	}
-	echo "Successfuly Updated <a href='../staff_view.php?id=".$_GET['id']."&dept=".$_GET['dept']."'>Go back!</a>";
+	// echo "Successfuly Updated <a href='../staff_view.php?id=".$_GET['id']."&dept=".$_GET['dept']."'>Go back!</a>";
 
 ?>

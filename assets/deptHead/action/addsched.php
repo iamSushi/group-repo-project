@@ -19,7 +19,8 @@
 
 	$sql = "INSERT INTO schedule_details VALUES('','$sid','$day','$time1','$time2','$time3','$time4','$z')";
 	if(mysqli_query($connect, $sql)){
-		echo "Successfully Added! <a href='../sched_view.php?id=".$id."&dept=".$dept."'>Go Back!</a>";
+		// echo "Successfully Added! <a href='../sched_view.php?id=".$id."&dept=".$dept."'>Go Back!</a>";
+		header('location: ../sched_view.php?id='.$id.'&dept='.$dept.'');
 	}else{
 		echo "Failed to Add!".mysqli_error($connect);
 		// echo "<br/> <a href='sign_up.php'>

@@ -142,7 +142,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group" style="margin-bottom: 15px;">
+						<!-- <div class="form-group" style="margin-bottom: 15px;">
 						    <label class="control-label col-sm-4">Department Head:</label>
 						    <div class="col-sm-5 inputGroupContainer">
 								<div class="input-group">
@@ -150,7 +150,7 @@
 									<input type="text" name="depthead" value="" class='form-control' placeholder="">
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group" style="margin-bottom: 15px;">
 						    <label class="control-label col-sm-4"></label>
 						    <div class="col-sm-5 inputGroupContainer">

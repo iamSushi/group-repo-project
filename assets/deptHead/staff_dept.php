@@ -106,7 +106,7 @@
 							$id = $_GET['id'];
 							$dept = $_GET['dept'];
 							include_once("action/mysqlconn.php");
-							$query = "SELECT * FROM staff WHERE department = '$dept'";
+							$query = "SELECT * FROM staff WHERE department = '$dept' AND type = 'Staff'";
 							$result = mysqli_query($connect,$query);
 							if(mysqli_num_rows($result) > 0){
 							echo "<table class='table'>";
