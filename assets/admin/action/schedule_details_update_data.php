@@ -14,11 +14,13 @@
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Updated! <a href='../view_schedule_details.php'><<< Go Back</a>";
+		header("Location:../view_schedule_details.php");
 	}else{
 
 
 		echo "Failed to Update!".mysqli_error($connect);
 		echo "<br/> <a href='../view_schedule_details.php'><<< Go Back</a>";
+		header("Location:../view_schedule_details.php");
 	}
 
 ?>

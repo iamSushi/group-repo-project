@@ -124,7 +124,7 @@
 
 			 		<div class="col-sm-12">
 			 			
-			 			<form class="form-horizontal" method="POST" action="job_details_add.php">
+			 			<form class="form-horizontal" method="POST" action="action/job_details_update_data.php">
 			 					<input type="hidden" name="id" value="<?php echo $_GET['id']?>">
 						    	<div class="form-group">
 									<label class="control-label col-sm-4">Staff ID:</label>
@@ -145,11 +145,11 @@
 									</div>
 								</div>
 								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
+								    <label class="control-label col-sm-4">SSS:</label>
 								    <div class="col-sm-5 inputGroupContainer">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department" value="<?php echo $row['department'];?>">
+											<input type="text" name="sss" class='form-control' required placeholder="Department" value="<?php echo $row['sss'];?>">
 										</div>
 									</div>
 								</div>
@@ -163,11 +163,11 @@
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
+							     	<label for="" class="control-label col-sm-4"> Pag-ibig:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status" value="<?php echo $row['employmentStatus'];?>">
+							     			<input type="text" name="pagibig" class='form-control' required placeholder="Pag-ibig" value="<?php echo $row['pagibig'];?>">
 							     		</div>
 							     	</div>
 							     </div>
@@ -176,7 +176,25 @@
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="dept_head" class='form-control' required placeholder="Department Head:" value="<?php echo $row['deptHead'];?>">
+							     			<input type="text" name="deptHead" class='form-control' required placeholder="Department Head:" value="<?php echo $row['deptHead'];?>">
+							     		</div>
+							     	</div>
+							     </div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">BIR:</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							     			<input type="text" name="bir" class='form-control' required placeholder="Department Head:" value="<?php echo $row['bir'];?>">
+							     		</div>
+							     	</div>
+							     </div>
+							     <div class="form-group">
+							     	<label for="" class="control-label col-sm-4">PhilHealth:</label>
+							     	<div class="col-sm-5 inputGroupContainer">
+							     		<div class="input-group">
+							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							     			<input type="text" name="phil" class='form-control' required placeholder="Department Head:" value="<?php echo $row['philhealth'];?>">
 							     		</div>
 							     	</div>
 							     </div>

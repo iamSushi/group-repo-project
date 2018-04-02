@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2018 at 01:33 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Apr 02, 2018 at 01:48 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -385,6 +385,17 @@ INSERT INTO `staff` (`staff_id`, `fname`, `mname`, `lname`, `birthdate`, `cellnu
 -- (See below for the actual view)
 --
 CREATE TABLE `staffjob` (
+`staff_id` bigint(20)
+,`fname` varchar(50)
+,`mname` varchar(50)
+,`lname` varchar(50)
+,`salaryWage` int(11)
+,`allowance` int(11)
+,`deptHead` varchar(50)
+,`sss` int(11)
+,`pagibig` int(11)
+,`philhealth` int(11)
+,`bir` int(11)
 );
 
 -- --------------------------------------------------------
@@ -473,7 +484,7 @@ INSERT INTO `x_awol` (`awol_id`, `staff_id`, `date`, `absences`, `late`) VALUES
 --
 DROP TABLE IF EXISTS `staffjob`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staffjob`  AS  select `job_details`.`staff_id` AS `staff_id`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname`,`job_details`.`salaryWage` AS `salaryWage`,`job_details`.`allowance` AS `allowance`,`job_details`.`deptHead` AS `deptHead`,`job_details`.`sss` AS `sss`,`job_details`.`pagibig` AS `pagibig`,`job_details`.`philhealth` AS `philhealth`,`job_details`.`bir` AS `bir`,`job_details`.`absences` AS `absences`,`job_details`.`late` AS `late` from (`job_details` left join `staff` on((`job_details`.`staff_id` = `staff`.`staff_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staffjob`  AS  select `job_details`.`staff_id` AS `staff_id`,`staff`.`fname` AS `fname`,`staff`.`mname` AS `mname`,`staff`.`lname` AS `lname`,`job_details`.`salaryWage` AS `salaryWage`,`job_details`.`allowance` AS `allowance`,`job_details`.`deptHead` AS `deptHead`,`job_details`.`sss` AS `sss`,`job_details`.`pagibig` AS `pagibig`,`job_details`.`philhealth` AS `philhealth`,`job_details`.`bir` AS `bir` from (`job_details` left join `staff` on((`job_details`.`staff_id` = `staff`.`staff_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -542,155 +553,6 @@ ALTER TABLE `job_details`
 ALTER TABLE `leave_details`
   ADD PRIMARY KEY (`leave_id`),
   ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `permanent_address`
---
-ALTER TABLE `permanent_address`
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `salary_details`
---
-ALTER TABLE `salary_details`
-  ADD KEY `salary_id` (`salary_id`),
-  ADD KEY `deductDetails_id` (`deductDetails_id`);
-
---
--- Indexes for table `salary_report`
---
-ALTER TABLE `salary_report`
-  ADD PRIMARY KEY (`salary_id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `schedule_details`
---
-ALTER TABLE `schedule_details`
-  ADD PRIMARY KEY (`sched_id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staff_id`);
-
---
--- Indexes for table `work_experience`
---
-ALTER TABLE `work_experience`
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `x_awol`
---
-ALTER TABLE `x_awol`
-  ADD KEY `awol_id` (`awol_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `awol`
---
-ALTER TABLE `awol`
-  MODIFY `awol_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `department`
---
-ALTER TABLE `department`
-  MODIFY `dept_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `leave_details`
---
-ALTER TABLE `leave_details`
-  MODIFY `leave_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `salary_report`
---
-ALTER TABLE `salary_report`
-  MODIFY `salary_id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `schedule_details`
---
-ALTER TABLE `schedule_details`
-  MODIFY `sched_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `staff_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `college_background`
---
-ALTER TABLE `college_background`
-  ADD CONSTRAINT `college_background_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `contact_person`
---
-ALTER TABLE `contact_person`
-  ADD CONSTRAINT `contact_person_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `current_address`
---
-ALTER TABLE `current_address`
-  ADD CONSTRAINT `current_address_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `family_details`
---
-ALTER TABLE `family_details`
-  ADD CONSTRAINT `family_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `highschool_background`
---
-ALTER TABLE `highschool_background`
-  ADD CONSTRAINT `highschool_background_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `job_details`
---
-ALTER TABLE `job_details`
-  ADD CONSTRAINT `job_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `leave_details`
---
-ALTER TABLE `leave_details`
-  ADD CONSTRAINT `leave_details_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `permanent_address`
---
-ALTER TABLE `permanent_address`
-  ADD CONSTRAINT `permanent_address_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `salary_report`
---
-ALTER TABLE `salary_report`
-  ADD CONSTRAINT `salary_report_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`);
-
---
--- Constraints for table `work_experience`
---
-ALTER TABLE `work_experience`
-  ADD CONSTRAINT `work_experience_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

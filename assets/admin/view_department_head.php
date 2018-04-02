@@ -110,7 +110,7 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
+		<div class="col-sm-12 haha"><legend> Department Head</legend></div>
 			 		<div class="col-sm-12">
 			 			
 			 			<?php
@@ -119,7 +119,7 @@
 	  $sql = "SELECT * FROM staff where type = 'head'";
 	  $result = mysqli_query($connect,$sql);
 	  if(mysqli_num_rows($result) > 0){
-		  echo "<table class='table' border='1'>";
+		  echo "<table class='table'>";
 		  echo "<thead>
 					<tr>
 						<th>First Name</th>
@@ -135,6 +135,8 @@
 						<th>Position</th>
 						<th>Password</th>
 						<th></th>
+						<th></th>
+
 					</tr>
 				</thead>";
 		  echo "<tbody>";
@@ -173,11 +175,10 @@
 						<a href='../user/about_me.php?id=".$row['staff_id']."'>
 					      <button class='btn btn-success'>Profile</button>
 						</a>
-					    <a href='Update_staff.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-primary'>Update</button>
-						</a>
-						<a href='action/staff_delete.php?id=".$row['staff_id']."'>
-						  <button class='btn btn-danger'>Delete</button>
+					</td>
+					 <td>
+						<a href='action/department_head_delect.php?id=".$row['staff_id']."'>
+					      <button class='btn btn-danger'>Delect</button>
 						</a>
 					 </td>
 					 </tr>";

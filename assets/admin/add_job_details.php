@@ -149,15 +149,6 @@
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-4">Department:</label>
-								    <div class="col-sm-5 inputGroupContainer">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-											<input type="text" name="department" class='form-control' required placeholder="Department">
-										</div>
-									</div>
-								</div>
 							    <div class="form-group">
 									<label class="control-label col-sm-4">Allowance:</label>
 									<div class="col-sm-5 inputGroupContainer">
@@ -168,11 +159,11 @@
 									</div>
 							 	</div>
 							     <div class="form-group">
-							     	<label for="" class="control-label col-sm-4">Employment Status:</label>
+							     	<label for="" class="control-label col-sm-4">SSS:</label>
 							     	<div class="col-sm-5 inputGroupContainer">
 							     		<div class="input-group">
 							     			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							     			<input type="text" name="employmentStatus" class='form-control' required placeholder="Employment Status">
+							     			<input type="text" name="sss" class='form-control' required placeholder="SSS">
 							     		</div>
 							     	</div>
 							     </div>
@@ -185,7 +176,33 @@
 							     		</div>
 							     	</div>
 							     </div>
-							    
+							    <div class="form-group">
+								    <label class="control-label col-sm-4">Pag-ibig:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="pagibig" class='form-control' required placeholder="pagibig">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+								    <label class="control-label col-sm-4">PhilHealth:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="phil" class='form-control' required placeholder="phil">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+								    <label class="control-label col-sm-4">BIR:</label>
+								    <div class="col-sm-5 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+											<input type="text" name="bir" class='form-control' required placeholder="bir">
+										</div>
+									</div>
+								</div>
 							   <br>
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>

@@ -235,9 +235,19 @@
 										<div class="input-group">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 									   			<select name="department" id="" class="form-control" required value="<?php echo $row['department']?>">
-									  				<option value="staff">Cardiology</option>
-									  				<option value="head">Ophthalmology</option>
-									  				<option value="leader">Accident and Emergency</option>
+									  				<?php
+													include_once("connection.php");
+													$sql = "SELECT * FROM department";
+													$result = mysqli_query($connect,$sql);
+													if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_assoc($result)){
+													?>
+													<option  value="<?php echo $row['dept_name'] ?>"><?php echo $row['dept_name']?></option>	
+													<?php
+													}
+																				  		}
+																				  ?>
+								 			</select>
 									  			</select>
 								    	</div>
 								    </div>

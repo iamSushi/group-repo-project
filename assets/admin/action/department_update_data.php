@@ -10,6 +10,7 @@
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Updated! <a href='../view_department.php'><<< Go Back</a>";
+		header("Location:../view_department.php");
 	}else{
 
 		echo "Failed to Update!".mysqli_error($connect);

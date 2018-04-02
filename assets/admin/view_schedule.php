@@ -118,11 +118,12 @@
 						  $sql = "SELECT * FROM scheduleView";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
-							  echo "<table class='table' border='1'>";
+							  echo "<table class='table'>";
 							  echo "<thead>
 										<tr>
 										    <th>Attendance ID</th>
 											<th>Staff ID</th>
+											<th></th>
 											<th></th>
 										</tr>
 									</thead>";
@@ -141,6 +142,8 @@
 										    <a href='update_schedule.php?id=".$row['sched_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
+										</td>
+					 					<td>
 											<a href='action/schedule_delete.php?id=".$row['sched_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>

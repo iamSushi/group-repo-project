@@ -112,7 +112,7 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Attendance Details</legend></div>
+		<div class="col-sm-12"><legend>Job Details</legend></div>
 			 		<div class="col-sm-12">
 			 			
 			 			<?php
@@ -121,21 +121,21 @@
 	  $sql = "SELECT * FROM staffjob";
 	  $result = mysqli_query($connect,$sql);
 	  if(mysqli_num_rows($result) > 0){
-		  echo "<table class='table' border='1'>";
+		  echo "<table class='table'>";
 		  echo "<thead>
 					<tr>
 					    <th>Staff</th>
 						<th>Salary Wage</th>
-						<th>Department</th>
+						 
 						<th>Allowance</th>
-						<th>Employment Status</th>
+						 
 						<th>Department Head</th>
 						<th>SSS</th>
 						<th>Pag-ibig</th>
 						<th>PhilHealth</th>
 						<th>BIR</th>
-						<th>Absences</th>
-						<th>Late</th>
+						 
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>";
@@ -163,17 +163,19 @@
 					$row['philhealth'].
 					 "</td><td>".
 					$row['bir'].
-					 "</td><td>".
+					/* "</td><td>".
 					$row['absences'].
 					 "</td><td>".
-					$row['late'].
+					$row['late'].*/
 					 
 					 
 					 "</td>
 					 <td>
-					    <a href='job_details_update.php?id=".$row['staff_id']."'>
+					    <a href='update_job_details.php?id=".$row['staff_id']."'>
 					      <button class='btn btn-primary'>Update</button>
 						</a>
+					</td>
+					 <td>
 						<a href='action/job_details_delete.php?id=".$row['staff_id']."'>
 						  <button class='btn btn-danger'>Delete</button>
 						</a>

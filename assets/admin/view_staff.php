@@ -121,7 +121,7 @@
 	  $sql = "SELECT * FROM staff";
 	  $result = mysqli_query($connect,$sql);
 	  if(mysqli_num_rows($result) > 0){
-		  echo "<table class='table' border='1'>";
+		  echo "<table class='table'>";
 		  echo "<thead>
 					<tr>
 						<th>First Name</th>
@@ -136,6 +136,8 @@
 						<th>Type</th>
 						<th>Position</th>
 						<th>Password</th>
+						<th></th>
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>";
@@ -175,9 +177,13 @@
 						<a href='../user/about_me.php?id=".$row['staff_id']."'>
 					      <button class='btn btn-success'>Profile</button>
 						</a>
+					 </td>
+					 <td>	
 					    <a href='Update_staff.php?id=".$row['staff_id']."'>
 					      <button class='btn btn-primary'>Update</button>
 						</a>
+					 </td>
+					 <td>
 						<a href='action/staff_delete.php?id=".$row['staff_id']."'>
 						  <button class='btn btn-danger'>Delete</button>
 						</a>

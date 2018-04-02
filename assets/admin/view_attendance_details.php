@@ -161,6 +161,8 @@
 					    <a href='update_attendance_details.php?id=".$row['attenDetails_id']."'>
 					      <button class='btn btn-primary'>Update</button>
 						</a>
+					</td>
+					 <td>
 						<a href='action/attendance_details_delete.php?id=".$row['attenDetails_id']."'>
 						  <button class='btn btn-danger'>Delete</button>
 						</a>

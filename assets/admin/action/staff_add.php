@@ -18,9 +18,10 @@
 
 	if(mysqli_query($connect, $sql)){
 		echo "Successfully Added! <a href='../view_staff.php'><<< Go Back</a>";
+		header("Location:../view_staff.php");
 	}else{
 		echo "Failed to Add! <a href='../view_staff.php'><<< Go Back</a>";
 		echo "Failed to Uptelnum!".mysqli_error($connect);
-
+		header("Location:../view_staff.php");
 	}
 ?>
