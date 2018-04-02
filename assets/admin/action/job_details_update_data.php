@@ -20,6 +20,7 @@
 
 		echo "Failed to Update!".mysqli_error($connect);
 		echo "<br/> <a href='../view_schedule_details.php'><<< Go Back</a>";}
+		header("Location:../view_job_details.php");
 		 
 
 ?>
