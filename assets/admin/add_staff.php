@@ -113,7 +113,7 @@
 			 </nav>		
 		</div>
 		<div class="col-sm-12"><legend>Staff Form Registration</legend></div>
-			 		<div class="col-sm-12">
+			 		<div class="col-sm-12" style="overflow-y: scroll;min-height: : 900px;">
 			 			
 			 			<form class="form-horizontal" method="POST" action="action/staff_add.php">
 						    	<div class="form-group">
@@ -264,7 +264,7 @@
 								    	</div>
 								    </div>
 								</div>
-							   <br>
+							   
 							   <div class="form-group">
 							    <label for="" class="col-sm-4 control-label"></label>
 							   		<div class="col-sm-5">

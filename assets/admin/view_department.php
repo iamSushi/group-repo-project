@@ -124,7 +124,6 @@
 					<tr>
 					    <th>Department ID</th>
 						<th>Department Name</th>
-						<th>Department Head</th>
 						<th></th>
 						<th></th>
 						 

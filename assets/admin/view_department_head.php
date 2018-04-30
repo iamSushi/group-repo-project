@@ -173,12 +173,12 @@
 					 "</td>
 					 <td>
 						<a href='../user/about_me.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-success'>Profile</button>
+					      <button class='btn btn-success' style='width:80px'>Profile</button>
 						</a>
 					</td>
 					 <td>
 						<a href='action/department_head_delect.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-danger'>Delect</button>
+					      <button class='btn btn-danger' style='width:80px'>Delect</button>
 						</a>
 					 </td>
 					 </tr>";

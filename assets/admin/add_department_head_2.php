@@ -159,7 +159,7 @@
 					$row['type'].
 					"</td><td>".
 					$row['department'].
-					"</td><td>"?><form action='action/department_head_elect.php<?php echo "?id=".$row['staff_id']."&dept=".$row['department'].""?>' method="post">
+					"</td><td>"?><form action='action/department_head_elect.php<?php echo "?id=".$row['staff_id'].""?>' method="post">
 					 <?php
 					/*"</td><td>".
 					$row['password'].*/
@@ -182,4 +182,4 @@
 		
 	</div>
 </body>
-</html>.
+</html>

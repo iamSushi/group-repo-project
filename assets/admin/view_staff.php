@@ -15,7 +15,7 @@
 	<script src="js/bootstrap.js"></script>
 	
 </head>
-<body>
+<body style="overflow-y:hidden;">
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
 								<div class="panel panel-default">
@@ -90,7 +90,7 @@
 								</div>
 							</div>
 	</div>
-	<div class="col-sm-10 content">
+	<div class="col-sm-10 content" >
 		<div class="col-sm-12" style="padding: 0;">
 			 <nav class="navbar navbar-inverse">
 			 	 <div class="container-fluid" style="padding-left: 0;">
@@ -112,8 +112,9 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12 haha"><legend> View Attendance Details</legend></div>
-			 		<div class="col-sm-12">
+		<div class="col-sm-12 haha" >
+			<legend> View Attendance Details</legend></div>
+			 		<div class="col-sm-12" style="overflow-y:scroll; max-height: 690px;">
 			 			
 			 			<?php
 
@@ -124,12 +125,12 @@
 		  echo "<table class='table'>";
 		  echo "<thead>
 					<tr>
-						<th>First Name</th>
-						<th>Middle Name</th>
-						<th>Last Name</th>
+						<th>Firstname</th>
+						<th>Middlename</th>
+						<th>Lastname</th>
 						<th>Birthdate</th>
-						<th>Cellphone No.</th>
-						<th>Telephone No.</th>
+						<th>Cellnum</th>
+						<th>Telnum</th>
 						<th>Email</th>
 						<th>Status</th>
 						<th>Gender</th>
@@ -137,8 +138,7 @@
 						<th>Position</th>
 						<th>Password</th>
 						<th></th>
-						<th></th>
-						<th></th>
+						
 					</tr>
 				</thead>";
 		  echo "<tbody>";
@@ -175,17 +175,15 @@
 					 "</td>
 					 <td>
 						<a href='../user/about_me.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-success'>Profile</button>
+					      <button class='btn btn-success' style='width:75px;margin-top:2px;'>Profile</button>
 						</a>
-					 </td>
-					 <td>	
+					 	
 					    <a href='Update_staff.php?id=".$row['staff_id']."'>
-					      <button class='btn btn-primary'>Update</button>
+					      <button class='btn btn-primary' style='width:75px;margin-top:2px;'>Update</button>
 						</a>
-					 </td>
-					 <td>
+					 
 						<a href='action/staff_delete.php?id=".$row['staff_id']."'>
-						  <button class='btn btn-danger'>Delete</button>
+						  <button class='btn btn-danger' style='width:75px;margin-top:2px;'>Delete</button>
 						</a>
 					 </td>
 					 </tr>";

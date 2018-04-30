@@ -2,7 +2,7 @@
 	margin: 0;
 }
 body{
-	 
+	overflow-y: hidden !important; 
 }
 .headerhe{
 	position: fixed;
@@ -58,6 +58,7 @@ body{
 .content{
 	height: 100%;
 	padding: 0;
+	
 
 	 
 
@@ -193,7 +194,7 @@ ul>.hnav{
 	margin-top: 20px;
 }
 .panel-default > .panel-heading {
-	background-color: #4d94ff;
+	background-color: #68d34f;
 	color:white;
 }
 .panel{
@@ -205,4 +206,9 @@ ul>.hnav{
 .nav-search{
 	float: right;
 }
-
+.list-group-item{
+	background-color: khaki;
+}
+h4{
+	color: black !important;
+}

@@ -113,7 +113,7 @@
 									echo "<td>".$row['gender']."</td>";
 									echo "<td>".$row['department']."</td>";
 									echo "<td>
-										<a href='update.php?id=".$row['staff_id']."' class='btn btn-primary' style='width:85px;'>View</a>
+										
 										<a href='action/addexestaff.php?sid=".$row['staff_id']."&id=".$_GET['id']."&dept=".$_GET['dept']."' class='btn btn-warning' style='width:85px;'>Add</a>
 									</td>";
 								echo "</tr>";

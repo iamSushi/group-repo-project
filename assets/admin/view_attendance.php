@@ -15,7 +15,7 @@
 	<script src="js/bootstrap.js"></script>
 	
 </head>
-<body>
+<body style="overflow-y: hidden;">
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
 							<div class="panel panel-default">
@@ -112,7 +112,7 @@
 		</div>
 		<div class="col-sm-12"><legend>View Attendance</legend></div>
 					<div class="col-sm-3"></div>
-			 		<div class="col-sm-6">
+			 		<div class="col-sm-6" style="overflow-y:scroll; min-height: 690px;">
 			 			<?php
 						  include_once("connection.php");
 						  $sql = "SELECT * FROM attendance";

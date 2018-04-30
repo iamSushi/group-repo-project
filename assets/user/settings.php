@@ -129,7 +129,7 @@
 				<div class="container row-1">
 					<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#update">Update  <span class="glyphicon glyphicon-send"></span></button>
 					
-					<div class="modal fade" id="update">
+					<!-- <div class="modal fade" id="update">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-body">
@@ -140,7 +140,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

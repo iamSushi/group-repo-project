@@ -15,7 +15,7 @@
 	<script src="js/bootstrap.js"></script>
 	
 </head>
-<body>
+<body style="overflow-y: hidden;">
 	<div class="col-sm-2 sidebar">
 		<div class="panel-group">
 								<div class="panel panel-default">
@@ -112,23 +112,24 @@
 			 	 </div>
 			 </nav>		
 		</div>
-		<div class="col-sm-12"><legend>Schedule Details</legend></div>
-					<div class="col-sm-1"></div>
-			 		<div class="col-sm-10">
+		<div class="col-sm-12 style="overflow-y:scroll; min-height: 690px;""><legend>Schedule Details</legend></div>
+					
+			 		<div class="col-sm-12" >
 			 			<?php
 						  include_once("connection.php");
 						  $sql = "SELECT * FROM staffsched";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
-							  echo "<table class='table'>";
+							  echo "<table class='table' >";
 							  echo "<thead>
 										<tr>
-										    <th>Schedule Details ID</th>
+
+										    <th>ScheduleID</th>
 											<th>Staff</th>
 										 
 											<th>Day</th>
-											<th>Morning Time In</th>
-											<th>Morning Time Out</th>
+											<th>Morning In</th>
+											<th>Morning Out</th>
 											<th>Afternoon Time In</th>
 											<th>Afternon Time Out</th>
 											<th>Total Hours</th>
@@ -178,7 +179,7 @@
 						  }
 						?>
 					  	</div>
-					  	<div class="col-sm-1"></div>
+					  	
 		
 	</div>
 </body>

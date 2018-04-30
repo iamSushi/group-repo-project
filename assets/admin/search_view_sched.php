@@ -126,13 +126,11 @@
 						  $sql = "SELECT * FROM staffsched where fname like '$search%' or mname like '$search%' or lname like '$search%'";
 						  $result = mysqli_query($connect,$sql);
 						  if(mysqli_num_rows($result) > 0){
-							  echo "<table class='table' border='1'>";
+							  echo "<table class='table'>";
 							  echo "<thead>
 										<tr>
-										    <th>Schedule Details ID</th>
+										    <th>ScheduleID</th>
 											<th>Staff</th>
-											<th>Head</th>
-											<th>Department</th>
 											<th>Day</th>
 											<th>Morning Time In</th>
 											<th>Morning Time Out</th>
@@ -140,20 +138,17 @@
 											<th>Afternon Time Out</th>
 											<th>Total Hours</th>
 											<th></th>
+											<th></th>
 										</tr>
 									</thead>";
 							  echo "<tbody>";
 						     while($row = mysqli_fetch_assoc($result)){
 							       echo "<tr><td style='text-align:center;'>".
-								         $row['schedDetails_id'].
+								         $row['sched_id'].
 										"</td><td>".
 										 $row['fname'].' '.
 										 $row['mname'].' '.
 										 $row['lname'].' '.
-										  "</td><td>".
-										 $row['head_id'].
-										  "</td><td>".
-										 $row['department'].
 										 "</td><td>".
 										 $row['day'].
 										"</td><td>".
@@ -169,10 +164,12 @@
 										 
 										 "</td>
 										 <td>
-										    <a href='update_schedule_details.php?id=".$row['schedDetails_id']."'>
+										    <a href='update_schedule_details.php?id=".$row['sched_id']."'>
 										      <button class='btn btn-primary'>Update</button>
 											</a>
-											<a href='action/attendance_details_delete.php?id=".$row['schedDetails_id']."'>
+										</td>
+										<td>
+											<a href='action/attendance_details_delete.php?id=".$row['sched_id']."'>
 											  <button class='btn btn-danger'>Delete</button>
 											</a>
 										 </td>
